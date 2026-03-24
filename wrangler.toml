@@ -5,4 +5,4 @@ pages_build_output_dir = "public"
 [[ d1_databases ]]
 binding = "DB"
 database_name = "ket-users"
-database_id = ""
+database_id = "f59a0c20-0dbf-4c82-8e4e-7b71689e7d34"

@@ -1,0 +1,344 @@
+{
+  "examType": "KET",
+  "title": "KET Reading & Writing Test 04",
+  "source": "englishpracticetest.net",
+  "category": "practice",
+  "totalQuestions": 30,
+  "parts": [
+    {
+      "part": 1,
+      "name": "Reading Part 1",
+      "description": "Read the notices, signs or short messages. For each question, choose the correct answer.",
+      "type": "multiple_choice",
+      "questions": [
+        {
+          "number": 1,
+          "points": 1,
+          "text": "COMPUTER GAMES SHOW\nBuy two tickets and get the third one half price.\nHurry! Last few days of offer.\nOnly until the end of the week.",
+          "textType": "notice",
+          "options": [
+            "A. There is 30% off all tickets.",
+            "B. You can save money this week.",
+            "C. Tickets are only available this week."
+          ],
+          "answer": "B"
+        },
+        {
+          "number": 2,
+          "points": 1,
+          "text": "We can only take you on the school trip if your parents have said it's OK. Please ask them to fill in the form.",
+          "textType": "notice",
+          "options": [
+            "A. Parents can come on the trip if they want.",
+            "B. Pupils must fill in a form and show it to their parents.",
+            "C. The school can take pupils on the trip if their parents let them go."
+          ],
+          "answer": "C"
+        },
+        {
+          "number": 3,
+          "points": 1,
+          "text": "The school's sports hall is used by all pupils for gym and indoor sports. There is also an outdoor area for hockey and football.",
+          "textType": "notice",
+          "options": [
+            "A. describing the sports lessons at the school.",
+            "B. explaining where you can do sports at the school.",
+            "C. saying that the pupils at the school are good at sports."
+          ],
+          "answer": "B"
+        },
+        {
+          "number": 4,
+          "points": 1,
+          "text": "Jim,\nAny chance your mum could take me home in the car after school today?\nI forgot to bring the money for my bus ticket!\nMark",
+          "textType": "message",
+          "options": [
+            "A. borrow some money",
+            "B. travel home with Jim",
+            "C. invite Jim to visit him"
+          ],
+          "answer": "B"
+        },
+        {
+          "number": 5,
+          "points": 1,
+          "text": "How about joining the school singing group? It doesn't matter if you can't read music. All staff and pupils welcome! Mondays after lessons at 4 p.m.",
+          "textType": "notice",
+          "options": [
+            "A. anyone at the school",
+            "B. pupils who have music lessons",
+            "C. people who can already read music"
+          ],
+          "answer": "A"
+        },
+        {
+          "number": 6,
+          "points": 1,
+          "text": "If you are not well and miss a class, please ask a classmate to tell you what was taught.",
+          "textType": "notice",
+          "options": [
+            "A. pupils who are feeling ill",
+            "B. pupils who couldn't go to a lesson",
+            "C. pupils who would like to help their friends"
+          ],
+          "answer": "B"
+        }
+      ]
+    },
+    {
+      "part": 2,
+      "name": "Reading Part 2",
+      "description": "Read the descriptions of three cookery books. For each question, choose the correct answer.",
+      "type": "matching",
+      "texts": {
+        "A": {
+          "title": "My First Cookbook by Lenard Minnow",
+          "content": "Lenard Minnow's last cookery book was a huge success across the world. And now, he has written a cookery book just for children. It has lots of lovely reading activities, so that children can get to know the names of more unusual foods. It explains in an easy-to-read way how to cook and makes it clear that cooking can be a hobby that young and old can really enjoy."
+        },
+        "B": {
+          "title": "Cooking for Students by Cormac O'Dally",
+          "content": "The idea for this book came when Cormac O'Dally's two sons went away to university. They never cooked and had no idea what to do in the kitchen, so Cormac wrote this book to help them. The photo on the cover of the book shows Cormac and his sons laughing and enjoying the food together. Students who use this book won't win prizes for great new food ideas. The meals are very simple, like cheese on toast, but they're easy to prepare and good for you, too."
+        },
+        "C": {
+          "title": "Everybody Can Cook by Denise Macon",
+          "content": "With its 'look-as-you-cook' photos, you can see the author doing everything that you need to do in this wonderful new book. And, as the title says, you'll soon be able to make tasty meals. Many of them come from all four corners of the world. The author received £4,000 when the book was chosen as Cookbook of the Year in a competition this year."
+        }
+      },
+      "questions": [
+        {
+          "number": 7,
+          "points": 1,
+          "text": "Which book won a prize?",
+          "answer": "C"
+        },
+        {
+          "number": 8,
+          "points": 1,
+          "text": "Which book has healthy recipes?",
+          "answer": "B"
+        },
+        {
+          "number": 9,
+          "points": 1,
+          "text": "Which book shows that cooking can be fun?",
+          "answer": "A"
+        },
+        {
+          "number": 10,
+          "points": 1,
+          "text": "Which book has dishes from different countries?",
+          "answer": "C"
+        },
+        {
+          "number": 11,
+          "points": 1,
+          "text": "Which book teaches words to talk about food?",
+          "answer": "A"
+        },
+        {
+          "number": 12,
+          "points": 1,
+          "text": "Which book is about food that the writer's family liked?",
+          "answer": "B"
+        },
+        {
+          "number": 13,
+          "points": 1,
+          "text": "Which book has pictures of someone preparing the food?",
+          "answer": "C"
+        }
+      ]
+    },
+    {
+      "part": 3,
+      "name": "Reading Part 3",
+      "type": "multiple_choice",
+      "description": "Read the text and answer the questions.",
+      "passage": "An amazing stay at the Ocean View Hotel\n\nI'm usually sad to say goodbye to my cousins after visiting them in Australia. But last June I wasn't. We had to change planes in the Middle East on the way back and had to stay overnight. I just couldn't wait to get to our hotel.\n\nThe first thing I noticed in the hotel was all the glass. It was really bright, so I don't know why all the lights were on in the building! There was also loud rock music playing, which I loved (but my parents didn't)! There weren't many people waiting at the reception, so we were soon in our rooms.\n\nThe garden wasn't what I expected. 'Dad', I said, 'you told me there was a pool!' He took me back into the reception area and then up in the lift to the 39th floor and out onto the top of the building. 'Here it is,' he said. It was amazing! Swimming under the clouds was awesome.\n\nI've stayed in some great hotels around the world, but nothing as cool as that one! I saw photographs of it before I went, but they don't really show how large the building is. I couldn't believe it. Everything is huge – the building, the pool, the meals (which were delicious, too, by the way)! There's so much to do and see there. I hope we can go back again and stay for longer!",
+      "questions": [
+        {
+          "number": 14,
+          "points": 1,
+          "text": "The writer says that last June, she felt",
+          "options": [
+            "A. excited about where she was going.",
+            "B. sad because she was leaving her cousins.",
+            "C. angry because of the delay in her journey."
+          ],
+          "answer": "A"
+        },
+        {
+          "number": 15,
+          "points": 1,
+          "text": "What was the hotel like inside?",
+          "options": [
+            "A. dark",
+            "B. noisy",
+            "C. busy"
+          ],
+          "answer": "B"
+        },
+        {
+          "number": 16,
+          "points": 1,
+          "text": "Where was the hotel's pool?",
+          "options": [
+            "A. in the hotel garden",
+            "B. on the roof of the hotel",
+            "C. close to the hotel's reception area"
+          ],
+          "answer": "B"
+        },
+        {
+          "number": 17,
+          "points": 1,
+          "text": "What do we learn about the writer in the last paragraph?",
+          "options": [
+            "A. She hasn't visited many hotels in her life.",
+            "B. She didn't have time to see everything in the hotel.",
+            "C. She didn't know the hotel is so big."
+          ],
+          "answer": "C"
+        },
+        {
+          "number": 18,
+          "points": 1,
+          "text": "Why has the writer written this text?",
+          "options": [
+            "A. to describe what the hotel looks like",
+            "B. to say how the hotel could improve",
+            "C. to explain why she loved the hotel"
+          ],
+          "answer": "C"
+        }
+      ]
+    },
+    {
+      "part": 4,
+      "name": "Reading Part 4",
+      "type": "cloze_choice",
+      "description": "Read the text. Choose the correct word for each space.",
+      "passage": "The Museum of Childhood\n\nThe Museum of Childhood in Edinburgh is full of variety. Visitors can (19)____ dolls houses, toy cars and much more. There is everything from toy soldiers to board (20)____ . The museum was started by a man called Patrick Murray, who (21)____ many toys during his life and wanted to show them to the public. But it's more than (22)____ a museum of toys. It explores all parts of growing (23)____ , and its exhibitions include lots of different things, from storybooks to baby (24)____ . The museum is easy to find in the centre of Edinburgh and is open all year.",
+      "questions": [
+        {
+          "number": 19,
+          "points": 1,
+          "text": "(19)",
+          "options": [
+            "A. watch",
+            "B. look",
+            "C. see"
+          ],
+          "answer": "C"
+        },
+        {
+          "number": 20,
+          "points": 1,
+          "text": "(20)",
+          "options": [
+            "A. games",
+            "B. competitions",
+            "C. matches"
+          ],
+          "answer": "A"
+        },
+        {
+          "number": 21,
+          "points": 1,
+          "text": "(21)",
+          "options": [
+            "A. picked",
+            "B. collected",
+            "C. took"
+          ],
+          "answer": "B"
+        },
+        {
+          "number": 22,
+          "points": 1,
+          "text": "(22)",
+          "options": [
+            "A. already",
+            "B. just",
+            "C. yet"
+          ],
+          "answer": "B"
+        },
+        {
+          "number": 23,
+          "points": 1,
+          "text": "(23)",
+          "options": [
+            "A. up",
+            "B. out",
+            "C. away"
+          ],
+          "answer": "A"
+        },
+        {
+          "number": 24,
+          "points": 1,
+          "text": "(24)",
+          "options": [
+            "A. snack",
+            "B. food",
+            "C. meal"
+          ],
+          "answer": "B"
+        }
+      ]
+    },
+    {
+      "part": 5,
+      "name": "Reading & Writing Part 5",
+      "type": "fill_blank",
+      "description": "Read the text. Write ONE word for each space.",
+      "passage": "From: Gemma\nTo: Anne\n\nHi Anne,\n\nI know you have piano lessons. I want (0) to start too, and I remember you said your teacher doesn't charge too (25)____ . What's he like? Is he good (26)____ explaining things? Can you let (27)____ know soon?\n\nCheers,\nGemma\n\nFrom: Anne\nTo: Gemma\n\nHi Gemma,\n\nMy piano teacher is called Ben. He's funny and I always have (28)____ good time in the lessons. But I don't know if I (29)____ getting any better! Anyway, if you're looking (30)____ a teacher, then I think Ben will be perfect for you.\n\nGood luck!\nAnne",
+      "questions": [
+        {
+          "number": 25,
+          "points": 1,
+          "answer": [
+            "much"
+          ]
+        },
+        {
+          "number": 26,
+          "points": 1,
+          "answer": [
+            "at"
+          ]
+        },
+        {
+          "number": 27,
+          "points": 1,
+          "answer": [
+            "me"
+          ]
+        },
+        {
+          "number": 28,
+          "points": 1,
+          "answer": [
+            "a"
+          ]
+        },
+        {
+          "number": 29,
+          "points": 1,
+          "answer": [
+            "am",
+            "'m"
+          ]
+        },
+        {
+          "number": 30,
+          "points": 1,
+          "answer": [
+            "for"
+          ]
+        }
+      ]
+    }
+  ]
+}

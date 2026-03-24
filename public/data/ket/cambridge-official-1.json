@@ -1,0 +1,332 @@
+{
+  "examType": "KET",
+  "title": "Cambridge Official Sample Test 1",
+  "source": "Cambridge English - Official 2020 Sample",
+  "category": "official",
+  "totalQuestions": 30,
+  "parts": [
+    {
+      "part": 1,
+      "name": "Reading Part 1",
+      "description": "Read the notices, signs or short messages. For each question, choose the correct answer.",
+      "type": "multiple_choice",
+      "questions": [
+        {
+          "number": 1,
+          "points": 1,
+          "text": "For Sale\nWomen's bicycle (small)\n11 years old - needs new tyres\nPhone Debbie\n- 0794587454",
+          "textType": "notice",
+          "options": [
+            "A. The bicycle that's for sale was built for a child.",
+            "B. Some parts of the bicycle must be changed.",
+            "C. Debbie is selling the bike because she's too big for it now."
+          ],
+          "answer": "B"
+        },
+        {
+          "number": 2,
+          "points": 1,
+          "text": "Hi Ben\nI've booked concert tickets for both of us online. Can you give me the money this afternoon when I see you?\nTim",
+          "textType": "message",
+          "options": [
+            "A. Tim thinks Ben should look on the concert website.",
+            "B. Tim hopes that Ben will be able to come with him.",
+            "C. Tim wants to know if Ben can pay him back today."
+          ],
+          "answer": "C"
+        },
+        {
+          "number": 3,
+          "points": 1,
+          "text": "ADVENTURE PARK\nHalf-price tickets for groups of 12 or more\nAsk at entrance",
+          "textType": "sign",
+          "options": [
+            "A. You get into the park by going this way.",
+            "B. It is more expensive to go here alone.",
+            "C. You will have fun if you come with friends."
+          ],
+          "answer": "B"
+        },
+        {
+          "number": 4,
+          "points": 1,
+          "text": "Lynne,\nKim's party starts at 8 p.m. but of course you don't finish work until 9. Shall we go together at 9.30? I'll pick you up.\nEmma",
+          "textType": "message",
+          "options": [
+            "A. Emma knows that Lynne can't be at the party when it starts.",
+            "B. Emma wants to go to the party a bit later than Lynne.",
+            "C. Emma wants to go out with Lynne but not to the party."
+          ],
+          "answer": "A"
+        },
+        {
+          "number": 5,
+          "points": 1,
+          "text": "DAN'S ICE CREAMS\nBuy one, get one free!\n(Special offer 12 - 2 p.m. only)",
+          "textType": "notice",
+          "options": [
+            "A. The ice cream shop is open for only 2 hours.",
+            "B. Two ice creams will cost the same as one.",
+            "C. You can get free ice creams all afternoon."
+          ],
+          "answer": "B"
+        },
+        {
+          "number": 6,
+          "points": 1,
+          "text": "Anna,\nSorry you missed today's class. Don't forget about the history project we're working on together - the teacher wants it by Friday. Call me!\nSophie",
+          "textType": "message",
+          "options": [
+            "A. to check if Anna has completed her homework",
+            "B. to let Anna know what they did in class today",
+            "C. to ask Anna to contact her about the homework"
+          ],
+          "answer": "C"
+        }
+      ]
+    },
+    {
+      "part": 2,
+      "name": "Reading Part 2",
+      "description": "Read the descriptions of three young blog writers. For each question, choose the correct answer.",
+      "type": "matching",
+      "topic": "Young blog writers",
+      "texts": {
+        "A": {
+          "title": "Tasha",
+          "content": "Last year I wrote for my college magazine, which I found really difficult, but I don't think it's hard to write a good blog. Mine is about things from daily life that make me laugh. My older brother also has a blog, but we're writing about different subjects. We don't discuss what we're planning, but we read each other's blogs sometimes. I like giving advice to people who write in asking for it – it's good to know I've helped."
+        },
+        "B": {
+          "title": "Danni",
+          "content": "I started writing my popular film blog because I love movies. I like it when readers send me articles by email about a film they've seen, and I put these on my blog for everyone to read. I'm still at college, so I'm careful about spending too long on my blog, which is difficult as writing well takes time. I don't think I'll write it for much longer. I'm busy, and it's time to do something new."
+        },
+        "C": {
+          "title": "Chrissie",
+          "content": "I began writing on a school magazine. I stopped after a few years, but I missed it, so I started my own – I'm still writing it now! The blog's new for me, and I write about daily life. I get ideas from friends or my sister when I can't decide what to write about – we always think of something interesting, sad or serious. At first, almost nobody visited my site, but now more do, I've had some lovely comments."
+        }
+      },
+      "questions": [
+        {
+          "number": 7,
+          "points": 1,
+          "text": "Who writes both a magazine and a blog?",
+          "answer": "C"
+        },
+        {
+          "number": 8,
+          "points": 1,
+          "text": "Who says that studying and writing a blog at the same time can be hard?",
+          "answer": "B"
+        },
+        {
+          "number": 9,
+          "points": 1,
+          "text": "Who answers questions from other people who read her blog?",
+          "answer": "A"
+        },
+        {
+          "number": 10,
+          "points": 1,
+          "text": "Who plans to stop writing her blog soon?",
+          "answer": "B"
+        },
+        {
+          "number": 11,
+          "points": 1,
+          "text": "Who didn't have many people reading her blog in the beginning?",
+          "answer": "C"
+        },
+        {
+          "number": 12,
+          "points": 1,
+          "text": "Who asks a member of her family to help her write her blog?",
+          "answer": "C"
+        },
+        {
+          "number": 13,
+          "points": 1,
+          "text": "Who says writing a blog is easier than some other types of writing?",
+          "answer": "A"
+        }
+      ]
+    },
+    {
+      "part": 3,
+      "name": "Reading Part 3",
+      "description": "Read the text and answer the questions.",
+      "type": "multiple_choice",
+      "passage": "A family of dancers\n\nThe women in the Watson family are all crazy about ballet. These days, Alice Watson gives ballet lessons, but for many years, she was a dancer with the National Ballet Company. Her mother, Hannah, also had a full-time job there, making costumes for the dancers.\n\nAlice's daughter Demi started learning ballet as soon as she could walk. 'I never taught her,' says Alice, 'because she never let me.' Now aged sixteen, Demi is a member of the ballet company where her mother was the star dancer for many years.\n\nAlice's husband, Jack, is an electrician. They met while he was working at a theatre where she was dancing and got married soon after. 'When Demi started dancing, the house was too small for her and Alice to practise in so I made the garage into a dance studio. Now the living room is nice and quiet when I'm watching television!' he says.\n\nLast month, Demi was invited to dance in the ballet Swan Lake. Of course, Alice and Hannah were in the audience and even Jack was there, which made it very special for Demi. Jack says, 'I'm not that interested in ballet myself but it's fantastic seeing Demi taking her first steps with Alice's old company!' Demi was wearing a dress that Hannah made for Alice many years before.\n\n'It was very exciting for all of us,' says Hannah. 'Demi's way of dancing is very like Alice's. I know I'm her grandmother, but I think she has a great future!'",
+      "questions": [
+        {
+          "number": 14,
+          "points": 1,
+          "text": "What is Alice Watson's job now?",
+          "options": [
+            "A. dancer",
+            "B. teacher",
+            "C. dress-maker"
+          ],
+          "answer": "B"
+        },
+        {
+          "number": 15,
+          "points": 1,
+          "text": "Demi had her first ballet lessons",
+          "options": [
+            "A. at a very young age.",
+            "B. at the National Ballet Company.",
+            "C. from her mother."
+          ],
+          "answer": "A"
+        },
+        {
+          "number": 16,
+          "points": 1,
+          "text": "Jack helped his wife and daughter by",
+          "options": [
+            "A. moving to a larger house.",
+            "B. letting them use the living room for dancing.",
+            "C. making a place for them to practise in."
+          ],
+          "answer": "C"
+        },
+        {
+          "number": 17,
+          "points": 1,
+          "text": "What was the best thing about the Swan Lake show for Demi?",
+          "options": [
+            "A. It was her first show with the company.",
+            "B. All her family were there.",
+            "C. She was wearing a new dress."
+          ],
+          "answer": "B"
+        },
+        {
+          "number": 18,
+          "points": 1,
+          "text": "Hannah says that Demi",
+          "options": [
+            "A. will be a star one day.",
+            "B. is her favourite granddaughter.",
+            "C. dances better than Alice did."
+          ],
+          "answer": "A"
+        }
+      ]
+    },
+    {
+      "part": 4,
+      "name": "Reading Part 4",
+      "description": "Read the text. Choose the correct word for each space.",
+      "type": "cloze_choice",
+      "passage": "William Perkin\n\nWilliam Perkin was born in London in 1838. As a child he had many hobbies, including model making and photography. But it was the (19)______ of chemistry that really interested him. At the age of 15, he went to college to study it.\n\nWhile he was there, he was (20)______ to make a medicine from coal. This didn't go well, but when he was working on the problem, he found a cheap (21)______ to make the colour purple. At that (22)______ it was very expensive to make clothes in different colours. William knew he could make a business out of his new colour. Helped by his father and brother, William (23)______ his own factory to make the colour. It sold well, and soon purple clothes (24)______ very popular in England and the rest of the world.",
+      "questions": [
+        {
+          "number": 19,
+          "points": 1,
+          "text": "(19)",
+          "options": [
+            "A. class",
+            "B. subject",
+            "C. course"
+          ],
+          "answer": "B"
+        },
+        {
+          "number": 20,
+          "points": 1,
+          "text": "(20)",
+          "options": [
+            "A. thinking",
+            "B. trying",
+            "C. deciding"
+          ],
+          "answer": "B"
+        },
+        {
+          "number": 21,
+          "points": 1,
+          "text": "(21)",
+          "options": [
+            "A. way",
+            "B. path",
+            "C. plan"
+          ],
+          "answer": "A"
+        },
+        {
+          "number": 22,
+          "points": 1,
+          "text": "(22)",
+          "options": [
+            "A. day",
+            "B. time",
+            "C. hour"
+          ],
+          "answer": "B"
+        },
+        {
+          "number": 23,
+          "points": 1,
+          "text": "(23)",
+          "options": [
+            "A. brought",
+            "B. turned",
+            "C. opened"
+          ],
+          "answer": "C"
+        },
+        {
+          "number": 24,
+          "points": 1,
+          "text": "(24)",
+          "options": [
+            "A. began",
+            "B. arrived",
+            "C. became"
+          ],
+          "answer": "C"
+        }
+      ]
+    },
+    {
+      "part": 5,
+      "name": "Reading & Writing Part 5",
+      "description": "Read the text. Write ONE word for each space.",
+      "type": "fill_blank",
+      "passage": "From: Maria\nTo: John\n\nI hope you are well. I'm having a great holiday here in Thailand. Our hotel is very nice and there are a lot of good restaurants near it.\n\nYesterday morning, we went to (25)______ lovely beach. We had to leave before lunch because it was very hot. We went to a party (26)______ the evening in the centre (27)______ the town. Everyone had a good time and we got back at midnight. Tomorrow, we want to (28)______ on a boat trip or (29)______ tennis.\n\nI'll show you my photos (30)______ I get back.\n\nSee you soon,\n\nMaria",
+      "questions": [
+        {
+          "number": 25,
+          "points": 1,
+          "answer": ["a", "this"]
+        },
+        {
+          "number": 26,
+          "points": 1,
+          "answer": ["in", "during"]
+        },
+        {
+          "number": 27,
+          "points": 1,
+          "answer": ["of"]
+        },
+        {
+          "number": 28,
+          "points": 1,
+          "answer": ["go"]
+        },
+        {
+          "number": 29,
+          "points": 1,
+          "answer": ["play", "watch"]
+        },
+        {
+          "number": 30,
+          "points": 1,
+          "answer": ["when", "after"]
+        }
+      ]
+    }
+  ]
+}

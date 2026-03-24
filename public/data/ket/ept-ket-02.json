@@ -1,0 +1,343 @@
+{
+  "examType": "KET",
+  "title": "KET Reading & Writing Test 02",
+  "source": "englishpracticetest.net",
+  "category": "practice",
+  "totalQuestions": 30,
+  "parts": [
+    {
+      "part": 1,
+      "name": "Reading Part 1",
+      "description": "Read the notices, signs or short messages. For each question, choose the correct answer.",
+      "type": "multiple_choice",
+      "questions": [
+        {
+          "number": 1,
+          "points": 1,
+          "text": "From 1 October, please do not enter the pool before you have used the shower.",
+          "textType": "notice",
+          "options": [
+            "A. The pool is closed on October 1st.",
+            "B. You need to wash before you swim.",
+            "C. There will be a new shower at the pool."
+          ],
+          "answer": "B"
+        },
+        {
+          "number": 2,
+          "points": 1,
+          "text": "From: Amanda\nTo: Gran\nSubject: Help with a school project\nHi Gran,\nDo you have any old photos showing you in your uniform when you were at school? If you do, can you send me one for school?\nThanks,\nAmanda",
+          "textType": "message",
+          "options": [
+            "A. let her have a picture.",
+            "B. lend her some clothes.",
+            "C. describe her old uniform."
+          ],
+          "answer": "A"
+        },
+        {
+          "number": 3,
+          "points": 1,
+          "text": "Warning\nMemory full\nPlease delete files or click here to buy more memory.\nOK",
+          "textType": "notice",
+          "options": [
+            "A. in a computer shop",
+            "B. on the screen of a computer",
+            "C. on the wall in the computer classroom"
+          ],
+          "answer": "B"
+        },
+        {
+          "number": 4,
+          "points": 1,
+          "text": "TOMORROW'S TRIP\nTime coach leaves school: 8:50.\nPlease arrive no later than 8:40.\nThe school gates will open at about 8:30.\nThank you.",
+          "textType": "notice",
+          "options": [
+            "A. about 8:30",
+            "B. by 8:40",
+            "C. at 8:50"
+          ],
+          "answer": "B"
+        },
+        {
+          "number": 5,
+          "points": 1,
+          "text": "PLEASE NOTE EVERYBODY\nThere's a lift if you need it. BUT use the stairs if you can.\nIt's a great way to stay fit.",
+          "textType": "notice",
+          "options": [
+            "A. Get the lift if you are in a hurry.",
+            "B. Use the stairs if the lift is broken.",
+            "C. Walking up and down stairs is better for you."
+          ],
+          "answer": "C"
+        },
+        {
+          "number": 6,
+          "points": 1,
+          "text": "Hounslow Cinema: Special Offer\nBuy tickets to four films and you don't need to pay for the next one!\nEvery day until 5:30 p.m.",
+          "textType": "notice",
+          "options": [
+            "A. You can watch up to four films for free.",
+            "B. The fifth film you see during the daytime is free.",
+            "C. Cheap tickets are available for groups of four in the evenings."
+          ],
+          "answer": "B"
+        }
+      ]
+    },
+    {
+      "part": 2,
+      "name": "Reading Part 2",
+      "description": "Read the descriptions of three people. For each question, choose the correct answer.",
+      "type": "matching",
+      "texts": {
+        "A": {
+          "title": "Damian, 13",
+          "content": "I don't mind doing homework, especially when I play some jazz (and not pop) on my phone. When I do, I'm able to think more carefully about what I'm doing. Sometimes I really enjoy doing my homework, especially when it's maths and I understand it well. Or when one of my classmates comes to my place and we study together. I find it's best if I let my parents and sister know I'm busy so they don't come into my room and spend all evening talking to me!"
+        },
+        "B": {
+          "title": "Louis, 11",
+          "content": "When I started doing my homework in my room every morning, it wasn't a great success. I always found something more interesting to do! But these days, I don't have the same problem. I just go to my room in the evening, switch on the light, sit down at my desk and do it. I do love music, but if I put my MP3 player on, I start to think about the song and not the homework! So I don't listen while I work. It's the same problem if my mum or dad put music on in the next room. I turn my mobile off or put it away before I start. That helps too."
+        },
+        "C": {
+          "title": "Jackson, 14",
+          "content": "I usually do most of my homework before I go to bed. And then I do a bit more as soon as I wake up. I've always found it easy to do that. I'll maybe look at my German vocabulary for five minutes before breakfast. I tell my friends at school: 'If you want to do your homework well, make sure your room is nice and bright. Otherwise, you'll fall asleep!'"
+        }
+      },
+      "questions": [
+        {
+          "number": 7,
+          "points": 1,
+          "text": "Which person says it's better not to look at his phone while he's doing his homework?",
+          "answer": "B"
+        },
+        {
+          "number": 8,
+          "points": 1,
+          "text": "Which person sometimes does homework with a friend?",
+          "answer": "A"
+        },
+        {
+          "number": 9,
+          "points": 1,
+          "text": "Which person tells his family when he is working?",
+          "answer": "A"
+        },
+        {
+          "number": 10,
+          "points": 1,
+          "text": "Which person says that there must be enough light in his room so he can work?",
+          "answer": "C"
+        },
+        {
+          "number": 11,
+          "points": 1,
+          "text": "Which person thinks that listening to music helps with homework?",
+          "answer": "A"
+        },
+        {
+          "number": 12,
+          "points": 1,
+          "text": "Which person works in the morning and evening?",
+          "answer": "C"
+        },
+        {
+          "number": 13,
+          "points": 1,
+          "text": "Which person says it's easier to do homework now than it was before?",
+          "answer": "B"
+        }
+      ]
+    },
+    {
+      "part": 3,
+      "name": "Reading Part 3",
+      "type": "multiple_choice",
+      "description": "Read the text and answer the questions.",
+      "passage": "Starting photography\nBy Mrs Howells, Class 3D teacher\n\nHave you ever wanted to take better pictures of your family, of your dinner or of your cat? Well, I can help you. In fact, that's what makes photography such a fantastic hobby. It doesn't matter if you have a nice new camera or just use your phone. We photographers are always trying to improve. We want today's to be more interesting than yesterday's.\n\nIn my photography classes, I'll show you how to find your own style, not just take the same photos as all your friends. But you'll need to be out of bed early and take pictures in the best light, before it gets too bright. We'll talk more about light in Week 1.\n\nActually, I've never read a book about photography, and I get bored watching videos on the net. I started to understand more about photography by looking at my own photos. I thought about what was wrong with them and decided how to do better next time. And in Week 2, I'll ask you to do the same with photos you have taken.\n\nDo you want to know what I think? I don't think there's anyone who can't take amazing photos. Not everyone wants to, and that's cool. But if you do, come along to Room 4D on Wednesdays after lunch from 1:30 to 2:00.",
+      "questions": [
+        {
+          "number": 14,
+          "points": 1,
+          "text": "Why does Mrs Howells enjoy photography?",
+          "options": [
+            "A. She loves using her new camera.",
+            "B. She likes taking photos of her family.",
+            "C. She enjoys trying to take better pictures."
+          ],
+          "answer": "C"
+        },
+        {
+          "number": 15,
+          "points": 1,
+          "text": "What advice does Mrs Howells give?",
+          "options": [
+            "A. Take pictures with your friends.",
+            "B. Don't take photos if it is dark.",
+            "C. Take photos early in the morning."
+          ],
+          "answer": "C"
+        },
+        {
+          "number": 16,
+          "points": 1,
+          "text": "How did Mrs Howells learn about photography?",
+          "options": [
+            "A. from books",
+            "B. from her mistakes",
+            "C. from videos on the web"
+          ],
+          "answer": "B"
+        },
+        {
+          "number": 17,
+          "points": 1,
+          "text": "Mrs Howells believes that",
+          "options": [
+            "A. everybody should learn photography.",
+            "B. photography is a great hobby for everyone.",
+            "C. everybody can take good photos if they want to."
+          ],
+          "answer": "C"
+        },
+        {
+          "number": 18,
+          "points": 1,
+          "text": "Why has Mrs Howells written this text?",
+          "options": [
+            "A. to ask pupils what they like photographing",
+            "B. to tell pupils about a photography course",
+            "C. to answer pupils' questions about photography"
+          ],
+          "answer": "B"
+        }
+      ]
+    },
+    {
+      "part": 4,
+      "name": "Reading Part 4",
+      "type": "cloze_choice",
+      "description": "Read the text. Choose the correct word for each space.",
+      "passage": "The oldest university in the world\n\nSome people say University of Al Quaraouiyine in Morocco is the world's oldest university because there has been a school in the same place (19)____ the year 859 AD. In other words, there has been one there (20)____ almost 1,100 years. The University has had many famous international students (21)____ the years including the great traveller, Ibn Khadun. The University was started by a woman, Fatima al-Fihri and (22)____ a long history of teaching women and activities for women's education. Lecturer Hisham Mahmoud believes this helps female students concentrate during their studies. Before joining Al Quaraouiyine, Dr Mahmoud was a scientist, but he decided to (23)____ his career and work in education. The University's students all do well. After finishing at the University, many students will continue their (24)____ at universities in America and Europe.",
+      "questions": [
+        {
+          "number": 19,
+          "points": 1,
+          "text": "(19)",
+          "options": [
+            "A. since",
+            "B. between",
+            "C. after"
+          ],
+          "answer": "A"
+        },
+        {
+          "number": 20,
+          "points": 1,
+          "text": "(20)",
+          "options": [
+            "A. since",
+            "B. during",
+            "C. for"
+          ],
+          "answer": "C"
+        },
+        {
+          "number": 21,
+          "points": 1,
+          "text": "(21)",
+          "options": [
+            "A. under",
+            "B. over",
+            "C. until"
+          ],
+          "answer": "B"
+        },
+        {
+          "number": 22,
+          "points": 1,
+          "text": "(22)",
+          "options": [
+            "A. has",
+            "B. makes",
+            "C. goes"
+          ],
+          "answer": "A"
+        },
+        {
+          "number": 23,
+          "points": 1,
+          "text": "(23)",
+          "options": [
+            "A. give",
+            "B. change",
+            "C. take"
+          ],
+          "answer": "B"
+        },
+        {
+          "number": 24,
+          "points": 1,
+          "text": "(24)",
+          "options": [
+            "A. marks",
+            "B. studies",
+            "C. information"
+          ],
+          "answer": "B"
+        }
+      ]
+    },
+    {
+      "part": 5,
+      "name": "Reading & Writing Part 5",
+      "type": "fill_blank",
+      "description": "Read the text. Write ONE word for each space.",
+      "passage": "A school trip to the theatre\n\nLast week, everyone in my class (0) went on a trip to the theatre. We travelled there (25)____ coach. The theatre is about 10 kilometres away from school, so it was much (26)____ far to walk. The play was Romeo and Juliet by William Shakespeare. In fact, it's probably the (27)____ famous of all the plays that Shakespeare wrote. We've studied it at school, so I knew (28)____ it's about. It's a love story, but it's also the saddest play I (29)____ ever seen. At the end, several (30)____ the people in my class were crying. But I loved it!",
+      "questions": [
+        {
+          "number": 25,
+          "points": 1,
+          "answer": [
+            "by"
+          ]
+        },
+        {
+          "number": 26,
+          "points": 1,
+          "answer": [
+            "too"
+          ]
+        },
+        {
+          "number": 27,
+          "points": 1,
+          "answer": [
+            "most"
+          ]
+        },
+        {
+          "number": 28,
+          "points": 1,
+          "answer": [
+            "what"
+          ]
+        },
+        {
+          "number": 29,
+          "points": 1,
+          "answer": [
+            "have"
+          ]
+        },
+        {
+          "number": 30,
+          "points": 1,
+          "answer": [
+            "of"
+          ]
+        }
+      ]
+    }
+  ]
+}

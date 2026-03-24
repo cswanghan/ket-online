@@ -3,12 +3,18 @@
     {
       "id": "ket",
       "name": "KET (A2 Key)",
-      "description": "Cambridge A2 Key English Test",
+      "description": "Cambridge A2 Key English Test - Reading & Writing",
       "grade": "适合小学高年级 - 初中",
       "tests": [
-        { "id": "practice-1", "title": "Practice Test 1", "totalQuestions": 30 },
-        { "id": "practice-2", "title": "Practice Test 2", "totalQuestions": 30 },
-        { "id": "practice-3", "title": "Practice Test 3", "totalQuestions": 30 }
+        { "id": "ept-ket-01", "title": "KET 真题 1", "totalQuestions": 30, "source": "englishpracticetest.net", "category": "past_paper" },
+        { "id": "ept-ket-02", "title": "KET 真题 2", "totalQuestions": 30, "source": "englishpracticetest.net", "category": "past_paper" },
+        { "id": "ept-ket-03", "title": "KET 真题 3", "totalQuestions": 30, "source": "englishpracticetest.net", "category": "past_paper" },
+        { "id": "ept-ket-04", "title": "KET 真题 4", "totalQuestions": 30, "source": "englishpracticetest.net", "category": "past_paper" },
+        { "id": "ept-ket-05", "title": "KET 真题 5", "totalQuestions": 30, "source": "englishpracticetest.net", "category": "past_paper" },
+        { "id": "practice-1", "title": "KET 练习卷 1", "totalQuestions": 30, "source": "AI Generated", "category": "practice" },
+        { "id": "practice-2", "title": "KET 练习卷 2", "totalQuestions": 30, "source": "AI Generated", "category": "practice" },
+        { "id": "practice-3", "title": "KET 练习卷 3", "totalQuestions": 30, "source": "AI Generated", "category": "practice" },
+        { "id": "cambridge-official-1", "title": "剑桥官方样卷 1", "totalQuestions": 30, "source": "Cambridge English - Official 2020 Sample", "category": "official" }
       ]
     }
   ]

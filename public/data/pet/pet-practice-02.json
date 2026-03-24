@@ -1,0 +1,393 @@
+{
+  "examType": "PET",
+  "title": "PET Reading Practice Test 2",
+  "source": "AI Generated",
+  "category": "practice",
+  "totalQuestions": 32,
+  "parts": [
+    {
+      "part": 1,
+      "name": "Reading Part 1",
+      "description": "For each question, choose the correct answer.",
+      "type": "multiple_choice",
+      "questions": [
+        {
+          "number": 1,
+          "points": 1,
+          "text": "SWIMMING POOL\nAll swimmers must shower before entering the pool.",
+          "textType": "notice",
+          "options": [
+            "A. You should shower after you have been in the pool.",
+            "B. You are required to take a shower before going into the pool.",
+            "C. The showers are next to the swimming pool."
+          ],
+          "answer": "B"
+        },
+        {
+          "number": 2,
+          "points": 1,
+          "text": "Sophie,\nI've left the concert tickets on the kitchen table. Don't forget to bring them tonight – I won't have time to come home before the show.\nDad",
+          "textType": "message",
+          "question": "Why has Sophie's dad written the message?",
+          "options": [
+            "A. To remind Sophie to buy concert tickets.",
+            "B. To ask Sophie to bring the tickets with her.",
+            "C. To tell Sophie he will be late for the concert."
+          ],
+          "answer": "B"
+        },
+        {
+          "number": 3,
+          "points": 1,
+          "text": "LIBRARY NOTICE\nBooks may be borrowed for up to three weeks. A fine of 20p per day will be charged for late returns.",
+          "textType": "notice",
+          "options": [
+            "A. You can keep library books for as long as you like.",
+            "B. There is a daily charge if you do not return books on time.",
+            "C. You must pay 20p each time you borrow a book."
+          ],
+          "answer": "B"
+        },
+        {
+          "number": 4,
+          "points": 1,
+          "text": "SALE\nAll winter clothing reduced by up to 50%. Offer ends Saturday.",
+          "textType": "notice",
+          "options": [
+            "A. Everything in the shop is half price until Saturday.",
+            "B. Winter clothes have been reduced, but not all by the same amount.",
+            "C. The sale starts on Saturday."
+          ],
+          "answer": "B"
+        },
+        {
+          "number": 5,
+          "points": 1,
+          "text": "James,\nThe dentist called to say your appointment has been moved from Thursday to Friday at 2pm. Can you let me know if that's OK?\nMum",
+          "textType": "message",
+          "question": "James's mum is writing to",
+          "options": [
+            "A. ask James to make a dentist appointment.",
+            "B. tell James about a change to his appointment.",
+            "C. remind James that his appointment is on Thursday."
+          ],
+          "answer": "B"
+        }
+      ]
+    },
+    {
+      "part": 2,
+      "name": "Reading Part 2",
+      "type": "matching",
+      "description": "The people below all want to choose a holiday activity. Read the descriptions of eight activities. Choose which activity would be the most suitable for the people below.",
+      "texts": {
+        "A": {
+          "title": "Mountain Trails Cycling",
+          "content": "Explore beautiful mountain scenery on our guided bike tours. Suitable for experienced cyclists only. Tours last a full day and include a packed lunch. Groups are kept small, with a maximum of six riders. Available April to October."
+        },
+        "B": {
+          "title": "Riverside Kayaking",
+          "content": "A gentle two-hour paddle along the River Avon. No previous experience needed – full training provided. Children welcome if accompanied by an adult. Equipment and waterproof clothing included in the price. Hot drinks available afterwards."
+        },
+        "C": {
+          "title": "Ocean Sailing School",
+          "content": "Learn to sail in our sheltered bay. Courses run from Monday to Friday, with a certificate awarded at the end. Students must be at least 16 years old. Accommodation available nearby at reduced rates for course participants."
+        },
+        "D": {
+          "title": "Forest Adventure Park",
+          "content": "Climbing, zip-lines and rope bridges high up in the trees. Ideal for families with children aged 6 and over. Half-day sessions morning or afternoon. A café serves sandwiches and cakes throughout the day. Free parking available."
+        },
+        "E": {
+          "title": "Lakeside Fishing",
+          "content": "Spend a peaceful day fishing at our well-stocked lake. Equipment can be hired on site. A beginners' workshop runs every Saturday morning. The on-site shop sells bait and refreshments. Open all year round."
+        },
+        "F": {
+          "title": "Country Walking Tours",
+          "content": "Guided walks through historic villages and beautiful countryside. Choose from easy half-day walks or more challenging full-day hikes. Our guides are experts in local history and wildlife. Large groups welcome. Walks take place every weekend."
+        },
+        "G": {
+          "title": "Beach Surfing Lessons",
+          "content": "Catch your first wave with our qualified instructors. Lessons last two hours and wetsuits are provided. Suitable for ages 10 and above. No previous experience necessary. Book online for a 15% discount."
+        },
+        "H": {
+          "title": "Indoor Climbing Centre",
+          "content": "Try rock climbing whatever the weather. Sessions for all ability levels from complete beginner to expert. Open seven days a week, mornings and evenings. Family sessions on Saturday afternoons. Birthday party packages available."
+        }
+      },
+      "questions": [
+        {
+          "number": 6,
+          "points": 1,
+          "text": "Tom wants to try a water sport with his 8-year-old daughter. Neither of them has done anything like this before, and he would like something that doesn't take too long.",
+          "answer": "B"
+        },
+        {
+          "number": 7,
+          "points": 1,
+          "text": "Maria is a keen cyclist who wants a challenging ride in a scenic area. She would prefer to go with a small group and have lunch provided.",
+          "answer": "A"
+        },
+        {
+          "number": 8,
+          "points": 1,
+          "text": "David is a history teacher who wants to organise an outdoor activity for his class of 25 students. He wants something educational that they can do on a Saturday.",
+          "answer": "F"
+        },
+        {
+          "number": 9,
+          "points": 1,
+          "text": "Karen is looking for a week-long course where she can learn a new skill. She is 18 and would need somewhere to stay during the course.",
+          "answer": "C"
+        },
+        {
+          "number": 10,
+          "points": 1,
+          "text": "Ben wants to take his two children, aged 7 and 10, somewhere fun for half a day. He would like to be able to get something to eat there and not have to worry about parking.",
+          "answer": "D"
+        }
+      ]
+    },
+    {
+      "part": 3,
+      "name": "Reading Part 3",
+      "type": "multiple_choice",
+      "description": "Read the text and answer the questions.",
+      "passageTitle": "Chef Marco Rivera talks about his career",
+      "passage": "I grew up in a small town in southern Spain, where food was at the centre of family life. My grandmother was an incredible cook, and I spent hours watching her prepare meals from scratch. She never used a recipe book – everything was done by memory and instinct. That early experience in her kitchen is what made me want to become a chef.\n\nAfter finishing school, I moved to Madrid to study at a cooking academy. It was tough at first. I was used to home-style cooking, and suddenly I had to learn complicated techniques and work under enormous pressure. Some students dropped out in the first few months, but I was determined to succeed. The course lasted three years and I graduated near the top of my class.\n\nMy first job was in a busy restaurant in Barcelona. The head chef was extremely demanding and would shout at us if anything was less than perfect. I learned an enormous amount from him, though, especially about organisation and timing. In a professional kitchen, being a few seconds late with a dish can ruin the entire table's meal.\n\nAfter five years there, I felt ready to open my own place. I found a small building near the beach and turned it into a restaurant with just twelve tables. I wanted it to feel intimate and personal. The menu changes every week depending on what's fresh at the local market. We don't have a huge team – just me and two other cooks – but that's how I like it.\n\nRunning your own restaurant is harder than I ever imagined. I work at least fourteen hours a day and rarely take a holiday. But when a customer tells me that a meal was the best they've ever had, it makes everything worthwhile. I wouldn't change what I do for anything.",
+      "questions": [
+        {
+          "number": 11,
+          "points": 1,
+          "text": "What inspired Marco to become a chef?",
+          "options": [
+            "A. Reading recipe books as a child.",
+            "B. Spending time in his grandmother's kitchen.",
+            "C. Visiting restaurants in his town.",
+            "D. Watching cooking shows on television."
+          ],
+          "answer": "B"
+        },
+        {
+          "number": 12,
+          "points": 1,
+          "text": "What does Marco say about his time at cooking academy?",
+          "options": [
+            "A. He found it easy because of his background.",
+            "B. He was the best student in his class.",
+            "C. It was difficult but he was determined to finish.",
+            "D. Most students completed the course successfully."
+          ],
+          "answer": "C"
+        },
+        {
+          "number": 13,
+          "points": 1,
+          "text": "What did Marco learn from the head chef in Barcelona?",
+          "options": [
+            "A. How to cook Spanish dishes.",
+            "B. The importance of being well-organised and punctual.",
+            "C. How to manage a team of cooks.",
+            "D. How to deal with difficult customers."
+          ],
+          "answer": "B"
+        },
+        {
+          "number": 14,
+          "points": 1,
+          "text": "What is special about Marco's own restaurant?",
+          "options": [
+            "A. It is the largest restaurant near the beach.",
+            "B. It serves the same menu every day.",
+            "C. It is small and the food depends on what is available locally.",
+            "D. It has a large team of experienced cooks."
+          ],
+          "answer": "C"
+        },
+        {
+          "number": 15,
+          "points": 1,
+          "text": "How does Marco feel about owning his restaurant?",
+          "options": [
+            "A. He wishes he worked fewer hours.",
+            "B. He regrets not staying in Barcelona.",
+            "C. He finds the work challenging but rewarding.",
+            "D. He is planning to open a second restaurant."
+          ],
+          "answer": "C"
+        }
+      ]
+    },
+    {
+      "part": 4,
+      "name": "Reading Part 4",
+      "type": "gapped_text",
+      "description": "Five sentences have been removed from the text below. For each question, choose the correct answer. There are three extra sentences which you do not need to use.",
+      "passageTitle": "The Rise of Electric Cars",
+      "passage": "Electric cars have been around for much longer than most people realise. In fact, some of the very first motor vehicles built in the late 1800s were powered by electricity. (16) ______ They were quiet, easy to drive, and didn't produce unpleasant smells.\n\nHowever, when Henry Ford began mass-producing petrol-powered cars in 1908, electric vehicles quickly fell out of favour. (17) ______ For most of the twentieth century, almost nobody thought about electric cars.\n\nThings began to change in the 1990s when people started to worry more about pollution and climate change. (18) ______ But these early models were expensive and could only travel short distances before needing to be recharged.\n\nThe real breakthrough came with improvements in battery technology. (19) ______ Companies like Tesla proved that electric cars could be fast, stylish and practical for everyday use.\n\nToday, many countries have announced plans to ban the sale of new petrol and diesel cars within the next ten to twenty years. (20) ______ Whether we like it or not, the future of driving is electric.",
+      "sentenceOptions": [
+        "A. Petrol cars were cheaper, faster and could travel much further on a single tank of fuel.",
+        "B. Several car manufacturers began experimenting with electric models again.",
+        "C. At that time, they were actually more popular than petrol-powered vehicles.",
+        "D. Modern batteries can store much more energy and can be recharged much more quickly.",
+        "E. This means that electric cars will eventually become the only option for new car buyers.",
+        "F. The problem was that electricity was not widely available at that time.",
+        "G. Electric cars are also much cheaper to maintain than traditional vehicles.",
+        "H. Many people believe that public transport is a better solution than electric cars."
+      ],
+      "questions": [
+        {
+          "number": 16,
+          "points": 1,
+          "text": "(16)",
+          "answer": "C"
+        },
+        {
+          "number": 17,
+          "points": 1,
+          "text": "(17)",
+          "answer": "A"
+        },
+        {
+          "number": 18,
+          "points": 1,
+          "text": "(18)",
+          "answer": "B"
+        },
+        {
+          "number": 19,
+          "points": 1,
+          "text": "(19)",
+          "answer": "D"
+        },
+        {
+          "number": 20,
+          "points": 1,
+          "text": "(20)",
+          "answer": "E"
+        }
+      ]
+    },
+    {
+      "part": 5,
+      "name": "Reading Part 5",
+      "type": "cloze_choice",
+      "description": "Read the text. Choose the correct word for each space.",
+      "passageTitle": "The History of Chocolate",
+      "passage": "Chocolate has been enjoyed by people (21)______ thousands of years. The ancient Mayans and Aztecs in Central America were the first to discover that the beans of the cacao tree could be (22)______ into a delicious drink.\n\nWhen Spanish explorers arrived in the Americas in the 16th century, they (23)______ cacao beans back to Europe. At first, chocolate was only available to the rich, as it was very expensive. (24)______, as production methods improved, the price came down and more people were (25)______ to enjoy it.\n\nToday, chocolate is one of the most popular foods in the world. The Swiss and Belgians are particularly famous (26)______ their high-quality chocolate, although cacao beans are still mainly grown in West Africa and South America.",
+      "questions": [
+        {
+          "number": 21,
+          "points": 1,
+          "text": "(21)",
+          "options": [
+            "A. since",
+            "B. for",
+            "C. during",
+            "D. while"
+          ],
+          "answer": "B"
+        },
+        {
+          "number": 22,
+          "points": 1,
+          "text": "(22)",
+          "options": [
+            "A. turned",
+            "B. changed",
+            "C. mixed",
+            "D. moved"
+          ],
+          "answer": "A"
+        },
+        {
+          "number": 23,
+          "points": 1,
+          "text": "(23)",
+          "options": [
+            "A. carried",
+            "B. fetched",
+            "C. brought",
+            "D. delivered"
+          ],
+          "answer": "C"
+        },
+        {
+          "number": 24,
+          "points": 1,
+          "text": "(24)",
+          "options": [
+            "A. But",
+            "B. However",
+            "C. Although",
+            "D. Despite"
+          ],
+          "answer": "B"
+        },
+        {
+          "number": 25,
+          "points": 1,
+          "text": "(25)",
+          "options": [
+            "A. capable",
+            "B. possible",
+            "C. able",
+            "D. allowed"
+          ],
+          "answer": "C"
+        },
+        {
+          "number": 26,
+          "points": 1,
+          "text": "(26)",
+          "options": [
+            "A. about",
+            "B. with",
+            "C. of",
+            "D. for"
+          ],
+          "answer": "D"
+        }
+      ]
+    },
+    {
+      "part": 6,
+      "name": "Reading Part 6",
+      "type": "fill_blank",
+      "description": "Read the text. Write ONE word for each gap.",
+      "passageTitle": "Learning to Drive",
+      "passage": "Getting your driving licence is an exciting moment for most young people. In the UK, you can start learning to drive (27)______ you are 17 years old. Before you can drive on public roads, you need to apply (28)______ a provisional driving licence.\n\nMost people take lessons (29)______ a qualified driving instructor. A typical lesson lasts about an hour, and most learners need around 40 lessons (30)______ they are ready to take the test. Of course, some people learn more quickly (31)______ others.\n\nThe driving test has two parts: a theory test and a practical test. You must pass the theory test (32)______ you can take the practical one. The theory test includes questions about road signs and safe driving.",
+      "questions": [
+        {
+          "number": 27,
+          "points": 1,
+          "answer": ["when", "once"]
+        },
+        {
+          "number": 28,
+          "points": 1,
+          "answer": ["for"]
+        },
+        {
+          "number": 29,
+          "points": 1,
+          "answer": ["with", "from"]
+        },
+        {
+          "number": 30,
+          "points": 1,
+          "answer": ["before", "until"]
+        },
+        {
+          "number": 31,
+          "points": 1,
+          "answer": ["than"]
+        },
+        {
+          "number": 32,
+          "points": 1,
+          "answer": ["before"]
+        }
+      ]
+    }
+  ]
+}

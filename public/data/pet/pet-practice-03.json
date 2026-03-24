@@ -1,0 +1,393 @@
+{
+  "examType": "PET",
+  "title": "PET Reading Practice Test 3",
+  "source": "AI Generated",
+  "category": "practice",
+  "totalQuestions": 32,
+  "parts": [
+    {
+      "part": 1,
+      "name": "Reading Part 1",
+      "description": "For each question, choose the correct answer.",
+      "type": "multiple_choice",
+      "questions": [
+        {
+          "number": 1,
+          "points": 1,
+          "text": "MUSEUM CAFÉ\nLast orders 30 minutes before closing time.",
+          "textType": "notice",
+          "options": [
+            "A. The café closes 30 minutes after the museum.",
+            "B. You cannot order food in the last half hour before the café shuts.",
+            "C. The café opens 30 minutes before the museum."
+          ],
+          "answer": "B"
+        },
+        {
+          "number": 2,
+          "points": 1,
+          "text": "Lucy,\nI tried to return your book to the library but it was closed. I've left it on your desk. Could you take it back tomorrow? It's due today.\nEmma",
+          "textType": "message",
+          "question": "Emma wants Lucy to",
+          "options": [
+            "A. borrow a book from the library.",
+            "B. return a library book for her.",
+            "C. collect a book from Emma's desk."
+          ],
+          "answer": "B"
+        },
+        {
+          "number": 3,
+          "points": 1,
+          "text": "TRAIN STATION\nPassengers are advised that the 8:15 service to London has been cancelled. The next train departs at 8:45.",
+          "textType": "notice",
+          "options": [
+            "A. All trains to London have been cancelled today.",
+            "B. The 8:15 train is running 30 minutes late.",
+            "C. The 8:15 train will not run but there is a later one."
+          ],
+          "answer": "C"
+        },
+        {
+          "number": 4,
+          "points": 1,
+          "text": "GYM MEMBERSHIP\nNew members joining in January receive two months free. Normal monthly fee applies from March.",
+          "textType": "notice",
+          "options": [
+            "A. January members don't have to pay until March.",
+            "B. Membership is free for the first two months for everyone.",
+            "C. The gym is closed in January and February."
+          ],
+          "answer": "A"
+        },
+        {
+          "number": 5,
+          "points": 1,
+          "text": "Mark,\nI've checked and your passport expires next month. You'll need to renew it before we book the flights. The form is online.\nSarah",
+          "textType": "message",
+          "question": "Sarah is telling Mark that he needs to",
+          "options": [
+            "A. book the flights as soon as possible.",
+            "B. get a new passport before they can travel.",
+            "C. find his passport before their trip."
+          ],
+          "answer": "B"
+        }
+      ]
+    },
+    {
+      "part": 2,
+      "name": "Reading Part 2",
+      "type": "matching",
+      "description": "The people below all want to find a course to study. Read the descriptions of eight courses. Choose which course would be the most suitable for the people below.",
+      "texts": {
+        "A": {
+          "title": "Digital Photography",
+          "content": "A ten-week evening course for complete beginners. Learn how to use your camera properly and take better photos. All you need is a digital camera or smartphone. Classes are on Tuesday evenings from 7pm to 9pm. Materials and refreshments included in the fee."
+        },
+        "B": {
+          "title": "Creative Writing Workshop",
+          "content": "Write short stories and poems in a supportive group. This weekend course is suitable for people who have some experience of writing and want to develop their skills further. Limited to 10 participants. Takes place on the first Saturday of each month."
+        },
+        "C": {
+          "title": "Spanish for Travellers",
+          "content": "A six-week course designed for people planning to visit a Spanish-speaking country. Learn essential phrases for hotels, restaurants and shops. No previous knowledge of Spanish required. Daytime classes only, Monday and Wednesday mornings."
+        },
+        "D": {
+          "title": "Introduction to Cooking",
+          "content": "Perfect for students and young adults living independently for the first time. Learn to prepare simple, healthy meals on a budget. Saturday morning classes. All ingredients provided. Each session focuses on a different type of meal."
+        },
+        "E": {
+          "title": "Advanced Watercolour Painting",
+          "content": "For experienced painters who want to take their work to the next level. Explore advanced techniques with a professional artist. Students should bring their own materials. Wednesday afternoons, 2pm-5pm. Minimum age 18."
+        },
+        "F": {
+          "title": "First Aid Certificate",
+          "content": "A two-day intensive course covering essential first aid skills. Internationally recognised certificate awarded on completion. Suitable for anyone over 14. Courses run every month and are available on weekdays or weekends. Lunch provided."
+        },
+        "G": {
+          "title": "Yoga for Beginners",
+          "content": "Start your yoga journey in a relaxed, friendly environment. No experience or special equipment needed – just wear comfortable clothes. Classes meet twice a week, Thursday evenings and Sunday mornings. Suitable for all ages and fitness levels."
+        },
+        "H": {
+          "title": "Web Design Basics",
+          "content": "Learn to build your own website from scratch. This eight-week course covers HTML, CSS and basic design principles. Some computer experience helpful but not essential. Monday evenings, 6pm-8pm. Students need to bring their own laptop."
+        }
+      },
+      "questions": [
+        {
+          "number": 6,
+          "points": 1,
+          "text": "Alex is 19 and has just moved into his own flat. He can't cook at all and wants to learn to make simple meals without spending too much money. He is free on Saturdays.",
+          "answer": "D"
+        },
+        {
+          "number": 7,
+          "points": 1,
+          "text": "Rita is retired and enjoys painting. She has been doing watercolours for years and wants to improve her technique. She is available during the daytime on weekdays.",
+          "answer": "E"
+        },
+        {
+          "number": 8,
+          "points": 1,
+          "text": "Chen works full-time and wants to create a website for his small business. He uses computers daily at work and has his own laptop. He needs an evening class.",
+          "answer": "H"
+        },
+        {
+          "number": 9,
+          "points": 1,
+          "text": "Olivia is planning a holiday to Mexico next summer. She doesn't speak any Spanish and wants to learn some useful phrases. She doesn't work and is free during the day.",
+          "answer": "C"
+        },
+        {
+          "number": 10,
+          "points": 1,
+          "text": "Sam is 15 and needs a qualification that will look good on job applications. He would like to complete it quickly and is available at weekends.",
+          "answer": "F"
+        }
+      ]
+    },
+    {
+      "part": 3,
+      "name": "Reading Part 3",
+      "type": "multiple_choice",
+      "description": "Read the text and answer the questions.",
+      "passageTitle": "Wildlife photographer Kate Morrison",
+      "passage": "I never planned to become a wildlife photographer. After university, where I studied biology, I got a job in a research laboratory. The work was interesting enough, but I spent all day indoors, and I missed being outside. I'd always loved nature, and it was frustrating to be stuck in a building all day looking at a computer screen.\n\nOne weekend, a friend persuaded me to join her on a bird-watching trip. I borrowed my dad's old camera and took a few photos. When I got home and looked at them, I was amazed at how good some of them were – not because of my skill, but because of how beautiful the birds looked. That was the moment I realised I wanted to combine my love of nature with photography.\n\nI started by photographing birds in my local park every weekend. I quickly discovered that wildlife photography requires enormous patience. Animals don't pose for you – you might wait for hours in the cold and rain for a single good shot. But that challenge is part of what makes it so satisfying.\n\nAfter about a year, I entered a photo competition and won second prize. That gave me the confidence to leave my laboratory job and try to make photography my career. It wasn't easy at first. I had very little income for the first couple of years. But gradually, magazines and websites started buying my photos, and I began to get invited on expeditions.\n\nNow I travel the world photographing animals in their natural habitats. Last year I spent three months in Africa, and next month I'm going to the Arctic. It can be physically demanding – I sometimes have to walk for hours carrying heavy equipment. But there's nothing quite like the feeling of capturing a perfect image of a wild animal. I feel incredibly lucky to do what I do.",
+      "questions": [
+        {
+          "number": 11,
+          "points": 1,
+          "text": "Why did Kate become unhappy with her first job?",
+          "options": [
+            "A. The research she was doing was boring.",
+            "B. She wanted to spend more time outdoors.",
+            "C. She didn't get on well with her colleagues.",
+            "D. The salary was too low."
+          ],
+          "answer": "B"
+        },
+        {
+          "number": 12,
+          "points": 1,
+          "text": "What happened on the bird-watching trip that changed Kate's life?",
+          "options": [
+            "A. She decided she wanted to study birds professionally.",
+            "B. Her friend suggested she become a photographer.",
+            "C. She took some photos that showed her the beauty of nature.",
+            "D. She bought an expensive camera."
+          ],
+          "answer": "C"
+        },
+        {
+          "number": 13,
+          "points": 1,
+          "text": "What does Kate say is the hardest thing about wildlife photography?",
+          "options": [
+            "A. Learning how to use the camera equipment.",
+            "B. Finding animals to photograph.",
+            "C. Working in bad weather conditions.",
+            "D. Having to wait a long time for good pictures."
+          ],
+          "answer": "D"
+        },
+        {
+          "number": 14,
+          "points": 1,
+          "text": "How did winning the competition affect Kate?",
+          "options": [
+            "A. It helped her believe she could be a professional photographer.",
+            "B. It led immediately to a well-paid job.",
+            "C. It made her famous overnight.",
+            "D. It taught her new photography techniques."
+          ],
+          "answer": "A"
+        },
+        {
+          "number": 15,
+          "points": 1,
+          "text": "What would be the best title for this article?",
+          "options": [
+            "A. How to win wildlife photography competitions.",
+            "B. From laboratory scientist to world-travelling wildlife photographer.",
+            "C. The best places in the world to photograph animals.",
+            "D. Why wildlife photography is the most difficult type of photography."
+          ],
+          "answer": "B"
+        }
+      ]
+    },
+    {
+      "part": 4,
+      "name": "Reading Part 4",
+      "type": "gapped_text",
+      "description": "Five sentences have been removed from the text below. For each question, choose the correct answer. There are three extra sentences which you do not need to use.",
+      "passageTitle": "The History of Jeans",
+      "passage": "Jeans are one of the most popular items of clothing in the world. Almost everyone owns at least one pair. But they weren't always a fashion item. (16) ______\n\nIn 1853, a German immigrant called Levi Strauss moved to San Francisco during the California Gold Rush. He noticed that the miners needed strong, durable trousers that wouldn't fall apart. (17) ______ The material was tough enough to withstand the rough conditions of mining.\n\nFor the next hundred years, jeans were mainly worn by manual workers – farmers, factory workers and cowboys. (18) ______ They were seen as practical workwear, nothing more.\n\nEverything changed in the 1950s when film stars like James Dean and Marlon Brando wore jeans in movies. (19) ______ Parents and teachers disapproved, which of course made jeans even more attractive to young people.\n\nBy the 1970s and 80s, designer brands started making expensive versions. (20) ______ Today, you can buy jeans at almost any price, from a few pounds to thousands, and they are worn by people of all ages and backgrounds around the world.",
+      "sentenceOptions": [
+        "A. In fact, they were originally designed as work clothes for manual labourers.",
+        "B. So he started making trousers from a strong cotton fabric called denim.",
+        "C. Nobody in fashionable society would have been seen wearing them.",
+        "D. Suddenly, jeans became a symbol of youth and rebellion.",
+        "E. Jeans went from being cheap workwear to a luxury fashion item.",
+        "F. Strauss had no interest in the fashion industry.",
+        "G. The gold miners preferred lighter fabrics that were more comfortable.",
+        "H. Other materials proved to be more popular with workers."
+      ],
+      "questions": [
+        {
+          "number": 16,
+          "points": 1,
+          "text": "(16)",
+          "answer": "A"
+        },
+        {
+          "number": 17,
+          "points": 1,
+          "text": "(17)",
+          "answer": "B"
+        },
+        {
+          "number": 18,
+          "points": 1,
+          "text": "(18)",
+          "answer": "C"
+        },
+        {
+          "number": 19,
+          "points": 1,
+          "text": "(19)",
+          "answer": "D"
+        },
+        {
+          "number": 20,
+          "points": 1,
+          "text": "(20)",
+          "answer": "E"
+        }
+      ]
+    },
+    {
+      "part": 5,
+      "name": "Reading Part 5",
+      "type": "cloze_choice",
+      "description": "Read the text. Choose the correct word for each space.",
+      "passageTitle": "The Great Barrier Reef",
+      "passage": "The Great Barrier Reef, located off the coast of Australia, is the largest coral reef system in the world. It (21)______ over 2,300 kilometres and can even be seen from space. The reef is home (22)______ an incredible variety of marine life, including over 1,500 species of fish.\n\nThe reef was formed over millions of years by tiny living organisms (23)______ coral polyps. These creatures build hard structures around themselves, and over time, these structures grow into the enormous reef we see today.\n\nUnfortunately, the Great Barrier Reef is (24)______ serious danger. Rising sea temperatures caused by climate change are damaging the coral. When the water gets too warm, the coral turns white – a process (25)______ as 'bleaching' – and eventually dies.\n\nScientists are working hard to find ways to protect the reef. Some are experimenting with growing coral in laboratories and then planting it back in the ocean. (26)______, many people believe that the only real solution is to reduce global warming.",
+      "questions": [
+        {
+          "number": 21,
+          "points": 1,
+          "text": "(21)",
+          "options": [
+            "A. stretches",
+            "B. reaches",
+            "C. measures",
+            "D. covers"
+          ],
+          "answer": "A"
+        },
+        {
+          "number": 22,
+          "points": 1,
+          "text": "(22)",
+          "options": [
+            "A. for",
+            "B. to",
+            "C. of",
+            "D. with"
+          ],
+          "answer": "B"
+        },
+        {
+          "number": 23,
+          "points": 1,
+          "text": "(23)",
+          "options": [
+            "A. named",
+            "B. said",
+            "C. told",
+            "D. called"
+          ],
+          "answer": "D"
+        },
+        {
+          "number": 24,
+          "points": 1,
+          "text": "(24)",
+          "options": [
+            "A. at",
+            "B. on",
+            "C. in",
+            "D. under"
+          ],
+          "answer": "C"
+        },
+        {
+          "number": 25,
+          "points": 1,
+          "text": "(25)",
+          "options": [
+            "A. called",
+            "B. known",
+            "C. referred",
+            "D. named"
+          ],
+          "answer": "B"
+        },
+        {
+          "number": 26,
+          "points": 1,
+          "text": "(26)",
+          "options": [
+            "A. However",
+            "B. Although",
+            "C. Despite",
+            "D. Moreover"
+          ],
+          "answer": "A"
+        }
+      ]
+    },
+    {
+      "part": 6,
+      "name": "Reading Part 6",
+      "type": "fill_blank",
+      "description": "Read the text. Write ONE word for each gap.",
+      "passageTitle": "School Trips",
+      "passage": "School trips are an important part of education. They give students the chance to learn outside (27)______ classroom and experience things they have only read about in books.\n\nOne of the most popular types of school trip is a visit (28)______ a museum. Students can see real objects and displays that bring their lessons to life. (29)______ example, a history class might visit a castle, while a science class could go to a technology centre.\n\nOf course, organising school trips is not always easy. Teachers have (30)______ plan carefully and make sure that all students are safe. Parents must give their permission, and (31)______ is usually a cost involved. However, most people agree that the benefits of school trips (32)______ worth the effort and expense.",
+      "questions": [
+        {
+          "number": 27,
+          "points": 1,
+          "answer": ["the"]
+        },
+        {
+          "number": 28,
+          "points": 1,
+          "answer": ["to"]
+        },
+        {
+          "number": 29,
+          "points": 1,
+          "answer": ["for"]
+        },
+        {
+          "number": 30,
+          "points": 1,
+          "answer": ["to"]
+        },
+        {
+          "number": 31,
+          "points": 1,
+          "answer": ["there"]
+        },
+        {
+          "number": 32,
+          "points": 1,
+          "answer": ["are"]
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,393 @@
+{
+  "examType": "PET",
+  "title": "PET Reading Practice Test 4",
+  "source": "AI Generated",
+  "category": "practice",
+  "totalQuestions": 32,
+  "parts": [
+    {
+      "part": 1,
+      "name": "Reading Part 1",
+      "description": "For each question, choose the correct answer.",
+      "type": "multiple_choice",
+      "questions": [
+        {
+          "number": 1,
+          "points": 1,
+          "text": "HOTEL\nGuests wishing to check out after 11am will be charged for an additional night.",
+          "textType": "notice",
+          "options": [
+            "A. You can stay in your room until 11am without extra cost.",
+            "B. You must arrive before 11am to check in.",
+            "C. An extra night costs the same as checking out late."
+          ],
+          "answer": "A"
+        },
+        {
+          "number": 2,
+          "points": 1,
+          "text": "Kate,\nI bumped into your old school friend Maria today. She's moved back to town and asked for your number. I gave it to her – hope that's OK!\nAunt Helen",
+          "textType": "message",
+          "question": "Aunt Helen is writing to tell Kate that",
+          "options": [
+            "A. she has arranged for Kate to meet Maria.",
+            "B. Maria may contact her soon.",
+            "C. Maria wants Kate's new address."
+          ],
+          "answer": "B"
+        },
+        {
+          "number": 3,
+          "points": 1,
+          "text": "BICYCLE PARKING\nBicycles left here for more than 48 hours will be removed without notice.",
+          "textType": "notice",
+          "options": [
+            "A. You can park your bicycle here for up to two days.",
+            "B. Bicycles must be moved every 24 hours.",
+            "C. You will receive a warning before your bicycle is taken away."
+          ],
+          "answer": "A"
+        },
+        {
+          "number": 4,
+          "points": 1,
+          "text": "RESTAURANT\nPlease inform your server of any food allergies before ordering.",
+          "textType": "notice",
+          "options": [
+            "A. The restaurant does not serve food that causes allergies.",
+            "B. You should tell staff about any allergies when you order food.",
+            "C. The menu contains a list of all possible allergens."
+          ],
+          "answer": "B"
+        },
+        {
+          "number": 5,
+          "points": 1,
+          "text": "Dan,\nThe plumber can come on Thursday between 2 and 4. I'll be at work so can you be home to let him in? The problem is the kitchen tap.\nLisa",
+          "textType": "message",
+          "question": "Lisa wants Dan to",
+          "options": [
+            "A. fix the kitchen tap himself.",
+            "B. call the plumber and arrange a time.",
+            "C. be at home when the plumber arrives."
+          ],
+          "answer": "C"
+        }
+      ]
+    },
+    {
+      "part": 2,
+      "name": "Reading Part 2",
+      "type": "matching",
+      "description": "The people below all want to find a restaurant for a special occasion. Read the descriptions of eight restaurants. Choose which restaurant would be the most suitable for the people below.",
+      "texts": {
+        "A": {
+          "title": "The Garden Room",
+          "content": "An elegant restaurant in a converted greenhouse, surrounded by beautiful gardens. The menu changes seasonally and features dishes made with ingredients grown on site. Open for lunch and dinner. Booking essential at weekends. Live piano music on Friday and Saturday evenings."
+        },
+        "B": {
+          "title": "Mario's",
+          "content": "A lively Italian restaurant popular with families. The children's menu offers smaller portions of favourites like pasta and pizza. There's a play area to keep the kids entertained while you wait for your food. Open every day for lunch and dinner. No need to book."
+        },
+        "C": {
+          "title": "The Blue Elephant",
+          "content": "Authentic Thai food served in a relaxed atmosphere. This small restaurant seats only 20 people, so booking is essential. The set menu offers excellent value for money. BYOB (bring your own bottle) – no alcohol sold on the premises. Closed on Mondays."
+        },
+        "D": {
+          "title": "Café Express",
+          "content": "Quick, affordable meals in the town centre. Choose from sandwiches, salads, soups and daily specials. Popular with shoppers and office workers at lunchtime. No evening opening. Free Wi-Fi available. Takeaway also available."
+        },
+        "E": {
+          "title": "The Riverside Inn",
+          "content": "A traditional English pub with a restaurant overlooking the river. Famous for its Sunday roast dinner and homemade pies. Large car park. Dog-friendly outdoor seating area. Open for lunch and dinner every day. Group bookings welcome."
+        },
+        "F": {
+          "title": "Sakura",
+          "content": "Japanese cuisine at its finest. Watch the chefs prepare your food at the teppanyaki table. Private dining rooms available for special celebrations. Expensive but worth it for a unique experience. Open Tuesday to Saturday, evenings only."
+        },
+        "G": {
+          "title": "The Vegan Kitchen",
+          "content": "100% plant-based food that even meat-lovers enjoy. Creative dishes using locally sourced organic ingredients. The weekend brunch is particularly popular. Open Wednesday to Sunday. No children under 12 in the evenings."
+        },
+        "H": {
+          "title": "Spice Route",
+          "content": "Award-winning Indian restaurant offering a wide range of curries, from mild to extremely hot. Buffet lunch available on weekdays at a fixed price. Takeaway and delivery service. Large restaurant with space for groups. Open every day."
+        }
+      },
+      "questions": [
+        {
+          "number": 6,
+          "points": 1,
+          "text": "Paula wants to take her parents out for a special anniversary dinner. She'd like somewhere with a private space and something different to watch while they eat. Price is not an issue.",
+          "answer": "F"
+        },
+        {
+          "number": 7,
+          "points": 1,
+          "text": "Mike wants to go out for Sunday lunch with his wife, their two young children and their dog. They need somewhere with parking as they live outside town.",
+          "answer": "E"
+        },
+        {
+          "number": 8,
+          "points": 1,
+          "text": "Yuki and her flatmate are students who want a tasty evening meal that won't cost too much. They want to bring a bottle of wine they received as a gift.",
+          "answer": "C"
+        },
+        {
+          "number": 9,
+          "points": 1,
+          "text": "Greg is planning an evening out with his girlfriend. She loves live music and he enjoys food made from fresh, local ingredients. They want to go on a Saturday.",
+          "answer": "A"
+        },
+        {
+          "number": 10,
+          "points": 1,
+          "text": "Anna wants to have lunch with a large group of work colleagues. She needs somewhere affordable that doesn't require booking and is available on a weekday.",
+          "answer": "H"
+        }
+      ]
+    },
+    {
+      "part": 3,
+      "name": "Reading Part 3",
+      "type": "multiple_choice",
+      "description": "Read the text and answer the questions.",
+      "passageTitle": "Emma Clarke – voice of the London Underground",
+      "passage": "You may not know Emma Clarke's face, but if you've ever used the London Underground, you will almost certainly know her voice. Emma is the woman behind the famous 'mind the gap' announcement and many other messages you hear on the Tube.\n\nEmma got into voice work almost by accident. After studying drama at university, she struggled to find acting jobs and took a temporary position at a radio station to pay the bills. She discovered that she had a natural talent for voice work and decided to focus on that instead. 'I realised I didn't need to be on stage or on screen,' she says. 'My voice alone could be my career.'\n\nThe London Underground job came in 2003 when Transport for London decided to update their announcements. Emma recorded thousands of separate words and phrases, which were then combined by computer to create all the different announcements passengers hear today. The work took several weeks to complete.\n\nEmma says the experience was both exciting and exhausting. 'You have to say each word perfectly clearly, with exactly the right tone and speed,' she explains. 'If you make even a tiny mistake, you have to do it again. By the end of each recording day, my voice was completely worn out.'\n\nOutside of her work for the Underground, Emma runs a successful business providing voices for telephone systems, TV advertisements and audiobooks. She works from a professional studio she has built in her home, which allows her to record at any time. Despite having one of the most heard voices in Britain, Emma can walk down the street without anyone recognising her. 'People sometimes say my voice sounds familiar,' she laughs, 'but they can never work out where they know it from.'",
+      "questions": [
+        {
+          "number": 11,
+          "points": 1,
+          "text": "How did Emma first get into voice work?",
+          "options": [
+            "A. She applied for a job with London Underground.",
+            "B. She studied it at university.",
+            "C. She found she was good at it while working at a radio station.",
+            "D. A friend recommended her for the job."
+          ],
+          "answer": "C"
+        },
+        {
+          "number": 12,
+          "points": 1,
+          "text": "What does Emma mean when she says 'My voice alone could be my career'?",
+          "options": [
+            "A. She could earn a living just by using her voice.",
+            "B. She was the only person with a voice good enough.",
+            "C. She preferred working alone to working with others.",
+            "D. She wanted to become a singer."
+          ],
+          "answer": "A"
+        },
+        {
+          "number": 13,
+          "points": 1,
+          "text": "How were the Underground announcements created?",
+          "options": [
+            "A. Emma recorded each complete announcement separately.",
+            "B. Individual words were recorded and put together electronically.",
+            "C. Emma recorded them live at underground stations.",
+            "D. A computer generated a voice based on Emma's."
+          ],
+          "answer": "B"
+        },
+        {
+          "number": 14,
+          "points": 1,
+          "text": "What did Emma find difficult about recording for the Underground?",
+          "options": [
+            "A. The studio was too cold.",
+            "B. She had to record at night.",
+            "C. Every word had to be pronounced exactly right.",
+            "D. She didn't understand the technical equipment."
+          ],
+          "answer": "C"
+        },
+        {
+          "number": 15,
+          "points": 1,
+          "text": "What does Emma find amusing about being famous?",
+          "options": [
+            "A. People ask her to record personal messages for them.",
+            "B. She often gets stopped in the street.",
+            "C. People recognise her voice but don't know who she is.",
+            "D. Other voice artists try to copy her style."
+          ],
+          "answer": "C"
+        }
+      ]
+    },
+    {
+      "part": 4,
+      "name": "Reading Part 4",
+      "type": "gapped_text",
+      "description": "Five sentences have been removed from the text below. For each question, choose the correct answer. There are three extra sentences which you do not need to use.",
+      "passageTitle": "Learning a Musical Instrument",
+      "passage": "Learning to play a musical instrument is one of the most rewarding things you can do. However, many people start with great enthusiasm and then give up within a few months. (16) ______ Understanding these can help you stay motivated.\n\nThe most common reason people quit is that they expect to make progress too quickly. (17) ______ In reality, learning any instrument takes months or even years of regular practice before you start to sound good.\n\nAnother problem is finding time to practise. Most experts recommend at least thirty minutes a day. (18) ______ Even ten minutes a day is much better than an hour once a week, because your muscles and brain need regular repetition to develop.\n\nChoosing the right teacher is also important. A good teacher will make lessons enjoyable and adapt to your learning speed. (19) ______ If you don't enjoy your lessons, it might be worth trying a different teacher before you decide to stop altogether.\n\nFinally, it helps to set realistic goals. Instead of dreaming about playing at a concert hall, focus on learning one new piece each month. (20) ______ Before you know it, you'll have built up an impressive range of music you can play.",
+      "sentenceOptions": [
+        "A. There are several common reasons why people stop learning.",
+        "B. This can be difficult for people with busy schedules, but it doesn't have to be a full half hour.",
+        "C. These small achievements will keep you motivated and give you a sense of progress.",
+        "D. They imagine they'll be playing their favourite songs within a few weeks.",
+        "E. Playing music with others is one of the best ways to improve.",
+        "F. A bad teacher, on the other hand, can make the whole experience frustrating.",
+        "G. The guitar is one of the easiest instruments for beginners.",
+        "H. Many famous musicians started learning when they were very young."
+      ],
+      "questions": [
+        {
+          "number": 16,
+          "points": 1,
+          "text": "(16)",
+          "answer": "A"
+        },
+        {
+          "number": 17,
+          "points": 1,
+          "text": "(17)",
+          "answer": "D"
+        },
+        {
+          "number": 18,
+          "points": 1,
+          "text": "(18)",
+          "answer": "B"
+        },
+        {
+          "number": 19,
+          "points": 1,
+          "text": "(19)",
+          "answer": "F"
+        },
+        {
+          "number": 20,
+          "points": 1,
+          "text": "(20)",
+          "answer": "C"
+        }
+      ]
+    },
+    {
+      "part": 5,
+      "name": "Reading Part 5",
+      "type": "cloze_choice",
+      "description": "Read the text. Choose the correct word for each space.",
+      "passageTitle": "The London Eye",
+      "passage": "The London Eye is one of the most famous landmarks in London. It (21)______ on the south bank of the River Thames and offers spectacular views of the city. The wheel is 135 metres tall, (22)______ it one of the largest observation wheels in the world.\n\nThe Eye was originally built to celebrate the year 2000. It was only (23)______ to be temporary, but it proved so popular that it became a permanent attraction. Since then, it (24)______ been visited by over 80 million people from around the world.\n\nA ride on the London Eye (25)______ about 30 minutes. On a clear day, you can see for up to 40 kilometres. Each of the 32 glass capsules can hold up to 25 passengers, and the wheel moves slowly enough (26)______ people to get on and off without it stopping.",
+      "questions": [
+        {
+          "number": 21,
+          "points": 1,
+          "text": "(21)",
+          "options": [
+            "A. stands",
+            "B. lies",
+            "C. sits",
+            "D. places"
+          ],
+          "answer": "A"
+        },
+        {
+          "number": 22,
+          "points": 1,
+          "text": "(22)",
+          "options": [
+            "A. doing",
+            "B. giving",
+            "C. making",
+            "D. having"
+          ],
+          "answer": "C"
+        },
+        {
+          "number": 23,
+          "points": 1,
+          "text": "(23)",
+          "options": [
+            "A. wanted",
+            "B. planned",
+            "C. meant",
+            "D. wished"
+          ],
+          "answer": "C"
+        },
+        {
+          "number": 24,
+          "points": 1,
+          "text": "(24)",
+          "options": [
+            "A. was",
+            "B. is",
+            "C. had",
+            "D. has"
+          ],
+          "answer": "D"
+        },
+        {
+          "number": 25,
+          "points": 1,
+          "text": "(25)",
+          "options": [
+            "A. takes",
+            "B. spends",
+            "C. lasts",
+            "D. goes"
+          ],
+          "answer": "C"
+        },
+        {
+          "number": 26,
+          "points": 1,
+          "text": "(26)",
+          "options": [
+            "A. to",
+            "B. for",
+            "C. that",
+            "D. so"
+          ],
+          "answer": "B"
+        }
+      ]
+    },
+    {
+      "part": 6,
+      "name": "Reading Part 6",
+      "type": "fill_blank",
+      "description": "Read the text. Write ONE word for each gap.",
+      "passageTitle": "Keeping Fit",
+      "passage": "Staying active is important for both your physical and mental health. Experts recommend that adults should do (27)______ least 150 minutes of moderate exercise per week. This might sound like a lot, but it works out at just over 20 minutes (28)______ day.\n\nYou don't need to join a gym or buy expensive equipment. Walking is one of (29)______ best forms of exercise, and it's completely free. If you walk quickly enough to feel slightly out (30)______ breath, you're getting a good workout.\n\nSwimming is (31)______ excellent option because it exercises your whole body without putting stress on your joints. Many public swimming pools offer affordable memberships, and some even have sessions (32)______ are free for certain age groups.",
+      "questions": [
+        {
+          "number": 27,
+          "points": 1,
+          "answer": ["at"]
+        },
+        {
+          "number": 28,
+          "points": 1,
+          "answer": ["a", "per", "each", "every"]
+        },
+        {
+          "number": 29,
+          "points": 1,
+          "answer": ["the"]
+        },
+        {
+          "number": 30,
+          "points": 1,
+          "answer": ["of"]
+        },
+        {
+          "number": 31,
+          "points": 1,
+          "answer": ["an"]
+        },
+        {
+          "number": 32,
+          "points": 1,
+          "answer": ["that", "which"]
+        }
+      ]
+    }
+  ]
+}

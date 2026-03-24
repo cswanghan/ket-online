@@ -1,0 +1,392 @@
+{
+  "examType": "PET",
+  "title": "PET Reading Practice Test 1",
+  "source": "Cambridge B1 Reading: Ten Practice Tests (egis.com.pl)",
+  "category": "practice",
+  "totalQuestions": 32,
+  "parts": [
+    {
+      "part": 1,
+      "name": "Reading Part 1",
+      "description": "For each question, choose the correct answer.",
+      "type": "multiple_choice",
+      "questions": [
+        {
+          "number": 1,
+          "points": 1,
+          "text": "CHILDREN'S PLAY AREA\nAll children must be supervised by a responsible adult at all times.",
+          "textType": "notice",
+          "options": [
+            "A. Adults are not permitted in the children's play area.",
+            "B. Children must always be accompanied by an adult.",
+            "C. Children must stay to the left in the play area."
+          ],
+          "answer": "B"
+        },
+        {
+          "number": 2,
+          "points": 1,
+          "text": "Tim,\nI've tried to call Isa but she's not picking up. Can you drop by the post office and pick up the parcel she left for me? I'll collect it from your place tonight.\nAngus",
+          "textType": "message",
+          "question": "Angus is telling Tim to:",
+          "options": [
+            "A. collect something from the post office.",
+            "B. call Isa.",
+            "C. get some new ID."
+          ],
+          "answer": "A"
+        },
+        {
+          "number": 3,
+          "points": 1,
+          "text": "Due to current regulations, we are now only able to allow a maximum of 20 customers in the shop at any time. Please wait outside until another customer leaves.",
+          "textType": "notice",
+          "options": [
+            "A. Do not try to buy so many things.",
+            "B. The number of people permitted in the shop is less than it was previously.",
+            "C. Only enter after someone has left."
+          ],
+          "answer": "B"
+        },
+        {
+          "number": 4,
+          "points": 1,
+          "text": "COFFEE CORNER LOYALTY CARD\nBuy nine hot drinks and receive your tenth completely free!",
+          "textType": "notice",
+          "options": [
+            "A. Buy ten hot drinks, get one free next time.",
+            "B. Buy nine hot drinks, get one free today.",
+            "C. Buy ten drinks and get a loyalty card."
+          ],
+          "answer": "A"
+        },
+        {
+          "number": 5,
+          "points": 1,
+          "text": "STAFF COFFEE ROOM\nThis room is for staff use only. The public coffee shop on the ground floor is temporarily closed for refurbishment. We apologise for any inconvenience.",
+          "textType": "notice",
+          "options": [
+            "A. The coffee room is only for workers.",
+            "B. The coffee shop is closed today only.",
+            "C. The coffee shop is closed indefinitely."
+          ],
+          "answer": "C"
+        }
+      ]
+    },
+    {
+      "part": 2,
+      "name": "Reading Part 2",
+      "type": "matching",
+      "description": "The people below are all looking for a new place to live. Read the descriptions of eight potential homes. Choose which home would be the most suitable for the people below.",
+      "texts": {
+        "A": {
+          "title": "Home A",
+          "content": "A four-bedroom, semi-detached house with a garage and extra parking is available from September. Large garden. Pets welcome. Easy access to the motorway and town centre. Close to several outstanding schools."
+        },
+        "B": {
+          "title": "Home B",
+          "content": "A shared house with four students who like to party. The room is inexpensive and situated in Dobberton, just ten miles from Cambridge. You'll need a car, but we have lots of space for parking."
+        },
+        "C": {
+          "title": "Home C",
+          "content": "Fully furnished luxury flat available for short-term lease. One bedroom, shower and bath, elevator and underground parking. All the modern conveniences. Owners prefer a single person."
+        },
+        "D": {
+          "title": "Home D",
+          "content": "Room available in a flat with one other person. The room is spacious and airy, and inexpensive for its location, a two-minute walk from a bus stop and five minutes from the train station."
+        },
+        "E": {
+          "title": "Home E",
+          "content": "A detached four-bedroom home is available near the old St Andrew's school site, located on the edge of town. Good access to all parts of town using the motorway. A family preferred. No pets though."
+        },
+        "F": {
+          "title": "Home F",
+          "content": "A country cottage surrounded by tranquil countryside. Two bedrooms and one studio for home-working or study. Large garden. Pets welcome. Pre-installed security system and a good internet connection."
+        },
+        "G": {
+          "title": "Home G",
+          "content": "Double room available in a small house with off-street parking. To share with studious 3rd year uni student who is often away at the weekend."
+        },
+        "H": {
+          "title": "Home H",
+          "content": "Attic-type apartment available in the city centre. Large, quiet, open-plan space. Located just beside Coldham's park. Minimum 12-month contract."
+        }
+      },
+      "questions": [
+        {
+          "number": 6,
+          "points": 1,
+          "text": "Stuart has just finished university and is looking for a room in a cheap, relaxed shared house. He doesn't have a car so he needs to be close to public transport links.",
+          "answer": "D"
+        },
+        {
+          "number": 7,
+          "points": 1,
+          "text": "Mary Anne is an architect who is looking for something quiet in a rural area with lots of space. She would like to work from home sometimes. She is looking for a home which will accommodate her two pet dogs.",
+          "answer": "F"
+        },
+        {
+          "number": 8,
+          "points": 1,
+          "text": "Colin is a student and wants to share with one other person who is tidy and responsible. He needs something with parking for his car. He would like his girlfriend to come to visit at the weekend sometimes.",
+          "answer": "G"
+        },
+        {
+          "number": 9,
+          "points": 1,
+          "text": "Lin needs an apartment for the next three months. She wants to live alone. She would like somewhere close to the centre of town, and would like something which she doesn't have to decorate.",
+          "answer": "C"
+        },
+        {
+          "number": 10,
+          "points": 1,
+          "text": "Trish needs a house for her husband and two young children, and her dog Rover. She needs parking for two cars, and would prefer to be close to a nursery school and primary school. She needs somewhere for just after the summer, as they will be on holiday in August.",
+          "answer": "A"
+        }
+      ]
+    },
+    {
+      "part": 3,
+      "name": "Reading Part 3",
+      "type": "multiple_choice",
+      "description": "Read the text and answer the questions.",
+      "passageTitle": "Violinist Alaina Masters talks about her job",
+      "passage": "I have always worked hard at mastering my instrument. That goes without saying. But ever since entering music college I was aware of how important it is to network with people. Since then, I've never really looked back and I am very happy to say that I've always managed to keep working.\n\nWhen it comes to finding work, people who work for themselves, like me, must have various ways of making an income. I always need to be looking for jobs, or gigs, as musicians call temporary pieces of work. Those might come from orchestras or with smaller groups, such as the string quartet and jazz trio I usually play with.\n\nI used to teach from time to time, but because I need to be available when a job comes up, I can't commit to having students anymore. It's a shame because I really enjoyed it.\n\nThe work with orchestras is always in the metropolitan area, which is handy for me. When I have one of those gigs, we will rehearse during the day in the weeks before the show starts. Those sessions are hard work and very tiring, but there is a social element to them and that helps get us through. Then we'll do a performance every night for the duration of the show, two on a weekend with some productions. That is always exciting and it's when I am in my element. The performances make all the effort worthwhile.\n\nWith my string quartet we play at weddings or other events, and that sometimes involves travelling. I don't drive, but thankfully one of the others is usually able to give me a ride, and we travel together for the concert. We try to always come back to our own beds afterwards, as paying for accommodation would use almost all our profits from the show.\n\nPlaying an instrument as a hobby and doing it to earn a living are quite different though. Thankfully, I have always maintained the love of what I do, so really I don't consider it work.",
+      "questions": [
+        {
+          "number": 11,
+          "points": 1,
+          "text": "Alaina says her experience at college taught her the importance of",
+          "options": [
+            "A. building up connections in the scene.",
+            "B. being good at her instrument.",
+            "C. continually working.",
+            "D. managing her time."
+          ],
+          "answer": "A"
+        },
+        {
+          "number": 12,
+          "points": 1,
+          "text": "How would you best describe Alaina's work status?",
+          "options": [
+            "A. Self-employed, with one main job.",
+            "B. Self-employed, with a variety of jobs.",
+            "C. An employee of an orchestra.",
+            "D. Unemployed."
+          ],
+          "answer": "B"
+        },
+        {
+          "number": 13,
+          "points": 1,
+          "text": "What does Alaina say about teaching?",
+          "options": [
+            "A. She is accustomed to teaching now.",
+            "B. She does not have time to teach any more.",
+            "C. She would like to teach in the future.",
+            "D. She hates teaching."
+          ],
+          "answer": "B"
+        },
+        {
+          "number": 14,
+          "points": 1,
+          "text": "What does Alaina enjoy most about working with the orchestra?",
+          "options": [
+            "A. The fact that the rehearsals and performances are close to where she lives.",
+            "B. The rehearsals.",
+            "C. Performing.",
+            "D. Seeing friends."
+          ],
+          "answer": "C"
+        },
+        {
+          "number": 15,
+          "points": 1,
+          "text": "Which option best summarises why Alaina likes to get home after gigs?",
+          "options": [
+            "A. She can't drive and her driver insists on it.",
+            "B. She is unable to sleep in a different bed.",
+            "C. It is impossible to find somewhere to stay.",
+            "D. To save money."
+          ],
+          "answer": "D"
+        }
+      ]
+    },
+    {
+      "part": 4,
+      "name": "Reading Part 4",
+      "type": "gapped_text",
+      "description": "Five sentences have been removed from the text below. For each question, choose the correct answer. There are three extra sentences which you do not need to use.",
+      "passageTitle": "The Streaming Phenomenon",
+      "passage": "Watching the latest movies and series on demand is undoubtedly the biggest change in entertainment in the 21st century. The emergence of services such as Netflix and Disney Plus have revolutionised the way we watch TV, and how the TV and cinema industry function forever. Music listening is following a similar model. (16) ______ Gideon McFluff explains.\n\nWhen people started making movies, they sold their product directly through the cinema theatres. (17) ______ It formed a lucrative industry for everyone involved. Many became rich and famous. Millions more around the world also earned a living, such as the camera operators, the make-up artists or the ice cream sellers in the theatre. And so it continued for many years.\n\nPiracy – copying movies or music and then selling them illegally to individuals to watch at home – became a problem in the 1980s and early 90s. (18) ______ Sites such as Napster offered users the option to share movies and music for free. People no longer had to pay for what they watched or listened to. Something had to be done.\n\nAs internet technology has become more powerful, the necessary means have arrived in our homes. Broadband and fibre optic capability has enabled us to receive images and audio in real time. (19) ______\n\nWith such developments, companies now offer a convenient and legal way to watch your favourite media productions. (20) ______ What distinguishes one from the other is the available content. These companies need the most popular movies and series to attract subscribers. We have seen the streaming companies become the financiers of movies and series, enabling media companies to invest in top-quality productions.",
+      "sentenceOptions": [
+        "A. If you wanted to watch the latest release you went to the cinema theatre and paid for your ticket.",
+        "B. Nowadays 4G and Wi-Fi allow us to watch movies even when we are on the move.",
+        "C. But did this change occur by choice or necessity?",
+        "D. This then becomes the content for the streamers' libraries, which therefore attracts subscribers.",
+        "E. Police and legal services eliminated the problem.",
+        "F. Clients pay a subscription fee every month for access.",
+        "G. However, with the arrival of the internet and the digital format the issue changed from problematic to catastrophic.",
+        "H. Where can you get your favourite music or movies?"
+      ],
+      "questions": [
+        {
+          "number": 16,
+          "points": 1,
+          "text": "(16)",
+          "answer": "C"
+        },
+        {
+          "number": 17,
+          "points": 1,
+          "text": "(17)",
+          "answer": "A"
+        },
+        {
+          "number": 18,
+          "points": 1,
+          "text": "(18)",
+          "answer": "G"
+        },
+        {
+          "number": 19,
+          "points": 1,
+          "text": "(19)",
+          "answer": "B"
+        },
+        {
+          "number": 20,
+          "points": 1,
+          "text": "(20)",
+          "answer": "F"
+        }
+      ]
+    },
+    {
+      "part": 5,
+      "name": "Reading Part 5",
+      "type": "cloze_choice",
+      "description": "Read the text. Choose the correct word for each space.",
+      "passageTitle": "The Potato",
+      "passage": "Solanum tuberosum, otherwise known (21)______ its common name, the potato, is the world's fourth largest food crop, (22)______ rice, wheat and maize.\n\nIt was first cultivated by the Inca-native Americans in Peru somewhere around 8,000 BC to 5,000 B.C. Spanish Conquistadors took over Peru in 1536 and discovered the potato for themselves, and subsequently transported them (23)______ Europe.\n\nIntroduced to Ireland in 1589 it (24)______ nearly 40 years for the potato to spread to the rest of Europe. It then made its way back across the Atlantic, this time to the North American continent, this time taken by European immigrants to the New World.\n\nPotatoes are easy to grow, contain most of the vitamins required, and provide a (25)______ yield from the space they occupy than the other staple crops.\n\nThe potato became the first vegetable to be grown in space in 1995. The University of Wisconsin and NASA invented the technology aimed at cultivating food (26)______ astronauts on long space voyages, and, in the future, feeding space colonies.",
+      "questions": [
+        {
+          "number": 21,
+          "points": 1,
+          "text": "(21)",
+          "options": [
+            "A. for",
+            "B. by",
+            "C. at",
+            "D. on"
+          ],
+          "answer": "B"
+        },
+        {
+          "number": 22,
+          "points": 1,
+          "text": "(22)",
+          "options": [
+            "A. after",
+            "B. before",
+            "C. over",
+            "D. when"
+          ],
+          "answer": "A"
+        },
+        {
+          "number": 23,
+          "points": 1,
+          "text": "(23)",
+          "options": [
+            "A. over",
+            "B. on",
+            "C. of",
+            "D. to"
+          ],
+          "answer": "D"
+        },
+        {
+          "number": 24,
+          "points": 1,
+          "text": "(24)",
+          "options": [
+            "A. took",
+            "B. lasted",
+            "C. played",
+            "D. told"
+          ],
+          "answer": "A"
+        },
+        {
+          "number": 25,
+          "points": 1,
+          "text": "(25)",
+          "options": [
+            "A. best",
+            "B. good",
+            "C. worst",
+            "D. higher"
+          ],
+          "answer": "D"
+        },
+        {
+          "number": 26,
+          "points": 1,
+          "text": "(26)",
+          "options": [
+            "A. from",
+            "B. in",
+            "C. for",
+            "D. make"
+          ],
+          "answer": "C"
+        }
+      ]
+    },
+    {
+      "part": 6,
+      "name": "Reading Part 6",
+      "type": "fill_blank",
+      "description": "Read the text. Write ONE word for each gap.",
+      "passageTitle": "Sleep",
+      "passage": "Few people doubt the importance of a good night's sleep. But (27)______ much do you need? Some people famously claim (28)______ need as little as three hours' sleep per night, while others need nine hours or more just to function properly.\n\nA good way (29)______ find out how much sleep you need is to find a time such (30)______ an annual holiday when you can sleep as much as you like. Take a note of the time when you go to sleep and wake up every day for seven days. Write (31)______ down and finally work out the average you need daily by dividing the total by 7.\n\nTo give (32)______ an idea, people commonly need between six and eight hours' sleep per night. However, everyone is different. Try it and see how much time you need in bed.",
+      "questions": [
+        {
+          "number": 27,
+          "points": 1,
+          "answer": ["how"]
+        },
+        {
+          "number": 28,
+          "points": 1,
+          "answer": ["to", "they"]
+        },
+        {
+          "number": 29,
+          "points": 1,
+          "answer": ["to"]
+        },
+        {
+          "number": 30,
+          "points": 1,
+          "answer": ["as"]
+        },
+        {
+          "number": 31,
+          "points": 1,
+          "answer": ["it"]
+        },
+        {
+          "number": 32,
+          "points": 1,
+          "answer": ["you"]
+        }
+      ]
+    }
+  ]
+}

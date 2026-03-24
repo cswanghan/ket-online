@@ -1,0 +1,392 @@
+{
+  "examType": "PET",
+  "title": "Cambridge Official Sample Test 1",
+  "source": "Cambridge English - Official 2020 Sample",
+  "category": "official",
+  "totalQuestions": 32,
+  "parts": [
+    {
+      "part": 1,
+      "name": "Reading Part 1",
+      "description": "For each question, choose the correct answer.",
+      "type": "multiple_choice",
+      "questions": [
+        {
+          "number": 1,
+          "points": 1,
+          "text": "Win a Car\nCOMPETITION\nEntries will only be accepted from people who are at least eighteen.",
+          "textType": "notice",
+          "options": [
+            "A. The competition is open to people over a certain age.",
+            "B. There is a maximum age limit for this competition.",
+            "C. Only eighteen-year-olds are allowed to enter this competition."
+          ],
+          "answer": "A"
+        },
+        {
+          "number": 2,
+          "points": 1,
+          "text": "Rachel\nFor our holiday, you need to get a photo for your visa and let me have it. I've got the visa forms so I can post them then.\nAdam",
+          "textType": "message",
+          "question": "Adam is telling Rachel to",
+          "options": [
+            "A. post something for him.",
+            "B. find out how to do something.",
+            "C. give him something he needs."
+          ],
+          "answer": "C"
+        },
+        {
+          "number": 3,
+          "points": 1,
+          "text": "LABORATORY\nThe public are not permitted beyond this point unless accompanied by a staff member.",
+          "textType": "notice",
+          "options": [
+            "A. Members of staff must be accompanied if they wish to pass this point.",
+            "B. Members of the public can't go through unless they are visiting someone working here.",
+            "C. Members of the public may go further if a company employee goes with them."
+          ],
+          "answer": "C"
+        },
+        {
+          "number": 4,
+          "points": 1,
+          "text": "Jane,\nMum's leaving really early tomorrow, so could you wake me at 7 when you leave for work? I mustn't be late for college again!\nTom",
+          "textType": "message",
+          "options": [
+            "A. Tom wants to persuade Jane to take him to college tomorrow morning.",
+            "B. Tom would like Jane to do him a favour tomorrow morning.",
+            "C. Tom is reminding Jane they have to get up early tomorrow morning."
+          ],
+          "answer": "B"
+        },
+        {
+          "number": 5,
+          "points": 1,
+          "text": "FREE COPIES OF ADVERTISEMENTS ON THIS BOARD ARE AVAILABLE FROM THE CAREERS CENTRE",
+          "textType": "notice",
+          "options": [
+            "A. The Careers Centre will give you a copy of any advertisement on this board.",
+            "B. This board is used to advertise the work done by the Careers Centre.",
+            "C. If you ask the Careers Centre, you can advertise for free on this board."
+          ],
+          "answer": "A"
+        }
+      ]
+    },
+    {
+      "part": 2,
+      "name": "Reading Part 2",
+      "type": "matching",
+      "description": "The people below all want to visit a city market. Read the descriptions of eight markets. Decide which market would be the most suitable for the people below.",
+      "texts": {
+        "A": {
+          "title": "Beckfield Market",
+          "content": "This market's world-famous for second-hand camera equipment and books on photography. As well as an amazing range of cameras, we have old pictures of local places of interest for you to buy, and of course the stall owners are happy to give you advice for free! Don't miss our hot soup stall in cold weather."
+        },
+        "B": {
+          "title": "Rosewell Hill",
+          "content": "Our market's in an amazing building that's hundreds of years old. Visitors find our late-night opening hours convenient, and there are always performers entertaining the crowds. We've recently opened more stalls specializing in pictures both from well-known artists and also those beginning their careers."
+        },
+        "C": {
+          "title": "Camberwall Market",
+          "content": "There's lots to see in this interesting indoor market, so it's open from morning until late, in a fantastic modern setting. Find everything from rare gold and silver jewellery to designer clothes \u2013 although the prices aren't cheap, the quality's excellent. After shopping, enjoy a meal in a nearby restaurant."
+        },
+        "D": {
+          "title": "Cobbledown Road",
+          "content": "A small market that's open in all weathers. Come and find something really fantastic \u2013 treat yourself or someone special! We have a wide selection of jewellery and musical instruments, produced locally by highly-skilled people, and homemade cakes to enjoy."
+        },
+        "E": {
+          "title": "Oldford Lane",
+          "content": "Situated in the historic city centre, you'll find a wide range of jewellery and clothes. Arrive early to avoid disappointment \u2013 bargains are found in the morning, and the stalls pack up after lunch. If the weather's good, enjoy watching the world go by, although it gets very busy in the tourist season."
+        },
+        "F": {
+          "title": "Purford Market",
+          "content": "Close to museums and art galleries, this is the place to buy something for lunch, as well as fresh fruit and special breads. Try the region's famous cheese \u2013 the producers are there with advice on different types. Eat on the seats situated around the market, watching the colourful scene and enjoying music from local bands."
+        },
+        "G": {
+          "title": "Teddingley Market",
+          "content": "Situated under historic city walls, in this busy market you'll find a huge selection of great-value new and second-hand clothes. There are also stalls offering unusual albums by international singers, often hard to find in shops. Our world-food area allows you to taste food from abroad, cooked in front of you by international chefs."
+        },
+        "H": {
+          "title": "Frome Place",
+          "content": "Stalls open during normal daytime shopping hours so, depending on the weather, there's plenty to entertain you the whole day. Try our sandwich bar if you're hungry, and look for an old copy of something by a favourite author. We also have gifts from all over the world."
+        }
+      },
+      "questions": [
+        {
+          "number": 6,
+          "points": 1,
+          "text": "Jenny wants to buy locally-produced food traditional to the area. She needs somewhere convenient to eat, and as she's sightseeing in the city, the market shouldn't be far from local attractions.",
+          "answer": "F"
+        },
+        {
+          "number": 7,
+          "points": 1,
+          "text": "Matt wants a market where he can get something to wear at reasonable prices, and something hot to eat. He's also keen on music, and likes finding rare recordings by different bands.",
+          "answer": "G"
+        },
+        {
+          "number": 8,
+          "points": 1,
+          "text": "Sammie wants to visit a market after spending the day in the city. He would like to photograph a historic place, and buy a painting by someone unknown.",
+          "answer": "B"
+        },
+        {
+          "number": 9,
+          "points": 1,
+          "text": "Alexia is looking for a really special necklace for her grandmother's birthday. She'd like to spend the whole day at the market, and wants to avoid the cold by staying inside.",
+          "answer": "C"
+        },
+        {
+          "number": 10,
+          "points": 1,
+          "text": "Ella is looking for objects from other countries for her friends. She'd like to choose a second-hand book to read on the journey home, and wants a snack at the market, too.",
+          "answer": "H"
+        }
+      ]
+    },
+    {
+      "part": 3,
+      "name": "Reading Part 3",
+      "type": "multiple_choice",
+      "description": "Read the text and answer the questions.",
+      "passageTitle": "Artist Peter Fuller talks about his hobby",
+      "passage": "There's a popular idea that artists are not supposed to be into sport, but mountain biking is a huge part of my life. It gets me out of my studio, and into the countryside. But more importantly, racing along as fast as you can leaves you no time to worry about anything that's going on in your life. You're too busy concentrating on not crashing. The only things you pay attention to are the pain in your legs and the rocks on the path in front of you.\n\nI'm in my sixties now, but I started cycling when I was a kid. In the summer my friends and I would ride our bikes into the woods and see who was brave enough to go down steep hills, or do big jumps. The bikes we had then weren't built for that, and often broke, so I used to draw pictures of bikes with big thick tyres that would be strong enough for what we were doing. They looked just like modern mountain bikes. However, it wasn't until many years later that someone actually invented one. By the 1980s, they were everywhere.\n\nAt that time I was into skateboarding. I did that for a decade until falling off on to hard surfaces started to hurt too much. Mountain biking seemed a fairly safe way to keep fit, so I took that up instead. I made a lot of friends, and got involved in racing, which gave me a reason to train hard. I wanted to find out just how fit and fast I could get, which turned out to be fairly quick. I even won a couple of local races.\n\nIn the end I stopped racing, mainly because I knew what it could mean to my career if I had a bad crash. But I still like to do a three-hour mountain bike ride every week. And if I'm out cycling in the hills and see a rider ahead, I have to beat them to the top. As I go past I imagine how surprised they would be if they knew how old I am.",
+      "questions": [
+        {
+          "number": 11,
+          "points": 1,
+          "text": "Peter enjoys mountain biking because",
+          "options": [
+            "A. it gives him the opportunity to enjoy the views.",
+            "B. he can use the time to plan his work.",
+            "C. he is able to stop thinking about his problems.",
+            "D. it helps him to concentrate better."
+          ],
+          "answer": "C"
+        },
+        {
+          "number": 12,
+          "points": 1,
+          "text": "What does Peter say about cycling during his childhood?",
+          "options": [
+            "A. He is sorry he didn't take more care of his bike.",
+            "B. His friends always had better quality bikes than he did.",
+            "C. His bike wasn't suitable for the activities he was doing.",
+            "D. He was more interested in designing bikes than riding them."
+          ],
+          "answer": "C"
+        },
+        {
+          "number": 13,
+          "points": 1,
+          "text": "Peter says he returned to cycling after several years",
+          "options": [
+            "A. because he had become unfit.",
+            "B. so that he could enter races.",
+            "C. in order to meet new people.",
+            "D. to replace an activity he had given up."
+          ],
+          "answer": "D"
+        },
+        {
+          "number": 14,
+          "points": 1,
+          "text": "How does Peter feel about cycling now?",
+          "options": [
+            "A. He is proud that he is still so fast.",
+            "B. He is keen to do less now that he is older.",
+            "C. He regrets the fact that he can no longer compete.",
+            "D. He wishes more people were involved in the sport."
+          ],
+          "answer": "A"
+        },
+        {
+          "number": 15,
+          "points": 1,
+          "text": "What would be a good introduction to this article?",
+          "options": [
+            "A. For Peter Fuller, nothing matters more than mountain biking, not even his career. Here, in his own words, he tells us why.",
+            "B. Artist Peter Fuller takes mountain biking pretty seriously. Here he describes how it all began and what he gets out of it.",
+            "C. In this article, Peter Fuller explains how he became an artist only as a result of his interest in mountain biking.",
+            "D. After discovering mountain biking late in life, Peter Fuller gave up art for a while to concentrate on getting as good as possible."
+          ],
+          "answer": "B"
+        }
+      ]
+    },
+    {
+      "part": 4,
+      "name": "Reading Part 4",
+      "type": "gapped_text",
+      "description": "Five sentences have been removed from the text below. For each question, choose the correct answer. There are three extra sentences which you do not need to use.",
+      "passageTitle": "A new life",
+      "passage": "I used to work as a college lecturer in the north of England, running photography courses. It wasn't a bad job and I really liked my students, but I began to feel tired of doing the same thing every day. (16) ______\n\nI'd always loved travelling, so one weekend I typed 'international volunteering' into an internet search engine. At the top of the results page was the opportunity to go and stay on an island in the Indian Ocean, thousands of miles away, and help to protect the beaches and the sea life. (17) ______ I had some diving experience, and the more I talked about it, the more I wanted to do it. So I contacted the organisation. One week later they offered to send me to the island and I accepted. (18) ______ After all, the volunteer job was only for two months during the summer holidays. I thought after I'd finished, I'd come home.\n\nAs soon as I got to the island, I was sure I'd done the right thing. My first dive was incredible. (19) ______ I felt so lucky to be able to experience that every day.\n\nIn fact I loved it so much that I never came home! I've now been on the island for ten years and I have a permanent job. I'm working as a marine educator, teaching volunteers about the sea life and taking them snorkelling and diving. My desk is a picnic table 10 metres from the best beach on the island. Of course not everything about my new life is perfect. (20) ______ However, I can't imagine going back to my old life.",
+      "sentenceOptions": [
+        "A. That's why I knew it was a terrible plan.",
+        "B. I had trained in icy water in the UK so the crystal clear warm water felt amazing.",
+        "C. They always ask lots of questions.",
+        "D. I work far harder than I used to.",
+        "E. I began joking to friends about sending in an application.",
+        "F. Afterwards, some people were surprised by my decision but I wasn't too worried.",
+        "G. I decided I needed a break.",
+        "H. I needed to explain that first."
+      ],
+      "questions": [
+        {
+          "number": 16,
+          "points": 1,
+          "text": "(16)",
+          "answer": "G"
+        },
+        {
+          "number": 17,
+          "points": 1,
+          "text": "(17)",
+          "answer": "E"
+        },
+        {
+          "number": 18,
+          "points": 1,
+          "text": "(18)",
+          "answer": "F"
+        },
+        {
+          "number": 19,
+          "points": 1,
+          "text": "(19)",
+          "answer": "B"
+        },
+        {
+          "number": 20,
+          "points": 1,
+          "text": "(20)",
+          "answer": "D"
+        }
+      ]
+    },
+    {
+      "part": 5,
+      "name": "Reading Part 5",
+      "type": "cloze_choice",
+      "description": "Read the text. Choose the correct word for each space.",
+      "passageTitle": "The Coconut Tree",
+      "passage": "The coconut tree is thought to be one of the most valuable trees in the world. It is mostly found by the sea where there is a hot and wet (21) __________ . The coconuts often fall into the sea and float on the water until they (22) __________ another beach, where more trees then begin to grow.\n\nHoliday makers often see the coconut tree as no more than an attractive sun umbrella that provides (23) __________ . However, this amazing tree has hundreds of (24) __________ and more are still being discovered.\n\nPeople have made houses, boats and baskets from the coconut tree's wood and leaves for centuries. Even today, if you take a (25) __________ in your cupboards, you will find coconut oil in products as (26) __________ as medicine and desserts.",
+      "questions": [
+        {
+          "number": 21,
+          "points": 1,
+          "text": "(21)",
+          "options": [
+            "A. temperature",
+            "B. condition",
+            "C. climate",
+            "D. weather"
+          ],
+          "answer": "C"
+        },
+        {
+          "number": 22,
+          "points": 1,
+          "text": "(22)",
+          "options": [
+            "A. reach",
+            "B. go",
+            "C. travel",
+            "D. arrive"
+          ],
+          "answer": "A"
+        },
+        {
+          "number": 23,
+          "points": 1,
+          "text": "(23)",
+          "options": [
+            "A. cloud",
+            "B. shade",
+            "C. dark",
+            "D. cold"
+          ],
+          "answer": "B"
+        },
+        {
+          "number": 24,
+          "points": 1,
+          "text": "(24)",
+          "options": [
+            "A. uses",
+            "B. jobs",
+            "C. roles",
+            "D. things"
+          ],
+          "answer": "A"
+        },
+        {
+          "number": 25,
+          "points": 1,
+          "text": "(25)",
+          "options": [
+            "A. scene",
+            "B. sight",
+            "C. look",
+            "D. view"
+          ],
+          "answer": "C"
+        },
+        {
+          "number": 26,
+          "points": 1,
+          "text": "(26)",
+          "options": [
+            "A. opposite",
+            "B. separate",
+            "C. strange",
+            "D. different"
+          ],
+          "answer": "D"
+        }
+      ]
+    },
+    {
+      "part": 6,
+      "name": "Reading Part 6",
+      "type": "fill_blank",
+      "description": "Read the text. Write ONE word for each gap.",
+      "passageTitle": "The Natural History Museum",
+      "passage": "This is one of my favourite places to visit. I've learned a huge amount about animals and plants (27) __________ time I've visited. I've even seen bits of rock from the moon!\n\nThe building's really beautiful and it's easy to find your way around. There are hundreds of interesting things on display, but (28) __________ you like dinosaurs the best time (29) __________ see them is during term-time. I've been twice in the school holidays and the queue was (30) __________ long that I wasn't able to visit that part (31) __________ the museum.\n\nYou'll probably want something to eat while you're there. You can take (32) __________ own picnic and eat in the museum garden, or try one of the two museum caf\u00e9s.",
+      "questions": [
+        {
+          "number": 27,
+          "points": 1,
+          "answer": ["every", "each"]
+        },
+        {
+          "number": 28,
+          "points": 1,
+          "answer": ["if"]
+        },
+        {
+          "number": 29,
+          "points": 1,
+          "answer": ["to"]
+        },
+        {
+          "number": 30,
+          "points": 1,
+          "answer": ["so"]
+        },
+        {
+          "number": 31,
+          "points": 1,
+          "answer": ["of"]
+        },
+        {
+          "number": 32,
+          "points": 1,
+          "answer": ["your"]
+        }
+      ]
+    }
+  ]
+}

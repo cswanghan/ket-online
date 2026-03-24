@@ -1,0 +1,344 @@
+{
+  "examType": "KET",
+  "title": "KET Reading & Writing Test 05",
+  "source": "englishpracticetest.net",
+  "category": "practice",
+  "totalQuestions": 30,
+  "parts": [
+    {
+      "part": 1,
+      "name": "Reading Part 1",
+      "description": "Read the notices, signs or short messages. For each question, choose the correct answer.",
+      "type": "multiple_choice",
+      "questions": [
+        {
+          "number": 1,
+          "points": 1,
+          "text": "School singing practice starts this week. Please don't arrive later than 1:25, as we must all be ready by 1:30.\nThank you.",
+          "textType": "notice",
+          "options": [
+            "A. Singing practice starts at 1:25.",
+            "B. There is no singing practice this week.",
+            "C. Please arrive early for singing practice."
+          ],
+          "answer": "C"
+        },
+        {
+          "number": 2,
+          "points": 1,
+          "text": "You may return games that aren't opened to the shop and get your money back.",
+          "textType": "notice",
+          "options": [
+            "A. it doesn't work.",
+            "B. you don't like it.",
+            "C. you haven't used it."
+          ],
+          "answer": "C"
+        },
+        {
+          "number": 3,
+          "points": 1,
+          "text": "Book club\nDo you enjoy discussing books with classmates? Yes? Then come along to the book club. To join, contact Mr Sponforth.",
+          "textType": "notice",
+          "options": [
+            "A. you are interested in becoming a member of the book club.",
+            "B. you would like to borrow a book from the club.",
+            "C. you have read the same book as your classmates."
+          ],
+          "answer": "A"
+        },
+        {
+          "number": 4,
+          "points": 1,
+          "text": "Hi Dad! It's Sam's birthday, so I want to buy a present. Could you lend me enough to get him something from the bookshop? Thanks! Davey",
+          "textType": "message",
+          "options": [
+            "A. go shopping with his dad.",
+            "B. borrow some money.",
+            "C. ask what to get for Sam."
+          ],
+          "answer": "B"
+        },
+        {
+          "number": 5,
+          "points": 1,
+          "text": "HONEY CAFE\nUnfortunately two of our staff are ill today. (We must have at least three to open.)\nOpen at 9 a.m. tomorrow.",
+          "textType": "notice",
+          "options": [
+            "A. The cafe is closed today.",
+            "B. We are looking for more staff.",
+            "C. Tomorrow we open at a different time."
+          ],
+          "answer": "A"
+        },
+        {
+          "number": 6,
+          "points": 1,
+          "text": "Smitford's Computer Store\nBring us your old laptop* when you get a new one from us and receive £100 off.\n*must still work",
+          "textType": "notice",
+          "options": [
+            "A. We repair old laptops.",
+            "B. Old laptops are for sale for £100.",
+            "C. Save money when you buy a new laptop."
+          ],
+          "answer": "C"
+        }
+      ]
+    },
+    {
+      "part": 2,
+      "name": "Reading Part 2",
+      "description": "Read the descriptions of three teenage business people. For each question, choose the correct answer.",
+      "type": "matching",
+      "texts": {
+        "A": {
+          "title": "Noa Mintz",
+          "content": "Noa started a business when she was 8, holding art classes for children. Two years later, she began a party planning business for children. She doesn't think that went very well. She thinks that because she was very young, the business wasn't exactly perfect. These days, she is sure that she knows what she's doing, as she has a business that finds staff to look after other people's children. She also pays someone to help her with the business."
+        },
+        "B": {
+          "title": "Mikaila Ulmer",
+          "content": "Mikaila has opened a company called Me and the Bees. It sells lemonade, which is made with local honey. The drink is sold in several shops in Mikaila's home town and online, and some of the money is given to nature groups that work with bees and other insects. Mikaila also shows children and their families how to get ideas to make money. She says, 'I think I've got lots of good advice for them.'"
+        },
+        "C": {
+          "title": "Jessie Chong",
+          "content": "When Jessie was really young, her parents told her that she should find something that she loved doing. She's happy she did because she thinks everyone should love their work. Jessie makes jewellery and sells it online. She looks at flowers and plants, and then uses the shapes and colours she sees in her jewellery."
+        }
+      },
+      "questions": [
+        {
+          "number": 7,
+          "points": 1,
+          "text": "Which person is helping wildlife?",
+          "answer": "B"
+        },
+        {
+          "number": 8,
+          "points": 1,
+          "text": "Which person has given someone a job?",
+          "answer": "A"
+        },
+        {
+          "number": 9,
+          "points": 1,
+          "text": "Which person gets ideas for her business from nature?",
+          "answer": "C"
+        },
+        {
+          "number": 10,
+          "points": 1,
+          "text": "Which person wants to teach children about business?",
+          "answer": "B"
+        },
+        {
+          "number": 11,
+          "points": 1,
+          "text": "Which person has opened other companies before?",
+          "answer": "A"
+        },
+        {
+          "number": 12,
+          "points": 1,
+          "text": "Which person is pleased that she took some good advice?",
+          "answer": "C"
+        },
+        {
+          "number": 13,
+          "points": 1,
+          "text": "Which person thinks she has improved as a business person?",
+          "answer": "A"
+        }
+      ]
+    },
+    {
+      "part": 3,
+      "name": "Reading Part 3",
+      "type": "multiple_choice",
+      "description": "Read the text and answer the questions.",
+      "passage": "Where playing video games IS real life\n\nSeo-yun Cho doesn't have time for hobbies because she spends all her time playing video games. 'I practise as much as I can so I will improve,' she says. 'This is what I really need to do.'\n\nSeo-yun and her friends are members of KS Fireflies 6, a video game team. She and the other members share a flat in Seoul's business district. Since they all left school, they have managed to make playing video games their life.\n\nEveryday, Seo-yun gets up after a good night's sleep at 10 a.m. and goes for a jog for an hour, before sitting down at her computer and starting to play. She and her friends have a few breaks to eat and relax during the day and the evening, but Seo-yun thinks that after midnight is when she has more fun playing than at any other time. She usually goes to bed at 3 a.m.\n\nSeo-yun and the rest of the team need to train hard and keep fit, as top players need to do about 30 mouse-clicks a minute. Video games are big business in South Korea, and the best players (like KS Fireflies 6) usually become even better-known than top baseball or volleyball players.\n\nSome people might get bored after playing video games for an hour or two. But these guys are actually getting paid to do something they love as a job. Many of them would even like to do it for free!",
+      "questions": [
+        {
+          "number": 14,
+          "points": 1,
+          "text": "What is the most important thing for Seo-yun Cho?",
+          "options": [
+            "A. trying new video games",
+            "B. getting better at video games",
+            "C. finding enough time to play video games"
+          ],
+          "answer": "B"
+        },
+        {
+          "number": 15,
+          "points": 1,
+          "text": "Seo-yun and her friends",
+          "options": [
+            "A. live together.",
+            "B. went to school together.",
+            "C. have a business together."
+          ],
+          "answer": "A"
+        },
+        {
+          "number": 16,
+          "points": 1,
+          "text": "What does Seo-yun say about playing games at night?",
+          "options": [
+            "A. It's when she feels happiest.",
+            "B. It's the time that she most enjoys playing.",
+            "C. It sometimes makes her tired."
+          ],
+          "answer": "B"
+        },
+        {
+          "number": 17,
+          "points": 1,
+          "text": "What does the writer say about sports?",
+          "options": [
+            "A. Seo-yun and her friends play a lot of sports video games.",
+            "B. Seo-yun and her friends play sports to get fit.",
+            "C. Seo-yun and her friends are more famous than some sports players."
+          ],
+          "answer": "C"
+        },
+        {
+          "number": 18,
+          "points": 1,
+          "text": "Why does the writer think that Seo-yun and her friends are lucky?",
+          "options": [
+            "A. because they earn a lot of money",
+            "B. because they don't need to look for another job",
+            "C. because they are doing something that they love"
+          ],
+          "answer": "C"
+        }
+      ]
+    },
+    {
+      "part": 4,
+      "name": "Reading Part 4",
+      "type": "cloze_choice",
+      "description": "Read the text. Choose the correct word for each space.",
+      "passage": "Preparing to go camping with the school\n\nFrom choosing the right equipment to remembering to take spare socks, campers need to be prepared! Keen camper, Jody Walterson, 16, explains why.\n\nMost pupils are really excited when they are taken on a school camping (19)____ . They're becoming really popular these days. For example, my class goes camping at (20)____ once a year. It's usually just for one night, but it's sometimes (21)____ .\n\nParents and children need to work together to (22)____ sure that everything goes well. Part of this is deciding what to take – this is a really important (23)____ . It's a good idea to take more clothes than you think you will (24)____ . So, if you're going for two nights, take three pairs of socks. And don't forget your toothbrush or a charger for your phone!",
+      "questions": [
+        {
+          "number": 19,
+          "points": 1,
+          "text": "(19)",
+          "options": [
+            "A. way",
+            "B. journey",
+            "C. trip"
+          ],
+          "answer": "C"
+        },
+        {
+          "number": 20,
+          "points": 1,
+          "text": "(20)",
+          "options": [
+            "A. little",
+            "B. least",
+            "C. low"
+          ],
+          "answer": "B"
+        },
+        {
+          "number": 21,
+          "points": 1,
+          "text": "(21)",
+          "options": [
+            "A. longer",
+            "B. bigger",
+            "C. higher"
+          ],
+          "answer": "A"
+        },
+        {
+          "number": 22,
+          "points": 1,
+          "text": "(22)",
+          "options": [
+            "A. get",
+            "B. do",
+            "C. make"
+          ],
+          "answer": "C"
+        },
+        {
+          "number": 23,
+          "points": 1,
+          "text": "(23)",
+          "options": [
+            "A. job",
+            "B. work",
+            "C. occupation"
+          ],
+          "answer": "A"
+        },
+        {
+          "number": 24,
+          "points": 1,
+          "text": "(24)",
+          "options": [
+            "A. have",
+            "B. like",
+            "C. need"
+          ],
+          "answer": "C"
+        }
+      ]
+    },
+    {
+      "part": 5,
+      "name": "Reading & Writing Part 5",
+      "type": "fill_blank",
+      "description": "Read the text. Write ONE word for each space.",
+      "passage": "From: Joanna\nTo: Emma\n\nHi Emma,\n\nAt school, you said that you don't have any plans for the weekend. Well, how (0) about meeting on Saturday morning? I thought maybe we could go (25)____ a bike ride. We can go to Moreton-on-Sea, and get something (26)____ eat. I went there by bike last year. In fact, there were six (27)____ us, and we had (28)____ really amazing day. I don't think it will take more (29)____ four hours to get there and back. Can you let (30)____ know if you can come?\n\nHopefully, I'll see you then!\n\nCheers,\nJoanna",
+      "questions": [
+        {
+          "number": 25,
+          "points": 1,
+          "answer": [
+            "for",
+            "on"
+          ]
+        },
+        {
+          "number": 26,
+          "points": 1,
+          "answer": [
+            "to"
+          ]
+        },
+        {
+          "number": 27,
+          "points": 1,
+          "answer": [
+            "of"
+          ]
+        },
+        {
+          "number": 28,
+          "points": 1,
+          "answer": [
+            "a"
+          ]
+        },
+        {
+          "number": 29,
+          "points": 1,
+          "answer": [
+            "than"
+          ]
+        },
+        {
+          "number": 30,
+          "points": 1,
+          "answer": [
+            "me"
+          ]
+        }
+      ]
+    }
+  ]
+}

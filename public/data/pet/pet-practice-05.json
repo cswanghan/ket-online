@@ -1,0 +1,393 @@
+{
+  "examType": "PET",
+  "title": "PET Reading Practice Test 5",
+  "source": "AI Generated",
+  "category": "practice",
+  "totalQuestions": 32,
+  "parts": [
+    {
+      "part": 1,
+      "name": "Reading Part 1",
+      "description": "For each question, choose the correct answer.",
+      "type": "multiple_choice",
+      "questions": [
+        {
+          "number": 1,
+          "points": 1,
+          "text": "APARTMENT BUILDING\nDeliveries should be left with the security desk if the resident is not at home.",
+          "textType": "notice",
+          "options": [
+            "A. Residents must collect their deliveries from the security desk.",
+            "B. If nobody is home, packages should be given to security.",
+            "C. The security desk is only open during delivery hours."
+          ],
+          "answer": "B"
+        },
+        {
+          "number": 2,
+          "points": 1,
+          "text": "Tom,\nThe washing machine has broken down again. I've called the repair company but they can't come until Wednesday. Could you take the dirty clothes to the laundrette on your way home?\nJen",
+          "textType": "message",
+          "question": "Jen is asking Tom to",
+          "options": [
+            "A. call the repair company about the washing machine.",
+            "B. fix the washing machine before Wednesday.",
+            "C. take the laundry somewhere to be washed."
+          ],
+          "answer": "C"
+        },
+        {
+          "number": 3,
+          "points": 1,
+          "text": "CINEMA\nScreenings in 3D require special glasses, available free of charge from the ticket office.",
+          "textType": "notice",
+          "options": [
+            "A. 3D glasses must be purchased separately.",
+            "B. You can get free 3D glasses when you buy your ticket.",
+            "C. Only certain films are shown in 3D."
+          ],
+          "answer": "B"
+        },
+        {
+          "number": 4,
+          "points": 1,
+          "text": "SUPERMARKET\nCustomers using the self-checkout must scan their loyalty card before starting.",
+          "textType": "notice",
+          "options": [
+            "A. You need a loyalty card to use the self-checkout.",
+            "B. You should scan your loyalty card first if you have one.",
+            "C. Loyalty cards are available at the self-checkout."
+          ],
+          "answer": "B"
+        },
+        {
+          "number": 5,
+          "points": 1,
+          "text": "Amy,\nI saw a great jacket in the shop window on Park Street – it would be perfect for your interview. They're having a sale that ends tomorrow. Shall I pick one up for you? What size are you?\nRachel",
+          "textType": "message",
+          "question": "Rachel is offering to",
+          "options": [
+            "A. go to Amy's interview with her.",
+            "B. lend Amy one of her jackets.",
+            "C. buy something for Amy from a shop."
+          ],
+          "answer": "C"
+        }
+      ]
+    },
+    {
+      "part": 2,
+      "name": "Reading Part 2",
+      "type": "matching",
+      "description": "The people below all want to visit a tourist attraction during their holiday. Read the descriptions of eight attractions. Choose which attraction would be the most suitable for the people below.",
+      "texts": {
+        "A": {
+          "title": "Oceanworld Aquarium",
+          "content": "Home to over 5,000 sea creatures including sharks, rays and seahorses. Daily feeding shows at 11am and 3pm. Children can touch sea stars and crabs in the rock pool area. Café and gift shop on site. Open every day, 10am-6pm. Free parking."
+        },
+        "B": {
+          "title": "Greenfield Steam Railway",
+          "content": "Take a trip back in time on our beautifully restored steam trains. The 45-minute journey passes through stunning countryside. Special afternoon tea service on Saturdays. Trains run at weekends only, April to September. Small museum at the station. Not suitable for wheelchair users."
+        },
+        "C": {
+          "title": "Adventure Island Theme Park",
+          "content": "Over 30 rides and attractions for all ages, from gentle rides for toddlers to high-speed roller coasters for thrill-seekers. Water park open in summer months. Multiple food outlets throughout the park. Open daily during school holidays, weekends only at other times."
+        },
+        "D": {
+          "title": "Hartley Castle",
+          "content": "Explore 800 years of history in this magnificent medieval castle. Guided tours run hourly and last about 90 minutes. Beautiful gardens with picnic areas. Special events for children during school holidays including sword-fighting demonstrations. Closed November to March."
+        },
+        "E": {
+          "title": "National Space Centre",
+          "content": "Discover the wonders of the universe through interactive exhibits and a state-of-the-art planetarium. Ideal for children aged 8 and over. Workshops and talks by real scientists at weekends. Café serving hot and cold meals. Fully accessible for wheelchair users."
+        },
+        "F": {
+          "title": "Willowbrook Farm Park",
+          "content": "Meet friendly farm animals and learn how a real farm works. Daily milking demonstration at 4pm. Pony rides for children under 10. Large indoor play area – great for rainy days. Farm shop selling local produce. Open every day except Christmas."
+        },
+        "G": {
+          "title": "Botanical Gardens",
+          "content": "Wander through 15 hectares of beautiful gardens featuring plants from around the world. Free guided walks every afternoon. The tropical greenhouse is especially impressive in winter. Dogs welcome in most areas. Open daily, dawn to dusk. Entry is free."
+        },
+        "H": {
+          "title": "Sea Life Boat Trips",
+          "content": "See dolphins, seals and seabirds on our two-hour coastal boat trips. Expert guides explain the wildlife you'll see. Trips depend on weather conditions – please phone on the day. Warm clothing recommended. Not suitable for children under 5. Limited to 12 passengers per trip."
+        }
+      },
+      "questions": [
+        {
+          "number": 6,
+          "points": 1,
+          "text": "George has two children aged 4 and 7. He wants to take them somewhere they can see and interact with animals. It might rain, so he needs somewhere with indoor activities too.",
+          "answer": "F"
+        },
+        {
+          "number": 7,
+          "points": 1,
+          "text": "Sarah is 12 and loves science, especially anything about space. She would enjoy hands-on activities and hearing from experts. Her grandmother uses a wheelchair and will come too.",
+          "answer": "E"
+        },
+        {
+          "number": 8,
+          "points": 1,
+          "text": "Mr and Mrs Hall are retired and enjoy being outdoors. They want to visit somewhere peaceful and free of charge, and they would like to bring their dog.",
+          "answer": "G"
+        },
+        {
+          "number": 9,
+          "points": 1,
+          "text": "Kenji's family is visiting during the school holidays. His children, aged 5 and 9, love exciting rides and splashing around in water. They want to spend a full day out.",
+          "answer": "C"
+        },
+        {
+          "number": 10,
+          "points": 1,
+          "text": "Lara enjoys history and wants to visit somewhere she can learn about the past through a professional tour. She would like to eat her own lunch in the grounds.",
+          "answer": "D"
+        }
+      ]
+    },
+    {
+      "part": 3,
+      "name": "Reading Part 3",
+      "type": "multiple_choice",
+      "description": "Read the text and answer the questions.",
+      "passageTitle": "Marathon runner James Chen",
+      "passage": "Running a marathon was never something I imagined I would do. At school, I was hopeless at sport. I was always the last person to be picked for any team, and I dreaded PE lessons. The idea of running 42 kilometres would have seemed completely impossible to me back then.\n\nEverything changed when I turned 30. I'd been working in an office for eight years and realised I was seriously unfit. I couldn't run for a bus without getting out of breath. A colleague suggested we sign up for a 5-kilometre charity run, and although I found it incredibly hard, I managed to finish. The sense of achievement I felt when I crossed that finish line was unlike anything I'd experienced before.\n\nAfter that first race, I was hooked. I started running three times a week and gradually increased my distances. Within a year, I'd completed a half marathon. The training was tough, especially in winter when it was dark and cold, but I found that running helped me deal with the stress of my job. It became my way of switching off from work.\n\nTwo years later, I entered the London Marathon. The training plan was brutal – I had to run at least five days a week, including one long run of 30 kilometres every Sunday. I lost weight, gained muscle, and felt healthier than I'd ever been. But the hardest part wasn't the physical training – it was making time for it alongside my full-time job and family life.\n\nOn race day, the atmosphere was incredible. Thousands of people lined the streets, cheering and offering sweets and drinks. I hit a wall at about 35 kilometres – my legs felt like lead and every step was painful. But I kept going, and when I finally crossed the finish line in just under four hours, I burst into tears. I've run three more marathons since then, and each one has been just as emotional.",
+      "questions": [
+        {
+          "number": 11,
+          "points": 1,
+          "text": "What does James say about his attitude to sport when he was young?",
+          "options": [
+            "A. He enjoyed watching sport but not playing it.",
+            "B. He was not good at sport and didn't enjoy it.",
+            "C. He was interested in running but not team sports.",
+            "D. He liked PE lessons but not competitive sport."
+          ],
+          "answer": "B"
+        },
+        {
+          "number": 12,
+          "points": 1,
+          "text": "What motivated James to start running?",
+          "options": [
+            "A. He wanted to lose weight.",
+            "B. His doctor told him he needed to exercise.",
+            "C. He realised how unfit he had become.",
+            "D. He watched the London Marathon on TV."
+          ],
+          "answer": "C"
+        },
+        {
+          "number": 13,
+          "points": 1,
+          "text": "What benefit did running bring to James besides fitness?",
+          "options": [
+            "A. He made a lot of new friends.",
+            "B. It helped him relax and forget about work.",
+            "C. He earned money from winning races.",
+            "D. It helped him get a promotion at work."
+          ],
+          "answer": "B"
+        },
+        {
+          "number": 14,
+          "points": 1,
+          "text": "What did James find most challenging about marathon training?",
+          "options": [
+            "A. The long Sunday runs.",
+            "B. Running in bad weather.",
+            "C. Fitting training around his other responsibilities.",
+            "D. Following a strict diet."
+          ],
+          "answer": "C"
+        },
+        {
+          "number": 15,
+          "points": 1,
+          "text": "How did James feel during the London Marathon?",
+          "options": [
+            "A. He found the whole race easy because of his training.",
+            "B. He nearly gave up but was inspired by the crowd.",
+            "C. He struggled towards the end but was deeply moved when he finished.",
+            "D. He was disappointed with his finishing time."
+          ],
+          "answer": "C"
+        }
+      ]
+    },
+    {
+      "part": 4,
+      "name": "Reading Part 4",
+      "type": "gapped_text",
+      "description": "Five sentences have been removed from the text below. For each question, choose the correct answer. There are three extra sentences which you do not need to use.",
+      "passageTitle": "The Importance of Bees",
+      "passage": "Bees are among the most important creatures on Earth. Without them, our food supply would be in serious trouble. (16) ______ This means that without bees, many of the fruits, vegetables and nuts we eat every day simply would not exist.\n\nSadly, bee populations around the world have been declining rapidly in recent years. (17) ______ Pesticides used in farming are one major factor. When bees come into contact with these chemicals, it can affect their ability to navigate back to their hive.\n\nAnother threat to bees is the loss of their natural habitat. (18) ______ With fewer wildflowers to feed on, bees struggle to find enough food, especially in late summer.\n\nFortunately, there are things that ordinary people can do to help. (19) ______ Even a small window box with the right flowers can provide food for local bees. Avoiding the use of pesticides in your garden is also important.\n\nGovernments are also taking action. Several countries have banned the most harmful pesticides, and farmers are being encouraged to leave areas of wildflowers at the edges of their fields. (20) ______ But it will take the efforts of everyone – governments, farmers, and individuals – to turn the situation around.",
+      "sentenceOptions": [
+        "A. Scientists believe there are several reasons for this decline.",
+        "B. Planting bee-friendly flowers such as lavender and sunflowers in your garden is one simple step.",
+        "C. As towns and cities expand, fields and meadows are being replaced by buildings and roads.",
+        "D. Honey is also used in many traditional medicines.",
+        "E. This is because bees pollinate around a third of the food crops that humans depend on.",
+        "F. These measures are beginning to show positive results in some areas.",
+        "G. Some types of bee live alone rather than in colonies.",
+        "H. Bees produce honey, which humans have collected for thousands of years."
+      ],
+      "questions": [
+        {
+          "number": 16,
+          "points": 1,
+          "text": "(16)",
+          "answer": "E"
+        },
+        {
+          "number": 17,
+          "points": 1,
+          "text": "(17)",
+          "answer": "A"
+        },
+        {
+          "number": 18,
+          "points": 1,
+          "text": "(18)",
+          "answer": "C"
+        },
+        {
+          "number": 19,
+          "points": 1,
+          "text": "(19)",
+          "answer": "B"
+        },
+        {
+          "number": 20,
+          "points": 1,
+          "text": "(20)",
+          "answer": "F"
+        }
+      ]
+    },
+    {
+      "part": 5,
+      "name": "Reading Part 5",
+      "type": "cloze_choice",
+      "description": "Read the text. Choose the correct word for each space.",
+      "passageTitle": "The Bicycle",
+      "passage": "The bicycle is one of the most (21)______ inventions in history. Since it was first developed in the early 19th century, it has provided people with an affordable and environmentally friendly (22)______ of transport.\n\nThe earliest bicycles looked very different from those we ride today. The first models didn't even have pedals – riders had to push themselves along with (23)______ feet. It wasn't (24)______ the 1860s that pedals were added, and the modern bicycle design that we recognise today didn't appear until the 1880s.\n\nIn recent years, cycling has become more popular (25)______ ever. Many cities have introduced bike-sharing schemes and built dedicated cycle lanes. This is partly because of growing concerns about pollution and traffic congestion, but also because people have recognised the health (26)______ of regular cycling.",
+      "questions": [
+        {
+          "number": 21,
+          "points": 1,
+          "text": "(21)",
+          "options": [
+            "A. successful",
+            "B. achieved",
+            "C. capable",
+            "D. possible"
+          ],
+          "answer": "A"
+        },
+        {
+          "number": 22,
+          "points": 1,
+          "text": "(22)",
+          "options": [
+            "A. way",
+            "B. kind",
+            "C. means",
+            "D. sort"
+          ],
+          "answer": "C"
+        },
+        {
+          "number": 23,
+          "points": 1,
+          "text": "(23)",
+          "options": [
+            "A. his",
+            "B. its",
+            "C. one's",
+            "D. their"
+          ],
+          "answer": "D"
+        },
+        {
+          "number": 24,
+          "points": 1,
+          "text": "(24)",
+          "options": [
+            "A. since",
+            "B. from",
+            "C. until",
+            "D. after"
+          ],
+          "answer": "C"
+        },
+        {
+          "number": 25,
+          "points": 1,
+          "text": "(25)",
+          "options": [
+            "A. as",
+            "B. than",
+            "C. that",
+            "D. so"
+          ],
+          "answer": "B"
+        },
+        {
+          "number": 26,
+          "points": 1,
+          "text": "(26)",
+          "options": [
+            "A. profits",
+            "B. advantages",
+            "C. benefits",
+            "D. gains"
+          ],
+          "answer": "C"
+        }
+      ]
+    },
+    {
+      "part": 6,
+      "name": "Reading Part 6",
+      "type": "fill_blank",
+      "description": "Read the text. Write ONE word for each gap.",
+      "passageTitle": "Recycling",
+      "passage": "Recycling is something that (27)______ of us can do to help protect the environment. By sorting our waste and putting the right items in the recycling bin, we can reduce the amount of rubbish that ends (28)______ in landfill sites.\n\nMaterials such as paper, glass, metal and (29)______ types of plastic can all be recycled. When these materials are collected, they are taken to special factories (30)______ they are processed and turned into new products.\n\nRecycling is not just good (31)______ the environment – it also saves energy. For example, making new aluminium cans from recycled ones uses 95% (32)______ energy than making them from raw materials. So next time you finish a drink, make sure you recycle the can!",
+      "questions": [
+        {
+          "number": 27,
+          "points": 1,
+          "answer": ["all", "each"]
+        },
+        {
+          "number": 28,
+          "points": 1,
+          "answer": ["up"]
+        },
+        {
+          "number": 29,
+          "points": 1,
+          "answer": ["some", "certain", "most", "many"]
+        },
+        {
+          "number": 30,
+          "points": 1,
+          "answer": ["where"]
+        },
+        {
+          "number": 31,
+          "points": 1,
+          "answer": ["for"]
+        },
+        {
+          "number": 32,
+          "points": 1,
+          "answer": ["less"]
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,18 @@
+{
+  "levels": [
+    {
+      "id": "pet",
+      "name": "PET (B1 Preliminary)",
+      "description": "Cambridge B1 Preliminary English Test - Reading",
+      "grade": "适合初中 - 高中",
+      "tests": [
+        { "id": "cambridge-official-1", "title": "PET 官方样卷 1", "totalQuestions": 32, "source": "Cambridge English Official", "category": "official" },
+        { "id": "pet-practice-01", "title": "PET 阅读练习 1", "totalQuestions": 32, "source": "Cambridge B1 Reading: Ten Practice Tests", "category": "practice" },
+        { "id": "pet-practice-02", "title": "PET 阅读练习 2", "totalQuestions": 32, "source": "AI Generated", "category": "practice" },
+        { "id": "pet-practice-03", "title": "PET 阅读练习 3", "totalQuestions": 32, "source": "AI Generated", "category": "practice" },
+        { "id": "pet-practice-04", "title": "PET 阅读练习 4", "totalQuestions": 32, "source": "AI Generated", "category": "practice" },
+        { "id": "pet-practice-05", "title": "PET 阅读练习 5", "totalQuestions": 32, "source": "AI Generated", "category": "practice" }
+      ]
+    }
+  ]
+}

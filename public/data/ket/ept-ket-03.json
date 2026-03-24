@@ -1,0 +1,345 @@
+{
+  "examType": "KET",
+  "title": "KET Reading & Writing Test 03",
+  "source": "englishpracticetest.net",
+  "category": "practice",
+  "totalQuestions": 30,
+  "parts": [
+    {
+      "part": 1,
+      "name": "Reading Part 1",
+      "description": "Read the notices, signs or short messages. For each question, choose the correct answer.",
+      "type": "multiple_choice",
+      "questions": [
+        {
+          "number": 1,
+          "points": 1,
+          "text": "John,\nYou know I said that football practice will be on Wednesday ... Well, it isn't – it's on Thursday. Sorry! See you there.\nCheers, Adam",
+          "textType": "message",
+          "options": [
+            "A. to ask if John wants to play football",
+            "B. to tell John that Adam can't play football",
+            "C. to let John know about a change of plan"
+          ],
+          "answer": "C"
+        },
+        {
+          "number": 2,
+          "points": 1,
+          "text": "SCHOOL FESTIVAL OF BOOKS\nMeet Ralph Sparks.\nHear how he got ideas for his books, including History of Exploring the New World.\nThurs 9 a.m. Room D31.",
+          "textType": "notice",
+          "options": [
+            "A. buy books.",
+            "B. read about explorers.",
+            "C. come and listen to a writer."
+          ],
+          "answer": "C"
+        },
+        {
+          "number": 3,
+          "points": 1,
+          "text": "Science Museum trip next Friday\nTickets are available for $4 (for coach transport to the museum, and for museum entry).\nIf you're interested, see Mr Goss.",
+          "textType": "notice",
+          "options": [
+            "A. You can now buy tickets for the museum trip.",
+            "B. Tell Mr Goss how you want to travel to the museum.",
+            "C. Mr Goss will tell you if you need a ticket to the museum."
+          ],
+          "answer": "A"
+        },
+        {
+          "number": 4,
+          "points": 1,
+          "text": "From: Lizzie\nTo: Jenny\nJenny,\nI think I left my scarf in your flat after the party. Have you seen it? Otherwise I'll buy another one.\nLizzie",
+          "textType": "message",
+          "options": [
+            "A. to invite Jenny to a party",
+            "B. to tell Jenny about a shopping trip",
+            "C. to ask about something that she's lost"
+          ],
+          "answer": "C"
+        },
+        {
+          "number": 5,
+          "points": 1,
+          "text": "Hi Dave,\nI broke my tennis racket. Can I use yours? I'll give it back in maths tomorrow. By the way, wasn't the homework difficult?\nMike",
+          "textType": "message",
+          "options": [
+            "A. play tennis with Dave.",
+            "B. borrow something from Dave.",
+            "C. get help from Dave with the homework."
+          ],
+          "answer": "B"
+        },
+        {
+          "number": 6,
+          "points": 1,
+          "text": "Mr Gregson is away today.\nClass 3, at 9 a.m., please go and join Class 4 in Room 7C for geography. Mr Gregson will be back tomorrow.",
+          "textType": "notice",
+          "options": [
+            "A. There isn't a geography lesson tomorrow.",
+            "B. Class 4's lesson is happening at a different time today.",
+            "C. There will be more people in Room 7C than usual today."
+          ],
+          "answer": "C"
+        }
+      ]
+    },
+    {
+      "part": 2,
+      "name": "Reading Part 2",
+      "description": "Read the descriptions of three sports people. For each question, choose the correct answer.",
+      "type": "matching",
+      "texts": {
+        "A": {
+          "title": "Gaurika Singh, swimmer",
+          "content": "Gaurika is from Nepal, and she was the only under-14-year-old to take part in the 2016 Olympics in Rio de Janeiro. She swam the 100 metres backstroke for Nepal. Home for Gaurika these days is in the UK, and she trains at the Copthall Swimming Club, where the coaches have trained other world-class swimmers. Her father, Paras Singh, travels with her around the world when she goes to a competition."
+        },
+        "B": {
+          "title": "Tracy Austin, tennis player",
+          "content": "When Tracy Austin was given a car as a prize in a tennis competition in Stuttgart, Germany, she was 15 and still too young to drive, but she was already a professional tennis player. Then, at the age of 17, the American became the youngest ever sports person to earn a million dollars. Before long, she was the world's number one player. These days, she often appears on TV, talking about tennis matches at major competitions."
+        },
+        "C": {
+          "title": "Nadia Comăneci, gymnast",
+          "content": "When Romanian gymnast Nadia took part in the Olympic Games in Montreal, Canada, in 1976, she immediately became one of the most famous sports people in the world. She got perfect scores of 10.0 in seven different events. Everyone thought that nobody could do this and, in fact, 9.9 was the highest number that the score board could show. She did so well that she helped large numbers of people become interested in gymnastics."
+        }
+      },
+      "questions": [
+        {
+          "number": 7,
+          "points": 1,
+          "text": "Which sports person now works as a journalist?",
+          "answer": "B"
+        },
+        {
+          "number": 8,
+          "points": 1,
+          "text": "Which sports person made her sport more popular?",
+          "answer": "C"
+        },
+        {
+          "number": 9,
+          "points": 1,
+          "text": "Which sports person won something that she couldn't use?",
+          "answer": "B"
+        },
+        {
+          "number": 10,
+          "points": 1,
+          "text": "Which sports person became rich when she was young?",
+          "answer": "B"
+        },
+        {
+          "number": 11,
+          "points": 1,
+          "text": "Which sports person was the youngest person in a competition?",
+          "answer": "A"
+        },
+        {
+          "number": 12,
+          "points": 1,
+          "text": "Which sports person did something that people believed was not possible?",
+          "answer": "C"
+        },
+        {
+          "number": 13,
+          "points": 1,
+          "text": "Which sports person was born in one country and now lives in another?",
+          "answer": "A"
+        }
+      ]
+    },
+    {
+      "part": 3,
+      "name": "Reading Part 3",
+      "type": "multiple_choice",
+      "description": "Read the text and answer the questions.",
+      "passage": "Lots of people become good at something when they are young. And quite a lot of children know what career they want to follow when they are older. But not everyone opens their own company. This is exactly what Isabella Rose Taylor has done. She started designing clothes when she was eight years old.\n\nAt the time, she was a keen painter. She used a lot of reds, blues and yellows, and these colours helped her to think of new clothes which she could make.\n\nWhen she started designing and making clothes, Isabella just made clothes for fun. But people liked her designs, so soon she started selling them online. Now she has a business and takes part in fashion shows. She runs her business from the family home, where she has made one room into an office, and another into a studio where the clothes are made.\n\nIsabella has also found time to finish school and get a college degree. She's intelligent, and she has thousands of followers online who love her stuff. It's brilliant that she already has people who work for her. Above all, she really knows what is needed to succeed in the world of fashion. And I am sure that she will.\n\n'The way I see it is I get to follow my dream and be a teenager at the same time. I think I'm pretty lucky,' she says.",
+      "questions": [
+        {
+          "number": 14,
+          "points": 1,
+          "text": "What does the writer say is unusual about Isabella Rose Taylor?",
+          "options": [
+            "A. She planned her future career when she was very young.",
+            "B. She started her own business when she was very young.",
+            "C. She got interested in fashion when she was very young."
+          ],
+          "answer": "B"
+        },
+        {
+          "number": 15,
+          "points": 1,
+          "text": "What does Isabella say about painting and making clothes?",
+          "options": [
+            "A. It is important to paint good pictures of clothes.",
+            "B. The colours in her paintings gave her ideas for clothes to make.",
+            "C. She uses paint to put her favourite colours on the clothes she makes."
+          ],
+          "answer": "B"
+        },
+        {
+          "number": 16,
+          "points": 1,
+          "text": "What do we learn about Isabella's home?",
+          "options": [
+            "A. Everything for her business is done in the same room at home.",
+            "B. Her home is too small, so she's looking for another one.",
+            "C. She's made changes to her home so that she can work there."
+          ],
+          "answer": "C"
+        },
+        {
+          "number": 17,
+          "points": 1,
+          "text": "Why does the writer think that Isabella will do well in the future?",
+          "options": [
+            "A. She is already very popular online.",
+            "B. She understands the fashion business.",
+            "C. She has brilliant people who work for her."
+          ],
+          "answer": "B"
+        },
+        {
+          "number": 18,
+          "points": 1,
+          "text": "What is the best title for the article?",
+          "options": [
+            "A. The girl who can't wait to start working in fashion soon",
+            "B. The problem with working and studying",
+            "C. A hobby that is becoming a career"
+          ],
+          "answer": "C"
+        }
+      ]
+    },
+    {
+      "part": 4,
+      "name": "Reading Part 4",
+      "type": "cloze_choice",
+      "description": "Read the text. Choose the correct word for each space.",
+      "passage": "Ferry to School\n\nMost pupils go to school each day on foot or by car, but Jordan Basford is different. He lives on the Scottish island of Egilsay. There, the school had to (19)____ because there weren't any other pupils. The nearest school is in Rousay, across the sea. His family have a boat, but it is small, and they can (20)____ use it in good weather. A much larger boat is (21)____ in bad weather. So every day, Jordan has to (22)____ the ferry across the sea to go to school. He usually comes back home afterwards, but sometimes he phones home to say that he's (23)____ the night at a friend's house instead. 'I know I have to travel a long (24)____ to school each day,' he says. 'But I don't mind.'",
+      "questions": [
+        {
+          "number": 19,
+          "points": 1,
+          "text": "(19)",
+          "options": [
+            "A. close",
+            "B. complete",
+            "C. finish"
+          ],
+          "answer": "A"
+        },
+        {
+          "number": 20,
+          "points": 1,
+          "text": "(20)",
+          "options": [
+            "A. almost",
+            "B. only",
+            "C. nearly"
+          ],
+          "answer": "B"
+        },
+        {
+          "number": 21,
+          "points": 1,
+          "text": "(21)",
+          "options": [
+            "A. needed",
+            "B. liked",
+            "C. had"
+          ],
+          "answer": "A"
+        },
+        {
+          "number": 22,
+          "points": 1,
+          "text": "(22)",
+          "options": [
+            "A. travel",
+            "B. make",
+            "C. catch"
+          ],
+          "answer": "C"
+        },
+        {
+          "number": 23,
+          "points": 1,
+          "text": "(23)",
+          "options": [
+            "A. resting",
+            "B. staying",
+            "C. sleeping"
+          ],
+          "answer": "B"
+        },
+        {
+          "number": 24,
+          "points": 1,
+          "text": "(24)",
+          "options": [
+            "A. way",
+            "B. transport",
+            "C. mile"
+          ],
+          "answer": "A"
+        }
+      ]
+    },
+    {
+      "part": 5,
+      "name": "Reading & Writing Part 5",
+      "type": "fill_blank",
+      "description": "Read the text. Write ONE word for each space.",
+      "passage": "From: Jake\nTo:\n\nHi guys!\n\nThis is (0) the best holiday ever! Plakias is such (25)____ beautiful place. The meals in the hotel are fantastic. For breakfast, you can have as (26)____ as you want.\n\nI usually have yoghurt with lots of fruit. There's lots for everyone in my family (27)____ do, so we're all enjoying it. Tomorrow I'm going to try windsurfing (28)____ the first time. I'm really excited because I (29)____ never done it before, but Dad says it's easy. In fact, I love it here so much that I (30)____ like to come back next year!\n\nSee you soon.\nJake",
+      "questions": [
+        {
+          "number": 25,
+          "points": 1,
+          "answer": [
+            "a"
+          ]
+        },
+        {
+          "number": 26,
+          "points": 1,
+          "answer": [
+            "much"
+          ]
+        },
+        {
+          "number": 27,
+          "points": 1,
+          "answer": [
+            "to"
+          ]
+        },
+        {
+          "number": 28,
+          "points": 1,
+          "answer": [
+            "for"
+          ]
+        },
+        {
+          "number": 29,
+          "points": 1,
+          "answer": [
+            "have",
+            "'ve"
+          ]
+        },
+        {
+          "number": 30,
+          "points": 1,
+          "answer": [
+            "would",
+            "'d"
+          ]
+        }
+      ]
+    }
+  ]
+}

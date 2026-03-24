@@ -1,0 +1,343 @@
+{
+  "examType": "KET",
+  "title": "KET Reading & Writing Test 01",
+  "source": "englishpracticetest.net",
+  "category": "practice",
+  "totalQuestions": 30,
+  "parts": [
+    {
+      "part": 1,
+      "name": "Reading Part 1",
+      "description": "Read the notices, signs or short messages. For each question, choose the correct answer.",
+      "type": "multiple_choice",
+      "questions": [
+        {
+          "number": 1,
+          "points": 1,
+          "text": "Please note: this afternoon's football class will be tomorrow instead, as Mr Hall is away today.",
+          "textType": "notice",
+          "options": [
+            "A. There is no football class today.",
+            "B. Mr Hall can't come to the football class tomorrow.",
+            "C. You can choose to go to the football class today or tomorrow."
+          ],
+          "answer": "A"
+        },
+        {
+          "number": 2,
+          "points": 1,
+          "text": "Hi Jane,\nHave you finished with that book I lent you? It's just that my brother needs it for a school project.\nThanks,\nLouise",
+          "textType": "message",
+          "options": [
+            "A. Louise is offering to lend Jane a book.",
+            "B. Louise wants her book back from Jane.",
+            "C. Louise's brother has borrowed a book from Jane."
+          ],
+          "answer": "B"
+        },
+        {
+          "number": 3,
+          "points": 1,
+          "text": "Picnic area\nNo ball games here – please use the other side of the park.",
+          "textType": "notice",
+          "options": [
+            "A. You can buy food somewhere else in the park.",
+            "B. Please don't eat while you are playing sport here.",
+            "C. This is a place for eating and you can't play football here."
+          ],
+          "answer": "C"
+        },
+        {
+          "number": 4,
+          "points": 1,
+          "text": "Museum open from 12.\nChildren must be with an adult.",
+          "textType": "notice",
+          "options": [
+            "A. Adults can take children to the museum in the morning.",
+            "B. Adults with children over 12 will enjoy the museum.",
+            "C. Children can visit the museum if they are with an adult."
+          ],
+          "answer": "C"
+        },
+        {
+          "number": 5,
+          "points": 1,
+          "text": "From: Mrs Monmouth, Head Teacher\nTo: All Pupils and Parents\nHello,\nThis week, please don't use the car to get to school. Coming on foot is healthy and doesn't take much time.\nThanks\nMrs Monmouth",
+          "textType": "message",
+          "options": [
+            "A. to ask pupils to walk to school",
+            "B. to tell pupils to get to school on time",
+            "C. to explain about a health problem at school"
+          ],
+          "answer": "A"
+        },
+        {
+          "number": 6,
+          "points": 1,
+          "text": "Pedro's Pizza Bar\nBuy two pizzas at the same time, and we'll give you a third one for free! This offer is Mon-Fri only.",
+          "textType": "notice",
+          "options": [
+            "A. Pedro's Pizza Bar isn't open at weekends",
+            "B. The third time you visit, you get a free pizza.",
+            "C. Three pizzas cost the same as two."
+          ],
+          "answer": "C"
+        }
+      ]
+    },
+    {
+      "part": 2,
+      "name": "Reading Part 2",
+      "description": "Read the descriptions of three museums. For each question, choose the correct answer.",
+      "type": "matching",
+      "texts": {
+        "A": {
+          "title": "Eureka!",
+          "content": "Eureka! is a complete hands-on experience, which means that visitors can actually pick up any object in the museum. It's a great way for young visitors to learn about the world, the body, how things work and move. And when you buy an entry ticket, it allows you to come back as many times as you want for a whole year for no extra cost. As Eureka! is right next to Halifax train station, it's very easy to get to from all over the country."
+        },
+        "B": {
+          "title": "Museum of Museums",
+          "content": "Every time you visit the Museum of Museums, you'll be able to see something different. And that's because the things you see there are actually lent by other museums around the country. The museum always has lots of different vehicles, from ice-cream vans and old motorbikes to the different kinds of public transport people used to get to work many years ago. You can find out about all this and lots more."
+        },
+        "C": {
+          "title": "Cinema Museum",
+          "content": "Ronald Grant, who opened the Cinema Museum in the 1960s, travelled round the country and bought things from cinemas which were closing down. This included old film posters and wooden cinema seating. At the museum, you can now see these and much more, including the uniforms that cinema staff once had to wear. Please let us know by phone or email if you'd like to come. We'll be happy to see you, but we need to arrange a guide, as it's only possible to visit the museum on an organised tour."
+        }
+      },
+      "questions": [
+        {
+          "number": 7,
+          "points": 1,
+          "text": "Which museum has an exhibition of clothes?",
+          "answer": "C"
+        },
+        {
+          "number": 8,
+          "points": 1,
+          "text": "Which museum is full of things which visitors can touch?",
+          "answer": "A"
+        },
+        {
+          "number": 9,
+          "points": 1,
+          "text": "Which museum is a good place to learn about how people travelled in the past?",
+          "answer": "B"
+        },
+        {
+          "number": 10,
+          "points": 1,
+          "text": "Which museum can you visit again for free after you pay once?",
+          "answer": "A"
+        },
+        {
+          "number": 11,
+          "points": 1,
+          "text": "Which museum do you need to contact before you visit?",
+          "answer": "C"
+        },
+        {
+          "number": 12,
+          "points": 1,
+          "text": "Which museum shows things that were borrowed from other places?",
+          "answer": "B"
+        },
+        {
+          "number": 13,
+          "points": 1,
+          "text": "Which museum has some furniture which wasn't needed any more?",
+          "answer": "C"
+        }
+      ]
+    },
+    {
+      "part": 3,
+      "name": "Reading Part 3",
+      "type": "multiple_choice",
+      "description": "Read the text and answer the questions.",
+      "passage": "Will's blog\n\nOne day my dad said, 'Why don't we have a street party?' This means that the street is closed so cars can't use it, and people put tables and chairs out in the street, then have a party! Dad said there was one in 1977 and he still remembers it well. Everyone loved it! I couldn't believe that since 1977 they never had another one. If it was so good, why not do it again?\n\nWe started to organise it, together with some other people. I helped to make the web page, so everyone on the street knew about the party and could post their old photos from the party in 1977. There were some pictures of my dad when he was a kid, together with his friends, who have moved away from the street now. It was interesting to see that the buildings on the street haven't changed at all!\n\nMy mum was a bit worried about the party. 'But a lot of people on the street don't really know each other', she said. 'What if they don't have anything to talk about?' I just said, 'Relax, Mum. It'll be great.'\n\nSo, what was the party like? It was fantastic! My friends and I really liked speaking to an old lady called Louisa. She's 89 and was telling us about when she and her friends were our age. So now I always chat to her when I see her on the street. I didn't know who she was before, so I'm glad we had the party.",
+      "questions": [
+        {
+          "number": 14,
+          "points": 1,
+          "text": "Why was Will surprised?",
+          "options": [
+            "A. His father wanted to have a street party.",
+            "B. There hasn't been a street party for a long time.",
+            "C. Many people remembered the last street party."
+          ],
+          "answer": "B"
+        },
+        {
+          "number": 15,
+          "points": 1,
+          "text": "What did the photos from 1977 show?",
+          "options": [
+            "A. The street still looks the same now.",
+            "B. There are more children living in the street now.",
+            "C. The same people still live on the street now."
+          ],
+          "answer": "A"
+        },
+        {
+          "number": 16,
+          "points": 1,
+          "text": "Why was Will's mother worried?",
+          "options": [
+            "A. She thought that the party was too expensive.",
+            "B. She thought that people might not come to the party.",
+            "C. She thought that the guests might not talk to each other."
+          ],
+          "answer": "C"
+        },
+        {
+          "number": 17,
+          "points": 1,
+          "text": "Will and his friends enjoyed",
+          "options": [
+            "A. hearing Louisa's stories.",
+            "B. meeting Louisa's friends.",
+            "C. telling Louisa about their lives."
+          ],
+          "answer": "A"
+        },
+        {
+          "number": 18,
+          "points": 1,
+          "text": "What is the best title for the article?",
+          "options": [
+            "A. Why I love street parties",
+            "B. The street party we had",
+            "C. How to have a street party"
+          ],
+          "answer": "B"
+        }
+      ]
+    },
+    {
+      "part": 4,
+      "name": "Reading Part 4",
+      "type": "cloze_choice",
+      "description": "Read the text. Choose the correct word for each space.",
+      "passage": "Red pandas\n\nRed pandas live in Nepal, Northern Myanmar, India and Bhutan, as (19)____ as in China. They (20)____ a lot of their time in trees and are very (21)____ at climbing. They are more active during the night than the day, and they usually (22)____ for food in the evening and early in the morning. Their favourite food is bamboo. In fact, a female red panda can eat 20,000 bamboo leaves in a day! But they also eat fruit, grass, eggs, insects and (23)____ small birds and animals. Scientists believe that the number of red pandas in the world is (24)____ because the forests where they live are getting smaller. But much is being done in countries around the world to help this amazing animal.",
+      "questions": [
+        {
+          "number": 19,
+          "points": 1,
+          "text": "(19)",
+          "options": [
+            "A. soon",
+            "B. much",
+            "C. well"
+          ],
+          "answer": "C"
+        },
+        {
+          "number": 20,
+          "points": 1,
+          "text": "(20)",
+          "options": [
+            "A. spend",
+            "B. live",
+            "C. take"
+          ],
+          "answer": "A"
+        },
+        {
+          "number": 21,
+          "points": 1,
+          "text": "(21)",
+          "options": [
+            "A. nice",
+            "B. great",
+            "C. good"
+          ],
+          "answer": "C"
+        },
+        {
+          "number": 22,
+          "points": 1,
+          "text": "(22)",
+          "options": [
+            "A. look",
+            "B. see",
+            "C. find"
+          ],
+          "answer": "A"
+        },
+        {
+          "number": 23,
+          "points": 1,
+          "text": "(23)",
+          "options": [
+            "A. even",
+            "B. quite",
+            "C. still"
+          ],
+          "answer": "A"
+        },
+        {
+          "number": 24,
+          "points": 1,
+          "text": "(24)",
+          "options": [
+            "A. little",
+            "B. low",
+            "C. short"
+          ],
+          "answer": "B"
+        }
+      ]
+    },
+    {
+      "part": 5,
+      "name": "Reading & Writing Part 5",
+      "type": "fill_blank",
+      "description": "Read the text. Write ONE word for each space.",
+      "passage": "From: Giles\nTo: Aunt Nel\n\nDear Aunt Nel,\n\nThank you very (0) much for the book you sent me. It was very kind (25)____ you. Actually, History of Space Travel sounds like (26)____ brilliant title. I'm really interested (27)____ that kind of thing – exploring space and learning about the moon. I'll start it after I finish the one I'm reading now, (28)____ is about how cars are made.\n\nThe holidays are nearly finished now. I go back (29)____ school next week. Then I've only got two more years of school, so I need to decide (30)____ to do next!\n\nThanks again for the present.\n\nBest wishes,\nGiles",
+      "questions": [
+        {
+          "number": 25,
+          "points": 1,
+          "answer": [
+            "of"
+          ]
+        },
+        {
+          "number": 26,
+          "points": 1,
+          "answer": [
+            "a"
+          ]
+        },
+        {
+          "number": 27,
+          "points": 1,
+          "answer": [
+            "in"
+          ]
+        },
+        {
+          "number": 28,
+          "points": 1,
+          "answer": [
+            "which"
+          ]
+        },
+        {
+          "number": 29,
+          "points": 1,
+          "answer": [
+            "to"
+          ]
+        },
+        {
+          "number": 30,
+          "points": 1,
+          "answer": [
+            "what"
+          ]
+        }
+      ]
+    }
+  ]
+}

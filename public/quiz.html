@@ -200,30 +200,37 @@
     let timerInterval = null;
     let submitted = false;
 
+    // Level detection
+    const params = new URLSearchParams(location.search);
+    const currentLevel = params.get('level') || 'ket';
+
     // Load test list
     async function loadTestList() {
-        const params = new URLSearchParams(location.search);
         const testId = params.get('test');
         if (testId) { loadTest(testId); return; }
 
         try {
-            const r = await fetch('/data/ket/index.json');
+            const r = await fetch(`/data/${currentLevel}/index.json`);
             const data = await r.json();
-            const level = data.levels.find(l => l.id === 'ket');
+            const level = data.levels.find(l => l.id === currentLevel);
             if (!level) return;
+            const badgeLabel = { official: '官方', past_paper: '真题', practice: '练习' };
             document.getElementById('testGrid').innerHTML = level.tests.map(t =>
-                `<div class="test-option" onclick="loadTest('${t.id}')">
+                `<div class="test-option" onclick="loadTest('${t.id}', '${currentLevel}')">
                     <div class="test-name">${t.title}</div>
                     <div class="test-info">${t.totalQuestions} 题 · Reading & Writing</div>
+                    ${t.category ? `<div style="margin-top:6px;"><span style="display:inline-block;font-size:0.7rem;padding:2px 8px;border-radius:8px;${t.category === 'official' ? 'background:#fef3c7;color:#92400e' : t.category === 'past_paper' ? 'background:#dbeafe;color:#1e40af' : 'background:#f3f4f6;color:#6b7280'}">${badgeLabel[t.category] || t.category}</span></div>` : ''}
+                    ${t.source ? `<div style="font-size:0.7rem;color:#9ca3af;margin-top:4px;">${t.source}</div>` : ''}
                 </div>`
             ).join('');
         } catch (e) { document.getElementById('testGrid').textContent = '加载失败'; }
     }
 
     // Load a specific test
-    async function loadTest(testId) {
+    async function loadTest(testId, level) {
+        level = level || currentLevel;
         try {
-            const r = await fetch(`/data/ket/${testId}.json`);
+            const r = await fetch(`/data/${level}/${testId}.json`);
             testData = await r.json();
             document.getElementById('topTitle').textContent = testData.title;
 
@@ -289,6 +296,16 @@
             html += `<div class="cloze-passage">${part.passage}</div>`;
         }
 
+        // Gapped text: show passage and sentence options
+        if (part.type === 'gapped_text') {
+            if (part.passage) html += `<div class="q-text passage">${part.passage}</div>`;
+            if (part.sentenceOptions) {
+                html += '<div class="matching-texts"><div class="matching-text"><div class="label">Sentences</div><div class="content">';
+                part.sentenceOptions.forEach(s => { html += `<div style="margin-bottom:4px;"><strong>${s.letter}.</strong> ${s.text}</div>`; });
+                html += '</div></div></div>';
+            }
+        }
+
         // Render questions
         part.questions.forEach(q => {
             html += renderQuestion(q, part);
@@ -319,9 +336,22 @@
             html += `<div class="q-text ${textClass}">${q.text}</div>`;
         }
 
-        // For matching questions, show the question text
+        // For matching questions, show the question text + A/B/C options from texts
         if (part.type === 'matching' && q.text) {
             html += `<div style="margin-bottom:12px;font-size:0.95rem;">${q.text}</div>`;
+            // Auto-generate options from part.texts keys
+            if (!q.options && part.texts) {
+                const keys = Object.keys(part.texts);
+                html += '<div class="options">';
+                keys.forEach(letter => {
+                    const selected = userAnswers[q.number] === letter;
+                    html += `<div class="option ${selected ? 'selected' : ''}" onclick="selectAnswer(${q.number}, '${letter}', this)">
+                        <span class="option-letter">${letter}</span>
+                        <span>${part.texts[letter].title}</span>
+                    </div>`;
+                });
+                html += '</div>';
+            }
         }
 
         // Options (for multiple_choice, matching, cloze_choice)
@@ -333,6 +363,20 @@
                 html += `<div class="option ${selected ? 'selected' : ''}" onclick="selectAnswer(${q.number}, '${letter}', this)">
                     <span class="option-letter">${letter}</span>
                     <span>${opt.replace(/^[A-C]\.\s*/, '')}</span>
+                </div>`;
+            });
+            html += '</div>';
+        }
+
+        // Gapped text: show sentence options as clickable
+        if (part.type === 'gapped_text' && part.sentenceOptions) {
+            html += `<div style="margin-bottom:12px;font-size:0.9rem;">选择要插入 ${q.text} 位置的句子：</div>`;
+            html += '<div class="options">';
+            part.sentenceOptions.forEach(s => {
+                const selected = userAnswers[q.number] === s.letter;
+                html += `<div class="option ${selected ? 'selected' : ''}" onclick="selectAnswer(${q.number}, '${s.letter}', this)">
+                    <span class="option-letter">${s.letter}</span>
+                    <span>${s.text}</span>
                 </div>`;
             });
             html += '</div>';
@@ -424,7 +468,7 @@
                 await fetch('/api/quiz/submit', {
                     method: 'POST',
                     headers: { 'Authorization': `Bearer ${token}`, 'Content-Type': 'application/json' },
-                    body: JSON.stringify({ level: 'KET', year: 2024, answers, duration, score })
+                    body: JSON.stringify({ level: currentLevel.toUpperCase(), year: 2024, answers, duration, score })
                 });
             }
         } catch (e) { console.error('Upload failed:', e); }
@@ -497,6 +541,19 @@
 
                 if (q.text && part.type !== 'cloze_choice') {
                     html += `<div class="q-text ${q.textType || ''}">${q.text}</div>`;
+                }
+
+                // Matching review: show A/B/C options
+                if (part.type === 'matching' && !q.options && part.texts) {
+                    const keys = Object.keys(part.texts);
+                    html += '<div class="options">';
+                    keys.forEach(letter => {
+                        let cls = '';
+                        if (letter === correctAns.toUpperCase()) cls = 'correct-answer';
+                        else if (letter === userAns.toUpperCase() && !isRight) cls = 'wrong-answer';
+                        html += `<div class="option ${cls}"><span class="option-letter">${letter}</span><span>${part.texts[letter].title}</span></div>`;
+                    });
+                    html += '</div>';
                 }
 
                 if (q.options) {

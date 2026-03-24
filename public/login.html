@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>KET Practice · 登录</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Noto+Sans+SC:wght@400;500;600&display=swap" rel="stylesheet">
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        :root {
+            --bg: #f8f9fa; --card: #ffffff; --border: #e2e8f0; --border-hover: #94a3b8;
+            --primary: #1a73e8; --primary-light: #e8f0fe; --text: #202124; --text-light: #5f6368;
+            --success: #34a853; --error: #ea4335;
+        }
+        body {
+            font-family: 'Noto Sans SC', 'Inter', sans-serif;
+            background: var(--bg); min-height: 100vh; color: var(--text);
+            display: flex; align-items: center; justify-content: center; padding: 20px;
+        }
+        .auth-container { width: 100%; max-width: 400px; }
+        .auth-header { text-align: center; margin-bottom: 36px; }
+        .auth-header .icon { font-size: 2.4rem; margin-bottom: 8px; }
+        .auth-header h1 { font-family: 'Inter', sans-serif; font-size: 1.8rem; font-weight: 700; margin-bottom: 4px; color: var(--primary); }
+        .auth-header .sub { color: var(--text-light); font-size: 0.85rem; }
+        .auth-card {
+            background: var(--card); border: 1px solid var(--border); border-radius: 16px;
+            padding: 32px 28px; position: relative;
+        }
+        .auth-card::before {
+            content: ''; position: absolute; top: 0; left: 0; right: 0; height: 3px;
+            background: var(--primary-light); border-radius: 16px 16px 0 0;
+        }
+        .tabs {
+            display: flex; border-bottom: 1px solid var(--border); margin: -32px -28px 24px; padding: 0 28px;
+        }
+        .tab {
+            flex: 1; text-align: center; padding: 14px 0; font-size: 0.9rem;
+            color: var(--text-light); cursor: pointer; border-bottom: 2px solid transparent; transition: all 0.2s;
+        }
+        .tab:hover { color: var(--text); }
+        .tab.active { color: var(--primary); border-bottom-color: var(--primary); font-weight: 600; }
+        .form-group { margin-bottom: 18px; }
+        .form-label { display: block; font-size: 0.8rem; color: var(--text-light); text-transform: uppercase; letter-spacing: 1px; margin-bottom: 6px; }
+        .form-input {
+            width: 100%; padding: 12px 14px; border: 1px solid var(--border); border-radius: 10px;
+            font-size: 0.95rem; font-family: inherit; color: var(--text); background: var(--bg); transition: border-color 0.2s; outline: none;
+        }
+        .form-input:focus { border-color: var(--primary); }
+        .form-input::placeholder { color: #9ca3af; }
+        .submit-btn {
+            width: 100%; padding: 13px; border: none; border-radius: 20px;
+            background: var(--primary); color: white; font-size: 0.95rem;
+            font-family: inherit; font-weight: 500; cursor: pointer; transition: background 0.2s; margin-top: 4px;
+        }
+        .submit-btn:hover { background: #1557b0; }
+        .submit-btn:disabled { background: #94b8e8; cursor: not-allowed; }
+        .message { margin-top: 14px; padding: 10px 14px; border-radius: 8px; font-size: 0.85rem; display: none; }
+        .message.show { display: block; }
+        .message.error { background: #fce8e6; color: #c5221f; }
+        .message.success { background: #e6f4ea; color: #137333; }
+        .auth-footer { text-align: center; margin-top: 20px; }
+        .auth-footer a {
+            color: var(--text-light); text-decoration: none; font-size: 0.85rem;
+            padding: 6px 16px; border: 1px solid var(--border); border-radius: 14px; transition: all 0.2s;
+        }
+        .auth-footer a:hover { color: var(--primary); border-color: var(--primary); }
+        .invite-field { display: none; }
+        .invite-toggle { font-size: 0.8rem; color: var(--primary); cursor: pointer; text-decoration: underline; margin-bottom: 12px; display: inline-block; }
+        #loginForm, #registerForm { display: none; }
+        #loginForm.active, #registerForm.active { display: block; }
+    </style>
+</head>
+<body>
+<div class="auth-container">
+    <div class="auth-header">
+        <div class="icon">📘</div>
+        <h1>KET Practice</h1>
+        <p class="sub">剑桥 A2 Key 英语练习平台</p>
+    </div>
+    <div class="auth-card">
+        <div class="tabs">
+            <div class="tab active" onclick="showTab('login')">登录</div>
+            <div class="tab" onclick="showTab('register')">注册</div>
+        </div>
+        <form id="loginForm" class="active" onsubmit="handleLogin(event)">
+            <div class="form-group">
+                <label class="form-label">用户名</label>
+                <input class="form-input" name="username" placeholder="请输入用户名" required>
+            </div>
+            <div class="form-group">
+                <label class="form-label">密码</label>
+                <input class="form-input" name="password" type="password" placeholder="请输入密码" required>
+            </div>
+            <button class="submit-btn" type="submit">登录</button>
+            <div class="message" id="loginMsg"></div>
+        </form>
+        <form id="registerForm" onsubmit="handleRegister(event)">
+            <div class="form-group">
+                <label class="form-label">用户名</label>
+                <input class="form-input" name="username" placeholder="3-20 字符" required>
+            </div>
+            <div class="form-group">
+                <label class="form-label">密码</label>
+                <input class="form-input" name="password" type="password" placeholder="至少 6 位" required>
+            </div>
+            <div class="form-group">
+                <label class="form-label">手机号</label>
+                <input class="form-input" name="phone" placeholder="选填">
+            </div>
+            <span class="invite-toggle" onclick="toggleInvite()">有邀请码？</span>
+            <div class="form-group invite-field" id="inviteField">
+                <label class="form-label">邀请码</label>
+                <input class="form-input" name="inviteCode" placeholder="有邀请码可免审核">
+            </div>
+            <button class="submit-btn" type="submit">注册</button>
+            <div class="message" id="registerMsg"></div>
+        </form>
+    </div>
+    <div class="auth-footer">
+        <a href="index.html">← 返回首页</a>
+    </div>
+</div>
+<script>
+    const token = localStorage.getItem('token');
+    if (token) {
+        fetch('/api/auth/me', { headers: { 'Authorization': `Bearer ${token}` } })
+            .then(r => r.ok ? window.location.href = 'index.html' : localStorage.removeItem('token'))
+            .catch(() => {});
+    }
+    function showTab(tab) {
+        document.querySelectorAll('.tab').forEach((t, i) =>
+            t.classList.toggle('active', (tab === 'login' ? i === 0 : i === 1)));
+        document.getElementById('loginForm').classList.toggle('active', tab === 'login');
+        document.getElementById('registerForm').classList.toggle('active', tab === 'register');
+    }
+    function toggleInvite() {
+        const f = document.getElementById('inviteField');
+        f.style.display = f.style.display === 'block' ? 'none' : 'block';
+    }
+    function showMsg(id, text, type) {
+        const el = document.getElementById(id);
+        el.textContent = text;
+        el.className = `message show ${type}`;
+    }
+    async function handleLogin(e) {
+        e.preventDefault();
+        const form = e.target;
+        try {
+            const r = await fetch('/api/auth/login', {
+                method: 'POST',
+                headers: { 'Content-Type': 'application/json' },
+                body: JSON.stringify({ username: form.username.value, password: form.password.value }),
+            });
+            const res = await r.json();
+            if (r.ok) {
+                localStorage.setItem('token', res.token);
+                localStorage.setItem('user', JSON.stringify(res.user));
+                window.location.href = 'index.html';
+            } else {
+                showMsg('loginMsg', res.error, 'error');
+            }
+        } catch { showMsg('loginMsg', '网络错误', 'error'); }
+    }
+    async function handleRegister(e) {
+        e.preventDefault();
+        const form = e.target;
+        try {
+            const r = await fetch('/api/auth/register', {
+                method: 'POST',
+                headers: { 'Content-Type': 'application/json' },
+                body: JSON.stringify({
+                    username: form.username.value, password: form.password.value,
+                    phone: form.phone.value || undefined, inviteCode: form.inviteCode?.value || undefined,
+                }),
+            });
+            const res = await r.json();
+            if (r.ok) {
+                showMsg('registerMsg', res.message, 'success');
+                if (res.message.includes('直接登录')) setTimeout(() => showTab('login'), 1500);
+            } else { showMsg('registerMsg', res.error, 'error'); }
+        } catch { showMsg('registerMsg', '网络错误', 'error'); }
+    }
+</script>
+</body>
+</html>

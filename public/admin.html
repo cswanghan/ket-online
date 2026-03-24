@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>KET Practice · 管理</title>
+    <script src="auth-guard.js"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Noto+Sans+SC:wght@400;500;600&display=swap" rel="stylesheet">
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        :root {
+            --bg: #f8f9fa; --card: #ffffff; --border: #e2e8f0; --primary: #1a73e8;
+            --primary-light: #e8f0fe; --text: #202124; --text-light: #5f6368;
+            --success: #34a853; --error: #ea4335;
+        }
+        body { font-family: 'Noto Sans SC', 'Inter', sans-serif; background: var(--bg); color: var(--text); }
+        .page { max-width: 800px; margin: 0 auto; padding: 40px 24px; }
+        h1 { font-family: 'Inter', sans-serif; font-size: 1.8rem; margin-bottom: 6px; color: var(--primary); }
+        .sub { color: var(--text-light); font-size: 0.85rem; margin-bottom: 32px; }
+        .nav-row { display: flex; gap: 12px; margin-bottom: 28px; }
+        .nav-link { color: var(--text-light); text-decoration: none; font-size: 0.85rem; padding: 6px 16px; border: 1px solid var(--border); border-radius: 14px; }
+        .nav-link:hover { color: var(--primary); border-color: var(--primary); }
+        .section { margin-bottom: 36px; }
+        .section-title { font-size: 0.8rem; color: var(--text-light); text-transform: uppercase; letter-spacing: 2px; margin-bottom: 14px; padding-bottom: 8px; border-bottom: 1px solid var(--border); }
+        .user-row { background: var(--card); border: 1px solid var(--border); border-radius: 10px; padding: 14px 18px; margin-bottom: 10px; display: flex; justify-content: space-between; align-items: center; }
+        .user-info .name { font-weight: 600; }
+        .user-info .meta { font-size: 0.8rem; color: var(--text-light); margin-top: 2px; }
+        .user-actions { display: flex; gap: 8px; }
+        .action-btn { padding: 6px 14px; border: none; border-radius: 14px; font-size: 0.8rem; cursor: pointer; font-family: inherit; transition: all 0.15s; }
+        .btn-approve { background: #e6f4ea; color: #137333; }
+        .btn-approve:hover { background: #ceead6; }
+        .btn-reject { background: #fce8e6; color: #c5221f; }
+        .btn-reject:hover { background: #f5d0cc; }
+        .invite-form { display: flex; gap: 10px; align-items: center; margin-bottom: 16px; }
+        .invite-form input { padding: 8px 12px; border: 1px solid var(--border); border-radius: 8px; font-family: inherit; font-size: 0.85rem; width: 80px; background: var(--bg); }
+        .invite-form button { padding: 8px 16px; background: var(--primary); color: white; border: none; border-radius: 14px; font-size: 0.85rem; cursor: pointer; font-family: inherit; }
+        .code-row { background: var(--card); border: 1px solid var(--border); border-radius: 8px; padding: 10px 14px; margin-bottom: 8px; font-size: 0.85rem; display: flex; justify-content: space-between; align-items: center; }
+        .code-val { font-family: monospace; font-weight: 600; color: var(--primary); letter-spacing: 1px; }
+        .code-meta { color: var(--text-light); font-size: 0.8rem; }
+        .empty { color: var(--text-light); font-size: 0.85rem; padding: 20px; text-align: center; }
+        .status-tabs { display: flex; gap: 0; margin-bottom: 16px; border-bottom: 1px solid var(--border); }
+        .st-tab { padding: 8px 20px; font-size: 0.85rem; color: var(--text-light); cursor: pointer; border-bottom: 2px solid transparent; }
+        .st-tab.active { color: var(--primary); border-bottom-color: var(--primary); font-weight: 600; }
+        .activity-card { background: var(--card); border: 1px solid var(--border); border-radius: 10px; padding: 16px 18px; margin-bottom: 10px; }
+        .activity-card .card-header { display: flex; justify-content: space-between; align-items: center; margin-bottom: 8px; }
+        .activity-card .name { font-weight: 600; }
+        .activity-card .role-badge { font-size: 0.75rem; padding: 2px 10px; border-radius: 10px; background: var(--primary-light); color: var(--primary); }
+        .activity-card .stats { display: flex; gap: 16px; flex-wrap: wrap; font-size: 0.82rem; color: var(--text-light); }
+        .activity-card .stat-val { font-weight: 600; color: var(--text); }
+        .activity-card .no-quiz { font-size: 0.82rem; color: var(--text-light); font-style: italic; }
+    </style>
+</head>
+<body>
+<div class="page">
+    <h1>管理后台</h1>
+    <p class="sub" id="welcomeText">管理员</p>
+    <div class="nav-row">
+        <a href="index.html" class="nav-link">← 首页</a>
+        <a href="javascript:logout()" class="nav-link">退出登录</a>
+    </div>
+    <div class="section" id="adminSection" style="display:none;">
+        <div class="section-title">用户管理</div>
+        <div class="status-tabs">
+            <div class="st-tab active" onclick="loadUsers('pending')">待审核</div>
+            <div class="st-tab" onclick="loadUsers('approved')">已通过</div>
+            <div class="st-tab" onclick="loadUsers('rejected')">已拒绝</div>
+            <div class="st-tab" onclick="loadActivity()">用户活动</div>
+        </div>
+        <div id="userList"><div class="empty">加载中...</div></div>
+    </div>
+    <div class="section">
+        <div class="section-title">邀请码</div>
+        <div class="invite-form">
+            <span style="font-size:0.85rem;">使用次数</span>
+            <input type="number" id="maxUses" value="5" min="1" max="50">
+            <span style="font-size:0.85rem;">有效天数</span>
+            <input type="number" id="expDays" value="7" min="1" max="90">
+            <button onclick="createInvite()">生成邀请码</button>
+        </div>
+        <div id="codeList"><div class="empty">加载中...</div></div>
+    </div>
+</div>
+<script>
+    const token = localStorage.getItem('token');
+    const user = JSON.parse(localStorage.getItem('user') || '{}');
+    document.getElementById('welcomeText').textContent = `${user.username || ''} · ${user.role === 'admin' ? '管理员' : '用户'}`;
+    if (user.role === 'admin') { document.getElementById('adminSection').style.display = 'block'; loadUsers('pending'); }
+    loadInvites();
+    async function api(path, opts = {}) {
+        const r = await fetch(path, { ...opts, headers: { 'Authorization': `Bearer ${token}`, 'Content-Type': 'application/json', ...opts.headers } });
+        if (r.status === 401) { localStorage.clear(); window.location.href = 'login.html'; }
+        return r.json();
+    }
+    async function loadUsers(status) {
+        document.querySelectorAll('.st-tab').forEach(t => t.classList.toggle('active', t.textContent === {pending:'待审核',approved:'已通过',rejected:'已拒绝'}[status]));
+        const data = await api(`/api/admin/users?status=${status}`);
+        const list = document.getElementById('userList');
+        if (!data.users?.length) { list.innerHTML = '<div class="empty">暂无数据</div>'; return; }
+        list.innerHTML = data.users.map(u => `
+            <div class="user-row">
+                <div class="user-info"><div class="name">${u.username}</div><div class="meta">${u.phone || '无手机号'} · ${u.created_at?.slice(0,10) || ''}</div></div>
+                ${status === 'pending' ? `<div class="user-actions"><button class="action-btn btn-approve" onclick="approveUser(${u.id}, 'approve')">通过</button><button class="action-btn btn-reject" onclick="approveUser(${u.id}, 'reject')">拒绝</button></div>` : ''}
+            </div>`).join('');
+    }
+    async function loadActivity() {
+        document.querySelectorAll('.st-tab').forEach(t => t.classList.toggle('active', t.textContent === '用户活动'));
+        const list = document.getElementById('userList');
+        list.innerHTML = '<div class="empty">加载中...</div>';
+        const data = await api('/api/admin/activity');
+        if (!data.users?.length) { list.innerHTML = '<div class="empty">暂无数据</div>'; return; }
+        list.innerHTML = data.users.map(u => {
+            if (!u.total_quizzes) return `<div class="activity-card"><div class="card-header"><span class="name">${u.username}</span><span class="role-badge">${u.role === 'admin' ? '管理员' : '用户'}</span></div><div class="no-quiz">尚未做题</div></div>`;
+            return `<div class="activity-card"><div class="card-header"><span class="name">${u.username}</span><span class="role-badge">${u.role === 'admin' ? '管理员' : '用户'}</span></div><div class="stats"><span>做题次数: <span class="stat-val">${u.total_quizzes}</span></span><span>平均分: <span class="stat-val">${u.total_score != null ? u.total_score : '-'}</span></span><span>最近做题: <span class="stat-val">${u.last_quiz_at?.slice(0,10) || '-'}</span></span></div></div>`;
+        }).join('');
+    }
+    async function approveUser(id, action) { await api('/api/admin/approve', { method: 'POST', body: JSON.stringify({ userId: id, action }) }); loadUsers('pending'); }
+    async function loadInvites() {
+        const data = await api('/api/invite/mine');
+        const list = document.getElementById('codeList');
+        if (!data.codes?.length) { list.innerHTML = '<div class="empty">还没有邀请码</div>'; return; }
+        list.innerHTML = data.codes.map(c => {
+            const expired = new Date(c.expires_at) < new Date();
+            return `<div class="code-row" style="${expired ? 'opacity:0.5' : ''}"><span class="code-val">${c.code}</span><span class="code-meta">${c.used_count}/${c.max_uses} 已用 · ${expired ? '已过期' : '有效至 ' + c.expires_at.slice(0,10)}</span></div>`;
+        }).join('');
+    }
+    async function createInvite() {
+        const maxUses = parseInt(document.getElementById('maxUses').value) || 5;
+        const expiresInDays = parseInt(document.getElementById('expDays').value) || 7;
+        await api('/api/invite/create', { method: 'POST', body: JSON.stringify({ maxUses, expiresInDays }) });
+        loadInvites();
+    }
+    function logout() { localStorage.clear(); window.location.href = 'login.html'; }
+</script>
+</body>
+</html>

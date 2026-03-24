@@ -1,0 +1,15 @@
+{
+  "levels": [
+    {
+      "id": "ket",
+      "name": "KET (A2 Key)",
+      "description": "Cambridge A2 Key English Test",
+      "grade": "适合小学高年级 - 初中",
+      "tests": [
+        { "id": "practice-1", "title": "Practice Test 1", "totalQuestions": 30 },
+        { "id": "practice-2", "title": "Practice Test 2", "totalQuestions": 30 },
+        { "id": "practice-3", "title": "Practice Test 3", "totalQuestions": 30 }
+      ]
+    }
+  ]
+}

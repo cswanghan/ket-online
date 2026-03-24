@@ -1,0 +1,305 @@
+{
+  "examType": "KET",
+  "title": "Practice Test 3",
+  "totalQuestions": 30,
+  "parts": [
+    {
+      "part": 1,
+      "name": "Reading Part 1",
+      "description": "Read the notices, signs or short messages. For each question, choose the correct answer.",
+      "type": "multiple_choice",
+      "questions": [
+        {
+          "number": 1,
+          "points": 1,
+          "text": "SCHOOL OFFICE\nAll students must collect their new timetables before Tuesday",
+          "textType": "notice",
+          "options": [
+            "A. New timetables will be sent home on Tuesday.",
+            "B. Students need to get their timetables from the office by Monday.",
+            "C. The school office is closed until Tuesday."
+          ],
+          "answer": "B"
+        },
+        {
+          "number": 2,
+          "points": 1,
+          "text": "SHOE SHOP\nSale! Up to 50% off all sports shoes this weekend",
+          "textType": "sign",
+          "options": [
+            "A. Sports shoes cost half price or less this weekend.",
+            "B. The shop only sells sports shoes.",
+            "C. Sports shoes will be more expensive next week."
+          ],
+          "answer": "A"
+        },
+        {
+          "number": 3,
+          "points": 1,
+          "text": "Dear guests,\nBreakfast is served in the dining room between 7:00 and 9:30 am.\nThe Hotel Team",
+          "textType": "notice",
+          "options": [
+            "A. Guests can have breakfast at any time they want.",
+            "B. The dining room closes at 9:30 in the morning.",
+            "C. Breakfast is not included in the hotel price."
+          ],
+          "answer": "B"
+        },
+        {
+          "number": 4,
+          "points": 1,
+          "text": "Hi Max,\nSorry I can't come to your party on Saturday. My grandparents are visiting us that day.\nHope you have fun!\nOscar",
+          "textType": "message",
+          "options": [
+            "A. Oscar is inviting Max to meet his grandparents.",
+            "B. Oscar cannot go to the party because he has other plans.",
+            "C. Oscar wants to change the day of the party."
+          ],
+          "answer": "B"
+        },
+        {
+          "number": 5,
+          "points": 1,
+          "text": "BUS STOP\nBuses to the airport leave every 30 minutes from 5:00 am",
+          "textType": "sign",
+          "options": [
+            "A. There is one bus to the airport each day.",
+            "B. The first bus to the airport leaves at 5:30 am.",
+            "C. Airport buses run twice an hour from early morning."
+          ],
+          "answer": "C"
+        },
+        {
+          "number": 6,
+          "points": 1,
+          "text": "COMMUNITY CENTRE\nGuitar lessons for beginners — Wednesdays 5-6pm\nCall 0118 555 3200 to book your place",
+          "textType": "notice",
+          "options": [
+            "A. You need to phone to join the guitar class.",
+            "B. Guitar lessons are for experienced players only.",
+            "C. Lessons take place every day of the week."
+          ],
+          "answer": "A"
+        }
+      ]
+    },
+    {
+      "part": 2,
+      "name": "Reading Part 2",
+      "description": "Read the descriptions of three people and the texts below. For each question, choose the correct answer.",
+      "type": "matching",
+      "texts": {
+        "A": {
+          "title": "Riverside Cycle Hire",
+          "content": "Hire a bicycle and explore the beautiful riverside path! Bikes are available for all ages and sizes, including children's bikes with training wheels. You can hire a bike for one hour (£5), half a day (£12) or a full day (£18). Helmets are included free. The path is flat and easy, perfect for families."
+        },
+        "B": {
+          "title": "Mountain View Horse Riding",
+          "content": "Come and ride a horse through the countryside! We offer lessons for all levels, from beginners to experienced riders. Our rides last two hours and go through forests and across fields. You must be at least 8 years old. Rides cost £30 per person and run on Tuesdays, Thursdays and Saturdays."
+        },
+        "C": {
+          "title": "Lakeside Boat Trips",
+          "content": "Enjoy a relaxing boat trip on the lake! Our guided tours last 45 minutes and run every hour from 10am to 4pm, seven days a week. Tickets cost £10 for adults and £5 for children under 12. You can see many kinds of birds and fish from the boat. There is a gift shop and cafe at the starting point."
+        }
+      },
+      "questions": [
+        {
+          "number": 7,
+          "points": 1,
+          "text": "Ben is 7 years old and would like to try an outdoor activity with his family on a flat route.",
+          "answer": "A"
+        },
+        {
+          "number": 8,
+          "points": 1,
+          "text": "Grace has never ridden a horse before and wants to try it on a Saturday.",
+          "answer": "B"
+        },
+        {
+          "number": 9,
+          "points": 1,
+          "text": "Mr and Mrs Lee want to do something relaxing with their two children and are interested in wildlife.",
+          "answer": "C"
+        },
+        {
+          "number": 10,
+          "points": 1,
+          "text": "Which activity is available every day?",
+          "answer": "C"
+        },
+        {
+          "number": 11,
+          "points": 1,
+          "text": "Which activity gives you safety equipment at no extra cost?",
+          "answer": "A"
+        },
+        {
+          "number": 12,
+          "points": 1,
+          "text": "Ella is 13 and wants an exciting activity that lasts about two hours in the countryside.",
+          "answer": "B"
+        },
+        {
+          "number": 13,
+          "points": 1,
+          "text": "Which activity has a place where you can buy presents?",
+          "answer": "C"
+        }
+      ]
+    },
+    {
+      "part": 3,
+      "name": "Reading Part 3",
+      "description": "Read the text and choose the correct answer for each question.",
+      "type": "multiple_choice",
+      "passage": "When Lisa was twelve, she read a book about a girl who grew her own vegetables. Lisa thought it sounded fun, so she asked her parents if she could have a small garden. Her father helped her prepare a corner of the back garden, and she planted tomatoes, carrots and lettuce.\n\nAt first, Lisa checked her plants every day and gave them water. But after a few weeks, she got bored and almost forgot about them. One morning, her mother told her to look at the garden. Lisa was amazed! The tomatoes were big and red, and the carrots were ready to pick.\n\nLisa used her vegetables to make a salad for the whole family. Everyone said it was delicious, and her little brother asked for more. Since then, Lisa has grown a garden every year. She now also grows peppers, beans and strawberries. She says that growing your own food teaches you to be patient and that the food always tastes better when you grow it yourself.",
+      "questions": [
+        {
+          "number": 14,
+          "points": 1,
+          "text": "What gave Lisa the idea to start a garden?",
+          "options": [
+            "A. A television programme about farming.",
+            "B. A book she read about growing vegetables.",
+            "C. Her mother suggested it to her."
+          ],
+          "answer": "B"
+        },
+        {
+          "number": 15,
+          "points": 1,
+          "text": "What happened after a few weeks?",
+          "options": [
+            "A. Lisa stopped paying attention to her plants.",
+            "B. The plants died because of bad weather.",
+            "C. Lisa decided to plant more vegetables."
+          ],
+          "answer": "A"
+        },
+        {
+          "number": 16,
+          "points": 1,
+          "text": "How did Lisa feel when she saw her tomatoes?",
+          "options": [
+            "A. She was disappointed they were too small.",
+            "B. She was surprised they had grown so well.",
+            "C. She was worried they might not be good to eat."
+          ],
+          "answer": "B"
+        },
+        {
+          "number": 17,
+          "points": 1,
+          "text": "What did Lisa do with the vegetables?",
+          "options": [
+            "A. She gave them to her neighbours.",
+            "B. She sold them at school.",
+            "C. She made a salad for her family."
+          ],
+          "answer": "C"
+        },
+        {
+          "number": 18,
+          "points": 1,
+          "text": "What has Lisa learned from gardening?",
+          "options": [
+            "A. It is important to be patient.",
+            "B. It is cheaper to buy vegetables from a shop.",
+            "C. Growing food is too much hard work."
+          ],
+          "answer": "A"
+        }
+      ]
+    },
+    {
+      "part": 4,
+      "name": "Reading Part 4",
+      "description": "Read the text. Choose the correct word for each space.",
+      "type": "cloze_choice",
+      "passage": "I have a pet dog (19)____ Biscuit. He is a small brown dog and he is three years old. I got him (20)____ I was ten, and he has been my best friend since then.\n\nEvery morning, I take Biscuit (21)____ a walk in the park near our house. He loves running after balls, and he is very good (22)____ catching them. After our walk, he always (23)____ very tired and sleeps on the sofa.\n\nI think everyone (24)____ have a pet because they make you feel happy.",
+      "questions": [
+        {
+          "number": 19,
+          "points": 1,
+          "text": "(19)",
+          "options": ["A. named", "B. called", "C. saying"],
+          "answer": "B"
+        },
+        {
+          "number": 20,
+          "points": 1,
+          "text": "(20)",
+          "options": ["A. when", "B. while", "C. during"],
+          "answer": "A"
+        },
+        {
+          "number": 21,
+          "points": 1,
+          "text": "(21)",
+          "options": ["A. to", "B. at", "C. for"],
+          "answer": "C"
+        },
+        {
+          "number": 22,
+          "points": 1,
+          "text": "(22)",
+          "options": ["A. in", "B. at", "C. on"],
+          "answer": "B"
+        },
+        {
+          "number": 23,
+          "points": 1,
+          "text": "(23)",
+          "options": ["A. feels", "B. does", "C. has"],
+          "answer": "A"
+        },
+        {
+          "number": 24,
+          "points": 1,
+          "text": "(24)",
+          "options": ["A. must", "B. should", "C. need"],
+          "answer": "B"
+        }
+      ]
+    },
+    {
+      "part": 5,
+      "name": "Reading & Writing Part 5",
+      "description": "Read the text. Write ONE word for each space.",
+      "type": "fill_blank",
+      "passage": "My name is Pedro and I come (25)____ Brazil. I moved to England two years (26)____ with my family.\n\nAt first, it was difficult (27)____ I didn't speak English very well. But my teachers (28)____ very kind and helped me a lot. Now I can speak English (29)____ and I have many friends at school.\n\nI still miss Brazil sometimes, but I (30)____ very happy living here.",
+      "questions": [
+        {
+          "number": 25,
+          "points": 1,
+          "answer": ["from"]
+        },
+        {
+          "number": 26,
+          "points": 1,
+          "answer": ["ago"]
+        },
+        {
+          "number": 27,
+          "points": 1,
+          "answer": ["because", "as", "since"]
+        },
+        {
+          "number": 28,
+          "points": 1,
+          "answer": ["were"]
+        },
+        {
+          "number": 29,
+          "points": 1,
+          "answer": ["well", "fluently"]
+        },
+        {
+          "number": 30,
+          "points": 1,
+          "answer": ["am", "'m", "feel"]
+        }
+      ]
+    }
+  ]
+}

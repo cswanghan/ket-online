@@ -1,0 +1,305 @@
+{
+  "examType": "KET",
+  "title": "Practice Test 2",
+  "totalQuestions": 30,
+  "parts": [
+    {
+      "part": 1,
+      "name": "Reading Part 1",
+      "description": "Read the notices, signs or short messages. For each question, choose the correct answer.",
+      "type": "multiple_choice",
+      "questions": [
+        {
+          "number": 1,
+          "points": 1,
+          "text": "MUSEUM\nFree entry for students with school ID card",
+          "textType": "notice",
+          "options": [
+            "A. All visitors must pay to enter the museum.",
+            "B. Students do not have to pay if they show their school card.",
+            "C. The museum is only open for school visits."
+          ],
+          "answer": "B"
+        },
+        {
+          "number": 2,
+          "points": 1,
+          "text": "TRAIN STATION\nPlatform 3: The 14:25 to Manchester is delayed by 20 minutes",
+          "textType": "notice",
+          "options": [
+            "A. The train to Manchester will leave later than planned.",
+            "B. The train to Manchester has been cancelled.",
+            "C. Passengers should go to a different platform."
+          ],
+          "answer": "A"
+        },
+        {
+          "number": 3,
+          "points": 1,
+          "text": "Hi Sam,\nCan you bring your guitar to school tomorrow? We need it for band practice after lessons.\nThanks, Alex",
+          "textType": "message",
+          "options": [
+            "A. Alex wants to borrow Sam's guitar forever.",
+            "B. Alex is asking Sam to bring his guitar for music practice.",
+            "C. Alex wants Sam to teach him guitar after school."
+          ],
+          "answer": "B"
+        },
+        {
+          "number": 4,
+          "points": 1,
+          "text": "SUPERMARKET\nBuy two pizzas, get one free!\nOffer ends Sunday",
+          "textType": "sign",
+          "options": [
+            "A. All pizzas are free this week.",
+            "B. You get an extra pizza at no cost when you buy two.",
+            "C. Pizzas are only available until Sunday."
+          ],
+          "answer": "B"
+        },
+        {
+          "number": 5,
+          "points": 1,
+          "text": "DOCTOR'S SURGERY\nPlease arrive 10 minutes before your appointment",
+          "textType": "notice",
+          "options": [
+            "A. Patients should come early for their visit.",
+            "B. The doctor is always 10 minutes late.",
+            "C. You can only wait for 10 minutes."
+          ],
+          "answer": "A"
+        },
+        {
+          "number": 6,
+          "points": 1,
+          "text": "Lucy,\nI found your blue scarf in the classroom. I'll keep it in my bag until I see you.\nRachel",
+          "textType": "message",
+          "options": [
+            "A. Rachel wants to borrow Lucy's scarf.",
+            "B. Rachel has Lucy's scarf and will give it back to her.",
+            "C. Lucy left her bag in the classroom."
+          ],
+          "answer": "B"
+        }
+      ]
+    },
+    {
+      "part": 2,
+      "name": "Reading Part 2",
+      "description": "Read the descriptions of three people and the texts below. For each question, choose the correct answer.",
+      "type": "matching",
+      "texts": {
+        "A": {
+          "title": "Greenhill Nature Park",
+          "content": "Greenhill Nature Park is open every day from 8am to 6pm. It has a large lake where you can go fishing or feed the ducks. There are walking paths through the woods and a playground for younger children. Entry is free, and there is a small cafe that sells sandwiches, cakes and hot drinks."
+        },
+        "B": {
+          "title": "Wonderland Indoor Play Centre",
+          "content": "This exciting play centre is perfect for rainy days! It has climbing walls, ball pits and slides for children aged 4-14. It is open on weekdays from 3pm to 8pm and all day at weekends. A two-hour session costs £8 per child. There is also a party room you can book for birthdays."
+        },
+        "C": {
+          "title": "Starlight Cinema",
+          "content": "Starlight Cinema shows the latest films every evening at 6pm and 8:30pm. On Saturday mornings, there are special children's showings at half price. The cinema has a shop selling popcorn, sweets and drinks. It is located in the town centre, next to the bus station."
+        }
+      },
+      "questions": [
+        {
+          "number": 7,
+          "points": 1,
+          "text": "Maya is 6 years old and loves climbing. Her parents want to take her somewhere fun when the weather is bad.",
+          "answer": "B"
+        },
+        {
+          "number": 8,
+          "points": 1,
+          "text": "David enjoys walking in nature and watching birds. He doesn't want to spend any money on entry.",
+          "answer": "A"
+        },
+        {
+          "number": 9,
+          "points": 1,
+          "text": "Olivia wants to watch a new film with her friends on Saturday morning and save some money.",
+          "answer": "C"
+        },
+        {
+          "number": 10,
+          "points": 1,
+          "text": "Which place can you visit without paying anything?",
+          "answer": "A"
+        },
+        {
+          "number": 11,
+          "points": 1,
+          "text": "Which place would be best for a birthday celebration?",
+          "answer": "B"
+        },
+        {
+          "number": 12,
+          "points": 1,
+          "text": "Tom wants to go somewhere close to public transport in the evening.",
+          "answer": "C"
+        },
+        {
+          "number": 13,
+          "points": 1,
+          "text": "Which place has somewhere you can buy food and is outdoors?",
+          "answer": "A"
+        }
+      ]
+    },
+    {
+      "part": 3,
+      "name": "Reading Part 3",
+      "description": "Read the text and choose the correct answer for each question.",
+      "type": "multiple_choice",
+      "passage": "Zara is fifteen years old and she has an unusual hobby. She collects old maps. She started this hobby three years ago when her grandmother gave her a map from 1960. Zara thought it was amazing to see how different her town looked more than sixty years ago.\n\nNow Zara has over forty maps in her collection. She finds them in second-hand bookshops, at markets and sometimes online. Her oldest map is from 1895 and shows a city in France. She keeps all her maps in special folders so they don't get damaged.\n\nZara's friends think her hobby is a bit strange, but she doesn't mind. She says that maps tell stories about how places change over time. Some streets disappear, new buildings appear, and rivers sometimes change direction. She has even started a blog where she posts pictures of her maps and writes about what she discovers. The blog already has over two hundred followers who share her interest.",
+      "questions": [
+        {
+          "number": 14,
+          "points": 1,
+          "text": "How did Zara become interested in collecting maps?",
+          "options": [
+            "A. She found an old map in a bookshop.",
+            "B. Her grandmother gave her a map as a gift.",
+            "C. She read about map collecting online."
+          ],
+          "answer": "B"
+        },
+        {
+          "number": 15,
+          "points": 1,
+          "text": "How many maps does Zara have now?",
+          "options": [
+            "A. About twenty.",
+            "B. Exactly sixty.",
+            "C. More than forty."
+          ],
+          "answer": "C"
+        },
+        {
+          "number": 16,
+          "points": 1,
+          "text": "Where does Zara NOT find maps?",
+          "options": [
+            "A. In her school library.",
+            "B. At markets.",
+            "C. On the internet."
+          ],
+          "answer": "A"
+        },
+        {
+          "number": 17,
+          "points": 1,
+          "text": "What do Zara's friends think about her hobby?",
+          "options": [
+            "A. They think it is very exciting.",
+            "B. They find it a little unusual.",
+            "C. They want to start collecting maps too."
+          ],
+          "answer": "B"
+        },
+        {
+          "number": 18,
+          "points": 1,
+          "text": "Why did Zara start a blog?",
+          "options": [
+            "A. To sell her old maps.",
+            "B. To share her maps and what she learns from them.",
+            "C. Because her teacher asked her to."
+          ],
+          "answer": "B"
+        }
+      ]
+    },
+    {
+      "part": 4,
+      "name": "Reading Part 4",
+      "description": "Read the text. Choose the correct word for each space.",
+      "type": "cloze_choice",
+      "passage": "My older sister, Maria, is a very good cook. She (19)____ cooking when she was only ten years old. Now she can make meals from many different countries.\n\nLast weekend, she made a big dinner (20)____ the whole family. She cooked Chinese food (21)____ the first time. She spent the whole afternoon in (22)____ kitchen preparing the meal.\n\nEveryone enjoyed the food very (23)____. My father said it was the (24)____ meal he had eaten in a long time. Maria was really happy to hear that.",
+      "questions": [
+        {
+          "number": 19,
+          "points": 1,
+          "text": "(19)",
+          "options": ["A. started", "B. starts", "C. has started"],
+          "answer": "A"
+        },
+        {
+          "number": 20,
+          "points": 1,
+          "text": "(20)",
+          "options": ["A. to", "B. for", "C. at"],
+          "answer": "B"
+        },
+        {
+          "number": 21,
+          "points": 1,
+          "text": "(21)",
+          "options": ["A. at", "B. in", "C. for"],
+          "answer": "C"
+        },
+        {
+          "number": 22,
+          "points": 1,
+          "text": "(22)",
+          "options": ["A. a", "B. an", "C. the"],
+          "answer": "C"
+        },
+        {
+          "number": 23,
+          "points": 1,
+          "text": "(23)",
+          "options": ["A. much", "B. many", "C. more"],
+          "answer": "A"
+        },
+        {
+          "number": 24,
+          "points": 1,
+          "text": "(24)",
+          "options": ["A. good", "B. better", "C. best"],
+          "answer": "C"
+        }
+      ]
+    },
+    {
+      "part": 5,
+      "name": "Reading & Writing Part 5",
+      "description": "Read the text. Write ONE word for each space.",
+      "type": "fill_blank",
+      "passage": "My favourite season is summer (25)____ I love being outside in the warm weather. Last summer, I went to the beach (26)____ my cousins. We stayed there (27)____ a week.\n\nEvery day we (28)____ up early and went swimming before breakfast. The sea (29)____ beautiful and clear. I took lots of photos so (30)____ I can remember the holiday forever.\n\nI really hope we can go again next year!",
+      "questions": [
+        {
+          "number": 25,
+          "points": 1,
+          "answer": ["because"]
+        },
+        {
+          "number": 26,
+          "points": 1,
+          "answer": ["with"]
+        },
+        {
+          "number": 27,
+          "points": 1,
+          "answer": ["for"]
+        },
+        {
+          "number": 28,
+          "points": 1,
+          "answer": ["got", "woke"]
+        },
+        {
+          "number": 29,
+          "points": 1,
+          "answer": ["was", "looked"]
+        },
+        {
+          "number": 30,
+          "points": 1,
+          "answer": ["that"]
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>KET Practice · 剑桥英语在线练习</title>
+    <script src="auth-guard.js"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Noto+Sans+SC:wght@400;500;600&display=swap" rel="stylesheet">
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        :root {
+            --bg: #f8f9fa; --card: #ffffff; --border: #e2e8f0; --border-hover: #94a3b8;
+            --primary: #1a73e8; --primary-light: #e8f0fe; --primary-dark: #1557b0;
+            --text: #202124; --text-light: #5f6368; --accent: #34a853;
+        }
+        body { font-family: 'Noto Sans SC', 'Inter', sans-serif; background: var(--bg); min-height: 100vh; color: var(--text); }
+        .page { max-width: 960px; margin: 0 auto; padding: 40px 24px 60px; }
+        .site-header { text-align: center; margin-bottom: 48px; }
+        .site-header h1 { font-family: 'Inter', sans-serif; font-size: 2.6rem; font-weight: 700; letter-spacing: 1px; margin-bottom: 8px; color: var(--primary); }
+        .site-header .tagline { color: var(--text-light); font-size: 1rem; letter-spacing: 0.5px; }
+
+        .level-tabs { display: flex; justify-content: center; gap: 0; margin-bottom: 48px; border-bottom: 1px solid var(--border); overflow-x: auto; }
+        .level-tab {
+            padding: 12px 28px; font-size: 0.95rem; color: var(--text-light); cursor: pointer;
+            border-bottom: 2px solid transparent; transition: all 0.2s; white-space: nowrap;
+        }
+        .level-tab:hover { color: var(--text); }
+        .level-tab.active { color: var(--primary); border-bottom-color: var(--primary); font-weight: 600; }
+
+        .level-info { text-align: center; margin-bottom: 48px; color: var(--text-light); font-size: 0.9rem; }
+        .level-info .grade { display: inline-block; background: var(--primary-light); color: var(--primary); padding: 4px 16px; border-radius: 12px; font-size: 0.8rem; margin-top: 6px; }
+
+        .entry-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 28px; max-width: 640px; margin: 0 auto; }
+        .entry-card {
+            background: var(--card); border: 1px solid var(--border); border-radius: 16px;
+            padding: 44px 28px; text-decoration: none; color: var(--text);
+            display: flex; flex-direction: column; align-items: center; gap: 16px;
+            transition: all 0.25s; position: relative; overflow: hidden;
+        }
+        .entry-card::before { content: ''; position: absolute; top: 0; left: 0; right: 0; height: 3px; background: var(--primary-light); transition: background 0.25s; }
+        .entry-card:hover { border-color: var(--primary); box-shadow: 0 8px 30px rgba(26,115,232,0.1); transform: translateY(-2px); }
+        .entry-card:hover::before { background: var(--primary); }
+        .entry-icon { font-size: 2.2rem; }
+        .entry-title { font-family: 'Inter', sans-serif; font-size: 1.3rem; font-weight: 600; }
+        .entry-desc { color: var(--text-light); font-size: 0.85rem; line-height: 1.7; text-align: center; }
+        .entry-action { font-size: 0.8rem; color: var(--primary); letter-spacing: 1px; text-transform: uppercase; margin-top: 4px; }
+
+        .test-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(200px, 1fr)); gap: 16px; max-width: 640px; margin: 0 auto 48px; }
+        .test-card {
+            background: var(--card); border: 1px solid var(--border); border-radius: 12px;
+            padding: 24px 20px; text-decoration: none; color: var(--text); text-align: center;
+            transition: all 0.2s; cursor: pointer;
+        }
+        .test-card:hover { border-color: var(--primary); box-shadow: 0 4px 16px rgba(26,115,232,0.08); }
+        .test-card .test-title { font-size: 1.1rem; font-weight: 600; color: var(--primary); margin-bottom: 6px; }
+        .test-card .test-meta { font-size: 0.8rem; color: var(--text-light); }
+
+        .login-link { text-align: center; margin-top: 48px; }
+        .login-link a { color: var(--text-light); text-decoration: none; font-size: 0.85rem; padding: 8px 20px; border: 1px solid var(--border); border-radius: 20px; transition: all 0.2s; }
+        .login-link a:hover { color: var(--primary); border-color: var(--primary); }
+        .site-footer { text-align: center; margin-top: 60px; color: var(--text-light); font-size: 0.8rem; opacity: 0.7; }
+
+        @media (max-width: 600px) {
+            .site-header h1 { font-size: 2rem; }
+            .entry-grid { grid-template-columns: 1fr; max-width: 360px; }
+            .entry-card { padding: 36px 24px; }
+            .page { padding: 30px 16px 40px; }
+        }
+    </style>
+</head>
+<body>
+    <div class="page">
+        <div class="site-header">
+            <h1>KET Practice</h1>
+            <p class="tagline">剑桥 A2 Key 英语 · 在线练习与真题</p>
+        </div>
+
+        <div class="level-tabs">
+            <div class="level-tab active" onclick="switchLevel('ket')">KET (A2 Key)</div>
+            <div class="level-tab" onclick="switchLevel('pet')" style="opacity:0.5">PET (B1) 即将上线</div>
+        </div>
+
+        <div class="level-info" id="levelInfo">
+            <div>Reading & Writing · Part 1-5 · 每套 30 题</div>
+            <div class="grade">适合小学高年级 — 初中</div>
+        </div>
+
+        <div id="testList"></div>
+
+        <div class="entry-grid">
+            <a id="quizEntry" href="quiz.html" class="entry-card">
+                <div class="entry-icon">✏️</div>
+                <div class="entry-title">在线练习</div>
+                <div class="entry-desc">选择套卷逐题作答<br>自动判分 · 错题回顾</div>
+                <div class="entry-action">Start →</div>
+            </a>
+            <a id="historyEntry" href="admin.html" class="entry-card">
+                <div class="entry-icon">📊</div>
+                <div class="entry-title">个人中心</div>
+                <div class="entry-desc">历史成绩 · 错题本<br>邀请码管理</div>
+                <div class="entry-action">View →</div>
+            </a>
+        </div>
+
+        <div class="login-link" id="authArea">
+            <a href="login.html">登录 / 注册</a>
+        </div>
+
+        <div class="site-footer">KET Practice — Cambridge A2 Key English Test</div>
+    </div>
+
+    <script>
+        (function() {
+            const user = JSON.parse(localStorage.getItem('user') || 'null');
+            if (user) {
+                const area = document.getElementById('authArea');
+                const adminLink = user.role === 'admin' ? ' <a href="admin.html">管理后台</a>' : '';
+                area.innerHTML = `<span style="color:var(--text-light);font-size:0.85rem;">${user.username}</span> ` +
+                    `<a href="admin.html">个人中心</a>` + adminLink +
+                    ` <a href="javascript:void(0)" onclick="localStorage.clear();location.reload()">退出</a>`;
+            }
+        })();
+
+        async function loadTests() {
+            try {
+                const r = await fetch('/data/ket/index.json');
+                const data = await r.json();
+                const level = data.levels.find(l => l.id === 'ket');
+                if (!level) return;
+                const container = document.getElementById('testList');
+                container.innerHTML = '<div class="test-grid">' + level.tests.map(t =>
+                    `<a class="test-card" href="quiz.html?test=${t.id}">
+                        <div class="test-title">${t.title}</div>
+                        <div class="test-meta">${t.totalQuestions} 题 · Reading & Writing</div>
+                    </a>`
+                ).join('') + '</div>';
+            } catch (e) { console.error('Failed to load tests:', e); }
+        }
+        loadTests();
+
+        function switchLevel(level) {
+            document.querySelectorAll('.level-tab').forEach((t, i) => t.classList.toggle('active', (level === 'ket' ? i === 0 : i === 1)));
+            if (level === 'pet') {
+                document.getElementById('levelInfo').innerHTML = '<div>PET (B1 Preliminary) 即将上线</div><div class="grade">敬请期待</div>';
+                document.getElementById('testList').innerHTML = '<div style="text-align:center;color:var(--text-light);padding:20px;">PET 练习即将上线，敬请期待</div>';
+            } else {
+                document.getElementById('levelInfo').innerHTML = '<div>Reading & Writing · Part 1-5 · 每套 30 题</div><div class="grade">适合小学高年级 — 初中</div>';
+                loadTests();
+            }
+        }
+    </script>
+</body>
+</html>

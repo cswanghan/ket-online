@@ -1,0 +1,532 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>KET Practice · 在线练习</title>
+    <script src="auth-guard.js"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Noto+Sans+SC:wght@400;500;600&display=swap" rel="stylesheet">
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        :root {
+            --bg: #f8f9fa; --card: #ffffff; --border: #e2e8f0;
+            --primary: #1a73e8; --primary-light: #e8f0fe; --primary-dark: #1557b0;
+            --text: #202124; --text-light: #5f6368;
+            --correct: #34a853; --correct-bg: #e6f4ea;
+            --wrong: #ea4335; --wrong-bg: #fce8e6;
+            --selected: #1a73e8; --selected-bg: #e8f0fe;
+        }
+        body { font-family: 'Noto Sans SC', 'Inter', sans-serif; background: var(--bg); color: var(--text); }
+
+        /* Top bar */
+        .top-bar {
+            position: sticky; top: 0; z-index: 100; background: var(--primary); color: white;
+            padding: 12px 24px; display: flex; justify-content: space-between; align-items: center;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+        }
+        .top-bar a { color: white; text-decoration: none; font-size: 0.9rem; opacity: 0.9; }
+        .top-bar a:hover { opacity: 1; }
+        .top-bar .center { font-weight: 600; }
+        .top-bar .right { display: flex; gap: 20px; font-size: 0.85rem; }
+        .timer { font-family: 'Inter', monospace; }
+
+        /* Progress bar */
+        .progress-bar { height: 3px; background: rgba(255,255,255,0.3); }
+        .progress-fill { height: 100%; background: white; transition: width 0.3s; }
+
+        /* Main layout */
+        .quiz-container { max-width: 800px; margin: 0 auto; padding: 24px; }
+
+        /* Test selector */
+        .test-selector { text-align: center; padding: 60px 20px; }
+        .test-selector h2 { font-size: 1.6rem; margin-bottom: 32px; color: var(--primary); }
+        .test-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(200px, 1fr)); gap: 16px; max-width: 640px; margin: 0 auto; }
+        .test-option {
+            background: var(--card); border: 1px solid var(--border); border-radius: 12px;
+            padding: 28px 20px; cursor: pointer; transition: all 0.2s; text-align: center;
+        }
+        .test-option:hover { border-color: var(--primary); box-shadow: 0 4px 16px rgba(26,115,232,0.08); }
+        .test-option .test-name { font-size: 1.1rem; font-weight: 600; color: var(--primary); margin-bottom: 6px; }
+        .test-option .test-info { font-size: 0.8rem; color: var(--text-light); }
+
+        /* Part header */
+        .part-header {
+            background: var(--primary-light); border-radius: 12px; padding: 20px 24px;
+            margin-bottom: 24px; border-left: 4px solid var(--primary);
+        }
+        .part-header h3 { font-size: 1.1rem; color: var(--primary); margin-bottom: 6px; }
+        .part-header p { font-size: 0.85rem; color: var(--text-light); line-height: 1.6; }
+
+        /* Question card */
+        .question-card {
+            background: var(--card); border: 1px solid var(--border); border-radius: 12px;
+            padding: 24px; margin-bottom: 16px; transition: border-color 0.2s;
+        }
+        .question-card.answered { border-color: var(--primary); }
+        .question-card.correct { border-color: var(--correct); background: var(--correct-bg); }
+        .question-card.wrong { border-color: var(--wrong); background: var(--wrong-bg); }
+
+        .q-number { font-size: 0.75rem; color: var(--primary); font-weight: 600; text-transform: uppercase; letter-spacing: 1px; margin-bottom: 10px; }
+
+        /* Text content (notices, signs, passages) */
+        .q-text {
+            background: #f1f3f4; border-radius: 8px; padding: 16px 20px;
+            margin-bottom: 16px; font-size: 0.95rem; line-height: 1.7; white-space: pre-line;
+        }
+        .q-text.sign { text-align: center; font-weight: 600; border: 2px dashed #d0d5dd; background: #fffef5; }
+        .q-text.notice { border-left: 4px solid var(--primary); background: #f0f4ff; }
+        .q-text.email { font-style: italic; background: #fefefe; border: 1px solid #e0e0e0; }
+        .q-text.passage { font-size: 0.9rem; line-height: 1.8; max-height: 300px; overflow-y: auto; }
+
+        /* Matching texts */
+        .matching-texts { display: grid; gap: 12px; margin-bottom: 20px; }
+        .matching-text { background: #f1f3f4; border-radius: 8px; padding: 14px 18px; }
+        .matching-text .label { font-weight: 700; color: var(--primary); margin-bottom: 4px; font-size: 0.9rem; }
+        .matching-text .content { font-size: 0.85rem; line-height: 1.6; color: var(--text); }
+
+        /* Options */
+        .options { display: flex; flex-direction: column; gap: 8px; }
+        .option {
+            display: flex; align-items: center; gap: 12px; padding: 12px 16px;
+            border: 1px solid var(--border); border-radius: 10px; cursor: pointer;
+            transition: all 0.15s; font-size: 0.9rem;
+        }
+        .option:hover { border-color: var(--primary); background: var(--primary-light); }
+        .option.selected { border-color: var(--selected); background: var(--selected-bg); font-weight: 500; }
+        .option.correct-answer { border-color: var(--correct); background: var(--correct-bg); }
+        .option.wrong-answer { border-color: var(--wrong); background: var(--wrong-bg); }
+        .option-letter {
+            width: 28px; height: 28px; border-radius: 50%; border: 2px solid var(--border);
+            display: flex; align-items: center; justify-content: center;
+            font-weight: 600; font-size: 0.8rem; flex-shrink: 0; transition: all 0.15s;
+        }
+        .option.selected .option-letter { border-color: var(--primary); background: var(--primary); color: white; }
+        .option.correct-answer .option-letter { border-color: var(--correct); background: var(--correct); color: white; }
+        .option.wrong-answer .option-letter { border-color: var(--wrong); background: var(--wrong); color: white; }
+
+        /* Fill blank */
+        .fill-input {
+            width: 120px; padding: 8px 12px; border: 2px solid var(--border); border-radius: 8px;
+            font-size: 1rem; font-family: inherit; outline: none; transition: border-color 0.2s;
+            display: inline-block; margin: 0 4px;
+        }
+        .fill-input:focus { border-color: var(--primary); }
+        .fill-input.correct { border-color: var(--correct); background: var(--correct-bg); }
+        .fill-input.wrong { border-color: var(--wrong); background: var(--wrong-bg); }
+        .correct-hint { font-size: 0.8rem; color: var(--correct); margin-top: 6px; font-weight: 500; }
+
+        /* Cloze passage with blanks */
+        .cloze-passage { font-size: 0.95rem; line-height: 2; margin-bottom: 20px; padding: 16px 20px; background: #f1f3f4; border-radius: 8px; }
+        .cloze-blank { font-weight: 700; color: var(--primary); padding: 2px 8px; background: var(--primary-light); border-radius: 4px; }
+
+        /* Navigation */
+        .nav-buttons { display: flex; justify-content: space-between; margin-top: 32px; padding-top: 24px; border-top: 1px solid var(--border); }
+        .nav-btn {
+            padding: 12px 28px; border: none; border-radius: 20px; font-size: 0.9rem;
+            font-family: inherit; cursor: pointer; transition: all 0.2s;
+        }
+        .nav-btn.prev { background: var(--card); border: 1px solid var(--border); color: var(--text); }
+        .nav-btn.prev:hover { border-color: var(--primary); color: var(--primary); }
+        .nav-btn.next { background: var(--primary); color: white; }
+        .nav-btn.next:hover { background: var(--primary-dark); }
+        .nav-btn.submit { background: var(--correct); color: white; }
+        .nav-btn.submit:hover { background: #2d8f47; }
+        .nav-btn:disabled { opacity: 0.5; cursor: not-allowed; }
+
+        /* Results page */
+        .results { text-align: center; padding: 40px 20px; }
+        .results h2 { font-size: 1.8rem; margin-bottom: 12px; }
+        .score-circle {
+            width: 160px; height: 160px; border-radius: 50%; margin: 24px auto;
+            display: flex; flex-direction: column; align-items: center; justify-content: center;
+            font-size: 2.4rem; font-weight: 700;
+        }
+        .score-circle.excellent { background: var(--correct-bg); color: var(--correct); border: 4px solid var(--correct); }
+        .score-circle.good { background: #fff3e0; color: #e65100; border: 4px solid #fb8c00; }
+        .score-circle.needs-work { background: var(--wrong-bg); color: var(--wrong); border: 4px solid var(--wrong); }
+        .score-circle .label { font-size: 0.7rem; font-weight: 400; color: var(--text-light); }
+        .score-detail { display: flex; justify-content: center; gap: 32px; margin: 24px 0; font-size: 0.9rem; color: var(--text-light); }
+        .score-detail .val { font-weight: 600; color: var(--text); font-size: 1.1rem; }
+        .result-actions { display: flex; gap: 12px; justify-content: center; margin-top: 24px; }
+        .result-btn {
+            padding: 12px 28px; border-radius: 20px; font-size: 0.9rem; font-family: inherit;
+            cursor: pointer; text-decoration: none; transition: all 0.2s;
+        }
+        .result-btn.primary { background: var(--primary); color: white; border: none; }
+        .result-btn.secondary { background: var(--card); color: var(--text); border: 1px solid var(--border); }
+
+        .hidden { display: none !important; }
+
+        @media (max-width: 600px) {
+            .quiz-container { padding: 16px; }
+            .question-card { padding: 18px; }
+            .top-bar { padding: 10px 16px; }
+        }
+    </style>
+</head>
+<body>
+
+<div class="top-bar">
+    <a href="index.html">← 返回</a>
+    <span class="center" id="topTitle">KET Practice</span>
+    <div class="right">
+        <span class="timer" id="timer">00:00</span>
+        <span id="progress">已答 0 / 0</span>
+    </div>
+</div>
+<div class="progress-bar"><div class="progress-fill" id="progressBar" style="width:0%"></div></div>
+
+<div class="quiz-container">
+    <!-- Test selector -->
+    <div id="selectorView" class="test-selector">
+        <h2>选择练习套卷</h2>
+        <div class="test-grid" id="testGrid">加载中...</div>
+    </div>
+
+    <!-- Quiz view -->
+    <div id="quizView" class="hidden"></div>
+
+    <!-- Results view -->
+    <div id="resultsView" class="hidden results"></div>
+</div>
+
+<script>
+    // State
+    let testData = null;
+    let allQuestions = [];
+    let userAnswers = {};
+    let currentPartIdx = 0;
+    let startTime = null;
+    let timerInterval = null;
+    let submitted = false;
+
+    // Load test list
+    async function loadTestList() {
+        const params = new URLSearchParams(location.search);
+        const testId = params.get('test');
+        if (testId) { loadTest(testId); return; }
+
+        try {
+            const r = await fetch('/data/ket/index.json');
+            const data = await r.json();
+            const level = data.levels.find(l => l.id === 'ket');
+            if (!level) return;
+            document.getElementById('testGrid').innerHTML = level.tests.map(t =>
+                `<div class="test-option" onclick="loadTest('${t.id}')">
+                    <div class="test-name">${t.title}</div>
+                    <div class="test-info">${t.totalQuestions} 题 · Reading & Writing</div>
+                </div>`
+            ).join('');
+        } catch (e) { document.getElementById('testGrid').textContent = '加载失败'; }
+    }
+
+    // Load a specific test
+    async function loadTest(testId) {
+        try {
+            const r = await fetch(`/data/ket/${testId}.json`);
+            testData = await r.json();
+            document.getElementById('topTitle').textContent = testData.title;
+
+            // Flatten all questions
+            allQuestions = [];
+            testData.parts.forEach(part => {
+                part.questions.forEach(q => {
+                    q._part = part;
+                    allQuestions.push(q);
+                });
+            });
+
+            startQuiz();
+        } catch (e) {
+            alert('加载试卷失败: ' + e.message);
+        }
+    }
+
+    function startQuiz() {
+        document.getElementById('selectorView').classList.add('hidden');
+        document.getElementById('quizView').classList.remove('hidden');
+        document.getElementById('progress').textContent = `已答 0 / ${allQuestions.length}`;
+        startTime = Date.now();
+        timerInterval = setInterval(updateTimer, 1000);
+        currentPartIdx = 0;
+        renderCurrentPart();
+    }
+
+    function updateTimer() {
+        const elapsed = Math.floor((Date.now() - startTime) / 1000);
+        const m = String(Math.floor(elapsed / 60)).padStart(2, '0');
+        const s = String(elapsed % 60).padStart(2, '0');
+        document.getElementById('timer').textContent = `${m}:${s}`;
+    }
+
+    function renderCurrentPart() {
+        const part = testData.parts[currentPartIdx];
+        const view = document.getElementById('quizView');
+
+        let html = `<div class="part-header"><h3>${part.name}</h3><p>${part.description}</p></div>`;
+
+        // Part 2 matching: show texts first
+        if (part.type === 'matching' && part.texts) {
+            html += '<div class="matching-texts">';
+            for (const [key, val] of Object.entries(part.texts)) {
+                html += `<div class="matching-text"><div class="label">${key}. ${val.title}</div><div class="content">${val.content}</div></div>`;
+            }
+            html += '</div>';
+        }
+
+        // Part 3 passage
+        if (part.type === 'multiple_choice' && part.passage) {
+            html += `<div class="q-text passage">${part.passage}</div>`;
+        }
+
+        // Part 4 cloze passage
+        if (part.type === 'cloze_choice' && part.passage) {
+            html += `<div class="cloze-passage">${formatClozePassage(part.passage)}</div>`;
+        }
+
+        // Part 5 fill blank passage
+        if (part.type === 'fill_blank' && part.passage) {
+            html += `<div class="cloze-passage">${part.passage}</div>`;
+        }
+
+        // Render questions
+        part.questions.forEach(q => {
+            html += renderQuestion(q, part);
+        });
+
+        // Navigation
+        const isFirst = currentPartIdx === 0;
+        const isLast = currentPartIdx === testData.parts.length - 1;
+        html += `<div class="nav-buttons">
+            <button class="nav-btn prev" onclick="prevPart()" ${isFirst ? 'disabled' : ''}>← 上一部分</button>
+            ${isLast
+                ? '<button class="nav-btn submit" onclick="submitQuiz()">提交试卷 ✓</button>'
+                : '<button class="nav-btn next" onclick="nextPart()">下一部分 →</button>'}
+        </div>`;
+
+        view.innerHTML = html;
+        window.scrollTo(0, 0);
+    }
+
+    function renderQuestion(q, part) {
+        const answered = userAnswers[q.number] !== undefined;
+        let html = `<div class="question-card ${answered ? 'answered' : ''}" id="q${q.number}">`;
+        html += `<div class="q-number">Question ${q.number}</div>`;
+
+        // Question text (for Part 1 signs/notices)
+        if (q.text && part.type !== 'cloze_choice' && part.type !== 'matching') {
+            const textClass = q.textType || '';
+            html += `<div class="q-text ${textClass}">${q.text}</div>`;
+        }
+
+        // For matching questions, show the question text
+        if (part.type === 'matching' && q.text) {
+            html += `<div style="margin-bottom:12px;font-size:0.95rem;">${q.text}</div>`;
+        }
+
+        // Options (for multiple_choice, matching, cloze_choice)
+        if (q.options) {
+            html += '<div class="options">';
+            q.options.forEach((opt, i) => {
+                const letter = String.fromCharCode(65 + i);
+                const selected = userAnswers[q.number] === letter;
+                html += `<div class="option ${selected ? 'selected' : ''}" onclick="selectAnswer(${q.number}, '${letter}', this)">
+                    <span class="option-letter">${letter}</span>
+                    <span>${opt.replace(/^[A-C]\.\s*/, '')}</span>
+                </div>`;
+            });
+            html += '</div>';
+        }
+
+        // Fill blank input (Part 5)
+        if (part.type === 'fill_blank' && !q.options) {
+            const val = userAnswers[q.number] || '';
+            html += `<div style="margin-top:8px;">
+                <span style="font-size:0.85rem;color:var(--text-light);">第 ${q.number} 空：</span>
+                <input class="fill-input" type="text" value="${val}" placeholder="填写答案"
+                    oninput="fillAnswer(${q.number}, this.value)" autocomplete="off" spellcheck="false">
+            </div>`;
+        }
+
+        html += '</div>';
+        return html;
+    }
+
+    function formatClozePassage(text) {
+        return text.replace(/\((\d+)\)____/g, '<span class="cloze-blank">($1) ____</span>');
+    }
+
+    function selectAnswer(qNum, letter, el) {
+        if (submitted) return;
+        userAnswers[qNum] = letter;
+        // Update UI
+        const card = el.closest('.question-card');
+        card.querySelectorAll('.option').forEach(o => o.classList.remove('selected'));
+        el.classList.add('selected');
+        card.classList.add('answered');
+        updateProgress();
+    }
+
+    function fillAnswer(qNum, value) {
+        if (submitted) return;
+        userAnswers[qNum] = value.trim();
+        updateProgress();
+    }
+
+    function updateProgress() {
+        const answered = Object.keys(userAnswers).filter(k => userAnswers[k] !== '').length;
+        document.getElementById('progress').textContent = `已答 ${answered} / ${allQuestions.length}`;
+        document.getElementById('progressBar').style.width = `${(answered / allQuestions.length) * 100}%`;
+    }
+
+    function prevPart() {
+        if (currentPartIdx > 0) { currentPartIdx--; renderCurrentPart(); }
+    }
+
+    function nextPart() {
+        if (currentPartIdx < testData.parts.length - 1) { currentPartIdx++; renderCurrentPart(); }
+    }
+
+    async function submitQuiz() {
+        const answered = Object.keys(userAnswers).filter(k => userAnswers[k] !== '').length;
+        if (answered < allQuestions.length) {
+            if (!confirm(`还有 ${allQuestions.length - answered} 题未作答，确定提交吗？`)) return;
+        }
+
+        submitted = true;
+        clearInterval(timerInterval);
+        const duration = Math.floor((Date.now() - startTime) / 1000);
+
+        // Calculate score
+        let correct = 0;
+        const answers = allQuestions.map(q => {
+            const userAns = userAnswers[q.number] || '';
+            let isRight = false;
+
+            if (Array.isArray(q.answer)) {
+                isRight = q.answer.some(a => a.toLowerCase() === userAns.toLowerCase());
+            } else {
+                isRight = userAns.toUpperCase() === q.answer.toUpperCase();
+            }
+
+            if (isRight) correct++;
+            return { question: q.number, answer: userAns, correct: Array.isArray(q.answer) ? q.answer[0] : q.answer, isRight, points: q.points || 1 };
+        });
+
+        const total = allQuestions.length;
+        const score = correct;
+        const pct = Math.round((correct / total) * 100);
+
+        // Upload to server
+        try {
+            const token = localStorage.getItem('token');
+            if (token) {
+                await fetch('/api/quiz/submit', {
+                    method: 'POST',
+                    headers: { 'Authorization': `Bearer ${token}`, 'Content-Type': 'application/json' },
+                    body: JSON.stringify({ level: 'KET', year: 2024, answers, duration, score })
+                });
+            }
+        } catch (e) { console.error('Upload failed:', e); }
+
+        showResults(correct, total, pct, duration, answers);
+    }
+
+    function showResults(correct, total, pct, duration, answers) {
+        const m = String(Math.floor(duration / 60)).padStart(2, '0');
+        const s = String(duration % 60).padStart(2, '0');
+        const grade = pct >= 80 ? 'excellent' : pct >= 60 ? 'good' : 'needs-work';
+        const gradeText = pct >= 80 ? 'Excellent! 🎉' : pct >= 60 ? 'Good job! 👍' : 'Keep practicing! 💪';
+
+        document.getElementById('quizView').classList.add('hidden');
+        const view = document.getElementById('resultsView');
+        view.classList.remove('hidden');
+
+        view.innerHTML = `
+            <h2>${gradeText}</h2>
+            <div class="score-circle ${grade}">
+                ${pct}%
+                <div class="label">${correct}/${total}</div>
+            </div>
+            <div class="score-detail">
+                <div><div class="val">${correct}</div>答对</div>
+                <div><div class="val">${total - correct}</div>答错</div>
+                <div><div class="val">${m}:${s}</div>用时</div>
+            </div>
+            <div class="result-actions">
+                <button class="result-btn primary" onclick="reviewAnswers()">查看答案</button>
+                <a class="result-btn secondary" href="quiz.html">再做一套</a>
+                <a class="result-btn secondary" href="index.html">返回首页</a>
+            </div>
+            <div id="reviewArea" class="hidden" style="text-align:left;margin-top:32px;"></div>
+        `;
+    }
+
+    function reviewAnswers() {
+        const area = document.getElementById('reviewArea');
+        if (!area.classList.contains('hidden')) { area.classList.add('hidden'); return; }
+        area.classList.remove('hidden');
+
+        let html = '';
+        testData.parts.forEach(part => {
+            html += `<div class="part-header" style="margin-top:24px;"><h3>${part.name}</h3></div>`;
+
+            if (part.type === 'matching' && part.texts) {
+                html += '<div class="matching-texts">';
+                for (const [key, val] of Object.entries(part.texts)) {
+                    html += `<div class="matching-text"><div class="label">${key}. ${val.title}</div><div class="content">${val.content}</div></div>`;
+                }
+                html += '</div>';
+            }
+            if (part.passage) {
+                html += `<div class="q-text passage">${part.passage}</div>`;
+            }
+
+            part.questions.forEach(q => {
+                const userAns = userAnswers[q.number] || '';
+                const correctAns = Array.isArray(q.answer) ? q.answer[0] : q.answer;
+                let isRight = false;
+                if (Array.isArray(q.answer)) {
+                    isRight = q.answer.some(a => a.toLowerCase() === userAns.toLowerCase());
+                } else {
+                    isRight = userAns.toUpperCase() === correctAns.toUpperCase();
+                }
+
+                html += `<div class="question-card ${isRight ? 'correct' : 'wrong'}">`;
+                html += `<div class="q-number">Question ${q.number} ${isRight ? '✓' : '✗'}</div>`;
+
+                if (q.text && part.type !== 'cloze_choice') {
+                    html += `<div class="q-text ${q.textType || ''}">${q.text}</div>`;
+                }
+
+                if (q.options) {
+                    html += '<div class="options">';
+                    q.options.forEach((opt, i) => {
+                        const letter = String.fromCharCode(65 + i);
+                        let cls = '';
+                        if (letter === correctAns.toUpperCase()) cls = 'correct-answer';
+                        else if (letter === userAns.toUpperCase() && !isRight) cls = 'wrong-answer';
+                        html += `<div class="option ${cls}"><span class="option-letter">${letter}</span><span>${opt.replace(/^[A-C]\.\s*/, '')}</span></div>`;
+                    });
+                    html += '</div>';
+                }
+
+                if (part.type === 'fill_blank' && !q.options) {
+                    html += `<div style="margin-top:8px;">
+                        <span>你的答案: </span><strong class="${isRight ? '' : 'wrong-answer'}" style="color:${isRight ? 'var(--correct)' : 'var(--wrong)'}">${userAns || '(未作答)'}</strong>
+                        ${!isRight ? `<span class="correct-hint"> → 正确答案: ${Array.isArray(q.answer) ? q.answer.join(' / ') : q.answer}</span>` : ''}
+                    </div>`;
+                }
+
+                html += '</div>';
+            });
+        });
+
+        area.innerHTML = html;
+    }
+
+    // Init
+    loadTestList();
+</script>
+</body>
+</html>

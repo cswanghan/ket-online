@@ -1,0 +1,305 @@
+{
+  "examType": "KET",
+  "title": "Practice Test 1",
+  "totalQuestions": 30,
+  "parts": [
+    {
+      "part": 1,
+      "name": "Reading Part 1",
+      "description": "Read the notices, signs or short messages. For each question, choose the correct answer.",
+      "type": "multiple_choice",
+      "questions": [
+        {
+          "number": 1,
+          "points": 1,
+          "text": "SWIMMING POOL\nChildren under 12 must be with an adult",
+          "textType": "notice",
+          "options": [
+            "A. Children can swim alone if they are 12.",
+            "B. Young children cannot use the pool without a grown-up.",
+            "C. Adults must not swim with children."
+          ],
+          "answer": "B"
+        },
+        {
+          "number": 2,
+          "points": 1,
+          "text": "SCHOOL CAFETERIA\nHot meals available 12:00 - 13:30 only",
+          "textType": "notice",
+          "options": [
+            "A. The cafeteria is open all day.",
+            "B. You can only get hot food at lunchtime.",
+            "C. Cold meals are served after 13:30."
+          ],
+          "answer": "B"
+        },
+        {
+          "number": 3,
+          "points": 1,
+          "text": "Tom,\nI've gone to the supermarket. Your lunch is in the fridge. Back by 3pm.\nMum",
+          "textType": "message",
+          "options": [
+            "A. Tom should make his own lunch.",
+            "B. Tom's mother has already prepared his food.",
+            "C. Tom needs to go shopping with his mother."
+          ],
+          "answer": "B"
+        },
+        {
+          "number": 4,
+          "points": 1,
+          "text": "CITY LIBRARY\nFree Wi-Fi available on all floors\nPassword: LibRead2024",
+          "textType": "notice",
+          "options": [
+            "A. You have to pay to use the internet at the library.",
+            "B. Wi-Fi is only available on the ground floor.",
+            "C. You can use the internet for free at the library."
+          ],
+          "answer": "C"
+        },
+        {
+          "number": 5,
+          "points": 1,
+          "text": "PARK RULES\nPlease keep dogs on leads at all times",
+          "textType": "sign",
+          "options": [
+            "A. Dogs are not allowed in the park.",
+            "B. Dog owners must control their dogs in the park.",
+            "C. Dogs can run freely in some areas of the park."
+          ],
+          "answer": "B"
+        },
+        {
+          "number": 6,
+          "points": 1,
+          "text": "Emma,\nDon't forget we're meeting at the cinema at 7pm, not 6pm like we first said.\nSee you there!\nLily",
+          "textType": "message",
+          "options": [
+            "A. The meeting time has changed to one hour later.",
+            "B. Lily cannot come to the cinema tonight.",
+            "C. Emma and Lily will meet at 6pm."
+          ],
+          "answer": "A"
+        }
+      ]
+    },
+    {
+      "part": 2,
+      "name": "Reading Part 2",
+      "description": "Read the descriptions of three people and the texts below. For each question, choose the correct answer.",
+      "type": "matching",
+      "texts": {
+        "A": {
+          "title": "Sunshine Sports Camp",
+          "content": "This summer camp is for young people aged 10-15 who love being outdoors. Activities include football, basketball and swimming. The camp runs for two weeks in July and costs £250. All meals are included. Campers sleep in tents and learn to work together as a team."
+        },
+        "B": {
+          "title": "Creative Arts Summer School",
+          "content": "If you enjoy painting, drawing or making things, this is the perfect summer course for you. Classes run every morning from 9am to 12pm during August. Students can choose between painting, pottery and photography. The cost is £15 per day, and all materials are provided. Suitable for ages 8-16."
+        },
+        "C": {
+          "title": "Young Cooks Academy",
+          "content": "Learn to make delicious meals from around the world! This weekend cooking course teaches young people aged 11-16 how to prepare healthy dishes. Each Saturday in June, you will learn to cook a different meal. Classes are from 10am to 2pm and cost £20 per session. You can take home everything you make."
+        }
+      },
+      "questions": [
+        {
+          "number": 7,
+          "points": 1,
+          "text": "Marco is 13 and wants to learn how to make meals for his family.",
+          "answer": "C"
+        },
+        {
+          "number": 8,
+          "points": 1,
+          "text": "Sophie is 11 and loves drawing. She wants to do something creative in the mornings during her summer holiday.",
+          "answer": "B"
+        },
+        {
+          "number": 9,
+          "points": 1,
+          "text": "Jake is 14 and enjoys playing team sports outdoors. He would like to stay somewhere for more than a few days.",
+          "answer": "A"
+        },
+        {
+          "number": 10,
+          "points": 1,
+          "text": "Which activity lets you take home what you make?",
+          "answer": "C"
+        },
+        {
+          "number": 11,
+          "points": 1,
+          "text": "Which activity includes a place to sleep?",
+          "answer": "A"
+        },
+        {
+          "number": 12,
+          "points": 1,
+          "text": "Amy is 9 and wants to try photography. She is only free in the mornings.",
+          "answer": "B"
+        },
+        {
+          "number": 13,
+          "points": 1,
+          "text": "Which activity only takes place on one day each week?",
+          "answer": "C"
+        }
+      ]
+    },
+    {
+      "part": 3,
+      "name": "Reading Part 3",
+      "description": "Read the text and choose the correct answer for each question.",
+      "type": "multiple_choice",
+      "passage": "My name is Kenji and I am from Tokyo, Japan. Last year, when I was fourteen, my family moved to London because of my father's job. At first, I was very worried because I didn't speak much English and I didn't know anyone at my new school.\n\nOn my first day, a boy called Daniel sat next to me in class. He was very friendly and helped me understand what the teacher was saying. At lunchtime, he introduced me to his friends, and they invited me to play football with them. I was surprised because in my old school in Tokyo, it took a long time to make new friends.\n\nNow I have been in London for eight months. My English is much better, and I have many friends. I still miss my old friends in Tokyo, but I talk to them online every weekend. I am also teaching Daniel some Japanese words, and he thinks the language is really interesting. I am glad that I came to London because I have learned so much about a different culture.",
+      "questions": [
+        {
+          "number": 14,
+          "points": 1,
+          "text": "Why did Kenji move to London?",
+          "options": [
+            "A. He wanted to learn English.",
+            "B. His father got a job there.",
+            "C. He wanted to go to a better school."
+          ],
+          "answer": "B"
+        },
+        {
+          "number": 15,
+          "points": 1,
+          "text": "How did Kenji feel on his first day at school?",
+          "options": [
+            "A. He felt excited about making friends.",
+            "B. He felt angry about leaving Tokyo.",
+            "C. He felt nervous because everything was new."
+          ],
+          "answer": "C"
+        },
+        {
+          "number": 16,
+          "points": 1,
+          "text": "What did Daniel do to help Kenji?",
+          "options": [
+            "A. He taught Kenji Japanese.",
+            "B. He helped Kenji understand lessons and meet other students.",
+            "C. He gave Kenji a book about London."
+          ],
+          "answer": "B"
+        },
+        {
+          "number": 17,
+          "points": 1,
+          "text": "What surprised Kenji about his new school?",
+          "options": [
+            "A. The students played football at lunchtime.",
+            "B. The teachers spoke very fast.",
+            "C. He made friends quickly."
+          ],
+          "answer": "C"
+        },
+        {
+          "number": 18,
+          "points": 1,
+          "text": "What is Kenji's overall feeling about living in London?",
+          "options": [
+            "A. He is happy because he has learned new things.",
+            "B. He is sad and wants to go back to Tokyo.",
+            "C. He thinks London is too different from Tokyo."
+          ],
+          "answer": "A"
+        }
+      ]
+    },
+    {
+      "part": 4,
+      "name": "Reading Part 4",
+      "description": "Read the text. Choose the correct word for each space.",
+      "type": "cloze_choice",
+      "passage": "Last summer, my family went (19)____ holiday to Italy. We (20)____ there by plane, and the flight took about two hours. When we arrived, the weather (21)____ really hot and sunny. We stayed in a small hotel near (22)____ beach.\n\nEvery morning, we (23)____ swimming in the sea. The water was very clean and warm. In the afternoons, we visited old towns and tried different kinds of Italian food. My favourite dish was pizza, (24)____ was much better than the pizza at home.\n\nIt was the best holiday I have ever had!",
+      "questions": [
+        {
+          "number": 19,
+          "points": 1,
+          "text": "(19)",
+          "options": ["A. at", "B. on", "C. in"],
+          "answer": "B"
+        },
+        {
+          "number": 20,
+          "points": 1,
+          "text": "(20)",
+          "options": ["A. travelled", "B. have travelled", "C. are travelling"],
+          "answer": "A"
+        },
+        {
+          "number": 21,
+          "points": 1,
+          "text": "(21)",
+          "options": ["A. is", "B. were", "C. was"],
+          "answer": "C"
+        },
+        {
+          "number": 22,
+          "points": 1,
+          "text": "(22)",
+          "options": ["A. a", "B. the", "C. an"],
+          "answer": "B"
+        },
+        {
+          "number": 23,
+          "points": 1,
+          "text": "(23)",
+          "options": ["A. go", "B. went", "C. going"],
+          "answer": "B"
+        },
+        {
+          "number": 24,
+          "points": 1,
+          "text": "(24)",
+          "options": ["A. who", "B. where", "C. which"],
+          "answer": "C"
+        }
+      ]
+    },
+    {
+      "part": 5,
+      "name": "Reading & Writing Part 5",
+      "description": "Read the text. Write ONE word for each space.",
+      "type": "fill_blank",
+      "passage": "Dear Anna,\n\nI (25)____ writing to tell you about my new school. It is much bigger (26)____ my old one. There (27)____ about 500 students here.\n\nI have already (28)____ some new friends. My best friend is called Lucy. She is very good (29)____ maths and she helps me with my homework.\n\nI hope you (30)____ come and visit me soon.\n\nLove,\nMia",
+      "questions": [
+        {
+          "number": 25,
+          "points": 1,
+          "answer": ["am", "'m"]
+        },
+        {
+          "number": 26,
+          "points": 1,
+          "answer": ["than"]
+        },
+        {
+          "number": 27,
+          "points": 1,
+          "answer": ["are", "'re"]
+        },
+        {
+          "number": 28,
+          "points": 1,
+          "answer": ["made"]
+        },
+        {
+          "number": 29,
+          "points": 1,
+          "answer": ["at"]
+        },
+        {
+          "number": 30,
+          "points": 1,
+          "answer": ["can", "will"]
+        }
+      ]
+    }
+  ]
+}

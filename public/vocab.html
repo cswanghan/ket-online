@@ -3,18 +3,18 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>KET Vocabulary Studio · 分级单词背诵</title>
+    <title>KET Vocabulary Studio · 官方主题词背诵</title>
     <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600;700&family=Manrope:wght@400;500;600;700&family=Noto+Serif+SC:wght@400;500;600&display=swap" rel="stylesheet">
     <style>
         :root {
-            --bg: #f7f1e8;
-            --paper: rgba(255, 252, 246, 0.84);
-            --line: rgba(87, 58, 41, 0.12);
-            --text: #2e241e;
-            --muted: #7b6b60;
-            --accent: #9b5d47;
-            --accent-soft: rgba(155, 93, 71, 0.12);
-            --shadow: 0 18px 50px rgba(73, 45, 29, 0.11);
+            --bg: #f6efe4;
+            --panel: rgba(255, 251, 246, 0.84);
+            --line: rgba(89, 62, 42, 0.12);
+            --text: #2d241d;
+            --muted: #76675e;
+            --accent: #99604b;
+            --accent-soft: rgba(153, 96, 75, 0.1);
+            --shadow: 0 18px 48px rgba(74, 48, 34, 0.12);
             --radius: 28px;
         }
 
@@ -22,42 +22,43 @@
 
         body {
             margin: 0;
-            font-family: 'Manrope', 'Noto Serif SC', sans-serif;
-            color: var(--text);
-            background:
-                radial-gradient(circle at top left, rgba(201, 111, 93, 0.18), transparent 26%),
-                radial-gradient(circle at right 15%, rgba(108, 141, 163, 0.18), transparent 24%),
-                linear-gradient(180deg, #fbf6ef 0%, var(--bg) 100%);
             min-height: 100vh;
+            color: var(--text);
+            font-family: 'Manrope', 'Noto Serif SC', sans-serif;
+            background:
+                radial-gradient(circle at left top, rgba(201, 111, 93, 0.16), transparent 24%),
+                radial-gradient(circle at right 16%, rgba(108, 141, 163, 0.18), transparent 22%),
+                linear-gradient(180deg, #fbf7f0 0%, var(--bg) 100%);
         }
 
         .shell {
-            width: min(1220px, calc(100vw - 32px));
-            margin: 28px auto;
+            width: min(1240px, calc(100vw - 28px));
+            margin: 18px auto 28px;
             display: grid;
-            grid-template-columns: 290px minmax(0, 1fr);
-            gap: 22px;
+            grid-template-columns: 320px minmax(0, 1fr);
+            gap: 18px;
         }
 
         .panel {
-            background: var(--paper);
-            backdrop-filter: blur(16px);
+            background: var(--panel);
             border: 1px solid var(--line);
             border-radius: var(--radius);
             box-shadow: var(--shadow);
+            backdrop-filter: blur(16px);
         }
 
         .sidebar {
-            padding: 24px 18px;
+            padding: 22px 18px;
             position: sticky;
-            top: 24px;
+            top: 18px;
             height: fit-content;
+            display: grid;
+            gap: 16px;
         }
 
         .brand {
-            padding: 6px 8px 22px;
+            padding: 8px 10px 18px;
             border-bottom: 1px solid var(--line);
-            margin-bottom: 18px;
         }
 
         .brand a {
@@ -67,126 +68,178 @@
         }
 
         .brand h1 {
+            margin: 10px 0 6px;
             font-family: 'Cormorant Garamond', 'Noto Serif SC', serif;
             font-size: 2rem;
-            margin: 12px 0 6px;
-            letter-spacing: 0.02em;
+            line-height: 0.95;
         }
 
         .brand p {
             margin: 0;
             color: var(--muted);
+            line-height: 1.75;
             font-size: 0.92rem;
-            line-height: 1.7;
         }
 
-        .deck-list {
-            display: flex;
-            flex-direction: column;
-            gap: 10px;
-        }
-
-        .deck-pill {
-            width: 100%;
-            border: 1px solid var(--line);
-            background: rgba(255, 255, 255, 0.72);
-            border-radius: 20px;
-            padding: 14px 16px;
-            text-align: left;
-            font: inherit;
-            color: inherit;
-            cursor: pointer;
-            transition: transform 0.18s ease, border-color 0.18s ease, box-shadow 0.18s ease;
-            display: grid;
-            gap: 4px;
-        }
-
-        .deck-pill:hover {
-            transform: translateY(-1px);
-            border-color: rgba(155, 93, 71, 0.4);
-        }
-
-        .deck-pill.active {
-            border-color: rgba(155, 93, 71, 0.45);
-            box-shadow: inset 0 0 0 1px rgba(155, 93, 71, 0.14);
-            background: linear-gradient(180deg, rgba(255,255,255,0.95), rgba(255,247,242,0.86));
-        }
-
-        .deck-pill-label {
-            font-size: 0.76rem;
+        .section-title {
+            margin: 0 0 10px;
+            font-size: 0.78rem;
             text-transform: uppercase;
             letter-spacing: 0.18em;
             color: var(--muted);
         }
 
-        .deck-pill strong {
-            font-size: 1rem;
-            font-weight: 700;
+        .level-filters,
+        .topic-filters {
+            display: grid;
+            gap: 10px;
         }
 
-        .deck-pill span:last-child {
-            font-size: 0.84rem;
+        .filter-btn,
+        .topic-chip {
+            width: 100%;
+            border: 1px solid var(--line);
+            border-radius: 20px;
+            background: rgba(255,255,255,0.72);
+            color: inherit;
+            text-align: left;
+            cursor: pointer;
+            transition: transform 0.16s ease, border-color 0.16s ease, background 0.16s ease;
+        }
+
+        .filter-btn:hover,
+        .topic-chip:hover {
+            transform: translateY(-1px);
+            border-color: rgba(153, 96, 75, 0.32);
+        }
+
+        .filter-btn.active,
+        .topic-chip.active {
+            background: linear-gradient(180deg, rgba(255,255,255,0.95), rgba(255,244,238,0.88));
+            border-color: rgba(153, 96, 75, 0.4);
+            box-shadow: inset 0 0 0 1px rgba(153, 96, 75, 0.1);
+        }
+
+        .filter-btn {
+            padding: 14px 16px;
+            display: grid;
+            gap: 4px;
+        }
+
+        .filter-btn span {
+            font-size: 0.74rem;
+            letter-spacing: 0.18em;
+            text-transform: uppercase;
             color: var(--muted);
         }
 
-        .content {
-            padding: 24px;
-            display: grid;
-            gap: 20px;
+        .filter-btn strong {
+            font-size: 1rem;
         }
 
-        .hero {
-            padding: 28px;
-            display: grid;
-            grid-template-columns: minmax(0, 1fr) 320px;
-            gap: 20px;
-            align-items: stretch;
+        .topic-filters {
+            grid-template-columns: 1fr 1fr;
         }
 
-        .hero-copy {
+        .topic-chip {
+            padding: 12px 14px;
             display: grid;
-            gap: 12px;
+            gap: 5px;
         }
 
-        .hero-copy .eyebrow {
-            font-size: 0.75rem;
-            text-transform: uppercase;
-            letter-spacing: 0.22em;
+        .topic-chip span {
+            font-size: 0.82rem;
+            line-height: 1.4;
+        }
+
+        .topic-chip strong {
+            font-size: 0.84rem;
             color: var(--accent);
         }
 
-        .hero-copy h2 {
-            margin: 0;
-            font-family: 'Cormorant Garamond', 'Noto Serif SC', serif;
-            font-size: clamp(2.4rem, 5vw, 4rem);
-            line-height: 0.95;
-            font-weight: 600;
+        .source-card {
+            padding: 16px;
+            border-radius: 22px;
+            background: rgba(255,255,255,0.68);
+            border: 1px solid var(--line);
+            display: grid;
+            gap: 10px;
         }
 
-        .hero-copy p {
+        .source-card p {
             margin: 0;
             color: var(--muted);
-            line-height: 1.8;
-            max-width: 64ch;
+            font-size: 0.85rem;
+            line-height: 1.7;
+        }
+
+        .source-links {
+            display: grid;
+            gap: 8px;
+        }
+
+        .source-links a {
+            color: var(--accent);
+            text-decoration: none;
+            font-size: 0.84rem;
+            line-height: 1.5;
+        }
+
+        .content {
+            display: grid;
+            gap: 18px;
+        }
+
+        .hero,
+        .mode-bar,
+        .session,
+        .preview {
+            padding: 22px;
+        }
+
+        .hero {
+            display: grid;
+            gap: 14px;
+        }
+
+        .eyebrow {
+            font-size: 0.76rem;
+            color: var(--accent);
+            letter-spacing: 0.22em;
+            text-transform: uppercase;
+        }
+
+        .hero h2 {
+            margin: 0;
+            font-family: 'Cormorant Garamond', 'Noto Serif SC', serif;
+            font-size: clamp(2.6rem, 6vw, 4.2rem);
+            line-height: 0.92;
+        }
+
+        .hero p {
+            margin: 0;
+            color: var(--muted);
+            line-height: 1.85;
+            max-width: 70ch;
         }
 
         .overview-stats {
             display: grid;
-            grid-template-columns: repeat(3, 1fr);
+            grid-template-columns: repeat(3, minmax(0, 1fr));
             gap: 12px;
         }
 
         .metric {
-            border: 1px solid var(--line);
             border-radius: 22px;
-            padding: 18px 16px;
-            background: rgba(255,255,255,0.68);
+            border: 1px solid var(--line);
+            padding: 16px 18px;
+            background: rgba(255,255,255,0.7);
             display: grid;
-            gap: 6px;
+            gap: 5px;
         }
 
         .metric-num {
-            font-size: 1.8rem;
+            font-size: 1.85rem;
             font-weight: 700;
         }
 
@@ -195,163 +248,156 @@
             color: var(--muted);
         }
 
-        .hero-note {
-            border-radius: 24px;
-            padding: 22px;
-            background:
-                linear-gradient(135deg, rgba(155, 93, 71, 0.95), rgba(110, 82, 65, 0.95)),
-                linear-gradient(180deg, rgba(255,255,255,0.12), rgba(255,255,255,0));
+        .mode-bar {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+            align-items: center;
+        }
+
+        .mode-bar-label {
+            font-size: 0.76rem;
+            text-transform: uppercase;
+            letter-spacing: 0.18em;
+            color: var(--muted);
+            margin-right: 6px;
+        }
+
+        .mode-tab {
+            border: 1px solid var(--line);
+            background: rgba(255,255,255,0.74);
+            border-radius: 999px;
+            padding: 10px 14px;
+            font: inherit;
+            cursor: pointer;
+            color: var(--muted);
+        }
+
+        .mode-tab.active {
             color: white;
-            display: grid;
-            gap: 14px;
-            align-content: space-between;
-        }
-
-        .hero-note h3 {
-            margin: 0;
-            font-size: 1.2rem;
-        }
-
-        .hero-note p {
-            margin: 0;
-            font-size: 0.92rem;
-            line-height: 1.8;
-            color: rgba(255,255,255,0.82);
-        }
-
-        .workspace {
-            display: grid;
-            grid-template-columns: minmax(0, 1fr) 280px;
-            gap: 20px;
+            border-color: transparent;
+            background: linear-gradient(135deg, #99604b, #7d4a38);
+            box-shadow: 0 10px 24px rgba(125, 74, 56, 0.18);
         }
 
         .session {
-            padding: 24px;
             display: grid;
-            gap: 18px;
+            gap: 14px;
         }
 
         .session-meta {
             display: flex;
+            gap: 12px;
+            flex-wrap: wrap;
             justify-content: space-between;
-            gap: 10px;
-            font-size: 0.82rem;
             color: var(--muted);
+            font-size: 0.82rem;
             text-transform: uppercase;
-            letter-spacing: 0.12em;
+            letter-spacing: 0.14em;
         }
 
-        .card-shell {
+        .word-stage,
+        .result-card {
             border-radius: 26px;
             padding: 22px;
+            border: 1px solid var(--line);
             background:
-                linear-gradient(180deg, rgba(255,255,255,0.88), rgba(255,248,242,0.82)),
-                linear-gradient(135deg, color-mix(in srgb, var(--deck-color) 18%, white), rgba(255,255,255,0.8));
-            border: 1px solid rgba(255,255,255,0.75);
-            min-height: 420px;
-            display: grid;
-            gap: 18px;
-            align-content: start;
-            box-shadow: inset 0 1px 0 rgba(255,255,255,0.9);
+                linear-gradient(180deg, rgba(255,255,255,0.92), rgba(255,248,242,0.86)),
+                linear-gradient(135deg, rgba(153,96,75,0.06), rgba(108,141,163,0.06));
+            box-shadow: inset 0 1px 0 rgba(255,255,255,0.92);
+            min-width: 0;
         }
 
-        .card-topline {
+        .stage-topline {
             display: flex;
             justify-content: space-between;
             gap: 12px;
-            align-items: center;
+            flex-wrap: wrap;
+            margin-bottom: 18px;
         }
 
-        .card-chip {
+        .topic-badge,
+        .status-badge {
+            padding: 8px 12px;
+            border-radius: 999px;
+            font-size: 0.8rem;
+            background: rgba(255,255,255,0.76);
+            border: 1px solid var(--line);
+            color: var(--muted);
+        }
+
+        .prompt-label {
             font-size: 0.76rem;
+            letter-spacing: 0.18em;
             text-transform: uppercase;
-            letter-spacing: 0.16em;
-            color: var(--deck-color);
-            font-weight: 700;
+            color: var(--accent);
         }
 
-        .card-state {
-            color: var(--muted);
-            font-size: 0.84rem;
-        }
-
-        .card-word-block {
-            padding: 12px 0 6px;
-        }
-
-        .card-word {
-            font-family: 'Cormorant Garamond', 'Noto Serif SC', serif;
-            font-size: clamp(3.2rem, 8vw, 5.8rem);
-            line-height: 0.88;
-            letter-spacing: 0.02em;
-        }
-
-        .card-phonetic {
+        .headline {
             margin-top: 12px;
-            font-size: 1.02rem;
-            color: var(--muted);
+            font-family: 'Cormorant Garamond', 'Noto Serif SC', serif;
+            font-size: clamp(3rem, 8vw, 6rem);
+            line-height: 0.9;
+            overflow-wrap: anywhere;
         }
 
-        .card-meaning,
-        .card-example,
-        .typing-panel,
-        .insight-card {
+        .subline {
+            margin-top: 10px;
+            color: var(--muted);
+            line-height: 1.7;
+        }
+
+        .meaning-card,
+        .example-card,
+        .input-card {
+            margin-top: 16px;
             border-radius: 20px;
             border: 1px solid var(--line);
-            background: rgba(255,255,255,0.72);
+            background: rgba(255,255,255,0.76);
+            padding: 16px 18px;
         }
 
-        .card-meaning {
-            padding: 18px;
-            min-height: 92px;
-            opacity: 0.48;
-            transition: opacity 0.18s ease, transform 0.18s ease;
+        .meaning-card {
+            opacity: 0.34;
+            transition: opacity 0.16s ease;
         }
 
-        .card-meaning.reveal {
+        .meaning-card.reveal {
             opacity: 1;
-            transform: translateY(-1px);
         }
 
-        .meaning-label {
-            font-size: 0.76rem;
+        .section-label {
+            display: block;
+            margin-bottom: 8px;
+            font-size: 0.74rem;
             text-transform: uppercase;
             letter-spacing: 0.16em;
             color: var(--muted);
-            margin-bottom: 8px;
         }
 
-        .meaning-value {
-            font-size: 1.22rem;
-            font-weight: 700;
+        .meaning-card strong {
+            display: block;
+            font-size: 1.25rem;
         }
 
-        .card-example {
-            padding: 18px;
-        }
-
-        .card-example p {
+        .meaning-card p,
+        .example-card p {
             margin: 0;
-            line-height: 1.8;
             color: var(--muted);
+            line-height: 1.8;
         }
 
-        .typing-panel {
-            padding: 18px;
-            display: none;
-        }
-
-        .typing-panel.active {
+        .input-card {
             display: grid;
             gap: 8px;
         }
 
-        .typing-panel label {
-            font-size: 0.84rem;
+        .input-card label {
+            font-size: 0.88rem;
             font-weight: 700;
         }
 
-        .typing-panel input {
+        .input-card input {
             width: 100%;
             padding: 14px 16px;
             border-radius: 16px;
@@ -361,14 +407,39 @@
             outline: none;
         }
 
-        .typing-panel input:focus {
-            border-color: rgba(155, 93, 71, 0.42);
-            box-shadow: 0 0 0 4px var(--accent-soft);
+        .input-card input:focus {
+            border-color: rgba(153, 96, 75, 0.42);
+            box-shadow: 0 0 0 4px rgba(153, 96, 75, 0.1);
         }
 
-        .typing-hint {
-            color: var(--muted);
-            font-size: 0.82rem;
+        .tool-row {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+            margin-top: 16px;
+        }
+
+        .feedback-box {
+            min-height: 0;
+        }
+
+        .feedback-box.correct,
+        .feedback-box.wrong {
+            display: grid;
+            gap: 6px;
+            padding: 14px 16px;
+            border-radius: 18px;
+            border: 1px solid var(--line);
+        }
+
+        .feedback-box.correct {
+            background: rgba(108, 146, 112, 0.12);
+            color: #335a3e;
+        }
+
+        .feedback-box.wrong {
+            background: rgba(190, 106, 88, 0.12);
+            color: #7a4033;
         }
 
         .controls {
@@ -377,128 +448,106 @@
             gap: 12px;
         }
 
-        .controls button {
+        .controls button,
+        .tool-row button,
+        .result-card button {
             border: none;
             border-radius: 18px;
-            padding: 14px 18px;
+            padding: 12px 16px;
             font: inherit;
             cursor: pointer;
-            transition: transform 0.16s ease, opacity 0.16s ease, box-shadow 0.16s ease;
+            transition: transform 0.16s ease, opacity 0.16s ease;
         }
 
-        .controls button:hover {
+        .controls button:hover,
+        .tool-row button:hover,
+        .result-card button:hover {
             transform: translateY(-1px);
         }
 
         .primary-btn {
-            background: linear-gradient(135deg, #9b5d47, #7d4838);
+            background: linear-gradient(135deg, #99604b, #7b4937);
             color: white;
-            box-shadow: 0 12px 28px rgba(125, 72, 56, 0.22);
+            box-shadow: 0 10px 24px rgba(123, 73, 55, 0.2);
         }
 
         .secondary-btn {
-            background: rgba(255,255,255,0.86);
+            background: rgba(255,255,255,0.84);
             color: var(--text);
             border: 1px solid var(--line);
         }
 
         .ghost-btn {
-            background: rgba(155, 93, 71, 0.08);
+            background: rgba(153, 96, 75, 0.08);
             color: var(--accent);
         }
 
-        .insight-column {
-            padding: 24px;
+        .result-card h3 {
+            margin: 0 0 10px;
+            font-family: 'Cormorant Garamond', 'Noto Serif SC', serif;
+            font-size: 2.3rem;
+        }
+
+        .result-card p {
+            margin: 0 0 16px;
+            color: var(--muted);
+            line-height: 1.8;
+            max-width: 56ch;
+        }
+
+        .preview {
             display: grid;
             gap: 14px;
-            align-content: start;
         }
 
-        .aside-title {
-            font-size: 0.8rem;
-            text-transform: uppercase;
-            letter-spacing: 0.18em;
-            color: var(--muted);
-        }
-
-        .insights {
+        .preview-grid {
             display: grid;
+            grid-template-columns: repeat(3, minmax(0, 1fr));
             gap: 12px;
         }
 
-        .insight-card {
+        .preview-card {
+            border-radius: 20px;
+            border: 1px solid var(--line);
+            background: rgba(255,255,255,0.74);
             padding: 16px;
+            min-width: 0;
         }
 
-        .insight-word {
+        .preview-word {
             font-weight: 800;
             font-size: 1rem;
-            margin-bottom: 4px;
+            overflow-wrap: anywhere;
         }
 
-        .insight-meaning {
-            color: var(--accent);
-            font-size: 0.9rem;
-            margin-bottom: 10px;
+        .preview-meta {
+            margin: 6px 0 8px;
+            color: var(--muted);
+            font-size: 0.8rem;
+            line-height: 1.5;
         }
 
-        .insight-card p {
+        .preview-card p {
             margin: 0;
             color: var(--muted);
-            line-height: 1.7;
+            line-height: 1.6;
             font-size: 0.88rem;
-        }
-
-        .session-complete {
-            min-height: 340px;
-            display: grid;
-            align-content: center;
-            justify-items: start;
-            gap: 14px;
-        }
-
-        .session-complete h3 {
-            margin: 0;
-            font-family: 'Cormorant Garamond', 'Noto Serif SC', serif;
-            font-size: 2.4rem;
-        }
-
-        .session-complete p {
-            margin: 0;
-            color: var(--muted);
-            line-height: 1.8;
-            max-width: 42ch;
-        }
-
-        .complete-metrics {
-            display: flex;
-            gap: 10px;
-            flex-wrap: wrap;
-        }
-
-        .complete-metrics span {
-            padding: 10px 14px;
-            background: rgba(255,255,255,0.75);
-            border: 1px solid var(--line);
-            border-radius: 999px;
-            color: var(--muted);
-            font-size: 0.85rem;
         }
 
         .toast {
             position: fixed;
             left: 50%;
-            bottom: 22px;
+            bottom: 18px;
             transform: translateX(-50%) translateY(12px);
-            background: rgba(46, 36, 30, 0.92);
-            color: white;
             padding: 12px 16px;
             border-radius: 999px;
+            background: rgba(45, 36, 29, 0.94);
+            color: white;
             font-size: 0.86rem;
             opacity: 0;
             pointer-events: none;
-            transition: opacity 0.18s ease, transform 0.18s ease;
-            box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+            transition: opacity 0.16s ease, transform 0.16s ease;
+            box-shadow: 0 10px 26px rgba(0,0,0,0.18);
         }
 
         .toast.show {
@@ -506,7 +555,7 @@
             transform: translateX(-50%) translateY(0);
         }
 
-        @media (max-width: 1100px) {
+        @media (max-width: 1080px) {
             .shell {
                 grid-template-columns: 1fr;
             }
@@ -516,44 +565,33 @@
             }
         }
 
-        @media (max-width: 860px) {
-            .hero,
-            .workspace {
+        @media (max-width: 720px) {
+            .shell {
+                width: min(100vw - 14px, 100%);
+                margin-top: 8px;
+            }
+
+            .topic-filters,
+            .overview-stats,
+            .preview-grid {
                 grid-template-columns: 1fr;
             }
 
-            .overview-stats {
-                grid-template-columns: repeat(3, minmax(0, 1fr));
-            }
-        }
-
-        @media (max-width: 640px) {
-            .shell {
-                width: min(100vw - 16px, 100%);
-                margin: 8px auto 20px;
-            }
-
-            .content,
-            .session,
-            .insight-column,
             .hero,
+            .mode-bar,
+            .session,
+            .preview,
             .sidebar {
                 padding: 18px;
-            }
-
-            .card-word {
-                font-size: 3.6rem;
-            }
-
-            .overview-stats {
-                grid-template-columns: 1fr;
             }
 
             .controls {
                 flex-direction: column;
             }
 
-            .controls button {
+            .controls button,
+            .tool-row button,
+            .result-card button {
                 width: 100%;
             }
         }
@@ -565,42 +603,52 @@
             <div class="brand">
                 <a href="index.html">← 返回 KET&PET 首页</a>
                 <h1>Word Voyage</h1>
-                <p>分级刷词卡、拼写回忆、自动保存本地进度。适合从启蒙词汇一路刷到 KET/PET 过渡。</p>
+                <p>按 Cambridge English 官方主题词组织，支持等级筛选、主题筛选，以及词卡、拼写、听写、例句挖空四种训练方式。</p>
             </div>
-            <div class="deck-list" id="deckList"></div>
+
+            <section>
+                <h3 class="section-title">Level</h3>
+                <div class="level-filters" id="levelFilters"></div>
+            </section>
+
+            <section>
+                <h3 class="section-title">Topic</h3>
+                <div class="topic-filters" id="topicFilters"></div>
+            </section>
+
+            <section class="source-card">
+                <h3 class="section-title" style="margin:0;">Official Source</h3>
+                <p>主题维度参考 Cambridge English 官方 A2 Key / B1 Preliminary vocabulary list 的 topic headings。</p>
+                <div class="source-links" id="sourceLinks"></div>
+            </section>
         </aside>
 
         <main class="content">
             <section class="panel hero">
-                <div class="hero-copy">
-                    <div class="eyebrow" id="heroEyebrow"></div>
-                    <h2 id="heroTitle"></h2>
-                    <p id="heroDesc"></p>
-                    <div class="overview-stats" id="overviewStats"></div>
-                </div>
-                <div class="hero-note">
-                    <div>
-                        <h3>推荐玩法</h3>
-                        <p>先用词卡模式看词形和例句，再切到拼写模式做主动回忆。连续两次记住，系统就会把这个词标记为“熟悉”。</p>
-                    </div>
-                    <div>
-                        <h3>覆盖范围</h3>
-                        <p>内容从 Pre-A1 基础词一路覆盖到 A2 Key 高频词，并补一层 PET Bridge 过渡词，方便向上衔接。</p>
-                    </div>
-                </div>
+                <div class="eyebrow" id="heroEyebrow"></div>
+                <h2 id="heroTitle"></h2>
+                <p id="heroDesc"></p>
+                <div class="overview-stats" id="overviewStats"></div>
             </section>
 
-            <section class="workspace">
-                <div class="panel session">
-                    <div class="session-meta" id="sessionMeta"></div>
-                    <div id="stage"></div>
-                    <div class="controls" id="controls"></div>
-                </div>
+            <section class="panel mode-bar">
+                <span class="mode-bar-label">Mode</span>
+                <button class="mode-tab active" data-mode="flashcard">词卡模式</button>
+                <button class="mode-tab" data-mode="spelling">拼写模式</button>
+                <button class="mode-tab" data-mode="dictation">听写模式</button>
+                <button class="mode-tab" data-mode="cloze">例句挖空</button>
+            </section>
 
-                <aside class="panel insight-column">
-                    <div class="aside-title">Deck Preview</div>
-                    <div class="insights" id="insights"></div>
-                </aside>
+            <section class="panel session">
+                <div class="session-meta" id="sessionMeta"></div>
+                <div id="stage"></div>
+                <div class="feedback-box" id="feedbackBox"></div>
+                <div class="controls" id="controls"></div>
+            </section>
+
+            <section class="panel preview">
+                <h3 class="section-title" style="margin:0;">Preview Pool</h3>
+                <div class="preview-grid" id="previewGrid"></div>
             </section>
         </main>
     </div>

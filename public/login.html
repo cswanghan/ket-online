@@ -120,7 +120,11 @@
         <a href="index.html">← 返回首页</a>
     </div>
 </div>
+<script src="analytics.js"></script>
 <script>
+    function trackEvent(name, meta, eventGroup) {
+        window.KETAnalytics?.track(name, { meta, eventGroup });
+    }
     const token = localStorage.getItem('token');
     if (token) {
         fetch('/api/auth/me', { headers: { 'Authorization': `Bearer ${token}` } })
@@ -132,10 +136,12 @@
             t.classList.toggle('active', (tab === 'login' ? i === 0 : i === 1)));
         document.getElementById('loginForm').classList.toggle('active', tab === 'login');
         document.getElementById('registerForm').classList.toggle('active', tab === 'register');
+        trackEvent('auth_tab_switch', { tab });
     }
     function toggleInvite() {
         const f = document.getElementById('inviteField');
         f.style.display = f.style.display === 'block' ? 'none' : 'block';
+        trackEvent('auth_invite_toggle', { visible: f.style.display === 'block' });
     }
     function showMsg(id, text, type) {
         const el = document.getElementById(id);
@@ -145,6 +151,7 @@
     async function handleLogin(e) {
         e.preventDefault();
         const form = e.target;
+        trackEvent('auth_login_attempt', { usernameLength: form.username.value.length });
         try {
             const r = await fetch('/api/auth/login', {
                 method: 'POST',
@@ -155,15 +162,21 @@
             if (r.ok) {
                 localStorage.setItem('token', res.token);
                 localStorage.setItem('user', JSON.stringify(res.user));
+                trackEvent('auth_login_success', { role: res.user?.role || 'user' });
                 window.location.href = 'index.html';
             } else {
+                trackEvent('auth_login_failure', { reason: res.error || 'unknown' }, 'error');
                 showMsg('loginMsg', res.error, 'error');
             }
-        } catch { showMsg('loginMsg', '网络错误', 'error'); }
+        } catch {
+            trackEvent('auth_login_failure', { reason: 'network' }, 'error');
+            showMsg('loginMsg', '网络错误', 'error');
+        }
     }
     async function handleRegister(e) {
         e.preventDefault();
         const form = e.target;
+        trackEvent('auth_register_attempt', { hasInvite: Boolean(form.inviteCode?.value) });
         try {
             const r = await fetch('/api/auth/register', {
                 method: 'POST',
@@ -175,10 +188,17 @@
             });
             const res = await r.json();
             if (r.ok) {
+                trackEvent('auth_register_success', { directLogin: Boolean(res.token), message: res.message || '' });
                 showMsg('registerMsg', res.message, 'success');
                 if (res.message.includes('直接登录')) setTimeout(() => showTab('login'), 1500);
-            } else { showMsg('registerMsg', res.error, 'error'); }
-        } catch { showMsg('registerMsg', '网络错误', 'error'); }
+            } else {
+                trackEvent('auth_register_failure', { reason: res.error || 'unknown' }, 'error');
+                showMsg('registerMsg', res.error, 'error');
+            }
+        } catch {
+            trackEvent('auth_register_failure', { reason: 'network' }, 'error');
+            showMsg('registerMsg', '网络错误', 'error');
+        }
     }
 </script>
 </body>

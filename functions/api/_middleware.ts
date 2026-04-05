@@ -9,6 +9,7 @@ const PUBLIC_PATHS = [
   '/api/auth/login',
   '/api/auth/register',
   '/api/invite/verify',
+  '/api/analytics/track',
 ];
 
 export const onRequest: PagesFunction<Env> = async (context) => {

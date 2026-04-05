@@ -285,20 +285,27 @@
     </div>
 </div>
 
+<script src="analytics.js"></script>
 <script>
     // Auth modal helpers
     let pendingSubmit = false;
+    function trackEvent(name, meta, eventGroup) {
+        window.KETAnalytics?.track(name, { meta, eventGroup });
+    }
 
     function showAuthModal() {
         document.getElementById('authOverlay').classList.add('show');
+        trackEvent('quiz_auth_required', { answered: Object.keys(userAnswers).filter(k => userAnswers[k] !== '').length });
     }
     function closeAuthModal() {
         document.getElementById('authOverlay').classList.remove('show');
+        trackEvent('quiz_auth_modal_close');
     }
     function switchAuthTab(tab) {
         document.querySelectorAll('.auth-tab').forEach((t, i) => t.classList.toggle('active', tab === 'login' ? i === 0 : i === 1));
         document.getElementById('modalLoginForm').style.display = tab === 'login' ? 'block' : 'none';
         document.getElementById('modalRegisterForm').style.display = tab === 'register' ? 'block' : 'none';
+        trackEvent('quiz_auth_tab_switch', { tab });
     }
     function showModalMsg(id, text, type) {
         const el = document.getElementById(id);
@@ -307,6 +314,7 @@
     async function handleModalLogin(e) {
         e.preventDefault();
         const form = e.target;
+        trackEvent('auth_login_attempt', { source: 'quiz_modal', usernameLength: form.username.value.length });
         try {
             const r = await fetch('/api/auth/login', {
                 method: 'POST', headers: { 'Content-Type': 'application/json' },
@@ -316,14 +324,22 @@
             if (r.ok) {
                 localStorage.setItem('token', res.token);
                 localStorage.setItem('user', JSON.stringify(res.user));
+                trackEvent('auth_login_success', { source: 'quiz_modal', role: res.user?.role || 'user' });
                 closeAuthModal();
                 if (pendingSubmit) { pendingSubmit = false; doSubmit(); }
-            } else { showModalMsg('modalLoginMsg', res.error, 'error'); }
-        } catch { showModalMsg('modalLoginMsg', '网络错误', 'error'); }
+            } else {
+                trackEvent('auth_login_failure', { source: 'quiz_modal', reason: res.error || 'unknown' }, 'error');
+                showModalMsg('modalLoginMsg', res.error, 'error');
+            }
+        } catch {
+            trackEvent('auth_login_failure', { source: 'quiz_modal', reason: 'network' }, 'error');
+            showModalMsg('modalLoginMsg', '网络错误', 'error');
+        }
     }
     async function handleModalRegister(e) {
         e.preventDefault();
         const form = e.target;
+        trackEvent('auth_register_attempt', { source: 'quiz_modal' });
         try {
             const r = await fetch('/api/auth/register', {
                 method: 'POST', headers: { 'Content-Type': 'application/json' },
@@ -334,13 +350,21 @@
                 if (res.token) {
                     localStorage.setItem('token', res.token);
                     localStorage.setItem('user', JSON.stringify(res.user));
+                    trackEvent('auth_register_success', { source: 'quiz_modal', directLogin: true });
                     closeAuthModal();
                     if (pendingSubmit) { pendingSubmit = false; doSubmit(); }
                 } else {
+                    trackEvent('auth_register_success', { source: 'quiz_modal', directLogin: false });
                     showModalMsg('modalRegisterMsg', res.message || '注册成功，请等待审核后登录', 'success');
                 }
-            } else { showModalMsg('modalRegisterMsg', res.error, 'error'); }
-        } catch { showModalMsg('modalRegisterMsg', '网络错误', 'error'); }
+            } else {
+                trackEvent('auth_register_failure', { source: 'quiz_modal', reason: res.error || 'unknown' }, 'error');
+                showModalMsg('modalRegisterMsg', res.error, 'error');
+            }
+        } catch {
+            trackEvent('auth_register_failure', { source: 'quiz_modal', reason: 'network' }, 'error');
+            showModalMsg('modalRegisterMsg', '网络错误', 'error');
+        }
     }
 </script>
 
@@ -353,6 +377,7 @@
     let startTime = null;
     let timerInterval = null;
     let submitted = false;
+    const progressCheckpoints = new Set();
 
     // Level detection
     const params = new URLSearchParams(location.search);
@@ -377,12 +402,14 @@
                     ${t.source ? `<div style="font-size:0.7rem;color:#9ca3af;margin-top:4px;">${t.source}</div>` : ''}
                 </div>`
             ).join('');
+            trackEvent('quiz_selector_view', { level: currentLevel, tests: level.tests.length });
         } catch (e) { document.getElementById('testGrid').textContent = '加载失败'; }
     }
 
     // Load a specific test
     async function loadTest(testId, level) {
         level = level || currentLevel;
+        trackEvent('quiz_test_select', { testId, level });
         try {
             const r = await fetch(`/data/${level}/${testId}.json`);
             testData = await r.json();
@@ -399,6 +426,7 @@
 
             startQuiz();
         } catch (e) {
+            trackEvent('quiz_load_failed', { testId, level, message: e.message || 'load_failed' }, 'error');
             alert('加载试卷失败: ' + e.message);
         }
     }
@@ -410,6 +438,7 @@
         startTime = Date.now();
         timerInterval = setInterval(updateTimer, 1000);
         currentPartIdx = 0;
+        trackEvent('quiz_start', { level: currentLevel, title: testData?.title || '', totalQuestions: allQuestions.length, totalParts: testData?.parts?.length || 0 });
         renderCurrentPart();
     }
 
@@ -575,18 +604,28 @@
         const answered = Object.keys(userAnswers).filter(k => userAnswers[k] !== '').length;
         document.getElementById('progress').textContent = `已答 ${answered} / ${allQuestions.length}`;
         document.getElementById('progressBar').style.width = `${(answered / allQuestions.length) * 100}%`;
+        maybeTrackProgressCheckpoint(answered);
     }
 
     function prevPart() {
-        if (currentPartIdx > 0) { currentPartIdx--; renderCurrentPart(); }
+        if (currentPartIdx > 0) {
+            currentPartIdx--;
+            trackEvent('quiz_part_nav', { direction: 'prev', partIndex: currentPartIdx + 1 });
+            renderCurrentPart();
+        }
     }
 
     function nextPart() {
-        if (currentPartIdx < testData.parts.length - 1) { currentPartIdx++; renderCurrentPart(); }
+        if (currentPartIdx < testData.parts.length - 1) {
+            currentPartIdx++;
+            trackEvent('quiz_part_nav', { direction: 'next', partIndex: currentPartIdx + 1 });
+            renderCurrentPart();
+        }
     }
 
     async function submitQuiz() {
         const answered = Object.keys(userAnswers).filter(k => userAnswers[k] !== '').length;
+        trackEvent('quiz_submit_attempt', { answered, total: allQuestions.length });
         if (answered < allQuestions.length) {
             if (!confirm(`还有 ${allQuestions.length - answered} 题未作答，确定提交吗？`)) return;
         }
@@ -631,13 +670,18 @@
         try {
             const token = localStorage.getItem('token');
             if (token) {
-                await fetch('/api/quiz/submit', {
+                const response = await fetch('/api/quiz/submit', {
                     method: 'POST',
                     headers: { 'Authorization': `Bearer ${token}`, 'Content-Type': 'application/json' },
                     body: JSON.stringify({ level: currentLevel.toUpperCase(), year: 2024, answers, duration, score })
                 });
+                if (!response.ok) throw new Error(`submit_${response.status}`);
             }
-        } catch (e) { console.error('Upload failed:', e); }
+            trackEvent('quiz_submit_success', { correct, total, pct, duration });
+        } catch (e) {
+            trackEvent('quiz_submit_failed', { message: e.message || 'upload_failed' }, 'error');
+            console.error('Upload failed:', e);
+        }
 
         showResults(correct, total, pct, duration, answers);
     }
@@ -673,6 +717,7 @@
     }
 
     function reviewAnswers() {
+        trackEvent('quiz_review_open', { total: allQuestions.length });
         const area = document.getElementById('reviewArea');
         if (!area.classList.contains('hidden')) { area.classList.add('hidden'); return; }
         area.classList.remove('hidden');
@@ -750,6 +795,16 @@
 
     // Init
     loadTestList();
+
+    function maybeTrackProgressCheckpoint(answered) {
+        if (!allQuestions.length) return;
+        [25, 50, 75, 100].forEach((percent) => {
+            if (answered >= Math.ceil((percent / 100) * allQuestions.length) && !progressCheckpoints.has(percent)) {
+                progressCheckpoints.add(percent);
+                trackEvent('quiz_progress_checkpoint', { percent, answered, total: allQuestions.length });
+            }
+        });
+    }
 </script>
 </body>
 </html>

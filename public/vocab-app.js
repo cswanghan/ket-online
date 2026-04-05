@@ -38,6 +38,10 @@ const state = {
   syncTimer: null,
 };
 
+function trackEvent(name, meta, eventGroup) {
+  window.KETAnalytics?.track(name, { meta, eventGroup });
+}
+
 function loadJson(key) {
   try {
     return JSON.parse(localStorage.getItem(key) || 'null');
@@ -333,6 +337,7 @@ function renderFilters() {
       state.topic = 'all';
       buildQueue();
       render();
+      trackEvent('vocab_filter_change', { filter: 'level', value: state.level });
     });
   });
 
@@ -367,6 +372,7 @@ function renderFilters() {
       state.topic = element.getAttribute('data-topic-id');
       buildQueue();
       render();
+      trackEvent('vocab_filter_change', { filter: 'topic', value: state.topic });
     });
   });
 
@@ -394,6 +400,7 @@ function renderFilters() {
       state.focus = element.getAttribute('data-focus-id');
       buildQueue();
       render();
+      trackEvent('vocab_filter_change', { filter: 'focus', value: state.focus });
     });
   });
 
@@ -403,6 +410,7 @@ function renderFilters() {
     state.onlyUnmastered = toggle.checked;
     buildQueue();
     render();
+    trackEvent('vocab_filter_change', { filter: 'only_unmastered', value: state.onlyUnmastered });
   };
 
   const randomToggle = document.getElementById('randomOrderToggle');
@@ -411,6 +419,7 @@ function renderFilters() {
     state.randomOrder = randomToggle.checked;
     buildQueue();
     render();
+    trackEvent('vocab_filter_change', { filter: 'random_order', value: state.randomOrder });
   };
 
   const audioToggle = document.getElementById('audioOnlyToggle');
@@ -421,6 +430,7 @@ function renderFilters() {
     state.reveal = false;
     state.feedback = null;
     render();
+    trackEvent('vocab_filter_change', { filter: 'audio_only', value: state.audioOnly });
   };
 }
 
@@ -487,6 +497,7 @@ function renderDailyCard() {
     state.focus = 'daily';
     buildQueue();
     render();
+    trackEvent('vocab_daily_focus', { size: getDailyWords().length });
   });
 }
 
@@ -676,6 +687,7 @@ function renderStage() {
     saveProgress();
     scheduleCloudSync([item.key]);
     render();
+    trackEvent('vocab_favorite_toggle', { word: item.word, topic: item.topic, favorite: nextState.favorite });
   });
 
   const speakWordBtn = document.getElementById('speakWordBtn');
@@ -740,6 +752,7 @@ function renderControls() {
       state.reveal = !state.reveal;
       renderStage();
       renderControls();
+      trackEvent('vocab_reveal_toggle', { mode: state.mode, reveal: state.reveal });
     });
     document.getElementById('againBtn').addEventListener('click', () => {
       commitProgress(false);
@@ -765,6 +778,7 @@ function renderControls() {
     renderStage();
     renderFeedback();
     renderControls();
+    trackEvent('vocab_reveal_answer', { mode: state.mode, word: item.word, topic: item.topic });
   });
 
   document.getElementById('againBtn').addEventListener('click', () => {
@@ -783,7 +797,6 @@ function submitTypingAnswer() {
   const expected = normalizeAnswer(item.word);
   const actual = normalizeAnswer(state.answer);
   const correct = actual === expected;
-
   state.reveal = true;
   state.feedback = correct
     ? { correct: true, message: `正确答案就是 ${item.word}。继续保持。` }
@@ -874,6 +887,7 @@ function attachModeEvents() {
       state.reveal = false;
       state.feedback = null;
       render();
+      trackEvent('vocab_mode_change', { mode: state.mode });
     });
   });
 }
@@ -901,6 +915,7 @@ async function verifyAuth() {
     }
     state.auth.status = 'ready';
     state.auth.message = `已连接云端进度，同步账号 ${state.auth.user?.username || ''}。`;
+    trackEvent('vocab_sync_ready', { user: state.auth.user?.username || '' });
     return true;
   } catch {
     state.auth.status = 'guest';
@@ -909,6 +924,7 @@ async function verifyAuth() {
     state.auth.user = null;
     localStorage.removeItem('token');
     localStorage.removeItem('user');
+    trackEvent('vocab_sync_guest');
     return false;
   }
 }
@@ -987,6 +1003,7 @@ async function pushProgress(progressMap, silent) {
   } catch {
     state.auth.status = 'ready';
     state.auth.message = '云端同步失败，进度仍已保存在本地。';
+    trackEvent('vocab_sync_failed', { pending: Object.keys(progressMap).length }, 'error');
     if (!silent) showToast('同步失败，已保留本地记录');
   } finally {
     state.auth.syncing = false;
@@ -1004,6 +1021,7 @@ async function initCloudSync() {
   } catch {
     state.auth.status = 'ready';
     state.auth.message = '已登录，但云端进度暂时不可用。';
+    trackEvent('vocab_sync_failed', { stage: 'initial_pull' }, 'error');
     renderSyncCard();
   }
 }
@@ -1027,6 +1045,10 @@ document.addEventListener('DOMContentLoaded', async () => {
   renderSources();
   attachModeEvents();
   buildQueue();
+  trackEvent('vocab_session_start', {
+    totalWords: state.libraryWords.length,
+    hasLocalProgress: Object.keys(state.stats).length > 0,
+  });
   render();
   await initCloudSync();
   buildQueue();

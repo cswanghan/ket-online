@@ -186,13 +186,22 @@
         </div>
     </div>
 
+    <script src="analytics.js"></script>
+
     <script>
-        function openDonate() { document.getElementById('donateModal').classList.add('show'); }
+        function trackEvent(name, meta) {
+            window.KETAnalytics?.track(name, { meta });
+        }
+        function openDonate() {
+            document.getElementById('donateModal').classList.add('show');
+            trackEvent('donate_modal_open');
+        }
         function closeDonate() { document.getElementById('donateModal').classList.remove('show'); }
         function switchQR(type) {
             document.querySelectorAll('.qr-tab').forEach(t => t.classList.remove('active'));
             document.querySelector('.qr-tab.' + type).classList.add('active');
             document.getElementById('qrImg').src = 'images/' + type + '-qr.png';
+            trackEvent('donate_qr_switch', { type });
         }
     </script>
 
@@ -219,7 +228,17 @@
                 document.getElementById('levelInfo').innerHTML = '<div>Reading & Writing · Part 1-5 · 每套 30 题</div><div class="grade">适合小学高年级 — 初中</div>';
             }
             document.getElementById('quizEntry').href = `quiz.html?level=${level}`;
+            trackEvent('home_level_switch', { level });
         }
+
+        document.getElementById('quizEntry').addEventListener('click', () => trackEvent('home_entry_click', { target: 'quiz', level: currentLevel }));
+        document.getElementById('historyEntry').addEventListener('click', () => trackEvent('home_entry_click', { target: 'admin' }));
+        document.querySelector('a[href="vocab.html"]').addEventListener('click', () => trackEvent('home_entry_click', { target: 'vocab' }));
+        document.querySelector('#authArea').addEventListener('click', (event) => {
+            const target = event.target.closest('a');
+            if (!target) return;
+            trackEvent('home_auth_click', { href: target.getAttribute('href') || 'inline' });
+        });
     </script>
 </body>
 </html>

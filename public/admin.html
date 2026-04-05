@@ -49,6 +49,25 @@
         .activity-card .stats { display: flex; gap: 16px; flex-wrap: wrap; font-size: 0.82rem; color: var(--text-light); }
         .activity-card .stat-val { font-weight: 600; color: var(--text); }
         .activity-card .no-quiz { font-size: 0.82rem; color: var(--text-light); font-style: italic; }
+        .analytics-toolbar { display: flex; gap: 10px; flex-wrap: wrap; margin-bottom: 16px; }
+        .analytics-chip { padding: 7px 14px; border: 1px solid var(--warm); border-radius: 999px; background: white; color: var(--text-light); cursor: pointer; font-size: 0.82rem; }
+        .analytics-chip.active { color: var(--accent); border-color: var(--rose); background: var(--rose-bg); font-weight: 600; }
+        .analytics-grid { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 12px; margin-bottom: 18px; }
+        .analytics-card { background: white; border: 1px solid var(--warm); border-radius: 12px; padding: 14px 16px; }
+        .analytics-card .k { color: var(--text-light); font-size: 0.78rem; text-transform: uppercase; letter-spacing: 1px; }
+        .analytics-card .v { font-size: 1.5rem; color: var(--accent); font-weight: 700; margin-top: 6px; }
+        .analytics-card .subv { color: var(--text-light); font-size: 0.8rem; margin-top: 4px; }
+        .analytics-panels { display: grid; grid-template-columns: 1.3fr 1fr; gap: 14px; }
+        .analytics-panel { background: white; border: 1px solid var(--warm); border-radius: 12px; padding: 14px 16px; }
+        .analytics-panel h3 { font-size: 0.84rem; text-transform: uppercase; letter-spacing: 2px; color: var(--text-light); margin-bottom: 12px; }
+        .analytics-list { display: grid; gap: 10px; }
+        .analytics-row { display: flex; justify-content: space-between; gap: 14px; align-items: center; font-size: 0.84rem; }
+        .analytics-row .name { color: var(--text); min-width: 0; }
+        .analytics-row .meta { color: var(--text-light); font-size: 0.78rem; }
+        .analytics-pill { padding: 2px 9px; border-radius: 999px; background: var(--rose-bg); color: var(--accent); font-size: 0.76rem; white-space: nowrap; }
+        @media (max-width: 760px) {
+            .analytics-grid, .analytics-panels { grid-template-columns: 1fr; }
+        }
     </style>
 </head>
 <body>
@@ -69,6 +88,16 @@
         </div>
         <div id="userList"><div class="empty">加载中...</div></div>
     </div>
+    <div class="section" id="uxSection" style="display:none;">
+        <div class="section-title">用户体验监控</div>
+        <div class="analytics-toolbar">
+            <button class="analytics-chip active" data-days="3" onclick="loadUxSummary(3)">近 3 天</button>
+            <button class="analytics-chip" data-days="7" onclick="loadUxSummary(7)">近 7 天</button>
+            <button class="analytics-chip" data-days="14" onclick="loadUxSummary(14)">近 14 天</button>
+            <button class="analytics-chip" data-days="30" onclick="loadUxSummary(30)">近 30 天</button>
+        </div>
+        <div id="uxSummary"><div class="empty">加载中...</div></div>
+    </div>
     <div class="section">
         <div class="section-title">邀请码</div>
         <div class="invite-form">
@@ -85,7 +114,12 @@
     const token = localStorage.getItem('token');
     const user = JSON.parse(localStorage.getItem('user') || '{}');
     document.getElementById('welcomeText').textContent = `${user.username || ''} · ${user.role === 'admin' ? '管理员' : '用户'}`;
-    if (user.role === 'admin') { document.getElementById('adminSection').style.display = 'block'; loadUsers('pending'); }
+    if (user.role === 'admin') {
+        document.getElementById('adminSection').style.display = 'block';
+        document.getElementById('uxSection').style.display = 'block';
+        loadUsers('pending');
+        loadUxSummary(7);
+    }
     loadInvites();
     async function api(path, opts = {}) {
         const r = await fetch(path, { ...opts, headers: { 'Authorization': `Bearer ${token}`, 'Content-Type': 'application/json', ...opts.headers } });
@@ -129,6 +163,74 @@
         const expiresInDays = parseInt(document.getElementById('expDays').value) || 7;
         await api('/api/invite/create', { method: 'POST', body: JSON.stringify({ maxUses, expiresInDays }) });
         loadInvites();
+    }
+    async function loadUxSummary(days) {
+        document.querySelectorAll('.analytics-chip').forEach(chip => chip.classList.toggle('active', Number(chip.dataset.days) === days));
+        const container = document.getElementById('uxSummary');
+        container.innerHTML = '<div class="empty">加载中...</div>';
+        const data = await api(`/api/admin/ux-summary?days=${days}`);
+        const overview = data.overview || {};
+        const auth = data.auth || {};
+        const quiz = data.quiz || {};
+        const vocab = data.vocab || {};
+        const pages = data.pages || [];
+        const friction = data.friction || [];
+
+        container.innerHTML = `
+            <div class="analytics-grid">
+                <div class="analytics-card"><div class="k">页面浏览</div><div class="v">${overview.pageViews || 0}</div><div class="subv">活跃会话 ${overview.activeSessions || 0}</div></div>
+                <div class="analytics-card"><div class="k">平均停留</div><div class="v">${overview.avgDurationSeconds || 0}s</div><div class="subv">低参与跳出 ${overview.bounces || 0}</div></div>
+                <div class="analytics-card"><div class="k">错误事件</div><div class="v">${overview.errors || 0}</div><div class="subv">脚本 / 接口 / 加载异常</div></div>
+                <div class="analytics-card"><div class="k">登录成功率</div><div class="v">${auth.loginAttempts ? Math.round((auth.loginSuccess || 0) / auth.loginAttempts * 100) : 0}%</div><div class="subv">${auth.loginSuccess || 0} / ${auth.loginAttempts || 0}</div></div>
+            </div>
+            <div class="analytics-grid">
+                <div class="analytics-card"><div class="k">做题启动</div><div class="v">${quiz.starts || 0}</div><div class="subv">提交成功 ${quiz.submitSuccess || 0}</div></div>
+                <div class="analytics-card"><div class="k">做题被登录拦截</div><div class="v">${quiz.authRequired || 0}</div><div class="subv">提交失败 ${quiz.submitFailed || 0}</div></div>
+                <div class="analytics-card"><div class="k">背词会话</div><div class="v">${vocab.starts || 0}</div><div class="subv">每日计划使用 ${vocab.dailyFocus || 0}</div></div>
+                <div class="analytics-card"><div class="k">背词同步失败</div><div class="v">${vocab.syncFailed || 0}</div><div class="subv">筛选切换 ${vocab.filterChanges || 0}</div></div>
+            </div>
+            <div class="analytics-panels">
+                <div class="analytics-panel">
+                    <h3>高访问页面</h3>
+                    <div class="analytics-list">
+                        ${pages.length ? pages.map(page => `
+                            <div class="analytics-row">
+                                <div>
+                                    <div class="name">${page.pagePath}</div>
+                                    <div class="meta">平均停留 ${page.avgDurationSeconds}s · 跳出 ${page.bounceCount}</div>
+                                </div>
+                                <span class="analytics-pill">${page.views}</span>
+                            </div>
+                        `).join('') : '<div class="empty">暂无数据</div>'}
+                    </div>
+                </div>
+                <div class="analytics-panel">
+                    <h3>高摩擦事件</h3>
+                    <div class="analytics-list">
+                        ${friction.length ? friction.map(item => `
+                            <div class="analytics-row">
+                                <div class="name">${formatEventName(item.eventName)}</div>
+                                <span class="analytics-pill">${item.total}</span>
+                            </div>
+                        `).join('') : '<div class="empty">暂无高摩擦事件</div>'}
+                    </div>
+                </div>
+            </div>
+        `;
+    }
+    function formatEventName(name) {
+        const labels = {
+            js_error: '前端脚本错误',
+            promise_rejection: 'Promise 异常',
+            page_load_slow: '页面加载过慢',
+            auth_login_failure: '登录失败',
+            auth_register_failure: '注册失败',
+            quiz_auth_required: '做题提交前被要求登录',
+            quiz_submit_failed: '做题结果上传失败',
+            vocab_sync_failed: '背词云同步失败',
+            low_engagement_bounce: '低参与快速离开',
+        };
+        return labels[name] || name;
     }
     function logout() { localStorage.clear(); window.location.href = 'login.html'; }
 </script>

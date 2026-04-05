@@ -66,6 +66,48 @@
         .login-link a:hover { color: var(--accent); border-color: var(--rose); }
         .site-footer { text-align: center; margin-top: 60px; color: var(--text-light); font-size: 0.8rem; opacity: 0.7; }
 
+        /* Donate button */
+        .donate-btn {
+            display: inline-flex; align-items: center; gap: 6px;
+            color: var(--text-light); text-decoration: none; font-size: 0.85rem;
+            padding: 8px 20px; border: 1px solid var(--warm); border-radius: 20px;
+            transition: all 0.2s; cursor: pointer; background: none; font-family: inherit;
+        }
+        .donate-btn:hover { color: var(--accent); border-color: var(--rose); }
+
+        /* Modal */
+        .modal-overlay {
+            display: none; position: fixed; top: 0; left: 0; right: 0; bottom: 0;
+            background: rgba(50,40,35,0.5); z-index: 100; align-items: center; justify-content: center;
+            backdrop-filter: blur(2px);
+        }
+        .modal-overlay.show { display: flex; }
+        .modal {
+            background: white; border-radius: 20px; padding: 36px 32px;
+            max-width: 480px; width: 90%; max-height: 90vh; overflow-y: auto;
+            box-shadow: 0 20px 60px rgba(50,40,35,0.2); position: relative;
+        }
+        .modal-close {
+            position: absolute; top: 14px; right: 18px; background: none; border: none;
+            font-size: 1.4rem; color: var(--text-light); cursor: pointer; line-height: 1;
+        }
+        .modal-close:hover { color: var(--text); }
+        .modal h2 {
+            font-family: 'Playfair Display', 'Noto Serif SC', serif;
+            font-size: 1.4rem; margin-bottom: 20px; text-align: center;
+        }
+        .donate-intro { text-align: center; color: var(--text-light); font-size: 0.88rem; line-height: 1.8; margin-bottom: 20px; }
+        .qr-tabs { display: flex; justify-content: center; gap: 0; margin-bottom: 16px; border-bottom: 1px solid var(--warm); }
+        .qr-tab {
+            padding: 8px 24px; font-size: 0.88rem; cursor: pointer; border-bottom: 2px solid transparent;
+            color: var(--text-light); font-family: inherit; background: none; border-top: none; border-left: none; border-right: none;
+        }
+        .qr-tab.active { font-weight: 600; border-bottom-color: currentColor; }
+        .qr-tab.alipay.active { color: #1677ff; }
+        .qr-tab.wechat.active { color: #07c160; }
+        .qr-img { display: block; margin: 0 auto; max-width: 260px; border-radius: 12px; }
+        .donate-thanks { text-align: center; margin-top: 16px; color: var(--text-light); font-size: 0.82rem; line-height: 1.7; }
+
         @media (max-width: 600px) {
             .site-header h1 { font-size: 2rem; }
             .entry-grid { grid-template-columns: 1fr; max-width: 360px; }
@@ -111,8 +153,42 @@
             <a href="login.html">登录 / 注册</a>
         </div>
 
+        <div style="text-align:center;margin-top:32px;">
+            <button class="donate-btn" onclick="openDonate()">☕ 请我喝杯咖啡</button>
+        </div>
+
         <div class="site-footer">Cambridge English Practice Platform</div>
     </div>
+
+    <!-- Donate Modal -->
+    <div class="modal-overlay" id="donateModal" onclick="if(event.target===this)closeDonate()">
+        <div class="modal">
+            <button class="modal-close" onclick="closeDonate()">&times;</button>
+            <h2>支持我们</h2>
+            <div class="donate-intro">
+                这个网站由一位家长利用业余时间开发维护<br>
+                如果对你有帮助，欢迎请我喝杯咖啡 :)
+            </div>
+            <div class="qr-tabs">
+                <button class="qr-tab alipay active" onclick="switchQR('alipay')">支付宝</button>
+                <button class="qr-tab wechat" onclick="switchQR('wechat')">微信</button>
+            </div>
+            <img class="qr-img" id="qrImg" src="images/alipay-qr.png" alt="收款码">
+            <div class="donate-thanks">
+                感谢你的支持与鼓励<br>每一份心意都是继续更新的动力
+            </div>
+        </div>
+    </div>
+
+    <script>
+        function openDonate() { document.getElementById('donateModal').classList.add('show'); }
+        function closeDonate() { document.getElementById('donateModal').classList.remove('show'); }
+        function switchQR(type) {
+            document.querySelectorAll('.qr-tab').forEach(t => t.classList.remove('active'));
+            document.querySelector('.qr-tab.' + type).classList.add('active');
+            document.getElementById('qrImg').src = 'images/' + type + '-qr.png';
+        }
+    </script>
 
     <script>
         (function() {

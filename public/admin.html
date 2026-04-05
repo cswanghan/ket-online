@@ -5,46 +5,47 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>KET Practice · 管理</title>
     <script src="auth-guard.js"></script>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Noto+Sans+SC:wght@400;500;600&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&family=Noto+Serif+SC:wght@400;600&display=swap" rel="stylesheet">
     <style>
         * { margin: 0; padding: 0; box-sizing: border-box; }
         :root {
-            --bg: #f8f9fa; --card: #ffffff; --border: #e2e8f0; --primary: #1a73e8;
-            --primary-light: #e8f0fe; --text: #202124; --text-light: #5f6368;
-            --success: #34a853; --error: #ea4335;
+            --cream: #faf8f5; --warm: #f3ede6; --rose: #c4a08a; --rose-light: #e8d5c8;
+            --rose-bg: #fdf5f0; --text: #3d3530; --text-light: #8a7e76; --accent: #b07d62;
+            --success: #6b9a7d; --error: #c47070;
         }
-        body { font-family: 'Noto Sans SC', 'Inter', sans-serif; background: var(--bg); color: var(--text); }
+        body { font-family: 'Noto Serif SC', 'Georgia', serif; background: var(--cream); color: var(--text); }
         .page { max-width: 800px; margin: 0 auto; padding: 40px 24px; }
-        h1 { font-family: 'Inter', sans-serif; font-size: 1.8rem; margin-bottom: 6px; color: var(--primary); }
+        h1 { font-family: 'Playfair Display', 'Noto Serif SC', serif; font-size: 1.8rem; margin-bottom: 6px; color: var(--accent); }
         .sub { color: var(--text-light); font-size: 0.85rem; margin-bottom: 32px; }
         .nav-row { display: flex; gap: 12px; margin-bottom: 28px; }
-        .nav-link { color: var(--text-light); text-decoration: none; font-size: 0.85rem; padding: 6px 16px; border: 1px solid var(--border); border-radius: 14px; }
-        .nav-link:hover { color: var(--primary); border-color: var(--primary); }
+        .nav-link { color: var(--text-light); text-decoration: none; font-size: 0.85rem; padding: 6px 16px; border: 1px solid var(--warm); border-radius: 14px; }
+        .nav-link:hover { color: var(--accent); border-color: var(--rose); }
         .section { margin-bottom: 36px; }
-        .section-title { font-size: 0.8rem; color: var(--text-light); text-transform: uppercase; letter-spacing: 2px; margin-bottom: 14px; padding-bottom: 8px; border-bottom: 1px solid var(--border); }
-        .user-row { background: var(--card); border: 1px solid var(--border); border-radius: 10px; padding: 14px 18px; margin-bottom: 10px; display: flex; justify-content: space-between; align-items: center; }
+        .section-title { font-size: 0.8rem; color: var(--text-light); text-transform: uppercase; letter-spacing: 2px; margin-bottom: 14px; padding-bottom: 8px; border-bottom: 1px solid var(--warm); }
+        .user-row { background: white; border: 1px solid var(--warm); border-radius: 10px; padding: 14px 18px; margin-bottom: 10px; display: flex; justify-content: space-between; align-items: center; }
         .user-info .name { font-weight: 600; }
         .user-info .meta { font-size: 0.8rem; color: var(--text-light); margin-top: 2px; }
         .user-actions { display: flex; gap: 8px; }
         .action-btn { padding: 6px 14px; border: none; border-radius: 14px; font-size: 0.8rem; cursor: pointer; font-family: inherit; transition: all 0.15s; }
-        .btn-approve { background: #e6f4ea; color: #137333; }
+        .btn-approve { background: #e6f4ea; color: var(--success); }
         .btn-approve:hover { background: #ceead6; }
-        .btn-reject { background: #fce8e6; color: #c5221f; }
+        .btn-reject { background: #fce8e6; color: var(--error); }
         .btn-reject:hover { background: #f5d0cc; }
         .invite-form { display: flex; gap: 10px; align-items: center; margin-bottom: 16px; }
-        .invite-form input { padding: 8px 12px; border: 1px solid var(--border); border-radius: 8px; font-family: inherit; font-size: 0.85rem; width: 80px; background: var(--bg); }
-        .invite-form button { padding: 8px 16px; background: var(--primary); color: white; border: none; border-radius: 14px; font-size: 0.85rem; cursor: pointer; font-family: inherit; }
-        .code-row { background: var(--card); border: 1px solid var(--border); border-radius: 8px; padding: 10px 14px; margin-bottom: 8px; font-size: 0.85rem; display: flex; justify-content: space-between; align-items: center; }
-        .code-val { font-family: monospace; font-weight: 600; color: var(--primary); letter-spacing: 1px; }
+        .invite-form input { padding: 8px 12px; border: 1px solid var(--warm); border-radius: 8px; font-family: inherit; font-size: 0.85rem; width: 80px; background: var(--cream); }
+        .invite-form button { padding: 8px 16px; background: var(--accent); color: white; border: none; border-radius: 14px; font-size: 0.85rem; cursor: pointer; font-family: inherit; }
+        .invite-form button:hover { background: #9a6b52; }
+        .code-row { background: white; border: 1px solid var(--warm); border-radius: 8px; padding: 10px 14px; margin-bottom: 8px; font-size: 0.85rem; display: flex; justify-content: space-between; align-items: center; }
+        .code-val { font-family: monospace; font-weight: 600; color: var(--accent); letter-spacing: 1px; }
         .code-meta { color: var(--text-light); font-size: 0.8rem; }
         .empty { color: var(--text-light); font-size: 0.85rem; padding: 20px; text-align: center; }
-        .status-tabs { display: flex; gap: 0; margin-bottom: 16px; border-bottom: 1px solid var(--border); }
+        .status-tabs { display: flex; gap: 0; margin-bottom: 16px; border-bottom: 1px solid var(--warm); }
         .st-tab { padding: 8px 20px; font-size: 0.85rem; color: var(--text-light); cursor: pointer; border-bottom: 2px solid transparent; }
-        .st-tab.active { color: var(--primary); border-bottom-color: var(--primary); font-weight: 600; }
-        .activity-card { background: var(--card); border: 1px solid var(--border); border-radius: 10px; padding: 16px 18px; margin-bottom: 10px; }
+        .st-tab.active { color: var(--accent); border-bottom-color: var(--accent); font-weight: 600; }
+        .activity-card { background: white; border: 1px solid var(--warm); border-radius: 10px; padding: 16px 18px; margin-bottom: 10px; }
         .activity-card .card-header { display: flex; justify-content: space-between; align-items: center; margin-bottom: 8px; }
         .activity-card .name { font-weight: 600; }
-        .activity-card .role-badge { font-size: 0.75rem; padding: 2px 10px; border-radius: 10px; background: var(--primary-light); color: var(--primary); }
+        .activity-card .role-badge { font-size: 0.75rem; padding: 2px 10px; border-radius: 10px; background: var(--rose-bg); color: var(--accent); }
         .activity-card .stats { display: flex; gap: 16px; flex-wrap: wrap; font-size: 0.82rem; color: var(--text-light); }
         .activity-card .stat-val { font-weight: 600; color: var(--text); }
         .activity-card .no-quiz { font-size: 0.82rem; color: var(--text-light); font-style: italic; }

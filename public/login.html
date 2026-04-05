@@ -4,68 +4,68 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>KET Practice · 登录</title>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Noto+Sans+SC:wght@400;500;600&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&family=Noto+Serif+SC:wght@400;600&display=swap" rel="stylesheet">
     <style>
         * { margin: 0; padding: 0; box-sizing: border-box; }
         :root {
-            --bg: #f8f9fa; --card: #ffffff; --border: #e2e8f0; --border-hover: #94a3b8;
-            --primary: #1a73e8; --primary-light: #e8f0fe; --text: #202124; --text-light: #5f6368;
-            --success: #34a853; --error: #ea4335;
+            --cream: #faf8f5; --warm: #f3ede6; --rose: #c4a08a; --rose-light: #e8d5c8;
+            --rose-bg: #fdf5f0; --text: #3d3530; --text-light: #8a7e76; --accent: #b07d62;
+            --success: #6b9a7d; --error: #c47070;
         }
         body {
-            font-family: 'Noto Sans SC', 'Inter', sans-serif;
-            background: var(--bg); min-height: 100vh; color: var(--text);
+            font-family: 'Noto Serif SC', 'Georgia', serif;
+            background: var(--cream); min-height: 100vh; color: var(--text);
             display: flex; align-items: center; justify-content: center; padding: 20px;
         }
         .auth-container { width: 100%; max-width: 400px; }
         .auth-header { text-align: center; margin-bottom: 36px; }
         .auth-header .icon { font-size: 2.4rem; margin-bottom: 8px; }
-        .auth-header h1 { font-family: 'Inter', sans-serif; font-size: 1.8rem; font-weight: 700; margin-bottom: 4px; color: var(--primary); }
+        .auth-header h1 { font-family: 'Playfair Display', 'Noto Serif SC', serif; font-size: 1.8rem; font-weight: 700; margin-bottom: 4px; color: var(--accent); }
         .auth-header .sub { color: var(--text-light); font-size: 0.85rem; }
         .auth-card {
-            background: var(--card); border: 1px solid var(--border); border-radius: 16px;
+            background: white; border: 1px solid var(--warm); border-radius: 16px;
             padding: 32px 28px; position: relative;
         }
         .auth-card::before {
             content: ''; position: absolute; top: 0; left: 0; right: 0; height: 3px;
-            background: var(--primary-light); border-radius: 16px 16px 0 0;
+            background: var(--rose-light); border-radius: 16px 16px 0 0;
         }
         .tabs {
-            display: flex; border-bottom: 1px solid var(--border); margin: -32px -28px 24px; padding: 0 28px;
+            display: flex; border-bottom: 1px solid var(--warm); margin: -32px -28px 24px; padding: 0 28px;
         }
         .tab {
             flex: 1; text-align: center; padding: 14px 0; font-size: 0.9rem;
             color: var(--text-light); cursor: pointer; border-bottom: 2px solid transparent; transition: all 0.2s;
         }
         .tab:hover { color: var(--text); }
-        .tab.active { color: var(--primary); border-bottom-color: var(--primary); font-weight: 600; }
+        .tab.active { color: var(--accent); border-bottom-color: var(--accent); font-weight: 600; }
         .form-group { margin-bottom: 18px; }
         .form-label { display: block; font-size: 0.8rem; color: var(--text-light); text-transform: uppercase; letter-spacing: 1px; margin-bottom: 6px; }
         .form-input {
-            width: 100%; padding: 12px 14px; border: 1px solid var(--border); border-radius: 10px;
-            font-size: 0.95rem; font-family: inherit; color: var(--text); background: var(--bg); transition: border-color 0.2s; outline: none;
+            width: 100%; padding: 12px 14px; border: 1px solid var(--warm); border-radius: 10px;
+            font-size: 0.95rem; font-family: inherit; color: var(--text); background: var(--cream); transition: border-color 0.2s; outline: none;
         }
-        .form-input:focus { border-color: var(--primary); }
-        .form-input::placeholder { color: #9ca3af; }
+        .form-input:focus { border-color: var(--accent); }
+        .form-input::placeholder { color: var(--text-light); }
         .submit-btn {
             width: 100%; padding: 13px; border: none; border-radius: 20px;
-            background: var(--primary); color: white; font-size: 0.95rem;
+            background: var(--accent); color: white; font-size: 0.95rem;
             font-family: inherit; font-weight: 500; cursor: pointer; transition: background 0.2s; margin-top: 4px;
         }
-        .submit-btn:hover { background: #1557b0; }
-        .submit-btn:disabled { background: #94b8e8; cursor: not-allowed; }
+        .submit-btn:hover { background: #9a6b52; }
+        .submit-btn:disabled { background: var(--rose-light); cursor: not-allowed; }
         .message { margin-top: 14px; padding: 10px 14px; border-radius: 8px; font-size: 0.85rem; display: none; }
         .message.show { display: block; }
-        .message.error { background: #fce8e6; color: #c5221f; }
-        .message.success { background: #e6f4ea; color: #137333; }
+        .message.error { background: #fce8e6; color: var(--error); }
+        .message.success { background: #e6f4ea; color: var(--success); }
         .auth-footer { text-align: center; margin-top: 20px; }
         .auth-footer a {
             color: var(--text-light); text-decoration: none; font-size: 0.85rem;
-            padding: 6px 16px; border: 1px solid var(--border); border-radius: 14px; transition: all 0.2s;
+            padding: 6px 16px; border: 1px solid var(--warm); border-radius: 14px; transition: all 0.2s;
         }
-        .auth-footer a:hover { color: var(--primary); border-color: var(--primary); }
+        .auth-footer a:hover { color: var(--accent); border-color: var(--rose); }
         .invite-field { display: none; }
-        .invite-toggle { font-size: 0.8rem; color: var(--primary); cursor: pointer; text-decoration: underline; margin-bottom: 12px; display: inline-block; }
+        .invite-toggle { font-size: 0.8rem; color: var(--accent); cursor: pointer; text-decoration: underline; margin-bottom: 12px; display: inline-block; }
         #loginForm, #registerForm { display: none; }
         #loginForm.active, #registerForm.active { display: block; }
     </style>

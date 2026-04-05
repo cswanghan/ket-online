@@ -9,6 +9,7 @@ const MODE_LABELS = {
 const state = {
   level: 'all',
   topic: 'all',
+  onlyUnmastered: false,
   mode: 'flashcard',
   queue: [],
   index: 0,
@@ -56,7 +57,8 @@ function filteredWords() {
   return window.VOCAB_LIBRARY.words.filter((item) => {
     const levelOk = state.level === 'all' || item.level === state.level;
     const topicOk = state.topic === 'all' || item.topic === state.topic;
-    return levelOk && topicOk;
+    const masteryOk = !state.onlyUnmastered || !getWordState(item).mastered;
+    return levelOk && topicOk && masteryOk;
   });
 }
 
@@ -167,6 +169,14 @@ function renderFilters() {
       render();
     });
   });
+
+  const toggle = document.getElementById('onlyUnmasteredToggle');
+  toggle.checked = state.onlyUnmastered;
+  toggle.onchange = () => {
+    state.onlyUnmastered = toggle.checked;
+    buildQueue();
+    render();
+  };
 }
 
 function renderHero() {

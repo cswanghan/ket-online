@@ -166,6 +166,73 @@
             gap: 10px;
         }
 
+        .toggle-card {
+            padding: 16px;
+            border-radius: 22px;
+            background: rgba(255,255,255,0.68);
+            border: 1px solid var(--line);
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 14px;
+        }
+
+        .toggle-copy strong {
+            display: block;
+            font-size: 0.94rem;
+        }
+
+        .toggle-copy span {
+            display: block;
+            margin-top: 4px;
+            color: var(--muted);
+            font-size: 0.82rem;
+            line-height: 1.6;
+        }
+
+        .switch {
+            position: relative;
+            width: 54px;
+            height: 32px;
+            flex-shrink: 0;
+        }
+
+        .switch input {
+            opacity: 0;
+            width: 0;
+            height: 0;
+        }
+
+        .slider {
+            position: absolute;
+            inset: 0;
+            background: rgba(118, 103, 94, 0.24);
+            border-radius: 999px;
+            transition: background 0.16s ease;
+            cursor: pointer;
+        }
+
+        .slider::before {
+            content: '';
+            position: absolute;
+            width: 24px;
+            height: 24px;
+            left: 4px;
+            top: 4px;
+            border-radius: 50%;
+            background: white;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.12);
+            transition: transform 0.16s ease;
+        }
+
+        .switch input:checked + .slider {
+            background: linear-gradient(135deg, #99604b, #7b4937);
+        }
+
+        .switch input:checked + .slider::before {
+            transform: translateX(22px);
+        }
+
         .source-card p {
             margin: 0;
             color: var(--muted);
@@ -614,6 +681,17 @@
             <section>
                 <h3 class="section-title">Topic</h3>
                 <div class="topic-filters" id="topicFilters"></div>
+            </section>
+
+            <section class="toggle-card">
+                <div class="toggle-copy">
+                    <strong>只看未掌握</strong>
+                    <span>隐藏已经连续答对两次的熟词。</span>
+                </div>
+                <label class="switch">
+                    <input type="checkbox" id="onlyUnmasteredToggle">
+                    <span class="slider"></span>
+                </label>
             </section>
 
             <section class="source-card">

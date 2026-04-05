@@ -9,7 +9,10 @@ const MODE_LABELS = {
 const state = {
   level: 'all',
   topic: 'all',
+  focus: 'all',
   onlyUnmastered: false,
+  randomOrder: false,
+  audioOnly: false,
   mode: 'flashcard',
   queue: [],
   index: 0,
@@ -37,6 +40,7 @@ function getWordState(item) {
     streak: 0,
     mastered: false,
     wrong: 0,
+    favorite: false,
   };
   return state.stats[item.word];
 }
@@ -58,7 +62,13 @@ function filteredWords() {
     const levelOk = state.level === 'all' || item.level === state.level;
     const topicOk = state.topic === 'all' || item.topic === state.topic;
     const masteryOk = !state.onlyUnmastered || !getWordState(item).mastered;
-    return levelOk && topicOk && masteryOk;
+    const focusState = getWordState(item);
+    const focusOk = (
+      state.focus === 'all'
+      || (state.focus === 'wrong' && focusState.wrong > 0)
+      || (state.focus === 'favorites' && focusState.favorite)
+    );
+    return levelOk && topicOk && masteryOk && focusOk;
   });
 }
 
@@ -72,7 +82,7 @@ function countMastered(words) {
 
 function buildQueue() {
   const pool = filteredWords();
-  state.queue = [...pool].sort((left, right) => {
+  const sorted = [...pool].sort((left, right) => {
     const leftState = getWordState(left);
     const rightState = getWordState(right);
 
@@ -81,10 +91,20 @@ function buildQueue() {
     if (leftState.seen !== rightState.seen) return leftState.seen - rightState.seen;
     return left.word.localeCompare(right.word);
   });
+  state.queue = state.randomOrder ? shuffle(sorted) : sorted;
   state.index = 0;
   state.answer = '';
   state.reveal = false;
   state.feedback = null;
+}
+
+function shuffle(list) {
+  const output = [...list];
+  for (let i = output.length - 1; i > 0; i -= 1) {
+    const j = Math.floor(Math.random() * (i + 1));
+    [output[i], output[j]] = [output[j], output[i]];
+  }
+  return output;
 }
 
 function currentItem() {
@@ -111,6 +131,11 @@ function speakText(text) {
   const utterance = new SpeechSynthesisUtterance(text);
   utterance.lang = 'en-GB';
   utterance.rate = 0.92;
+  const voices = window.speechSynthesis.getVoices();
+  const preferred = voices.find((voice) => /en-GB/i.test(voice.lang))
+    || voices.find((voice) => /British|UK/i.test(voice.name))
+    || voices.find((voice) => /en/i.test(voice.lang));
+  if (preferred) utterance.voice = preferred;
   window.speechSynthesis.speak(utterance);
 }
 
@@ -170,11 +195,58 @@ function renderFilters() {
     });
   });
 
+  const focusContainer = document.getElementById('focusFilters');
+  const currentPool = window.VOCAB_LIBRARY.words.filter((item) => {
+    const levelOk = state.level === 'all' || item.level === state.level;
+    const topicOk = state.topic === 'all' || item.topic === state.topic;
+    return levelOk && topicOk;
+  });
+  const wrongCount = currentPool.filter((item) => getWordState(item).wrong > 0).length;
+  const favCount = currentPool.filter((item) => getWordState(item).favorite).length;
+  const focusItems = [
+    { id: 'all', label: '全部词池', desc: `${currentPool.length} 个词` },
+    { id: 'wrong', label: '错词本', desc: `${wrongCount} 个词` },
+    { id: 'favorites', label: '收藏夹', desc: `${favCount} 个词` },
+  ];
+
+  focusContainer.innerHTML = focusItems.map((item) => `
+    <button class="focus-chip${state.focus === item.id ? ' active' : ''}" data-focus-id="${item.id}">
+      <strong>${item.label}</strong>
+      <span>${item.desc}</span>
+    </button>
+  `).join('');
+
+  focusContainer.querySelectorAll('[data-focus-id]').forEach((element) => {
+    element.addEventListener('click', () => {
+      state.focus = element.getAttribute('data-focus-id');
+      buildQueue();
+      render();
+    });
+  });
+
   const toggle = document.getElementById('onlyUnmasteredToggle');
   toggle.checked = state.onlyUnmastered;
   toggle.onchange = () => {
     state.onlyUnmastered = toggle.checked;
     buildQueue();
+    render();
+  };
+
+  const randomToggle = document.getElementById('randomOrderToggle');
+  randomToggle.checked = state.randomOrder;
+  randomToggle.onchange = () => {
+    state.randomOrder = randomToggle.checked;
+    buildQueue();
+    render();
+  };
+
+  const audioToggle = document.getElementById('audioOnlyToggle');
+  audioToggle.checked = state.audioOnly;
+  audioToggle.onchange = () => {
+    state.audioOnly = audioToggle.checked;
+    state.answer = '';
+    state.reveal = false;
+    state.feedback = null;
     render();
   };
 }
@@ -219,7 +291,7 @@ function renderSessionMeta() {
     ? `
       <span>${MODE_LABELS[state.mode]}</span>
       <span>${state.index + 1} / ${state.queue.length}</span>
-      <span>${topicMeta ? topicMeta.label : 'All Topics'}</span>
+      <span>${topicMeta ? topicMeta.label : 'All Topics'} · ${state.focus === 'all' ? '全部词池' : state.focus === 'wrong' ? '错词本' : '收藏夹'}</span>
     `
     : `
       <span>${MODE_LABELS[state.mode]}</span>
@@ -266,7 +338,11 @@ function renderStage() {
     body = `
       <div class="prompt-label">Flashcard</div>
       <div class="headline">${item.word}</div>
-      <div class="subline">${item.level === 'a2-key' ? 'A2 Key' : 'B1 Preliminary'} · ${topicMeta.label}</div>
+      <div class="subline">${item.level === 'a2-key' ? 'A2 Key' : 'B1 Preliminary'} · ${topicMeta.label} · British audio ready</div>
+      <div class="tool-row">
+        <button class="secondary-btn" id="speakWordBtn">英式发音</button>
+        <button class="secondary-btn" id="speakSentenceBtn">朗读例句</button>
+      </div>
       <div class="meaning-card${state.reveal ? ' reveal' : ''}">
         <span class="section-label">中文释义</span>
         <strong>${item.meaning}</strong>
@@ -281,11 +357,15 @@ function renderStage() {
   if (state.mode === 'spelling') {
     body = `
       <div class="prompt-label">Spell It</div>
-      <div class="headline">${item.meaning}</div>
-      <div class="subline">${topicMeta.label} · 首尾提示 ${maskWord(item.word)}</div>
+      <div class="headline">${state.audioOnly ? 'Listen, then spell' : item.meaning}</div>
+      <div class="subline">${topicMeta.label} · ${state.audioOnly ? '纯听模式已开启' : `首尾提示 ${maskWord(item.word)}`}</div>
+      <div class="tool-row">
+        <button class="secondary-btn" id="speakWordBtn">播放单词</button>
+        <button class="secondary-btn" id="speakSentenceBtn">播放例句</button>
+      </div>
       <div class="example-card">
         <span class="section-label">语境提示</span>
-        <p>${item.example}</p>
+        <p>${state.audioOnly ? '先听发音，再尝试拼写。' : item.example}</p>
       </div>
       <div class="input-card">
         <label for="answerInput">写出英文单词</label>
@@ -298,7 +378,7 @@ function renderStage() {
     body = `
       <div class="prompt-label">Dictation</div>
       <div class="headline">Listen and type</div>
-      <div class="subline">${topicMeta.label} · 听单词和例句后再输入</div>
+      <div class="subline">${topicMeta.label} · ${state.audioOnly ? '纯听模式：无文字提示' : '听单词和例句后再输入'}</div>
       <div class="tool-row">
         <button class="secondary-btn" id="speakWordBtn">播放单词</button>
         <button class="secondary-btn" id="speakSentenceBtn">播放例句</button>
@@ -310,7 +390,7 @@ function renderStage() {
       <div class="meaning-card${state.reveal ? ' reveal' : ''}">
         <span class="section-label">答案提示</span>
         <strong>${item.word}</strong>
-        <p>${item.meaning}</p>
+        <p>${state.audioOnly ? item.example : item.meaning}</p>
       </div>
     `;
   }
@@ -318,11 +398,14 @@ function renderStage() {
   if (state.mode === 'cloze') {
     body = `
       <div class="prompt-label">Cloze</div>
-      <div class="headline">${item.meaning}</div>
-      <div class="subline">${topicMeta.label} · 根据例句补全单词</div>
+      <div class="headline">${state.audioOnly ? 'Listen and complete' : item.meaning}</div>
+      <div class="subline">${topicMeta.label} · ${state.audioOnly ? '先听例句，再填写单词' : '根据例句补全单词'}</div>
+      <div class="tool-row">
+        <button class="secondary-btn" id="speakSentenceBtn">播放例句</button>
+      </div>
       <div class="example-card">
         <span class="section-label">例句挖空</span>
-        <p>${makeCloze(item.example, item.word)}</p>
+        <p>${state.audioOnly ? '文字提示已隐藏，请先播放例句。' : makeCloze(item.example, item.word)}</p>
       </div>
       <div class="input-card">
         <label for="answerInput">填入英文单词</label>
@@ -336,15 +419,24 @@ function renderStage() {
       <div class="stage-topline">
         <span class="topic-badge">${topicMeta.label}</span>
         <span class="status-badge">${wordState.mastered ? '熟词' : '待巩固'} · streak ${wordState.streak}</span>
+        <div class="stage-actions">
+          <button class="mini-btn${wordState.favorite ? ' active' : ''}" id="favoriteBtn">${wordState.favorite ? '已收藏' : '收藏'}</button>
+        </div>
       </div>
       ${body}
     </div>
   `;
 
-  if (state.mode === 'dictation') {
-    document.getElementById('speakWordBtn').addEventListener('click', () => speakText(item.word));
-    document.getElementById('speakSentenceBtn').addEventListener('click', () => speakText(item.example));
-  }
+  document.getElementById('favoriteBtn').addEventListener('click', () => {
+    wordState.favorite = !wordState.favorite;
+    saveProgress();
+    render();
+  });
+
+  const speakWordBtn = document.getElementById('speakWordBtn');
+  const speakSentenceBtn = document.getElementById('speakSentenceBtn');
+  if (speakWordBtn) speakWordBtn.addEventListener('click', () => speakText(item.word));
+  if (speakSentenceBtn) speakSentenceBtn.addEventListener('click', () => speakText(item.example));
 
   const input = document.getElementById('answerInput');
   if (input) {

@@ -4,64 +4,66 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>KET&PET 练习 · 剑桥英语在线练习</title>
-    <script src="auth-guard.js"></script>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Noto+Sans+SC:wght@400;500;600&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&family=Noto+Serif+SC:wght@400;600&display=swap" rel="stylesheet">
     <style>
         * { margin: 0; padding: 0; box-sizing: border-box; }
         :root {
-            --bg: #f8f9fa; --card: #ffffff; --border: #e2e8f0; --border-hover: #94a3b8;
-            --primary: #1a73e8; --primary-light: #e8f0fe; --primary-dark: #1557b0;
-            --text: #202124; --text-light: #5f6368; --accent: #34a853;
+            --cream: #faf8f5; --warm: #f3ede6; --rose: #c4a08a; --rose-light: #e8d5c8;
+            --rose-bg: #fdf5f0; --text: #3d3530; --text-light: #8a7e76; --accent: #b07d62;
         }
-        body { font-family: 'Noto Sans SC', 'Inter', sans-serif; background: var(--bg); min-height: 100vh; color: var(--text); }
+        body { font-family: 'Noto Serif SC', 'Georgia', serif; background: var(--cream); min-height: 100vh; color: var(--text); }
         .page { max-width: 960px; margin: 0 auto; padding: 40px 24px 60px; }
-        .site-header { text-align: center; margin-bottom: 48px; }
-        .site-header h1 { font-family: 'Inter', sans-serif; font-size: 2.6rem; font-weight: 700; letter-spacing: 1px; margin-bottom: 8px; color: var(--primary); }
-        .site-header .tagline { color: var(--text-light); font-size: 1rem; letter-spacing: 0.5px; }
+        .site-header { text-align: center; margin-bottom: 48px; position: relative; }
+        .site-header h1 {
+            font-family: 'Playfair Display', 'Noto Serif SC', serif;
+            font-size: 2.6rem; font-weight: 700; letter-spacing: 2px; margin-bottom: 8px;
+        }
+        .site-header .tagline { color: var(--text-light); font-size: 1rem; letter-spacing: 1px; }
 
-        .level-tabs { display: flex; justify-content: center; gap: 0; margin-bottom: 48px; border-bottom: 1px solid var(--border); overflow-x: auto; }
+        .level-tabs {
+            display: flex; justify-content: center; gap: 0;
+            margin-bottom: 48px; border-bottom: 1px solid var(--rose-light);
+            overflow-x: auto; -webkit-overflow-scrolling: touch;
+        }
         .level-tab {
-            padding: 12px 28px; font-size: 0.95rem; color: var(--text-light); cursor: pointer;
-            border-bottom: 2px solid transparent; transition: all 0.2s; white-space: nowrap;
+            padding: 12px 28px; font-family: 'Noto Serif SC', serif;
+            font-size: 0.95rem; color: var(--text-light); cursor: pointer;
+            border-bottom: 2px solid transparent; transition: all 0.2s;
+            letter-spacing: 1px; white-space: nowrap; flex-shrink: 0;
         }
         .level-tab:hover { color: var(--text); }
-        .level-tab.active { color: var(--primary); border-bottom-color: var(--primary); font-weight: 600; }
+        .level-tab.active { color: var(--accent); border-bottom-color: var(--accent); font-weight: 600; }
 
         .level-info { text-align: center; margin-bottom: 48px; color: var(--text-light); font-size: 0.9rem; }
-        .level-info .grade { display: inline-block; background: var(--primary-light); color: var(--primary); padding: 4px 16px; border-radius: 12px; font-size: 0.8rem; margin-top: 6px; }
+        .level-info .grade {
+            display: inline-block; background: var(--rose-bg); color: var(--accent);
+            padding: 4px 16px; border-radius: 12px; font-size: 0.8rem; margin-top: 6px;
+        }
 
         .entry-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 28px; max-width: 640px; margin: 0 auto; }
         .entry-card {
-            background: var(--card); border: 1px solid var(--border); border-radius: 16px;
+            background: white; border: 1px solid var(--warm); border-radius: 16px;
             padding: 44px 28px; text-decoration: none; color: var(--text);
             display: flex; flex-direction: column; align-items: center; gap: 16px;
             transition: all 0.25s; position: relative; overflow: hidden;
         }
-        .entry-card::before { content: ''; position: absolute; top: 0; left: 0; right: 0; height: 3px; background: var(--primary-light); transition: background 0.25s; }
-        .entry-card:hover { border-color: var(--primary); box-shadow: 0 8px 30px rgba(26,115,232,0.1); transform: translateY(-2px); }
-        .entry-card:hover::before { background: var(--primary); }
-        .entry-icon { font-size: 2.2rem; }
-        .entry-title { font-family: 'Inter', sans-serif; font-size: 1.3rem; font-weight: 600; }
-        .entry-desc { color: var(--text-light); font-size: 0.85rem; line-height: 1.7; text-align: center; }
-        .entry-action { font-size: 0.8rem; color: var(--primary); letter-spacing: 1px; text-transform: uppercase; margin-top: 4px; }
-
-        .test-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(200px, 1fr)); gap: 16px; max-width: 640px; margin: 0 auto 48px; }
-        .test-card {
-            background: var(--card); border: 1px solid var(--border); border-radius: 12px;
-            padding: 24px 20px; text-decoration: none; color: var(--text); text-align: center;
-            transition: all 0.2s; cursor: pointer;
+        .entry-card::before {
+            content: ''; position: absolute; top: 0; left: 0; right: 0; height: 3px;
+            background: var(--rose-light); transition: background 0.25s;
         }
-        .test-card:hover { border-color: var(--primary); box-shadow: 0 4px 16px rgba(26,115,232,0.08); }
-        .test-card .test-title { font-size: 1.1rem; font-weight: 600; color: var(--primary); margin-bottom: 6px; }
-        .test-card .test-meta { font-size: 0.8rem; color: var(--text-light); }
-        .test-card .badge { display: inline-block; font-size: 0.7rem; padding: 2px 8px; border-radius: 8px; margin-top: 6px; }
-        .badge.official { background: #fef3c7; color: #92400e; }
-        .badge.past_paper { background: #dbeafe; color: #1e40af; }
-        .badge.practice { background: #f3f4f6; color: #6b7280; }
+        .entry-card:hover { border-color: var(--rose); box-shadow: 0 8px 30px rgba(180,140,110,0.1); transform: translateY(-2px); }
+        .entry-card:hover::before { background: var(--accent); }
+        .entry-icon { font-size: 2.2rem; }
+        .entry-title { font-family: 'Playfair Display', 'Noto Serif SC', serif; font-size: 1.3rem; font-weight: 600; }
+        .entry-desc { color: var(--text-light); font-size: 0.85rem; line-height: 1.7; text-align: center; }
+        .entry-action { font-size: 0.8rem; color: var(--accent); letter-spacing: 1px; text-transform: uppercase; margin-top: 4px; }
 
         .login-link { text-align: center; margin-top: 48px; }
-        .login-link a { color: var(--text-light); text-decoration: none; font-size: 0.85rem; padding: 8px 20px; border: 1px solid var(--border); border-radius: 20px; transition: all 0.2s; }
-        .login-link a:hover { color: var(--primary); border-color: var(--primary); }
+        .login-link a {
+            color: var(--text-light); text-decoration: none; font-size: 0.85rem;
+            padding: 8px 20px; border: 1px solid var(--warm); border-radius: 20px; transition: all 0.2s;
+        }
+        .login-link a:hover { color: var(--accent); border-color: var(--rose); }
         .site-footer { text-align: center; margin-top: 60px; color: var(--text-light); font-size: 0.8rem; opacity: 0.7; }
 
         @media (max-width: 600px) {
@@ -69,6 +71,7 @@
             .entry-grid { grid-template-columns: 1fr; max-width: 360px; }
             .entry-card { padding: 36px 24px; }
             .page { padding: 30px 16px 40px; }
+            .level-tab { padding: 10px 14px; font-size: 0.85rem; }
         }
     </style>
 </head>
@@ -108,7 +111,7 @@
             <a href="login.html">登录 / 注册</a>
         </div>
 
-        <div class="site-footer">KET Practice — Cambridge A2 Key English Test</div>
+        <div class="site-footer">Cambridge English Practice Platform</div>
     </div>
 
     <script>
@@ -133,7 +136,6 @@
             } else {
                 document.getElementById('levelInfo').innerHTML = '<div>Reading & Writing · Part 1-5 · 每套 30 题</div><div class="grade">适合小学高年级 — 初中</div>';
             }
-            // Update quiz link with current level
             document.getElementById('quizEntry').href = `quiz.html?level=${level}`;
         }
     </script>

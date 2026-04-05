@@ -4,9 +4,11 @@ interface Env { DB: D1Database; JWT_SECRET: string; }
 
 export const onRequestPost: PagesFunction<Env> = async (context) => {
   const user = (context as any).user;
-  const { maxUses = 1, expiresInDays = 7 } = await context.request.json<{
+  const body = await context.request.json<{
     maxUses?: number; expiresInDays?: number;
-  }>().catch(() => ({}));
+  }>().catch(() => ({ maxUses: 1, expiresInDays: 7 }));
+  const maxUses = body.maxUses ?? 1;
+  const expiresInDays = body.expiresInDays ?? 7;
 
   const code = generateInviteCode();
   const expiresAt = new Date(Date.now() + expiresInDays * 86400000).toISOString();

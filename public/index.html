@@ -40,7 +40,7 @@
             padding: 4px 16px; border-radius: 12px; font-size: 0.8rem; margin-top: 6px;
         }
 
-        .entry-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 28px; max-width: 640px; margin: 0 auto; }
+        .entry-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 28px; max-width: 960px; margin: 0 auto; }
         .entry-card {
             background: white; border: 1px solid var(--warm); border-radius: 16px;
             padding: 44px 28px; text-decoration: none; color: var(--text);
@@ -121,7 +121,7 @@
     <div class="page">
         <div class="site-header">
             <h1>KET&PET 练习</h1>
-            <p class="tagline">剑桥英语 · 在线练习与真题</p>
+            <p class="tagline">剑桥英语 · 在线练习、背词与真题</p>
         </div>
 
         <div class="level-tabs">
@@ -140,6 +140,12 @@
                 <div class="entry-title">在线练习</div>
                 <div class="entry-desc">选择套卷逐题作答<br>自动判分 · 错题回顾</div>
                 <div class="entry-action">Start →</div>
+            </a>
+            <a href="vocab.html" class="entry-card">
+                <div class="entry-icon">🗂️</div>
+                <div class="entry-title">单词背诵</div>
+                <div class="entry-desc">按级别刷词卡与拼写<br>本地进度 · 主动回忆</div>
+                <div class="entry-action">Memorize →</div>
             </a>
             <a id="historyEntry" href="admin.html" class="entry-card">
                 <div class="entry-icon">📊</div>

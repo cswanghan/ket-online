@@ -1,4 +1,7 @@
-const STORAGE_KEY = 'ket-vocab-progress-v2';
+const STORAGE_KEY = 'ket-vocab-progress-v3';
+const LEGACY_STORAGE_KEYS = ['ket-vocab-progress-v2'];
+const DAILY_TARGET = 20;
+const SYNC_DEBOUNCE_MS = 1200;
 const MODE_LABELS = {
   flashcard: '词卡模式',
   spelling: '拼写模式',
@@ -19,30 +22,176 @@ const state = {
   reveal: false,
   answer: '',
   feedback: null,
-  stats: loadProgress(),
+  stats: {},
+  libraryWords: [],
+  wordByKey: new Map(),
+  uniqueWordKeyMap: new Map(),
+  auth: {
+    token: localStorage.getItem('token') || '',
+    user: loadJson('user'),
+    status: 'guest',
+    message: '未登录，进度仅保存在当前浏览器。',
+    syncing: false,
+    lastSyncedAt: null,
+  },
+  pendingSyncKeys: new Set(),
+  syncTimer: null,
 };
 
-function loadProgress() {
+function loadJson(key) {
   try {
-    return JSON.parse(localStorage.getItem(STORAGE_KEY) || '{}');
+    return JSON.parse(localStorage.getItem(key) || 'null');
   } catch {
-    return {};
+    return null;
   }
+}
+
+function safeInt(value) {
+  const number = Number(value);
+  return Number.isFinite(number) ? Math.max(0, Math.floor(number)) : 0;
+}
+
+function normalizeTimestamp(value) {
+  if (typeof value === 'number' && Number.isFinite(value)) {
+    return new Date(value).toISOString();
+  }
+  if (typeof value === 'string' && value.trim()) {
+    const date = new Date(value);
+    if (!Number.isNaN(date.getTime())) return date.toISOString();
+  }
+  return new Date(0).toISOString();
+}
+
+function normalizeWordLookup(value) {
+  return String(value || '').trim().toLowerCase();
+}
+
+function makeWordKey(item) {
+  return `${item.topic}::${item.word.toLowerCase()}`;
+}
+
+function normalizeStoredEntry(raw, fallback = {}) {
+  return {
+    word: raw.word || fallback.word || '',
+    topic: raw.topic || fallback.topic || '',
+    seen: safeInt(raw.seen),
+    streak: safeInt(raw.streak),
+    mastered: Boolean(raw.mastered),
+    wrong: safeInt(raw.wrong),
+    favorite: Boolean(raw.favorite),
+    updatedAt: normalizeTimestamp(raw.updatedAt),
+  };
+}
+
+function mergeEntry(localEntry, cloudEntry, fallback = {}) {
+  const local = normalizeStoredEntry(localEntry || {}, fallback);
+  const cloud = normalizeStoredEntry(cloudEntry || {}, fallback);
+  const localTime = Date.parse(local.updatedAt);
+  const cloudTime = Date.parse(cloud.updatedAt);
+  const latest = localTime >= cloudTime ? local : cloud;
+
+  return {
+    word: latest.word || fallback.word || '',
+    topic: latest.topic || fallback.topic || '',
+    seen: Math.max(local.seen, cloud.seen),
+    streak: latest.streak,
+    mastered: latest.mastered,
+    wrong: Math.max(local.wrong, cloud.wrong),
+    favorite: latest.favorite,
+    updatedAt: latest.updatedAt || normalizeTimestamp(),
+  };
+}
+
+function entryEquals(left, right) {
+  return JSON.stringify(left) === JSON.stringify(right);
+}
+
+function prepareLibrary() {
+  const words = window.VOCAB_LIBRARY.words.map((item) => ({ ...item, key: makeWordKey(item) }));
+  const counts = new Map();
+
+  words.forEach((item) => {
+    const lookup = normalizeWordLookup(item.word);
+    counts.set(lookup, (counts.get(lookup) || 0) + 1);
+    state.wordByKey.set(item.key, item);
+  });
+
+  words.forEach((item) => {
+    const lookup = normalizeWordLookup(item.word);
+    if (counts.get(lookup) === 1) {
+      state.uniqueWordKeyMap.set(lookup, item.key);
+    }
+  });
+
+  state.libraryWords = words;
+}
+
+function migrateProgress(rawProgress) {
+  const next = {};
+  Object.entries(rawProgress || {}).forEach(([rawKey, rawValue]) => {
+    const mappedKey = state.wordByKey.has(rawKey)
+      ? rawKey
+      : state.uniqueWordKeyMap.get(normalizeWordLookup(rawKey));
+
+    if (!mappedKey) return;
+    const item = state.wordByKey.get(mappedKey);
+    const normalized = normalizeStoredEntry(rawValue || {}, item);
+    next[mappedKey] = next[mappedKey]
+      ? mergeEntry(next[mappedKey], normalized, item)
+      : normalized;
+  });
+  return next;
+}
+
+function loadProgress() {
+  const merged = {};
+  const sources = [STORAGE_KEY, ...LEGACY_STORAGE_KEYS];
+
+  sources.forEach((key) => {
+    try {
+      const raw = JSON.parse(localStorage.getItem(key) || '{}');
+      const migrated = migrateProgress(raw);
+      Object.entries(migrated).forEach(([wordKey, entry]) => {
+        const item = state.wordByKey.get(wordKey);
+        merged[wordKey] = merged[wordKey]
+          ? mergeEntry(merged[wordKey], entry, item)
+          : normalizeStoredEntry(entry, item);
+      });
+    } catch {
+      // ignore broken local cache
+    }
+  });
+
+  localStorage.setItem(STORAGE_KEY, JSON.stringify(merged));
+  LEGACY_STORAGE_KEYS.forEach((key) => {
+    if (key !== STORAGE_KEY) localStorage.removeItem(key);
+  });
+
+  return merged;
 }
 
 function saveProgress() {
   localStorage.setItem(STORAGE_KEY, JSON.stringify(state.stats));
 }
 
+function focusLabel() {
+  if (state.focus === 'wrong') return '错词本';
+  if (state.focus === 'favorites') return '收藏夹';
+  if (state.focus === 'daily') return '每日 20 词';
+  return '全部词池';
+}
+
 function getWordState(item) {
-  state.stats[item.word] = state.stats[item.word] || {
-    seen: 0,
-    streak: 0,
-    mastered: false,
-    wrong: 0,
-    favorite: false,
-  };
-  return state.stats[item.word];
+  state.stats[item.key] = state.stats[item.key] || normalizeStoredEntry({}, item);
+  return state.stats[item.key];
+}
+
+function touchWordState(item) {
+  const wordState = getWordState(item);
+  wordState.word = item.word;
+  wordState.topic = item.topic;
+  wordState.updatedAt = new Date().toISOString();
+  return wordState;
 }
 
 function normalizeAnswer(value) {
@@ -57,23 +206,45 @@ function getTopicMeta(id) {
   return window.VOCAB_LIBRARY.topics.find((item) => item.id === id);
 }
 
-function filteredWords() {
-  return window.VOCAB_LIBRARY.words.filter((item) => {
+function getBasePool() {
+  return state.libraryWords.filter((item) => {
     const levelOk = state.level === 'all' || item.level === state.level;
     const topicOk = state.topic === 'all' || item.topic === state.topic;
     const masteryOk = !state.onlyUnmastered || !getWordState(item).mastered;
-    const focusState = getWordState(item);
-    const focusOk = (
-      state.focus === 'all'
-      || (state.focus === 'wrong' && focusState.wrong > 0)
-      || (state.focus === 'favorites' && focusState.favorite)
-    );
-    return levelOk && topicOk && masteryOk && focusOk;
+    return levelOk && topicOk && masteryOk;
   });
 }
 
+function getDailyWords(pool = getBasePool()) {
+  const today = new Date().toISOString().slice(0, 10);
+  const sorted = [...pool].sort((left, right) => {
+    const leftState = getWordState(left);
+    const rightState = getWordState(right);
+
+    if (leftState.mastered !== rightState.mastered) return leftState.mastered ? 1 : -1;
+    if (leftState.wrong !== rightState.wrong) return rightState.wrong - leftState.wrong;
+    if (leftState.seen !== rightState.seen) return leftState.seen - rightState.seen;
+    if (leftState.streak !== rightState.streak) return leftState.streak - rightState.streak;
+
+    const leftHash = hashString(`${today}:${left.key}`);
+    const rightHash = hashString(`${today}:${right.key}`);
+    if (leftHash !== rightHash) return leftHash - rightHash;
+    return left.word.localeCompare(right.word);
+  });
+
+  return sorted.slice(0, Math.min(DAILY_TARGET, sorted.length));
+}
+
+function filteredWords() {
+  const pool = getBasePool();
+  if (state.focus === 'wrong') return pool.filter((item) => getWordState(item).wrong > 0);
+  if (state.focus === 'favorites') return pool.filter((item) => getWordState(item).favorite);
+  if (state.focus === 'daily') return getDailyWords(pool);
+  return pool;
+}
+
 function wordsForLevel(levelId = state.level) {
-  return window.VOCAB_LIBRARY.words.filter((item) => levelId === 'all' || item.level === levelId);
+  return state.libraryWords.filter((item) => levelId === 'all' || item.level === levelId);
 }
 
 function countMastered(words) {
@@ -112,13 +283,21 @@ function currentItem() {
 }
 
 function maskWord(word) {
-  if (word.length <= 4) return `${word[0]}${'_'.repeat(word.length - 1)}`;
+  if (word.length <= 4) return `${word[0]}${'_'.repeat(Math.max(0, word.length - 1))}`;
   return `${word[0]}${'_'.repeat(word.length - 2)}${word[word.length - 1]}`;
 }
 
 function makeCloze(example, word) {
   const pattern = new RegExp(word.replace(/[.*+?^${}()|[\]\\]/g, '\\$&'), 'i');
   return example.replace(pattern, '______');
+}
+
+function hashString(value) {
+  let hash = 0;
+  for (let i = 0; i < value.length; i += 1) {
+    hash = ((hash << 5) - hash + value.charCodeAt(i)) | 0;
+  }
+  return Math.abs(hash);
 }
 
 function speakText(text) {
@@ -166,11 +345,7 @@ function renderFilters() {
   });
 
   const topicButtons = [
-    {
-      id: 'all',
-      label: 'All Topics',
-      count: availableWords.length,
-    },
+    { id: 'all', label: 'All Topics', count: availableWords.length },
     ...window.VOCAB_LIBRARY.topics
       .filter((topic) => topicCounts.get(topic.id))
       .map((topic) => ({
@@ -196,15 +371,13 @@ function renderFilters() {
   });
 
   const focusContainer = document.getElementById('focusFilters');
-  const currentPool = window.VOCAB_LIBRARY.words.filter((item) => {
-    const levelOk = state.level === 'all' || item.level === state.level;
-    const topicOk = state.topic === 'all' || item.topic === state.topic;
-    return levelOk && topicOk;
-  });
+  const currentPool = getBasePool();
   const wrongCount = currentPool.filter((item) => getWordState(item).wrong > 0).length;
   const favCount = currentPool.filter((item) => getWordState(item).favorite).length;
+  const dailyCount = getDailyWords(currentPool).length;
   const focusItems = [
     { id: 'all', label: '全部词池', desc: `${currentPool.length} 个词` },
+    { id: 'daily', label: '每日 20 词', desc: `${dailyCount} 个词` },
     { id: 'wrong', label: '错词本', desc: `${wrongCount} 个词` },
     { id: 'favorites', label: '收藏夹', desc: `${favCount} 个词` },
   ];
@@ -251,24 +424,94 @@ function renderFilters() {
   };
 }
 
+function renderSyncCard() {
+  const card = document.getElementById('syncCard');
+  const username = state.auth.user?.username || '游客';
+  const timeText = state.auth.lastSyncedAt ? formatTime(state.auth.lastSyncedAt) : '尚未同步';
+  const badge = state.auth.syncing
+    ? '同步中'
+    : state.auth.status === 'ready'
+      ? '云端已连接'
+      : state.auth.status === 'error'
+        ? '同步异常'
+        : '本地模式';
+
+  card.innerHTML = `
+    <div class="status-row">
+      <h3 class="section-title" style="margin:0;">Progress Sync</h3>
+      <span class="status-badge-pill">${badge}</span>
+    </div>
+    <p class="status-note">${state.auth.message}</p>
+    <div class="status-row">
+      <span class="status-note">账号：${escapeHtml(username)}</span>
+      ${state.auth.status === 'ready'
+        ? `<span class="status-note">最近同步：${timeText}</span>`
+        : '<a class="status-link" href="login.html">登录后同步</a>'}
+    </div>
+  `;
+}
+
+function renderDailyCard() {
+  const card = document.getElementById('dailyCard');
+  const dailyWords = getDailyWords();
+  const mastered = countMastered(dailyWords);
+  const wrong = dailyWords.filter((item) => getWordState(item).wrong > 0).length;
+
+  card.innerHTML = `
+    <div class="status-row">
+      <h3 class="section-title" style="margin:0;">Daily Plan</h3>
+      <span class="status-badge-pill">${new Date().toISOString().slice(5, 10)}</span>
+    </div>
+    <div class="daily-stats">
+      <div class="daily-stat">
+        <strong>${dailyWords.length}</strong>
+        <span>今日计划词数</span>
+      </div>
+      <div class="daily-stat">
+        <strong>${mastered}</strong>
+        <span>今日已掌握</span>
+      </div>
+      <div class="daily-stat">
+        <strong>${wrong}</strong>
+        <span>需复习词数</span>
+      </div>
+      <div class="daily-stat">
+        <strong>${DAILY_TARGET}</strong>
+        <span>默认每日目标</span>
+      </div>
+    </div>
+    <button class="daily-btn" id="dailyFocusBtn">${state.focus === 'daily' ? '正在训练今日计划' : '切到每日 20 词'}</button>
+  `;
+
+  document.getElementById('dailyFocusBtn').addEventListener('click', () => {
+    state.focus = 'daily';
+    buildQueue();
+    render();
+  });
+}
+
 function renderHero() {
   const words = filteredWords();
   const mastered = countMastered(words);
   const topicCount = state.topic === 'all'
     ? new Set(words.map((item) => item.topic)).size
-    : 1;
+    : (words.length ? 1 : 0);
   const levelMeta = getLevelMeta();
   const topicMeta = state.topic === 'all' ? null : getTopicMeta(state.topic);
 
   document.getElementById('heroEyebrow').textContent = topicMeta
     ? `${levelMeta.label} · ${topicMeta.label}`
     : `${levelMeta.label} · Cambridge Topic Vocabulary`;
-  document.getElementById('heroTitle').textContent = topicMeta
-    ? `${topicMeta.label} Word Studio`
-    : 'Official Topic Vocabulary Studio';
-  document.getElementById('heroDesc').textContent = topicMeta
-    ? `当前筛选的是 ${topicMeta.label} 主题词。可以切换词卡、拼写、听写和例句挖空四种训练模式。`
-    : `词汇按 Cambridge English 官方 A2 Key / B1 Preliminary 主题维度组织，支持按等级与主题筛选。`;
+  document.getElementById('heroTitle').textContent = state.focus === 'daily'
+    ? 'Today’s 20 Words'
+    : topicMeta
+      ? `${topicMeta.label} Word Studio`
+      : 'Official Topic Vocabulary Studio';
+  document.getElementById('heroDesc').textContent = state.focus === 'daily'
+    ? `系统会按今日日期、当前等级/主题和你的掌握情况，优先挑出 ${DAILY_TARGET} 个值得复习的单词。`
+    : topicMeta
+      ? `当前筛选的是 ${topicMeta.label} 主题词。可以切换词卡、拼写、听写和例句挖空四种训练模式。`
+      : '词汇按 Cambridge English 官方 A2 Key / B1 Preliminary 主题维度组织，支持主题筛选、每日计划和云端同步。';
 
   document.getElementById('overviewStats').innerHTML = `
     <div class="metric"><span class="metric-num">${words.length}</span><span class="metric-label">筛选词数</span></div>
@@ -291,12 +534,12 @@ function renderSessionMeta() {
     ? `
       <span>${MODE_LABELS[state.mode]}</span>
       <span>${state.index + 1} / ${state.queue.length}</span>
-      <span>${topicMeta ? topicMeta.label : 'All Topics'} · ${state.focus === 'all' ? '全部词池' : state.focus === 'wrong' ? '错词本' : '收藏夹'}</span>
+      <span>${topicMeta ? topicMeta.label : 'All Topics'} · ${focusLabel()}</span>
     `
     : `
       <span>${MODE_LABELS[state.mode]}</span>
       <span>${countMastered(words)} / ${words.length} 已掌握</span>
-      <span>Ready for another round</span>
+      <span>${focusLabel()} · Ready for another round</span>
     `;
 }
 
@@ -428,8 +671,10 @@ function renderStage() {
   `;
 
   document.getElementById('favoriteBtn').addEventListener('click', () => {
-    wordState.favorite = !wordState.favorite;
+    const nextState = touchWordState(item);
+    nextState.favorite = !nextState.favorite;
     saveProgress();
+    scheduleCloudSync([item.key]);
     render();
   });
 
@@ -478,9 +723,7 @@ function renderControls() {
   }
 
   if (state.feedback) {
-    controls.innerHTML = `
-      <button class="primary-btn" id="continueBtn">继续下一个</button>
-    `;
+    controls.innerHTML = '<button class="primary-btn" id="continueBtn">继续下一个</button>';
     document.getElementById('continueBtn').addEventListener('click', () => {
       commitProgress(state.feedback.correct);
     });
@@ -555,7 +798,7 @@ function commitProgress(correct) {
   const item = currentItem();
   if (!item) return;
 
-  const wordState = getWordState(item);
+  const wordState = touchWordState(item);
   wordState.seen += 1;
   if (correct) {
     wordState.streak += 1;
@@ -566,6 +809,7 @@ function commitProgress(correct) {
     wordState.wrong += 1;
   }
   saveProgress();
+  scheduleCloudSync([item.key]);
 
   if (correct) {
     state.index += 1;
@@ -616,6 +860,12 @@ function escapeHtml(value) {
     .replace(/'/g, '&#39;');
 }
 
+function formatTime(value) {
+  const date = new Date(value);
+  if (Number.isNaN(date.getTime())) return '刚刚';
+  return `${String(date.getHours()).padStart(2, '0')}:${String(date.getMinutes()).padStart(2, '0')}`;
+}
+
 function attachModeEvents() {
   document.querySelectorAll('[data-mode]').forEach((element) => {
     element.addEventListener('click', () => {
@@ -628,8 +878,140 @@ function attachModeEvents() {
   });
 }
 
+function apiFetch(path, options = {}) {
+  const headers = new Headers(options.headers || {});
+  if (state.auth.token) headers.set('Authorization', `Bearer ${state.auth.token}`);
+  return fetch(path, { ...options, headers });
+}
+
+async function verifyAuth() {
+  if (!state.auth.token) {
+    state.auth.status = 'guest';
+    state.auth.message = '未登录，进度仅保存在当前浏览器。';
+    return false;
+  }
+
+  try {
+    const response = await apiFetch('/api/auth/me');
+    if (!response.ok) throw new Error('unauthorized');
+    const data = await response.json();
+    state.auth.user = data.user || state.auth.user;
+    if (state.auth.user) {
+      localStorage.setItem('user', JSON.stringify(state.auth.user));
+    }
+    state.auth.status = 'ready';
+    state.auth.message = `已连接云端进度，同步账号 ${state.auth.user?.username || ''}。`;
+    return true;
+  } catch {
+    state.auth.status = 'guest';
+    state.auth.message = '登录已失效，已切回本地模式。';
+    state.auth.token = '';
+    state.auth.user = null;
+    localStorage.removeItem('token');
+    localStorage.removeItem('user');
+    return false;
+  }
+}
+
+async function pullCloudProgress() {
+  const response = await apiFetch('/api/vocab/progress');
+  if (!response.ok) throw new Error('sync failed');
+
+  const data = await response.json();
+  const cloudProgress = migrateProgress(data.progress || {});
+  const merged = {};
+  const syncBack = {};
+  const keys = new Set([...Object.keys(state.stats), ...Object.keys(cloudProgress)]);
+
+  keys.forEach((wordKey) => {
+    const item = state.wordByKey.get(wordKey);
+    if (!item) return;
+    const nextEntry = mergeEntry(state.stats[wordKey], cloudProgress[wordKey], item);
+    merged[wordKey] = nextEntry;
+    if (!entryEquals(nextEntry, cloudProgress[wordKey] ? normalizeStoredEntry(cloudProgress[wordKey], item) : null)) {
+      syncBack[wordKey] = nextEntry;
+    }
+  });
+
+  state.stats = merged;
+  saveProgress();
+  state.auth.lastSyncedAt = data.syncedAt || new Date().toISOString();
+  state.auth.message = `已同步 ${Object.keys(merged).length} 个词条。`;
+
+  if (Object.keys(syncBack).length) {
+    await pushProgress(syncBack, true);
+  }
+}
+
+function scheduleCloudSync(keys) {
+  if (state.auth.status !== 'ready') return;
+  keys.forEach((key) => state.pendingSyncKeys.add(key));
+  state.auth.message = '本地进度已更新，等待同步...';
+  renderSyncCard();
+
+  clearTimeout(state.syncTimer);
+  state.syncTimer = setTimeout(() => {
+    flushCloudSync();
+  }, SYNC_DEBOUNCE_MS);
+}
+
+async function flushCloudSync() {
+  if (state.auth.status !== 'ready' || state.auth.syncing || !state.pendingSyncKeys.size) return;
+
+  const payload = {};
+  Array.from(state.pendingSyncKeys).forEach((key) => {
+    if (state.stats[key]) payload[key] = state.stats[key];
+  });
+  state.pendingSyncKeys.clear();
+  await pushProgress(payload, false);
+}
+
+async function pushProgress(progressMap, silent) {
+  if (state.auth.status !== 'ready' || !Object.keys(progressMap).length) return;
+
+  try {
+    state.auth.syncing = true;
+    renderSyncCard();
+    const response = await apiFetch('/api/vocab/progress', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({ progress: progressMap }),
+    });
+
+    if (!response.ok) throw new Error('sync failed');
+    const data = await response.json();
+    state.auth.status = 'ready';
+    state.auth.lastSyncedAt = data.syncedAt || new Date().toISOString();
+    state.auth.message = `云端已保存 ${data.saved || 0} 条更新。`;
+    if (!silent) showToast('云端进度已同步');
+  } catch {
+    state.auth.status = 'ready';
+    state.auth.message = '云端同步失败，进度仍已保存在本地。';
+    if (!silent) showToast('同步失败，已保留本地记录');
+  } finally {
+    state.auth.syncing = false;
+    renderSyncCard();
+  }
+}
+
+async function initCloudSync() {
+  const valid = await verifyAuth();
+  renderSyncCard();
+  if (!valid) return;
+
+  try {
+    await pullCloudProgress();
+  } catch {
+    state.auth.status = 'ready';
+    state.auth.message = '已登录，但云端进度暂时不可用。';
+    renderSyncCard();
+  }
+}
+
 function render() {
   renderFilters();
+  renderSyncCard();
+  renderDailyCard();
   renderHero();
   renderModeTabs();
   renderSessionMeta();
@@ -639,9 +1021,14 @@ function render() {
   renderPreview();
 }
 
-document.addEventListener('DOMContentLoaded', () => {
+document.addEventListener('DOMContentLoaded', async () => {
+  prepareLibrary();
+  state.stats = loadProgress();
   renderSources();
   attachModeEvents();
+  buildQueue();
+  render();
+  await initCloudSync();
   buildQueue();
   render();
 });

@@ -9,7 +9,7 @@ interface SubmitBody {
 }
 
 export const onRequestPost: PagesFunction<Env> = async (context) => {
-  const user = (context as any).user;
+  const user = (context as any).data?.user || (context as any).user;
   const body = await context.request.json<SubmitBody>();
 
   if (!body.level || !body.year || !body.answers?.length) {

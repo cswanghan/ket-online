@@ -15,7 +15,7 @@ interface VocabProgressEntry {
 }
 
 export const onRequestGet: PagesFunction<Env> = async (context) => {
-  const user = (context as any).user;
+  const user = (context as any).data?.user || (context as any).user;
   const rows = await context.env.DB.prepare(
     `SELECT word_key, word, topic, seen, streak, mastered, wrong, favorite, updated_at
      FROM vocab_progress
@@ -47,7 +47,7 @@ export const onRequestGet: PagesFunction<Env> = async (context) => {
 };
 
 export const onRequestPost: PagesFunction<Env> = async (context) => {
-  const user = (context as any).user;
+  const user = (context as any).data?.user || (context as any).user;
   const body = await context.request.json<{ progress?: Record<string, VocabProgressEntry> }>();
   const progress = body.progress || {};
   const entries = Object.entries(progress).filter(([wordKey, value]) => wordKey && value);

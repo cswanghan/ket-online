@@ -2,7 +2,7 @@ interface Env { DB: D1Database; JWT_SECRET: string; }
 
 export const onRequestGet: PagesFunction<Env> = async (context) => {
   try {
-    const user = (context as any).user;
+    const user = (context as any).data?.user || (context as any).user;
     const url = new URL(context.request.url);
     const level = url.searchParams.get('level');
     const year = url.searchParams.get('year');

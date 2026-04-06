@@ -1,7 +1,7 @@
 interface Env { DB: D1Database; JWT_SECRET: string; }
 
 export const onRequestGet: PagesFunction<Env> = async (context) => {
-  const user = (context as any).user;
+  const user = (context as any).data?.user || (context as any).user || null;
   return new Response(JSON.stringify({ user }), {
     headers: { 'Content-Type': 'application/json' },
   });

@@ -3,7 +3,7 @@ import { generateInviteCode } from '../../../src/auth';
 interface Env { DB: D1Database; JWT_SECRET: string; }
 
 export const onRequestPost: PagesFunction<Env> = async (context) => {
-  const user = (context as any).user;
+  const user = (context as any).data?.user || (context as any).user;
   const body = await context.request.json<{
     maxUses?: number; expiresInDays?: number;
   }>().catch(() => ({ maxUses: 1, expiresInDays: 7 }));

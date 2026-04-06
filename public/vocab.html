@@ -611,12 +611,14 @@
         }
 
         .meaning-card {
-            opacity: 0.34;
-            transition: opacity 0.16s ease;
+            filter: blur(8px);
+            transition: filter 0.24s ease;
+            user-select: none;
         }
 
         .meaning-card.reveal {
-            opacity: 1;
+            filter: blur(0);
+            user-select: auto;
         }
 
         .section-label {

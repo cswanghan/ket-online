@@ -162,7 +162,8 @@
             if (r.ok) {
                 localStorage.setItem('token', res.token);
                 localStorage.setItem('user', JSON.stringify(res.user));
-                trackEvent('auth_login_success', { role: res.user?.role || 'user' });
+                window.KETAnalytics?.track('auth_login_success', { meta: { role: res.user?.role || 'user' }, immediate: true, keepalive: true });
+                await window.KETAnalytics?.flush(true);
                 window.location.href = 'index.html';
             } else {
                 trackEvent('auth_login_failure', { reason: res.error || 'unknown' }, 'error');

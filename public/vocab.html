@@ -4,6 +4,8 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>KET Vocabulary Studio · 官方主题词背诵</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600;700&family=Manrope:wght@400;500;600;700&family=Noto+Serif+SC:wght@400;500;600&display=swap" rel="stylesheet">
     <style>
         :root {
@@ -422,8 +424,33 @@
 
         .overview-stats {
             display: grid;
-            grid-template-columns: repeat(3, minmax(0, 1fr));
+            grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
             gap: 10px;
+        }
+        .hero-actions {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+        }
+        .hero-action-btn {
+            border: 1px solid var(--line);
+            border-radius: 999px;
+            padding: 10px 16px;
+            font: inherit;
+            cursor: pointer;
+            background: rgba(255,255,255,0.8);
+            color: var(--text);
+            transition: transform 0.16s ease, border-color 0.16s ease;
+        }
+        .hero-action-btn:hover {
+            transform: translateY(-1px);
+            border-color: rgba(153, 96, 75, 0.36);
+        }
+        .hero-action-btn.primary {
+            color: white;
+            border-color: transparent;
+            background: linear-gradient(135deg, #99604b, #7b4937);
+            box-shadow: 0 10px 24px rgba(123, 73, 55, 0.18);
         }
 
         .metric {
@@ -909,6 +936,7 @@
                 <div class="eyebrow" id="heroEyebrow"></div>
                 <h2 id="heroTitle"></h2>
                 <p id="heroDesc"></p>
+                <div class="hero-actions" id="heroActions"></div>
                 <div class="overview-stats" id="overviewStats"></div>
             </section>
 

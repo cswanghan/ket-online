@@ -1,5 +1,7 @@
 const STORAGE_KEY = 'ket-vocab-progress-v3';
 const LEGACY_STORAGE_KEYS = ['ket-vocab-progress-v2'];
+const UI_PREFS_KEY = 'ket-vocab-ui-v2';
+const FIRST_VISIT_KEY = 'ket-vocab-first-visit-v1';
 const DAILY_TARGET = 20;
 const SYNC_DEBOUNCE_MS = 1200;
 const MODE_LABELS = {
@@ -36,6 +38,7 @@ const state = {
   },
   pendingSyncKeys: new Set(),
   syncTimer: null,
+  entrySource: 'direct',
 };
 
 function trackEvent(name, meta, eventGroup) {
@@ -53,6 +56,26 @@ function loadJson(key) {
 function safeInt(value) {
   const number = Number(value);
   return Number.isFinite(number) ? Math.max(0, Math.floor(number)) : 0;
+}
+
+function loadUiPrefs() {
+  try {
+    return JSON.parse(localStorage.getItem(UI_PREFS_KEY) || '{}');
+  } catch {
+    return {};
+  }
+}
+
+function saveUiPrefs() {
+  localStorage.setItem(UI_PREFS_KEY, JSON.stringify({
+    level: state.level,
+    topic: state.topic,
+    focus: state.focus,
+    onlyUnmastered: state.onlyUnmastered,
+    randomOrder: state.randomOrder,
+    audioOnly: state.audioOnly,
+    mode: state.mode,
+  }));
 }
 
 function normalizeTimestamp(value) {
@@ -210,6 +233,61 @@ function getTopicMeta(id) {
   return window.VOCAB_LIBRARY.topics.find((item) => item.id === id);
 }
 
+function resolveInitialState() {
+  const params = new URLSearchParams(window.location.search);
+  const prefs = loadUiPrefs();
+  const validLevels = new Set(window.VOCAB_LIBRARY.levels.map((item) => item.id));
+  const validTopics = new Set(window.VOCAB_LIBRARY.topics.map((item) => item.id));
+  const validModes = new Set(Object.keys(MODE_LABELS));
+  const validFocus = new Set(['all', 'daily', 'wrong', 'favorites']);
+  const isFirstVisit = !localStorage.getItem(FIRST_VISIT_KEY);
+
+  const requestedLevel = params.get('level');
+  const requestedTopic = params.get('topic');
+  const requestedMode = params.get('mode');
+  const requestedFocus = params.get('focus');
+
+  state.level = validLevels.has(requestedLevel) ? requestedLevel : (validLevels.has(prefs.level) ? prefs.level : 'all');
+  state.topic = validTopics.has(requestedTopic) ? requestedTopic : (validTopics.has(prefs.topic) ? prefs.topic : 'all');
+  state.mode = validModes.has(requestedMode) ? requestedMode : (validModes.has(prefs.mode) ? prefs.mode : 'flashcard');
+  state.onlyUnmastered = params.has('onlyUnmastered') ? params.get('onlyUnmastered') === '1' : Boolean(prefs.onlyUnmastered);
+  state.randomOrder = params.has('random') ? params.get('random') === '1' : Boolean(prefs.randomOrder);
+  state.audioOnly = params.has('audioOnly') ? params.get('audioOnly') === '1' : Boolean(prefs.audioOnly);
+
+  if (validFocus.has(requestedFocus)) {
+    state.focus = requestedFocus;
+    state.entrySource = requestedFocus === 'daily' ? 'deep_link' : 'query';
+  } else if (validFocus.has(prefs.focus)) {
+    state.focus = prefs.focus;
+    state.entrySource = prefs.focus === 'daily' ? 'return_daily' : 'returning';
+  } else if (isFirstVisit) {
+    state.focus = 'daily';
+    state.entrySource = 'first_visit';
+  } else {
+    state.focus = 'all';
+    state.entrySource = 'direct';
+  }
+
+  localStorage.setItem(FIRST_VISIT_KEY, '1');
+}
+
+function setFocus(nextFocus, source = 'manual') {
+  state.focus = nextFocus;
+  buildQueue();
+  render();
+  saveUiPrefs();
+  if (nextFocus === 'daily') {
+    trackEvent('vocab_daily_focus', {
+      size: getDailyWords().length,
+      source,
+      level: state.level,
+      topic: state.topic,
+    });
+  } else {
+    trackEvent('vocab_filter_change', { filter: 'focus', value: state.focus, source });
+  }
+}
+
 function getBasePool() {
   return state.libraryWords.filter((item) => {
     const levelOk = state.level === 'all' || item.level === state.level;
@@ -337,6 +415,7 @@ function renderFilters() {
       state.topic = 'all';
       buildQueue();
       render();
+      saveUiPrefs();
       trackEvent('vocab_filter_change', { filter: 'level', value: state.level });
     });
   });
@@ -372,6 +451,7 @@ function renderFilters() {
       state.topic = element.getAttribute('data-topic-id');
       buildQueue();
       render();
+      saveUiPrefs();
       trackEvent('vocab_filter_change', { filter: 'topic', value: state.topic });
     });
   });
@@ -397,10 +477,7 @@ function renderFilters() {
 
   focusContainer.querySelectorAll('[data-focus-id]').forEach((element) => {
     element.addEventListener('click', () => {
-      state.focus = element.getAttribute('data-focus-id');
-      buildQueue();
-      render();
-      trackEvent('vocab_filter_change', { filter: 'focus', value: state.focus });
+      setFocus(element.getAttribute('data-focus-id'), 'focus_chip');
     });
   });
 
@@ -410,6 +487,7 @@ function renderFilters() {
     state.onlyUnmastered = toggle.checked;
     buildQueue();
     render();
+    saveUiPrefs();
     trackEvent('vocab_filter_change', { filter: 'only_unmastered', value: state.onlyUnmastered });
   };
 
@@ -419,6 +497,7 @@ function renderFilters() {
     state.randomOrder = randomToggle.checked;
     buildQueue();
     render();
+    saveUiPrefs();
     trackEvent('vocab_filter_change', { filter: 'random_order', value: state.randomOrder });
   };
 
@@ -430,6 +509,7 @@ function renderFilters() {
     state.reveal = false;
     state.feedback = null;
     render();
+    saveUiPrefs();
     trackEvent('vocab_filter_change', { filter: 'audio_only', value: state.audioOnly });
   };
 }
@@ -494,10 +574,7 @@ function renderDailyCard() {
   `;
 
   document.getElementById('dailyFocusBtn').addEventListener('click', () => {
-    state.focus = 'daily';
-    buildQueue();
-    render();
-    trackEvent('vocab_daily_focus', { size: getDailyWords().length });
+    setFocus('daily', 'daily_card');
   });
 }
 
@@ -524,10 +601,37 @@ function renderHero() {
       ? `当前筛选的是 ${topicMeta.label} 主题词。可以切换词卡、拼写、听写和例句挖空四种训练模式。`
       : '词汇按 Cambridge English 官方 A2 Key / B1 Preliminary 主题维度组织，支持主题筛选、每日计划和云端同步。';
 
+  document.getElementById('heroActions').innerHTML = `
+    <button class="hero-action-btn primary" id="heroDailyAction">${state.focus === 'daily' ? '继续今日 20 词' : '切到今日 20 词'}</button>
+    <button class="hero-action-btn" id="heroTopicAction">${state.topic === 'all' ? '浏览全部主题' : '回到全部主题'}</button>
+    <button class="hero-action-btn" id="heroModeAction">${state.mode === 'dictation' ? '切到例句挖空' : '切到听写模式'}</button>
+  `;
+  document.getElementById('heroDailyAction').addEventListener('click', () => {
+    setFocus('daily', 'hero');
+  });
+  document.getElementById('heroTopicAction').addEventListener('click', () => {
+    state.topic = 'all';
+    state.focus = 'all';
+    buildQueue();
+    render();
+    saveUiPrefs();
+    trackEvent('vocab_filter_change', { filter: 'topic_reset', value: 'all', source: 'hero' });
+  });
+  document.getElementById('heroModeAction').addEventListener('click', () => {
+    state.mode = state.mode === 'dictation' ? 'cloze' : 'dictation';
+    state.answer = '';
+    state.reveal = false;
+    state.feedback = null;
+    render();
+    saveUiPrefs();
+    trackEvent('vocab_mode_change', { mode: state.mode, source: 'hero' });
+  });
+
   document.getElementById('overviewStats').innerHTML = `
     <div class="metric"><span class="metric-num">${words.length}</span><span class="metric-label">筛选词数</span></div>
     <div class="metric"><span class="metric-num">${mastered}</span><span class="metric-label">已掌握</span></div>
     <div class="metric"><span class="metric-num">${topicCount}</span><span class="metric-label">主题数</span></div>
+    <div class="metric"><span class="metric-num">${state.libraryWords.length}</span><span class="metric-label">完整词库</span></div>
   `;
 }
 
@@ -823,6 +927,13 @@ function commitProgress(correct) {
   }
   saveProgress();
   scheduleCloudSync([item.key]);
+  trackEvent('vocab_word_complete', {
+    mode: state.mode,
+    focus: state.focus,
+    correct,
+    word: item.word,
+    topic: item.topic,
+  });
 
   if (correct) {
     state.index += 1;
@@ -887,6 +998,7 @@ function attachModeEvents() {
       state.reveal = false;
       state.feedback = null;
       render();
+      saveUiPrefs();
       trackEvent('vocab_mode_change', { mode: state.mode });
     });
   });
@@ -1042,14 +1154,29 @@ function render() {
 document.addEventListener('DOMContentLoaded', async () => {
   prepareLibrary();
   state.stats = loadProgress();
+  resolveInitialState();
   renderSources();
   attachModeEvents();
   buildQueue();
   trackEvent('vocab_session_start', {
     totalWords: state.libraryWords.length,
     hasLocalProgress: Object.keys(state.stats).length > 0,
+    focus: state.focus,
+    level: state.level,
+    topic: state.topic,
+    mode: state.mode,
+    source: state.entrySource,
   });
+  if (state.focus === 'daily') {
+    trackEvent('vocab_daily_focus', {
+      size: getDailyWords().length,
+      source: state.entrySource,
+      level: state.level,
+      topic: state.topic,
+    });
+  }
   render();
+  saveUiPrefs();
   await initCloudSync();
   buildQueue();
   render();

@@ -138,25 +138,24 @@
   }
 
   function trackPerformance() {
-    setTimeout(() => {
-      const navigation = performance.getEntriesByType('navigation')[0];
-      if (!navigation) return;
-      const loadSeconds = Math.round(navigation.loadEventEnd / 1000);
-      track('page_load', {
-        eventGroup: 'performance',
-        value: loadSeconds,
-        meta: {
-          domContentLoadedMs: Math.round(navigation.domContentLoadedEventEnd),
-          loadEventMs: Math.round(navigation.loadEventEnd),
-        },
+    const navigation = performance.getEntriesByType('navigation')[0];
+    if (!navigation) return;
+    const loadEventMs = Math.round(navigation.loadEventEnd || 0);
+    if (!loadEventMs) return;
+    track('page_load', {
+      eventGroup: 'performance',
+      value: Math.round(loadEventMs / 1000),
+      meta: {
+        domContentLoadedMs: Math.round(navigation.domContentLoadedEventEnd || 0),
+        loadEventMs,
+      },
+    });
+    if (loadEventMs >= 4000) {
+      track('page_load_slow', {
+        eventGroup: 'friction',
+        value: loadEventMs,
       });
-      if (navigation.loadEventEnd >= 4000) {
-        track('page_load_slow', {
-          eventGroup: 'error',
-          value: Math.round(navigation.loadEventEnd),
-        });
-      }
-    }, 0);
+    }
   }
 
   window.addEventListener('error', (event) => {
@@ -190,7 +189,10 @@
 
   document.addEventListener('DOMContentLoaded', () => {
     trackPageView();
-    trackPerformance();
+  });
+
+  window.addEventListener('load', () => {
+    setTimeout(trackPerformance, 0);
   });
 
   window.KETAnalytics = {

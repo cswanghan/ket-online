@@ -5,6 +5,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>KET Practice · 管理</title>
     <script src="auth-guard.js"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&family=Noto+Serif+SC:wght@400;600&display=swap" rel="stylesheet">
     <style>
         * { margin: 0; padding: 0; box-sizing: border-box; }
@@ -65,8 +67,16 @@
         .analytics-row .name { color: var(--text); min-width: 0; }
         .analytics-row .meta { color: var(--text-light); font-size: 0.78rem; }
         .analytics-pill { padding: 2px 9px; border-radius: 999px; background: var(--rose-bg); color: var(--accent); font-size: 0.76rem; white-space: nowrap; }
+        .analytics-funnels { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 14px; margin-top: 14px; }
+        .funnel-step { display: grid; gap: 6px; margin-bottom: 12px; }
+        .funnel-step:last-child { margin-bottom: 0; }
+        .funnel-step .meta-row { display: flex; justify-content: space-between; gap: 12px; font-size: 0.82rem; }
+        .funnel-step .label { color: var(--text); }
+        .funnel-step .rate { color: var(--text-light); }
+        .funnel-track { height: 8px; border-radius: 999px; background: var(--warm); overflow: hidden; }
+        .funnel-fill { height: 100%; border-radius: inherit; background: linear-gradient(135deg, #c4a08a, #b07d62); }
         @media (max-width: 760px) {
-            .analytics-grid, .analytics-panels { grid-template-columns: 1fr; }
+            .analytics-grid, .analytics-panels, .analytics-funnels { grid-template-columns: 1fr; }
         }
     </style>
 </head>
@@ -175,6 +185,8 @@
         const vocab = data.vocab || {};
         const pages = data.pages || [];
         const friction = data.friction || [];
+        const quizFunnel = data.quizFunnel || [];
+        const vocabFunnel = data.vocabFunnel || [];
 
         container.innerHTML = `
             <div class="analytics-grid">
@@ -184,10 +196,10 @@
                 <div class="analytics-card"><div class="k">登录成功率</div><div class="v">${auth.loginAttempts ? Math.round((auth.loginSuccess || 0) / auth.loginAttempts * 100) : 0}%</div><div class="subv">${auth.loginSuccess || 0} / ${auth.loginAttempts || 0}</div></div>
             </div>
             <div class="analytics-grid">
-                <div class="analytics-card"><div class="k">做题启动</div><div class="v">${quiz.starts || 0}</div><div class="subv">提交成功 ${quiz.submitSuccess || 0}</div></div>
-                <div class="analytics-card"><div class="k">做题被登录拦截</div><div class="v">${quiz.authRequired || 0}</div><div class="subv">提交失败 ${quiz.submitFailed || 0}</div></div>
+                <div class="analytics-card"><div class="k">做题启动</div><div class="v">${quiz.starts || 0}</div><div class="subv">看到结果 ${(quiz.submitSuccess || 0) + (quiz.guestResults || 0)}</div></div>
+                <div class="analytics-card"><div class="k">历史保存</div><div class="v">${quiz.saveHistorySuccess || 0}</div><div class="subv">中途离开 ${quiz.inProgressLeave || 0}</div></div>
                 <div class="analytics-card"><div class="k">背词会话</div><div class="v">${vocab.starts || 0}</div><div class="subv">每日计划使用 ${vocab.dailyFocus || 0}</div></div>
-                <div class="analytics-card"><div class="k">背词同步失败</div><div class="v">${vocab.syncFailed || 0}</div><div class="subv">筛选切换 ${vocab.filterChanges || 0}</div></div>
+                <div class="analytics-card"><div class="k">背词完成量</div><div class="v">${vocab.wordCompletions || 0}</div><div class="subv">同步失败 ${vocab.syncFailed || 0}</div></div>
             </div>
             <div class="analytics-panels">
                 <div class="analytics-panel">
@@ -216,7 +228,36 @@
                     </div>
                 </div>
             </div>
+            <div class="analytics-funnels">
+                <div class="analytics-panel">
+                    <h3>测验转化漏斗</h3>
+                    ${renderFunnel(quizFunnel)}
+                </div>
+                <div class="analytics-panel">
+                    <h3>背词转化漏斗</h3>
+                    ${renderFunnel(vocabFunnel)}
+                </div>
+            </div>
         `;
+    }
+    function renderFunnel(steps) {
+        if (!steps.length) return '<div class="empty">暂无漏斗数据</div>';
+        const first = steps[0]?.count || 0;
+        return steps.map((step, index) => {
+            const prev = index === 0 ? first : (steps[index - 1]?.count || 0);
+            const base = first || 1;
+            const width = step.count ? Math.max(4, Math.round((step.count || 0) / base * 100)) : 0;
+            const stepRate = prev ? Math.round((step.count || 0) / prev * 100) : (step.count ? 100 : 0);
+            return `
+                <div class="funnel-step">
+                    <div class="meta-row">
+                        <span class="label">${step.label}</span>
+                        <span class="rate">${step.count || 0} · ${stepRate}%</span>
+                    </div>
+                    <div class="funnel-track"><div class="funnel-fill" style="width:${width}%"></div></div>
+                </div>
+            `;
+        }).join('');
     }
     function formatEventName(name) {
         const labels = {
@@ -225,8 +266,9 @@
             page_load_slow: '页面加载过慢',
             auth_login_failure: '登录失败',
             auth_register_failure: '注册失败',
-            quiz_auth_required: '做题提交前被要求登录',
+            quiz_in_progress_leave: '做题中途离开',
             quiz_submit_failed: '做题结果上传失败',
+            quiz_save_history_failed: '结果补存失败',
             vocab_sync_failed: '背词云同步失败',
             low_engagement_bounce: '低参与快速离开',
         };

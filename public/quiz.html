@@ -4,6 +4,8 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>KET Practice · 在线练习</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&family=Noto+Serif+SC:wght@400;600&display=swap" rel="stylesheet">
     <style>
         * { margin: 0; padding: 0; box-sizing: border-box; }
@@ -38,6 +40,27 @@
         /* Test selector */
         .test-selector { text-align: center; padding: 60px 20px; }
         .test-selector h2 { font-family: 'Playfair Display', 'Noto Serif SC', serif; font-size: 1.6rem; margin-bottom: 32px; color: var(--accent); }
+        .selector-intro {
+            max-width: 640px; margin: 0 auto 24px; color: var(--text-light);
+            font-size: 0.9rem; line-height: 1.8;
+        }
+        .resume-banner {
+            max-width: 640px; margin: 0 auto 20px; text-align: left;
+            background: white; border: 1px solid var(--warm); border-radius: 16px;
+            padding: 18px 20px; display: none; gap: 14px;
+            box-shadow: 0 8px 24px rgba(180,140,110,0.08);
+        }
+        .resume-banner.show { display: grid; }
+        .resume-banner strong { color: var(--accent); font-size: 1rem; }
+        .resume-banner p { color: var(--text-light); font-size: 0.86rem; line-height: 1.7; }
+        .resume-actions { display: flex; gap: 10px; flex-wrap: wrap; }
+        .resume-btn {
+            padding: 10px 16px; border-radius: 18px; border: none; font: inherit;
+            cursor: pointer; transition: all 0.2s;
+        }
+        .resume-btn.primary { background: var(--accent); color: white; }
+        .resume-btn.secondary { background: white; color: var(--text); border: 1px solid var(--warm); }
+        .resume-btn.secondary:hover { border-color: var(--rose); color: var(--accent); }
         .test-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(200px, 1fr)); gap: 16px; max-width: 640px; margin: 0 auto; }
         .test-option {
             background: white; border: 1px solid var(--warm); border-radius: 16px;
@@ -141,6 +164,20 @@
         .nav-btn.submit { background: var(--correct); color: white; }
         .nav-btn.submit:hover { background: #5a8a6c; }
         .nav-btn:disabled { opacity: 0.5; cursor: not-allowed; }
+        .quiz-status-card {
+            background: white; border: 1px solid var(--warm); border-radius: 14px;
+            padding: 16px 18px; margin-bottom: 18px; display: grid; gap: 10px;
+        }
+        .quiz-status-card strong { color: var(--accent); }
+        .quiz-status-meta {
+            display: flex; flex-wrap: wrap; gap: 12px; color: var(--text-light);
+            font-size: 0.82rem;
+        }
+        .quiz-status-pill {
+            display: inline-flex; align-items: center; gap: 6px;
+            padding: 5px 10px; border-radius: 999px; font-size: 0.76rem;
+            background: var(--rose-bg); color: var(--accent); width: fit-content;
+        }
 
         /* Results page */
         .results { text-align: center; padding: 40px 20px; }
@@ -165,6 +202,18 @@
         .result-btn.primary:hover { background: #9a6b52; }
         .result-btn.secondary { background: white; color: var(--text); border: 1px solid var(--warm); }
         .result-btn.secondary:hover { border-color: var(--rose); color: var(--accent); }
+        .result-note {
+            margin: 20px auto 0; max-width: 520px; color: var(--text-light);
+            font-size: 0.85rem; line-height: 1.8;
+        }
+        .save-card {
+            max-width: 520px; margin: 24px auto 0; text-align: left;
+            background: white; border: 1px solid var(--warm); border-radius: 16px;
+            padding: 18px 20px; display: grid; gap: 12px;
+        }
+        .save-card strong { color: var(--accent); font-size: 1rem; }
+        .save-card p { color: var(--text-light); font-size: 0.86rem; line-height: 1.7; }
+        .save-card .save-actions { display: flex; gap: 10px; flex-wrap: wrap; }
 
         .hidden { display: none !important; }
 
@@ -234,6 +283,8 @@
     <!-- Test selector -->
     <div id="selectorView" class="test-selector">
         <h2>选择练习套卷</h2>
+        <p class="selector-intro">支持游客直接完成整套练习，结果先本地展示；登录后再保存到历史记录。中途作答会自动保存，下次可以继续。</p>
+        <div id="resumeBanner" class="resume-banner"></div>
         <div class="test-grid" id="testGrid">加载中...</div>
     </div>
 
@@ -248,8 +299,8 @@
 <div class="auth-overlay" id="authOverlay">
     <div class="auth-modal">
         <button class="close-btn" onclick="closeAuthModal()">&times;</button>
-        <h3>登录后提交成绩</h3>
-        <p class="hint">注册/登录后自动保存成绩，方便查看历史记录</p>
+        <h3 id="authModalTitle">登录后保存记录</h3>
+        <p class="hint" id="authModalHint">注册/登录后可同步成绩和历史记录，游客也能先做完再保存。</p>
         <div class="auth-tabs">
             <div class="auth-tab active" onclick="switchAuthTab('login')">登录</div>
             <div class="auth-tab" onclick="switchAuthTab('register')">注册</div>
@@ -263,7 +314,7 @@
                 <label class="form-label">密码</label>
                 <input class="form-input" name="password" type="password" placeholder="请输入密码" required>
             </div>
-            <button class="submit-btn" type="submit">登录并提交</button>
+            <button class="submit-btn" type="submit">登录并保存</button>
             <div class="msg" id="modalLoginMsg"></div>
         </form>
         <form id="modalRegisterForm" style="display:none" onsubmit="handleModalRegister(event)">
@@ -279,7 +330,7 @@
                 <label class="form-label">手机号</label>
                 <input class="form-input" name="phone" placeholder="选填">
             </div>
-            <button class="submit-btn" type="submit">注册并提交</button>
+            <button class="submit-btn" type="submit">注册并保存</button>
             <div class="msg" id="modalRegisterMsg"></div>
         </form>
     </div>
@@ -288,17 +339,20 @@
 <script src="analytics.js"></script>
 <script>
     // Auth modal helpers
-    let pendingSubmit = false;
+    let pendingSaveResult = false;
     function trackEvent(name, meta, eventGroup) {
         window.KETAnalytics?.track(name, { meta, eventGroup });
     }
 
-    function showAuthModal() {
+    function showAuthModal(reason = 'save_result') {
         document.getElementById('authOverlay').classList.add('show');
-        trackEvent('quiz_auth_required', { answered: Object.keys(userAnswers).filter(k => userAnswers[k] !== '').length });
+        document.getElementById('authModalTitle').textContent = '登录后保存记录';
+        document.getElementById('authModalHint').textContent = '注册/登录后可同步成绩和历史记录，游客也能先做完再保存。';
+        trackEvent('quiz_save_history_click', { reason, answered: getAnsweredCount(), hasResult: Boolean(lastResult) });
     }
     function closeAuthModal() {
         document.getElementById('authOverlay').classList.remove('show');
+        pendingSaveResult = false;
         trackEvent('quiz_auth_modal_close');
     }
     function switchAuthTab(tab) {
@@ -325,8 +379,14 @@
                 localStorage.setItem('token', res.token);
                 localStorage.setItem('user', JSON.stringify(res.user));
                 trackEvent('auth_login_success', { source: 'quiz_modal', role: res.user?.role || 'user' });
+                const shouldPersist = pendingSaveResult;
                 closeAuthModal();
-                if (pendingSubmit) { pendingSubmit = false; doSubmit(); }
+                if (shouldPersist) {
+                    pendingSaveResult = false;
+                    await persistPendingResult('save_history');
+                } else {
+                    renderCurrentPart();
+                }
             } else {
                 trackEvent('auth_login_failure', { source: 'quiz_modal', reason: res.error || 'unknown' }, 'error');
                 showModalMsg('modalLoginMsg', res.error, 'error');
@@ -351,8 +411,14 @@
                     localStorage.setItem('token', res.token);
                     localStorage.setItem('user', JSON.stringify(res.user));
                     trackEvent('auth_register_success', { source: 'quiz_modal', directLogin: true });
+                    const shouldPersist = pendingSaveResult;
                     closeAuthModal();
-                    if (pendingSubmit) { pendingSubmit = false; doSubmit(); }
+                    if (shouldPersist) {
+                        pendingSaveResult = false;
+                        await persistPendingResult('save_history');
+                    } else {
+                        renderCurrentPart();
+                    }
                 } else {
                     trackEvent('auth_register_success', { source: 'quiz_modal', directLogin: false });
                     showModalMsg('modalRegisterMsg', res.message || '注册成功，请等待审核后登录', 'success');
@@ -370,6 +436,8 @@
 
 <script>
     // State
+    const QUIZ_DRAFT_KEY = 'ket_quiz_draft_v2';
+    const QUIZ_DRAFT_TTL_MS = 1000 * 60 * 60 * 48;
     let testData = null;
     let allQuestions = [];
     let userAnswers = {};
@@ -377,11 +445,91 @@
     let startTime = null;
     let timerInterval = null;
     let submitted = false;
+    let currentTestId = '';
+    let lastResult = null;
+    let pendingResultPayload = null;
     const progressCheckpoints = new Set();
 
     // Level detection
     const params = new URLSearchParams(location.search);
     const currentLevel = params.get('level') || 'ket';
+
+    function getAnsweredCount() {
+        return Object.keys(userAnswers).filter(key => String(userAnswers[key] || '').trim() !== '').length;
+    }
+
+    function getElapsedSeconds() {
+        return startTime ? Math.floor((Date.now() - startTime) / 1000) : 0;
+    }
+
+    function getStoredDraft() {
+        try {
+            const draft = JSON.parse(localStorage.getItem(QUIZ_DRAFT_KEY) || 'null');
+            if (!draft?.testId || !draft?.savedAt) return null;
+            if (Date.now() - draft.savedAt > QUIZ_DRAFT_TTL_MS) {
+                localStorage.removeItem(QUIZ_DRAFT_KEY);
+                return null;
+            }
+            return draft.level === currentLevel ? draft : null;
+        } catch {
+            localStorage.removeItem(QUIZ_DRAFT_KEY);
+            return null;
+        }
+    }
+
+    function clearDraft() {
+        localStorage.removeItem(QUIZ_DRAFT_KEY);
+    }
+
+    function persistDraft() {
+        if (!testData || submitted || !currentTestId) return;
+        const answered = getAnsweredCount();
+        if (!answered) {
+            clearDraft();
+            return;
+        }
+        localStorage.setItem(QUIZ_DRAFT_KEY, JSON.stringify({
+            level: currentLevel,
+            testId: currentTestId,
+            title: testData.title,
+            answered,
+            total: allQuestions.length,
+            userAnswers,
+            currentPartIdx,
+            elapsedSeconds: getElapsedSeconds(),
+            savedAt: Date.now(),
+        }));
+    }
+
+    function renderResumeBanner() {
+        const banner = document.getElementById('resumeBanner');
+        const draft = getStoredDraft();
+        if (!draft) {
+            banner.classList.remove('show');
+            banner.innerHTML = '';
+            return;
+        }
+
+        banner.classList.add('show');
+        banner.innerHTML = `
+            <strong>发现上次未完成的练习</strong>
+            <p>${draft.title || draft.testId} · 已答 ${draft.answered || 0}/${draft.total || 0} · 自动保存于 ${new Date(draft.savedAt).toLocaleString('zh-CN', { hour12: false })}</p>
+            <div class="resume-actions">
+                <button class="resume-btn primary" id="resumeQuizBtn">继续作答</button>
+                <button class="resume-btn secondary" id="discardQuizBtn">放弃草稿</button>
+            </div>
+        `;
+        document.getElementById('resumeQuizBtn').onclick = () => {
+            trackEvent('quiz_resume_start', { testId: draft.testId, answered: draft.answered || 0, total: draft.total || 0 });
+            loadTest(draft.testId, draft.level, true);
+        };
+        document.getElementById('discardQuizBtn').onclick = () => {
+            clearDraft();
+            banner.classList.remove('show');
+            banner.innerHTML = '';
+            trackEvent('quiz_draft_discard', { testId: draft.testId });
+        };
+    }
 
     // Load test list
     async function loadTestList() {
@@ -403,12 +551,14 @@
                 </div>`
             ).join('');
             trackEvent('quiz_selector_view', { level: currentLevel, tests: level.tests.length });
+            renderResumeBanner();
         } catch (e) { document.getElementById('testGrid').textContent = '加载失败'; }
     }
 
     // Load a specific test
-    async function loadTest(testId, level) {
+    async function loadTest(testId, level, resumeFromDraft = false) {
         level = level || currentLevel;
+        currentTestId = testId;
         trackEvent('quiz_test_select', { testId, level });
         try {
             const r = await fetch(`/data/${level}/${testId}.json`);
@@ -424,22 +574,35 @@
                 });
             });
 
-            startQuiz();
+            const draft = resumeFromDraft ? getStoredDraft() : null;
+            startQuiz(draft && draft.testId === testId ? draft : null);
         } catch (e) {
             trackEvent('quiz_load_failed', { testId, level, message: e.message || 'load_failed' }, 'error');
             alert('加载试卷失败: ' + e.message);
         }
     }
 
-    function startQuiz() {
+    function startQuiz(draft = null) {
         document.getElementById('selectorView').classList.add('hidden');
         document.getElementById('quizView').classList.remove('hidden');
-        document.getElementById('progress').textContent = `已答 0 / ${allQuestions.length}`;
-        startTime = Date.now();
+        document.getElementById('resultsView').classList.add('hidden');
+        userAnswers = draft?.userAnswers || {};
+        currentPartIdx = draft?.currentPartIdx || 0;
+        submitted = false;
+        progressCheckpoints.clear();
+        startTime = Date.now() - ((draft?.elapsedSeconds || 0) * 1000);
+        updateTimer();
         timerInterval = setInterval(updateTimer, 1000);
-        currentPartIdx = 0;
-        trackEvent('quiz_start', { level: currentLevel, title: testData?.title || '', totalQuestions: allQuestions.length, totalParts: testData?.parts?.length || 0 });
+        trackEvent('quiz_start', {
+            level: currentLevel,
+            title: testData?.title || '',
+            totalQuestions: allQuestions.length,
+            totalParts: testData?.parts?.length || 0,
+            resumed: Boolean(draft),
+        });
         renderCurrentPart();
+        updateProgress();
+        persistDraft();
     }
 
     function updateTimer() {
@@ -452,8 +615,22 @@
     function renderCurrentPart() {
         const part = testData.parts[currentPartIdx];
         const view = document.getElementById('quizView');
+        const draft = getStoredDraft();
+        const answered = getAnsweredCount();
+        const loggedIn = Boolean(localStorage.getItem('token'));
 
-        let html = `<div class="part-header"><h3>${part.name}</h3><p>${part.description}</p></div>`;
+        let html = `
+            <div class="quiz-status-card">
+                <span class="quiz-status-pill">${loggedIn ? '已登录，交卷后自动保存' : '游客模式，可先完成再决定是否保存'}</span>
+                <strong>${testData.title}</strong>
+                <div class="quiz-status-meta">
+                    <span>当前部分：${currentPartIdx + 1}/${testData.parts.length}</span>
+                    <span>当前进度：${answered}/${allQuestions.length}</span>
+                    <span>${draft ? `草稿已自动保存 ${new Date(draft.savedAt).toLocaleTimeString('zh-CN', { hour12: false })}` : '开始作答后将自动保存草稿'}</span>
+                </div>
+            </div>
+            <div class="part-header"><h3>${part.name}</h3><p>${part.description}</p></div>
+        `;
 
         // Part 2 matching: show texts first
         if (part.type === 'matching' && part.texts) {
@@ -592,16 +769,18 @@
         el.classList.add('selected');
         card.classList.add('answered');
         updateProgress();
+        persistDraft();
     }
 
     function fillAnswer(qNum, value) {
         if (submitted) return;
         userAnswers[qNum] = value.trim();
         updateProgress();
+        persistDraft();
     }
 
     function updateProgress() {
-        const answered = Object.keys(userAnswers).filter(k => userAnswers[k] !== '').length;
+        const answered = getAnsweredCount();
         document.getElementById('progress').textContent = `已答 ${answered} / ${allQuestions.length}`;
         document.getElementById('progressBar').style.width = `${(answered / allQuestions.length) * 100}%`;
         maybeTrackProgressCheckpoint(answered);
@@ -611,6 +790,7 @@
         if (currentPartIdx > 0) {
             currentPartIdx--;
             trackEvent('quiz_part_nav', { direction: 'prev', partIndex: currentPartIdx + 1 });
+            persistDraft();
             renderCurrentPart();
         }
     }
@@ -619,32 +799,24 @@
         if (currentPartIdx < testData.parts.length - 1) {
             currentPartIdx++;
             trackEvent('quiz_part_nav', { direction: 'next', partIndex: currentPartIdx + 1 });
+            persistDraft();
             renderCurrentPart();
         }
     }
 
     async function submitQuiz() {
-        const answered = Object.keys(userAnswers).filter(k => userAnswers[k] !== '').length;
+        const answered = getAnsweredCount();
         trackEvent('quiz_submit_attempt', { answered, total: allQuestions.length });
         if (answered < allQuestions.length) {
             if (!confirm(`还有 ${allQuestions.length - answered} 题未作答，确定提交吗？`)) return;
         }
-
-        // Check login - if not logged in, show auth modal
-        const token = localStorage.getItem('token');
-        if (!token) {
-            pendingSubmit = true;
-            showAuthModal();
-            return;
-        }
-
         doSubmit();
     }
 
     async function doSubmit() {
         submitted = true;
         clearInterval(timerInterval);
-        const duration = Math.floor((Date.now() - startTime) / 1000);
+        const duration = getElapsedSeconds();
 
         // Calculate score
         let correct = 0;
@@ -665,32 +837,68 @@
         const total = allQuestions.length;
         const score = correct;
         const pct = Math.round((correct / total) * 100);
+        pendingResultPayload = {
+            level: currentLevel.toUpperCase(),
+            year: 2024,
+            answers,
+            duration,
+            score,
+            correct,
+            total,
+            pct,
+        };
+        clearDraft();
 
-        // Upload to server
-        try {
-            const token = localStorage.getItem('token');
-            if (token) {
-                const response = await fetch('/api/quiz/submit', {
-                    method: 'POST',
-                    headers: { 'Authorization': `Bearer ${token}`, 'Content-Type': 'application/json' },
-                    body: JSON.stringify({ level: currentLevel.toUpperCase(), year: 2024, answers, duration, score })
-                });
-                if (!response.ok) throw new Error(`submit_${response.status}`);
-            }
-            trackEvent('quiz_submit_success', { correct, total, pct, duration });
-        } catch (e) {
-            trackEvent('quiz_submit_failed', { message: e.message || 'upload_failed' }, 'error');
-            console.error('Upload failed:', e);
+        if (localStorage.getItem('token')) {
+            await persistPendingResult('submit');
+        } else {
+            trackEvent('quiz_guest_result_shown', { correct, total, pct, duration, testId: currentTestId });
         }
 
         showResults(correct, total, pct, duration, answers);
     }
 
     function showResults(correct, total, pct, duration, answers) {
+        lastResult = { correct, total, pct, duration, answers };
+        renderResults();
+    }
+
+    function renderResults() {
+        if (!lastResult) return;
+        const { correct, total, pct, duration } = lastResult;
         const m = String(Math.floor(duration / 60)).padStart(2, '0');
         const s = String(duration % 60).padStart(2, '0');
         const grade = pct >= 80 ? 'excellent' : pct >= 60 ? 'good' : 'needs-work';
         const gradeText = pct >= 80 ? 'Excellent! 🎉' : pct >= 60 ? 'Good job! 👍' : 'Keep practicing! 💪';
+        const hasToken = Boolean(localStorage.getItem('token'));
+        const hasPendingSave = Boolean(pendingResultPayload);
+        let saveCard = '';
+        let resultNote = '';
+
+        if (!hasToken && hasPendingSave) {
+            saveCard = `
+                <div class="save-card">
+                    <strong>这次结果已生成，但还没保存到历史记录</strong>
+                    <p>你现在是游客模式，成绩已经展示给你了。登录或注册后，可以把这次结果补存到个人历史和错题本。</p>
+                    <div class="save-actions">
+                        <button class="result-btn primary" id="saveHistoryBtn">登录后保存这次成绩</button>
+                        <a class="result-btn secondary" href="login.html">前往登录页</a>
+                    </div>
+                </div>
+            `;
+        } else if (!hasPendingSave) {
+            resultNote = '<p class="result-note">本次成绩已保存到历史记录，可在个人中心继续查看和回顾。</p>';
+        } else if (hasToken && hasPendingSave) {
+            saveCard = `
+                <div class="save-card">
+                    <strong>成绩暂未写入云端</strong>
+                    <p>网络或接口异常时结果仍保留在当前页面。你可以重试保存，不会影响本地查看答案。</p>
+                    <div class="save-actions">
+                        <button class="result-btn primary" id="saveHistoryBtn">重试保存成绩</button>
+                    </div>
+                </div>
+            `;
+        }
 
         document.getElementById('quizView').classList.add('hidden');
         const view = document.getElementById('resultsView');
@@ -712,8 +920,67 @@
                 <a class="result-btn secondary" href="quiz.html">再做一套</a>
                 <a class="result-btn secondary" href="index.html">返回首页</a>
             </div>
+            ${resultNote}
+            ${saveCard}
             <div id="reviewArea" class="hidden" style="text-align:left;margin-top:32px;"></div>
         `;
+        const saveButton = document.getElementById('saveHistoryBtn');
+        if (saveButton) {
+            saveButton.addEventListener('click', () => {
+                pendingSaveResult = true;
+                if (localStorage.getItem('token')) {
+                    persistPendingResult('save_history');
+                } else {
+                    showAuthModal('guest_result');
+                }
+            });
+        }
+    }
+
+    async function persistPendingResult(source = 'submit') {
+        if (!pendingResultPayload) return false;
+        try {
+            const token = localStorage.getItem('token');
+            if (!token) return false;
+            const response = await fetch('/api/quiz/submit', {
+                method: 'POST',
+                headers: { 'Authorization': `Bearer ${token}`, 'Content-Type': 'application/json' },
+                body: JSON.stringify({
+                    level: pendingResultPayload.level,
+                    year: pendingResultPayload.year,
+                    answers: pendingResultPayload.answers,
+                    duration: pendingResultPayload.duration,
+                    score: pendingResultPayload.score,
+                })
+            });
+            if (!response.ok) throw new Error(`submit_${response.status}`);
+            if (source === 'submit') {
+                trackEvent('quiz_submit_success', {
+                    correct: pendingResultPayload.correct,
+                    total: pendingResultPayload.total,
+                    pct: pendingResultPayload.pct,
+                    duration: pendingResultPayload.duration,
+                });
+            } else {
+                trackEvent('quiz_save_history_success', {
+                    correct: pendingResultPayload.correct,
+                    total: pendingResultPayload.total,
+                    pct: pendingResultPayload.pct,
+                });
+            }
+            pendingResultPayload = null;
+            renderResults();
+            return true;
+        } catch (e) {
+            if (source === 'submit') {
+                trackEvent('quiz_submit_failed', { message: e.message || 'upload_failed' }, 'error');
+            } else {
+                trackEvent('quiz_save_history_failed', { message: e.message || 'upload_failed' }, 'error');
+            }
+            console.error('Upload failed:', e);
+            renderResults();
+            return false;
+        }
     }
 
     function reviewAnswers() {
@@ -795,6 +1062,17 @@
 
     // Init
     loadTestList();
+    window.addEventListener('beforeunload', persistDraft);
+    window.addEventListener('pagehide', () => {
+        if (!submitted && getAnsweredCount() > 0) {
+            persistDraft();
+            trackEvent('quiz_in_progress_leave', {
+                answered: getAnsweredCount(),
+                total: allQuestions.length,
+                testId: currentTestId,
+            }, 'friction');
+        }
+    });
 
     function maybeTrackProgressCheckpoint(answered) {
         if (!allQuestions.length) return;

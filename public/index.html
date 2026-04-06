@@ -4,82 +4,212 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>KET&PET 练习 · 剑桥英语在线练习</title>
-    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&family=Noto+Serif+SC:wght@400;600&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500;700&family=Noto+Serif+SC:wght@400;500;600&display=swap" rel="stylesheet">
     <style>
         * { margin: 0; padding: 0; box-sizing: border-box; }
         :root {
-            --cream: #faf8f5; --warm: #f3ede6; --rose: #c4a08a; --rose-light: #e8d5c8;
-            --rose-bg: #fdf5f0; --text: #3d3530; --text-light: #8a7e76; --accent: #b07d62;
+            --cream: #faf7f2;
+            --warm: #f2e7dc;
+            --warm-deep: #e4d1c0;
+            --text: #3c332f;
+            --text-light: #83756d;
+            --accent: #ab7154;
+            --accent-deep: #8f5a41;
+            --card: rgba(255,255,255,0.86);
+            --shadow: 0 18px 48px rgba(96, 67, 50, 0.12);
         }
-        body { font-family: 'Noto Serif SC', 'Georgia', serif; background: var(--cream); min-height: 100vh; color: var(--text); }
-        .page { max-width: 960px; margin: 0 auto; padding: 40px 24px 60px; }
-        .site-header { text-align: center; margin-bottom: 48px; position: relative; }
-        .site-header h1 {
+        body {
+            font-family: 'Noto Serif SC', 'Georgia', serif;
+            color: var(--text);
+            min-height: 100vh;
+            background:
+                radial-gradient(circle at left top, rgba(171, 113, 84, 0.18), transparent 26%),
+                radial-gradient(circle at right 18%, rgba(145, 171, 190, 0.18), transparent 20%),
+                linear-gradient(180deg, #fcfaf7 0%, var(--cream) 100%);
+        }
+        .page { max-width: 1160px; margin: 0 auto; padding: 30px 24px 64px; }
+        .topbar {
+            display: flex; justify-content: space-between; align-items: center; gap: 16px;
+            margin-bottom: 26px; flex-wrap: wrap;
+        }
+        .brand small {
+            display: block; color: var(--text-light); font-size: 0.75rem;
+            letter-spacing: 0.24em; text-transform: uppercase;
+        }
+        .brand h1 {
             font-family: 'Playfair Display', 'Noto Serif SC', serif;
-            font-size: 2.6rem; font-weight: 700; letter-spacing: 2px; margin-bottom: 8px;
+            font-size: clamp(2rem, 5vw, 3rem); letter-spacing: 1px; margin-top: 6px;
         }
-        .site-header .tagline { color: var(--text-light); font-size: 1rem; letter-spacing: 1px; }
+        .auth-links {
+            display: flex; gap: 10px; flex-wrap: wrap; align-items: center;
+        }
+        .pill-link {
+            text-decoration: none; color: var(--text-light); font-size: 0.84rem;
+            padding: 9px 16px; border: 1px solid var(--warm-deep); border-radius: 999px;
+            background: rgba(255,255,255,0.72); transition: all 0.2s;
+        }
+        .pill-link:hover { color: var(--accent); border-color: var(--accent); }
+
+        .hero {
+            display: grid; grid-template-columns: minmax(0, 1.2fr) minmax(300px, 0.8fr);
+            gap: 20px; align-items: stretch; margin-bottom: 24px;
+        }
+        .hero-main,
+        .hero-side,
+        .feature-card,
+        .entry-card,
+        .support-card {
+            border: 1px solid rgba(171, 113, 84, 0.12);
+            border-radius: 28px;
+            background: var(--card);
+            box-shadow: var(--shadow);
+            backdrop-filter: blur(16px);
+        }
+        .hero-main {
+            padding: 34px 34px 30px;
+            background:
+                linear-gradient(135deg, rgba(255,255,255,0.92), rgba(255,245,238,0.84)),
+                linear-gradient(180deg, rgba(171,113,84,0.08), transparent);
+        }
+        .hero-badge {
+            display: inline-flex; align-items: center; gap: 8px;
+            padding: 8px 14px; border-radius: 999px;
+            background: rgba(171, 113, 84, 0.1); color: var(--accent);
+            font-size: 0.8rem; margin-bottom: 18px;
+        }
+        .hero-main h2 {
+            font-family: 'Playfair Display', 'Noto Serif SC', serif;
+            font-size: clamp(2.8rem, 7vw, 4.8rem);
+            line-height: 0.92; margin-bottom: 18px;
+        }
+        .hero-main p {
+            max-width: 42rem; color: var(--text-light); line-height: 1.9;
+            font-size: 0.96rem;
+        }
+        .hero-actions {
+            display: flex; gap: 14px; flex-wrap: wrap; margin: 24px 0 20px;
+        }
+        .hero-btn {
+            display: inline-flex; align-items: center; justify-content: center; gap: 8px;
+            padding: 14px 22px; border-radius: 999px; text-decoration: none;
+            font-size: 0.92rem; transition: transform 0.2s, box-shadow 0.2s;
+        }
+        .hero-btn:hover { transform: translateY(-1px); }
+        .hero-btn.primary {
+            color: white; background: linear-gradient(135deg, var(--accent), var(--accent-deep));
+            box-shadow: 0 14px 28px rgba(171, 113, 84, 0.22);
+        }
+        .hero-btn.secondary {
+            color: var(--text); border: 1px solid var(--warm-deep);
+            background: rgba(255,255,255,0.76);
+        }
+        .hero-stats {
+            display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 12px;
+        }
+        .hero-stat {
+            border-radius: 20px; padding: 16px 18px;
+            background: rgba(255,255,255,0.72); border: 1px solid rgba(171,113,84,0.1);
+        }
+        .hero-stat strong {
+            display: block; font-size: 1.8rem; color: var(--accent); margin-bottom: 4px;
+        }
+        .hero-stat span { color: var(--text-light); font-size: 0.82rem; line-height: 1.6; }
+
+        .hero-side {
+            padding: 24px;
+            display: grid; gap: 16px;
+            background:
+                linear-gradient(180deg, rgba(255,255,255,0.95), rgba(249,240,232,0.88));
+        }
+        .side-card {
+            padding: 18px 18px 16px; border-radius: 22px;
+            border: 1px solid rgba(171,113,84,0.12); background: rgba(255,255,255,0.76);
+        }
+        .side-card small {
+            display: block; color: var(--text-light); font-size: 0.74rem;
+            letter-spacing: 0.18em; text-transform: uppercase; margin-bottom: 8px;
+        }
+        .side-card strong { display: block; font-size: 1.1rem; color: var(--accent); margin-bottom: 8px; }
+        .side-card p { color: var(--text-light); font-size: 0.86rem; line-height: 1.75; }
+        .side-card .mini-link {
+            display: inline-flex; margin-top: 12px; color: var(--accent);
+            text-decoration: none; font-size: 0.85rem;
+        }
 
         .level-tabs {
-            display: flex; justify-content: center; gap: 0;
-            margin-bottom: 48px; border-bottom: 1px solid var(--rose-light);
-            overflow-x: auto; -webkit-overflow-scrolling: touch;
+            display: inline-flex; gap: 0; padding: 6px;
+            border-radius: 999px; background: rgba(255,255,255,0.72);
+            border: 1px solid var(--warm-deep); margin-bottom: 16px;
         }
         .level-tab {
-            padding: 12px 28px; font-family: 'Noto Serif SC', serif;
-            font-size: 0.95rem; color: var(--text-light); cursor: pointer;
-            border-bottom: 2px solid transparent; transition: all 0.2s;
-            letter-spacing: 1px; white-space: nowrap; flex-shrink: 0;
+            border: none; background: transparent; color: var(--text-light);
+            padding: 10px 20px; border-radius: 999px; cursor: pointer;
+            font: inherit; transition: all 0.2s;
         }
-        .level-tab:hover { color: var(--text); }
-        .level-tab.active { color: var(--accent); border-bottom-color: var(--accent); font-weight: 600; }
-
-        .level-info { text-align: center; margin-bottom: 48px; color: var(--text-light); font-size: 0.9rem; }
-        .level-info .grade {
-            display: inline-block; background: var(--rose-bg); color: var(--accent);
-            padding: 4px 16px; border-radius: 12px; font-size: 0.8rem; margin-top: 6px;
+        .level-tab.active {
+            background: linear-gradient(135deg, rgba(171,113,84,0.16), rgba(171,113,84,0.1));
+            color: var(--accent); font-weight: 600;
+        }
+        .level-meta {
+            color: var(--text-light); font-size: 0.88rem; line-height: 1.8;
+            margin-bottom: 14px;
+        }
+        .level-chip {
+            display: inline-flex; margin-top: 10px; padding: 5px 12px; border-radius: 999px;
+            background: rgba(171,113,84,0.08); color: var(--accent); font-size: 0.76rem;
         }
 
-        .entry-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 28px; max-width: 960px; margin: 0 auto; }
+        .entry-grid {
+            display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 16px;
+            margin-bottom: 22px;
+        }
         .entry-card {
-            background: white; border: 1px solid var(--warm); border-radius: 16px;
-            padding: 44px 28px; text-decoration: none; color: var(--text);
-            display: flex; flex-direction: column; align-items: center; gap: 16px;
-            transition: all 0.25s; position: relative; overflow: hidden;
+            padding: 22px 22px 20px; text-decoration: none; color: inherit;
+            transition: transform 0.2s, border-color 0.2s;
         }
-        .entry-card::before {
-            content: ''; position: absolute; top: 0; left: 0; right: 0; height: 3px;
-            background: var(--rose-light); transition: background 0.25s;
+        .entry-card:hover { transform: translateY(-2px); border-color: rgba(171,113,84,0.3); }
+        .entry-card small {
+            display: block; color: var(--text-light); font-size: 0.74rem;
+            letter-spacing: 0.18em; text-transform: uppercase; margin-bottom: 8px;
         }
-        .entry-card:hover { border-color: var(--rose); box-shadow: 0 8px 30px rgba(180,140,110,0.1); transform: translateY(-2px); }
-        .entry-card:hover::before { background: var(--accent); }
-        .entry-icon { font-size: 2.2rem; }
-        .entry-title { font-family: 'Playfair Display', 'Noto Serif SC', serif; font-size: 1.3rem; font-weight: 600; }
-        .entry-desc { color: var(--text-light); font-size: 0.85rem; line-height: 1.7; text-align: center; }
-        .entry-action { font-size: 0.8rem; color: var(--accent); letter-spacing: 1px; text-transform: uppercase; margin-top: 4px; }
+        .entry-card strong {
+            display: block; font-size: 1.18rem; font-family: 'Playfair Display', 'Noto Serif SC', serif;
+            color: var(--accent); margin-bottom: 8px;
+        }
+        .entry-card p { color: var(--text-light); font-size: 0.86rem; line-height: 1.75; }
 
-        .login-link { text-align: center; margin-top: 48px; }
-        .login-link a {
-            color: var(--text-light); text-decoration: none; font-size: 0.85rem;
-            padding: 8px 20px; border: 1px solid var(--warm); border-radius: 20px; transition: all 0.2s;
+        .feature-grid {
+            display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 16px;
+            margin-bottom: 26px;
         }
-        .login-link a:hover { color: var(--accent); border-color: var(--rose); }
-        .site-footer { text-align: center; margin-top: 60px; color: var(--text-light); font-size: 0.8rem; opacity: 0.7; }
-
-        /* Donate button */
-        .donate-btn {
-            display: inline-flex; align-items: center; gap: 6px;
-            color: var(--text-light); text-decoration: none; font-size: 0.85rem;
-            padding: 8px 20px; border: 1px solid var(--warm); border-radius: 20px;
-            transition: all 0.2s; cursor: pointer; background: none; font-family: inherit;
+        .feature-card { padding: 20px 22px; }
+        .feature-card strong {
+            display: block; font-size: 1.02rem; color: var(--accent); margin-bottom: 10px;
         }
-        .donate-btn:hover { color: var(--accent); border-color: var(--rose); }
+        .feature-card p { color: var(--text-light); font-size: 0.85rem; line-height: 1.78; }
 
-        /* Modal */
+        .support-card {
+            padding: 22px 24px; display: flex; justify-content: space-between;
+            align-items: center; gap: 16px; flex-wrap: wrap;
+        }
+        .support-card p { color: var(--text-light); font-size: 0.86rem; line-height: 1.75; }
+        .support-card button {
+            display: inline-flex; align-items: center; gap: 8px;
+            padding: 10px 18px; border-radius: 999px; border: 1px solid var(--warm-deep);
+            background: white; color: var(--text); font: inherit; cursor: pointer;
+        }
+        .support-card button:hover { color: var(--accent); border-color: var(--accent); }
+
+        .site-footer {
+            text-align: center; margin-top: 30px; color: var(--text-light);
+            font-size: 0.78rem; opacity: 0.8;
+        }
+
         .modal-overlay {
-            display: none; position: fixed; top: 0; left: 0; right: 0; bottom: 0;
-            background: rgba(50,40,35,0.5); z-index: 100; align-items: center; justify-content: center;
-            backdrop-filter: blur(2px);
+            display: none; position: fixed; inset: 0; background: rgba(50,40,35,0.5);
+            z-index: 100; align-items: center; justify-content: center; backdrop-filter: blur(3px);
         }
         .modal-overlay.show { display: flex; }
         .modal {
@@ -91,7 +221,6 @@
             position: absolute; top: 14px; right: 18px; background: none; border: none;
             font-size: 1.4rem; color: var(--text-light); cursor: pointer; line-height: 1;
         }
-        .modal-close:hover { color: var(--text); }
         .modal h2 {
             font-family: 'Playfair Display', 'Noto Serif SC', serif;
             font-size: 1.4rem; margin-bottom: 20px; text-align: center;
@@ -108,65 +237,134 @@
         .qr-img { display: block; margin: 0 auto; max-width: 260px; border-radius: 12px; }
         .donate-thanks { text-align: center; margin-top: 16px; color: var(--text-light); font-size: 0.82rem; line-height: 1.7; }
 
-        @media (max-width: 600px) {
-            .site-header h1 { font-size: 2rem; }
-            .entry-grid { grid-template-columns: 1fr; max-width: 360px; }
-            .entry-card { padding: 36px 24px; }
-            .page { padding: 30px 16px 40px; }
-            .level-tab { padding: 10px 14px; font-size: 0.85rem; }
+        @media (max-width: 920px) {
+            .hero { grid-template-columns: 1fr; }
+            .entry-grid, .feature-grid { grid-template-columns: 1fr; }
+        }
+
+        @media (max-width: 640px) {
+            .page { padding: 22px 16px 42px; }
+            .hero-main, .hero-side, .feature-card, .entry-card, .support-card { border-radius: 22px; }
+            .hero-main { padding: 26px 22px; }
+            .hero-actions, .topbar, .auth-links { align-items: stretch; }
+            .hero-btn, .pill-link { width: 100%; justify-content: center; }
+            .hero-stats { grid-template-columns: 1fr; }
+            .level-tabs { width: 100%; justify-content: space-between; }
+            .level-tab { flex: 1; }
         }
     </style>
 </head>
 <body>
     <div class="page">
-        <div class="site-header">
-            <h1>KET&PET 练习</h1>
-            <p class="tagline">剑桥英语 · 在线练习、背词与真题</p>
+        <div class="topbar">
+            <div class="brand">
+                <small>Cambridge English Practice</small>
+                <h1>KET & PET 练习站</h1>
+            </div>
+            <div class="auth-links" id="authArea">
+                <a class="pill-link" href="login.html">登录 / 注册</a>
+            </div>
         </div>
 
-        <div class="level-tabs">
-            <div class="level-tab active" onclick="switchLevel('ket')">KET (A2 Key)</div>
-            <div class="level-tab" onclick="switchLevel('pet')">PET (B1 Preliminary)</div>
-        </div>
+        <section class="hero">
+            <div class="hero-main">
+                <div class="hero-badge">KET / PET 真题练习 + 官方主题词背诵</div>
+                <div class="level-tabs">
+                    <button class="level-tab active" onclick="switchLevel('ket')">KET (A2 Key)</button>
+                    <button class="level-tab" onclick="switchLevel('pet')">PET (B1 Preliminary)</button>
+                </div>
+                <div class="level-meta" id="levelInfo">
+                    <div>Reading & Writing · Part 1-5 · 每套 30 题</div>
+                    <div class="level-chip">适合小学高年级 — 初中</div>
+                </div>
+                <h2>今天先做一套题，<br>再背 20 个高频主题词。</h2>
+                <p>首页不再只是入口列表。你可以直接开始当前等级的套卷练习，或者进入“每日 20 词”计划，用词卡、拼写、听写、例句挖空四种方式刷 Cambridge 官方主题词表。</p>
+                <div class="hero-actions">
+                    <a id="quizEntry" class="hero-btn primary" href="quiz.html?level=ket">开始当前等级练习</a>
+                    <a id="dailyEntry" class="hero-btn secondary" href="vocab.html?focus=daily&level=a2-key">进入每日 20 词</a>
+                </div>
+                <div class="hero-stats">
+                    <div class="hero-stat">
+                        <strong>516</strong>
+                        <span>已整理 KET / PET 官方主题词汇，覆盖 12 个主题。</span>
+                    </div>
+                    <div class="hero-stat">
+                        <strong>4</strong>
+                        <span>词卡、拼写、听写、例句挖空四种训练模式。</span>
+                    </div>
+                    <div class="hero-stat">
+                        <strong>Auto</strong>
+                        <span>做题草稿自动保存，游客先完成，登录后再存历史。</span>
+                    </div>
+                </div>
+            </div>
 
-        <div class="level-info" id="levelInfo">
-            <div>Reading & Writing · Part 1-5 · 每套 30 题</div>
-            <div class="grade">适合小学高年级 — 初中</div>
-        </div>
+            <div class="hero-side">
+                <div class="side-card">
+                    <small>Daily Plan</small>
+                    <strong>每日 20 词</strong>
+                    <p>系统按当天日期、当前等级和你的掌握情况，自动挑出最值得今天复习的 20 个词。</p>
+                    <a id="sideDailyEntry" class="mini-link" href="vocab.html?focus=daily&level=a2-key">现在进入今日计划 →</a>
+                </div>
+                <div class="side-card">
+                    <small>Quiz Flow</small>
+                    <strong>先做题，再决定是否登录</strong>
+                    <p>现在测验支持游客直接交卷并查看答案，登录只影响“是否保存到历史记录”，不再卡在提交前。</p>
+                    <a class="mini-link" href="quiz.html?level=ket">直接开始一套 →</a>
+                </div>
+                <div class="side-card">
+                    <small>Dashboard</small>
+                    <strong>个人中心 / 进度回顾</strong>
+                    <p>历史成绩、错题回顾、邀请码和后台数据都在这里。普通用户看个人记录，管理员看全站监控。</p>
+                    <a id="historyEntry" class="mini-link" href="admin.html">打开个人中心 →</a>
+                </div>
+            </div>
+        </section>
 
-        <div class="entry-grid">
-            <a id="quizEntry" href="quiz.html" class="entry-card">
-                <div class="entry-icon">✏️</div>
-                <div class="entry-title">在线练习</div>
-                <div class="entry-desc">选择套卷逐题作答<br>自动判分 · 错题回顾</div>
-                <div class="entry-action">Start →</div>
+        <section class="entry-grid">
+            <a id="vocabEntry" href="vocab.html" class="entry-card">
+                <small>Vocabulary</small>
+                <strong>完整主题词表</strong>
+                <p>按 Family, Education, Food, Travel 等官方 topic headings 筛选，支持等级和主题联动。</p>
             </a>
-            <a href="vocab.html" class="entry-card">
-                <div class="entry-icon">🗂️</div>
-                <div class="entry-title">单词背诵</div>
-                <div class="entry-desc">官方主题词表 · 听写挖空<br>云端进度 · 每日 20 词</div>
-                <div class="entry-action">Memorize →</div>
+            <a href="vocab.html?mode=dictation&focus=daily" class="entry-card" id="dictationEntry">
+                <small>Dictation</small>
+                <strong>听写 / 挖空专项</strong>
+                <p>适合补听辨和拼写薄弱点。可以先听发音，再拼写或在例句中补全单词。</p>
             </a>
-            <a id="historyEntry" href="admin.html" class="entry-card">
-                <div class="entry-icon">📊</div>
-                <div class="entry-title">个人中心</div>
-                <div class="entry-desc">历史成绩 · 错题本<br>邀请码管理</div>
-                <div class="entry-action">View →</div>
+            <a href="quiz.html?level=ket" class="entry-card" id="quickQuizEntry">
+                <small>Practice</small>
+                <strong>快速开刷</strong>
+                <p>进入当前等级套卷列表，支持官方真题、练习卷、错题复盘和结果页回看。</p>
             </a>
-        </div>
+        </section>
 
-        <div class="login-link" id="authArea">
-            <a href="login.html">登录 / 注册</a>
-        </div>
+        <section class="feature-grid">
+            <div class="feature-card">
+                <strong>首页目标更单一</strong>
+                <p>把首页从“功能目录”改成“先行动”的页面，重点推两条主路径：开始刷题、开始今日词汇。</p>
+            </div>
+            <div class="feature-card">
+                <strong>词汇入口更深</strong>
+                <p>每日计划入口会带上深链参数，直接切到对应等级、主题和模式，而不是让用户自己再筛一轮。</p>
+            </div>
+            <div class="feature-card">
+                <strong>后台看漏斗，不只看总量</strong>
+                <p>管理员后台会补首页到做题、首页到背词的真实转化链，方便判断掉点到底发生在哪一步。</p>
+            </div>
+        </section>
 
-        <div style="text-align:center;margin-top:32px;">
-            <button class="donate-btn" onclick="openDonate()">☕ 请我喝杯咖啡</button>
-        </div>
+        <section class="support-card">
+            <div>
+                <strong style="display:block;color:var(--accent);margin-bottom:8px;">支持站点持续维护</strong>
+                <p>这个站点目前主要靠业余时间维护。如果它对你有帮助，可以请我喝杯咖啡，帮助继续补题库、词库和体验细节。</p>
+            </div>
+            <button onclick="openDonate()">☕ 请我喝杯咖啡</button>
+        </section>
 
         <div class="site-footer">Cambridge English Practice Platform</div>
     </div>
 
-    <!-- Donate Modal -->
     <div class="modal-overlay" id="donateModal" onclick="if(event.target===this)closeDonate()">
         <div class="modal">
             <button class="modal-close" onclick="closeDonate()">&times;</button>
@@ -187,11 +385,17 @@
     </div>
 
     <script src="analytics.js"></script>
-
     <script>
+        let currentLevel = 'ket';
+
         function trackEvent(name, meta) {
             window.KETAnalytics?.track(name, { meta });
         }
+
+        function getVocabLevel(level) {
+            return level === 'pet' ? 'b1-preliminary' : 'a2-key';
+        }
+
         function openDonate() {
             document.getElementById('donateModal').classList.add('show');
             trackEvent('donate_modal_open');
@@ -203,37 +407,51 @@
             document.getElementById('qrImg').src = 'images/' + type + '-qr.png';
             trackEvent('donate_qr_switch', { type });
         }
-    </script>
 
-    <script>
+        function updateEntryLinks() {
+            const vocabLevel = getVocabLevel(currentLevel);
+            document.getElementById('quizEntry').href = `quiz.html?level=${currentLevel}`;
+            document.getElementById('quickQuizEntry').href = `quiz.html?level=${currentLevel}`;
+            document.getElementById('dailyEntry').href = `vocab.html?focus=daily&level=${vocabLevel}`;
+            document.getElementById('sideDailyEntry').href = `vocab.html?focus=daily&level=${vocabLevel}`;
+            document.getElementById('dictationEntry').href = `vocab.html?focus=daily&mode=dictation&level=${vocabLevel}`;
+            document.getElementById('vocabEntry').href = `vocab.html?level=${vocabLevel}`;
+        }
+
+        function switchLevel(level) {
+            currentLevel = level;
+            document.querySelectorAll('.level-tab').forEach((tab, index) => {
+                tab.classList.toggle('active', (level === 'ket' ? index === 0 : index === 1));
+            });
+            if (level === 'pet') {
+                document.getElementById('levelInfo').innerHTML = '<div>Reading · Part 1-6 · 每套 32 题</div><div class="level-chip">适合初中 — 高中</div>';
+            } else {
+                document.getElementById('levelInfo').innerHTML = '<div>Reading & Writing · Part 1-5 · 每套 30 题</div><div class="level-chip">适合小学高年级 — 初中</div>';
+            }
+            updateEntryLinks();
+            trackEvent('home_level_switch', { level });
+        }
+
         (function() {
             const user = JSON.parse(localStorage.getItem('user') || 'null');
             if (user) {
                 const area = document.getElementById('authArea');
-                const adminLink = user.role === 'admin' ? ' <a href="admin.html">管理后台</a>' : '';
-                area.innerHTML = `<span style="color:var(--text-light);font-size:0.85rem;">${user.username}</span> ` +
-                    `<a href="admin.html">个人中心</a>` + adminLink +
-                    ` <a href="javascript:void(0)" onclick="localStorage.clear();location.reload()">退出</a>`;
+                const adminLink = user.role === 'admin' ? ' <a class="pill-link" href="admin.html">管理后台</a>' : '';
+                area.innerHTML = `<span class="pill-link" style="cursor:default;">${user.username}</span>` +
+                    `<a class="pill-link" href="admin.html">个人中心</a>` + adminLink +
+                    `<a class="pill-link" href="javascript:void(0)" onclick="localStorage.clear();location.reload()">退出</a>`;
             }
         })();
 
-        let currentLevel = 'ket';
+        updateEntryLinks();
 
-        function switchLevel(level) {
-            currentLevel = level;
-            document.querySelectorAll('.level-tab').forEach((t, i) => t.classList.toggle('active', (level === 'ket' ? i === 0 : i === 1)));
-            if (level === 'pet') {
-                document.getElementById('levelInfo').innerHTML = '<div>Reading · Part 1-6 · 每套 32 题</div><div class="grade">适合初中 — 高中</div>';
-            } else {
-                document.getElementById('levelInfo').innerHTML = '<div>Reading & Writing · Part 1-5 · 每套 30 题</div><div class="grade">适合小学高年级 — 初中</div>';
-            }
-            document.getElementById('quizEntry').href = `quiz.html?level=${level}`;
-            trackEvent('home_level_switch', { level });
-        }
-
-        document.getElementById('quizEntry').addEventListener('click', () => trackEvent('home_entry_click', { target: 'quiz', level: currentLevel }));
+        document.getElementById('quizEntry').addEventListener('click', () => trackEvent('home_entry_click', { target: 'quiz', level: currentLevel, position: 'hero_primary' }));
+        document.getElementById('quickQuizEntry').addEventListener('click', () => trackEvent('home_entry_click', { target: 'quiz', level: currentLevel, position: 'card_quick_quiz' }));
         document.getElementById('historyEntry').addEventListener('click', () => trackEvent('home_entry_click', { target: 'admin' }));
-        document.querySelector('a[href="vocab.html"]').addEventListener('click', () => trackEvent('home_entry_click', { target: 'vocab' }));
+        document.getElementById('vocabEntry').addEventListener('click', () => trackEvent('home_entry_click', { target: 'vocab', level: getVocabLevel(currentLevel), position: 'card_vocab' }));
+        document.getElementById('dailyEntry').addEventListener('click', () => trackEvent('home_entry_click', { target: 'vocab_daily', level: getVocabLevel(currentLevel), position: 'hero_secondary' }));
+        document.getElementById('sideDailyEntry').addEventListener('click', () => trackEvent('home_entry_click', { target: 'vocab_daily', level: getVocabLevel(currentLevel), position: 'side_daily' }));
+        document.getElementById('dictationEntry').addEventListener('click', () => trackEvent('home_entry_click', { target: 'vocab_dictation', level: getVocabLevel(currentLevel), position: 'card_dictation' }));
         document.querySelector('#authArea').addEventListener('click', (event) => {
             const target = event.target.closest('a');
             if (!target) return;

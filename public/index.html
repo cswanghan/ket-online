@@ -202,9 +202,9 @@
 
         .entry-grid {
             display: grid;
-            grid-template-columns: repeat(3, minmax(0, 1fr));
+            grid-template-columns: repeat(2, minmax(0, 1fr));
             gap: 18px;
-            margin-bottom: 18px;
+            margin-bottom: 14px;
         }
         .entry-card {
             background: var(--panel);
@@ -244,11 +244,29 @@
             font-size: 0.82rem;
         }
 
+        .subnav {
+            display: flex;
+            justify-content: center;
+            gap: 12px;
+            flex-wrap: wrap;
+            margin-bottom: 18px;
+        }
+        .subnav-link {
+            text-decoration: none;
+            color: var(--muted);
+            font-size: 0.84rem;
+            padding: 8px 14px;
+            border-radius: 999px;
+            border: 1px solid var(--line);
+            background: rgba(255,255,255,0.72);
+        }
+        .subnav-link:hover { color: var(--accent); border-color: var(--accent); }
+
         .notice-row {
             display: grid;
             grid-template-columns: 1fr 1fr;
             gap: 18px;
-            margin-bottom: 26px;
+            margin-bottom: 24px;
         }
         .notice-card {
             background: rgba(255,255,255,0.76);
@@ -432,7 +450,7 @@
                         <div>Reading & Writing · Part 1-5 · 每套 30 题</div>
                         <div class="level-chip">适合小学高年级 — 初中</div>
                     </div>
-                    <p>适合家长陪练，也适合学生自己刷。先完成一套当前等级练习，再用每日 20 词巩固高频主题词。游客也可以直接开始，不必先登录。</p>
+                <p>适合家长陪练，也适合学生自己刷。先做一套题，再用每日 20 词巩固高频词。游客也能直接开始。</p>
                     <div class="hero-actions">
                         <a id="quizEntry" class="hero-btn primary" href="quiz.html?level=ket">开始做题</a>
                         <a id="dailyEntry" class="hero-btn secondary" href="vocab.html?focus=daily&level=a2-key">开始今日背词</a>
@@ -442,7 +460,7 @@
                 <div class="hero-side">
                     <small>Today</small>
                     <strong>每日 20 词</strong>
-                    <p>按等级和掌握情况自动推荐今天最值得复习的词，适合每天花 10 分钟坚持练。</p>
+                    <p>按等级和掌握情况推荐今天最值得复习的词，每天 10 分钟就能坚持。</p>
                     <a id="sideDailyEntry" href="vocab.html?focus=daily&level=a2-key">直接进入今日计划 →</a>
                 </div>
             </div>
@@ -459,26 +477,23 @@
             <a id="vocabEntry" href="vocab.html?level=a2-key" class="entry-card">
                 <div class="entry-kicker">Vocabulary</div>
                 <div class="entry-title">单词背诵</div>
-                <div class="entry-desc">按官方主题词表背词，支持主题筛选、每日计划和进度记录。</div>
+                <div class="entry-desc">按官方主题词表背词，支持主题筛选、每日计划和学习进度。</div>
                 <div class="entry-meta">主题词表 / 每日 20 词 / 复习进度</div>
             </a>
-
-            <a id="historyEntry" href="admin.html" class="entry-card">
-                <div class="entry-kicker">Progress</div>
-                <div class="entry-title">个人中心</div>
-                <div class="entry-desc">查看历史成绩、错题回顾和学习记录，方便持续跟进。</div>
-                <div class="entry-meta">历史成绩 / 错题本 / 邀请码</div>
-            </a>
         </section>
+
+        <div class="subnav">
+            <a id="historyEntry" class="subnav-link" href="admin.html">查看历史成绩 / 个人中心</a>
+        </div>
 
         <section class="notice-row">
             <div class="notice-card">
                 <strong>四种背词模式</strong>
-                <p>词卡、拼写、听写、例句挖空可以自由切换，既适合入门记忆，也适合查漏补缺。</p>
+                <p>词卡、拼写、听写、例句挖空自由切换，既能记意思，也能练拼写和听辨。</p>
             </div>
             <div class="notice-card">
                 <strong>先练后存更轻松</strong>
-                <p>做题支持游客直接完成并查看结果；登录后再保存历史，不会因为注册打断练习节奏。</p>
+                <p>做题支持游客直接完成并查看结果；登录后再保存历史，不会打断练习节奏。</p>
             </div>
         </section>
 

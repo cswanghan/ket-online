@@ -10,245 +10,397 @@
     <style>
         * { margin: 0; padding: 0; box-sizing: border-box; }
         :root {
-            --cream: #faf7f2;
-            --warm: #f2e7dc;
-            --warm-deep: #e4d1c0;
-            --text: #3c332f;
-            --text-light: #83756d;
+            --bg: #faf7f2;
+            --panel: rgba(255, 255, 255, 0.9);
+            --line: #eadbcf;
             --accent: #ab7154;
             --accent-deep: #8f5a41;
-            --card: rgba(255,255,255,0.86);
-            --shadow: 0 18px 48px rgba(96, 67, 50, 0.12);
+            --text: #3c332f;
+            --muted: #85766e;
+            --soft: #f6eee7;
+            --shadow: 0 14px 36px rgba(111, 80, 60, 0.1);
         }
         body {
             font-family: 'Noto Serif SC', 'Georgia', serif;
+            background:
+                radial-gradient(circle at top left, rgba(171, 113, 84, 0.14), transparent 24%),
+                linear-gradient(180deg, #fcfaf7 0%, var(--bg) 100%);
             color: var(--text);
             min-height: 100vh;
-            background:
-                radial-gradient(circle at left top, rgba(171, 113, 84, 0.18), transparent 26%),
-                radial-gradient(circle at right 18%, rgba(145, 171, 190, 0.18), transparent 20%),
-                linear-gradient(180deg, #fcfaf7 0%, var(--cream) 100%);
         }
-        .page { max-width: 1160px; margin: 0 auto; padding: 30px 24px 64px; }
+        .page {
+            width: min(980px, calc(100vw - 32px));
+            margin: 0 auto;
+            padding: 28px 0 56px;
+        }
         .topbar {
-            display: flex; justify-content: space-between; align-items: center; gap: 16px;
-            margin-bottom: 26px; flex-wrap: wrap;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            gap: 12px;
+            margin-bottom: 28px;
+            flex-wrap: wrap;
         }
         .brand small {
-            display: block; color: var(--text-light); font-size: 0.75rem;
-            letter-spacing: 0.24em; text-transform: uppercase;
+            display: block;
+            color: var(--muted);
+            font-size: 0.75rem;
+            letter-spacing: 0.24em;
+            text-transform: uppercase;
         }
         .brand h1 {
             font-family: 'Playfair Display', 'Noto Serif SC', serif;
-            font-size: clamp(2rem, 5vw, 3rem); letter-spacing: 1px; margin-top: 6px;
+            font-size: clamp(2rem, 5vw, 2.9rem);
+            letter-spacing: 1px;
+            margin-top: 6px;
+        }
+        .brand p {
+            margin-top: 8px;
+            color: var(--muted);
+            font-size: 0.9rem;
         }
         .auth-links {
-            display: flex; gap: 10px; flex-wrap: wrap; align-items: center;
+            display: flex;
+            gap: 10px;
+            flex-wrap: wrap;
+            align-items: center;
         }
         .pill-link {
-            text-decoration: none; color: var(--text-light); font-size: 0.84rem;
-            padding: 9px 16px; border: 1px solid var(--warm-deep); border-radius: 999px;
-            background: rgba(255,255,255,0.72); transition: all 0.2s;
+            text-decoration: none;
+            color: var(--muted);
+            font-size: 0.84rem;
+            padding: 9px 16px;
+            border: 1px solid var(--line);
+            border-radius: 999px;
+            background: rgba(255,255,255,0.78);
+            transition: all 0.2s;
         }
         .pill-link:hover { color: var(--accent); border-color: var(--accent); }
 
         .hero {
-            display: grid; grid-template-columns: minmax(0, 1.2fr) minmax(300px, 0.8fr);
-            gap: 20px; align-items: stretch; margin-bottom: 24px;
-        }
-        .hero-main,
-        .hero-side,
-        .feature-card,
-        .entry-card,
-        .support-card {
-            border: 1px solid rgba(171, 113, 84, 0.12);
-            border-radius: 28px;
-            background: var(--card);
+            background: var(--panel);
+            border: 1px solid var(--line);
+            border-radius: 30px;
             box-shadow: var(--shadow);
-            backdrop-filter: blur(16px);
+            padding: 32px 30px;
+            margin-bottom: 18px;
         }
-        .hero-main {
-            padding: 34px 34px 30px;
-            background:
-                linear-gradient(135deg, rgba(255,255,255,0.92), rgba(255,245,238,0.84)),
-                linear-gradient(180deg, rgba(171,113,84,0.08), transparent);
+        .level-tabs {
+            display: inline-flex;
+            padding: 6px;
+            border-radius: 999px;
+            background: var(--soft);
+            border: 1px solid var(--line);
+            margin-bottom: 18px;
         }
-        .hero-badge {
-            display: inline-flex; align-items: center; gap: 8px;
-            padding: 8px 14px; border-radius: 999px;
-            background: rgba(171, 113, 84, 0.1); color: var(--accent);
-            font-size: 0.8rem; margin-bottom: 18px;
+        .level-tab {
+            border: none;
+            background: transparent;
+            color: var(--muted);
+            padding: 10px 18px;
+            border-radius: 999px;
+            cursor: pointer;
+            font: inherit;
+            transition: all 0.2s;
         }
-        .hero-main h2 {
+        .level-tab.active {
+            background: white;
+            color: var(--accent);
+            box-shadow: 0 4px 14px rgba(171, 113, 84, 0.1);
+            font-weight: 600;
+        }
+        .hero-grid {
+            display: grid;
+            grid-template-columns: minmax(0, 1fr) 260px;
+            gap: 20px;
+            align-items: stretch;
+        }
+        .hero-copy h2 {
             font-family: 'Playfair Display', 'Noto Serif SC', serif;
-            font-size: clamp(2.8rem, 7vw, 4.8rem);
-            line-height: 0.92; margin-bottom: 18px;
+            font-size: clamp(2.2rem, 6vw, 3.8rem);
+            line-height: 0.95;
+            margin-bottom: 16px;
         }
-        .hero-main p {
-            max-width: 42rem; color: var(--text-light); line-height: 1.9;
-            font-size: 0.96rem;
+        .hero-copy p {
+            color: var(--muted);
+            font-size: 0.98rem;
+            line-height: 1.9;
+            max-width: 42rem;
+        }
+        .level-info {
+            margin: 14px 0 18px;
+            color: var(--muted);
+            font-size: 0.88rem;
+            line-height: 1.8;
+        }
+        .level-chip {
+            display: inline-flex;
+            margin-top: 10px;
+            padding: 5px 12px;
+            border-radius: 999px;
+            background: var(--soft);
+            color: var(--accent);
+            font-size: 0.76rem;
         }
         .hero-actions {
-            display: flex; gap: 14px; flex-wrap: wrap; margin: 24px 0 20px;
+            display: flex;
+            gap: 12px;
+            flex-wrap: wrap;
+            margin-top: 22px;
         }
         .hero-btn {
-            display: inline-flex; align-items: center; justify-content: center; gap: 8px;
-            padding: 14px 22px; border-radius: 999px; text-decoration: none;
-            font-size: 0.92rem; transition: transform 0.2s, box-shadow 0.2s;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            padding: 14px 22px;
+            border-radius: 999px;
+            text-decoration: none;
+            font-size: 0.92rem;
+            transition: transform 0.2s;
         }
         .hero-btn:hover { transform: translateY(-1px); }
         .hero-btn.primary {
-            color: white; background: linear-gradient(135deg, var(--accent), var(--accent-deep));
-            box-shadow: 0 14px 28px rgba(171, 113, 84, 0.22);
+            background: linear-gradient(135deg, var(--accent), var(--accent-deep));
+            color: white;
+            box-shadow: 0 12px 24px rgba(171, 113, 84, 0.2);
         }
         .hero-btn.secondary {
-            color: var(--text); border: 1px solid var(--warm-deep);
-            background: rgba(255,255,255,0.76);
+            background: white;
+            border: 1px solid var(--line);
+            color: var(--text);
         }
-        .hero-stats {
-            display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 12px;
-        }
-        .hero-stat {
-            border-radius: 20px; padding: 16px 18px;
-            background: rgba(255,255,255,0.72); border: 1px solid rgba(171,113,84,0.1);
-        }
-        .hero-stat strong {
-            display: block; font-size: 1.8rem; color: var(--accent); margin-bottom: 4px;
-        }
-        .hero-stat span { color: var(--text-light); font-size: 0.82rem; line-height: 1.6; }
-
         .hero-side {
-            padding: 24px;
-            display: grid; gap: 16px;
-            background:
-                linear-gradient(180deg, rgba(255,255,255,0.95), rgba(249,240,232,0.88));
+            background: linear-gradient(180deg, #fffaf6 0%, #f9f0e8 100%);
+            border: 1px solid var(--line);
+            border-radius: 22px;
+            padding: 18px;
+            display: grid;
+            gap: 12px;
+            align-content: start;
         }
-        .side-card {
-            padding: 18px 18px 16px; border-radius: 22px;
-            border: 1px solid rgba(171,113,84,0.12); background: rgba(255,255,255,0.76);
+        .hero-side small {
+            color: var(--muted);
+            font-size: 0.74rem;
+            letter-spacing: 0.18em;
+            text-transform: uppercase;
         }
-        .side-card small {
-            display: block; color: var(--text-light); font-size: 0.74rem;
-            letter-spacing: 0.18em; text-transform: uppercase; margin-bottom: 8px;
+        .hero-side strong {
+            display: block;
+            font-size: 1.1rem;
+            color: var(--accent);
         }
-        .side-card strong { display: block; font-size: 1.1rem; color: var(--accent); margin-bottom: 8px; }
-        .side-card p { color: var(--text-light); font-size: 0.86rem; line-height: 1.75; }
-        .side-card .mini-link {
-            display: inline-flex; margin-top: 12px; color: var(--accent);
-            text-decoration: none; font-size: 0.85rem;
+        .hero-side p {
+            color: var(--muted);
+            font-size: 0.86rem;
+            line-height: 1.8;
         }
-
-        .level-tabs {
-            display: inline-flex; gap: 0; padding: 6px;
-            border-radius: 999px; background: rgba(255,255,255,0.72);
-            border: 1px solid var(--warm-deep); margin-bottom: 16px;
-        }
-        .level-tab {
-            border: none; background: transparent; color: var(--text-light);
-            padding: 10px 20px; border-radius: 999px; cursor: pointer;
-            font: inherit; transition: all 0.2s;
-        }
-        .level-tab.active {
-            background: linear-gradient(135deg, rgba(171,113,84,0.16), rgba(171,113,84,0.1));
-            color: var(--accent); font-weight: 600;
-        }
-        .level-meta {
-            color: var(--text-light); font-size: 0.88rem; line-height: 1.8;
-            margin-bottom: 14px;
-        }
-        .level-chip {
-            display: inline-flex; margin-top: 10px; padding: 5px 12px; border-radius: 999px;
-            background: rgba(171,113,84,0.08); color: var(--accent); font-size: 0.76rem;
+        .hero-side a {
+            color: var(--accent);
+            text-decoration: none;
+            font-size: 0.86rem;
         }
 
         .entry-grid {
-            display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 16px;
-            margin-bottom: 22px;
+            display: grid;
+            grid-template-columns: repeat(3, minmax(0, 1fr));
+            gap: 18px;
+            margin-bottom: 18px;
         }
         .entry-card {
-            padding: 22px 22px 20px; text-decoration: none; color: inherit;
+            background: var(--panel);
+            border: 1px solid var(--line);
+            border-radius: 24px;
+            box-shadow: var(--shadow);
+            padding: 28px 24px;
+            text-decoration: none;
+            color: inherit;
             transition: transform 0.2s, border-color 0.2s;
         }
-        .entry-card:hover { transform: translateY(-2px); border-color: rgba(171,113,84,0.3); }
-        .entry-card small {
-            display: block; color: var(--text-light); font-size: 0.74rem;
-            letter-spacing: 0.18em; text-transform: uppercase; margin-bottom: 8px;
+        .entry-card:hover {
+            transform: translateY(-2px);
+            border-color: #d5b7a3;
         }
-        .entry-card strong {
-            display: block; font-size: 1.18rem; font-family: 'Playfair Display', 'Noto Serif SC', serif;
-            color: var(--accent); margin-bottom: 8px;
+        .entry-kicker {
+            color: var(--muted);
+            font-size: 0.74rem;
+            letter-spacing: 0.18em;
+            text-transform: uppercase;
+            margin-bottom: 10px;
         }
-        .entry-card p { color: var(--text-light); font-size: 0.86rem; line-height: 1.75; }
+        .entry-title {
+            font-family: 'Playfair Display', 'Noto Serif SC', serif;
+            font-size: 1.55rem;
+            color: var(--accent);
+            margin-bottom: 10px;
+        }
+        .entry-desc {
+            color: var(--muted);
+            font-size: 0.9rem;
+            line-height: 1.9;
+            margin-bottom: 16px;
+        }
+        .entry-meta {
+            color: var(--accent);
+            font-size: 0.82rem;
+        }
 
-        .feature-grid {
-            display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 16px;
+        .notice-row {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 18px;
             margin-bottom: 26px;
         }
-        .feature-card { padding: 20px 22px; }
-        .feature-card strong {
-            display: block; font-size: 1.02rem; color: var(--accent); margin-bottom: 10px;
+        .notice-card {
+            background: rgba(255,255,255,0.76);
+            border: 1px solid var(--line);
+            border-radius: 22px;
+            padding: 18px 20px;
         }
-        .feature-card p { color: var(--text-light); font-size: 0.85rem; line-height: 1.78; }
+        .notice-card strong {
+            display: block;
+            color: var(--accent);
+            font-size: 1rem;
+            margin-bottom: 8px;
+        }
+        .notice-card p {
+            color: var(--muted);
+            font-size: 0.86rem;
+            line-height: 1.8;
+        }
 
         .support-card {
-            padding: 22px 24px; display: flex; justify-content: space-between;
-            align-items: center; gap: 16px; flex-wrap: wrap;
+            background: rgba(255,255,255,0.8);
+            border: 1px solid var(--line);
+            border-radius: 24px;
+            padding: 20px 22px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            gap: 16px;
+            flex-wrap: wrap;
         }
-        .support-card p { color: var(--text-light); font-size: 0.86rem; line-height: 1.75; }
+        .support-card strong {
+            display: block;
+            color: var(--accent);
+            margin-bottom: 8px;
+        }
+        .support-card p {
+            color: var(--muted);
+            font-size: 0.85rem;
+            line-height: 1.8;
+        }
         .support-card button {
-            display: inline-flex; align-items: center; gap: 8px;
-            padding: 10px 18px; border-radius: 999px; border: 1px solid var(--warm-deep);
-            background: white; color: var(--text); font: inherit; cursor: pointer;
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            padding: 10px 18px;
+            border-radius: 999px;
+            border: 1px solid var(--line);
+            background: white;
+            color: var(--text);
+            font: inherit;
+            cursor: pointer;
         }
         .support-card button:hover { color: var(--accent); border-color: var(--accent); }
 
         .site-footer {
-            text-align: center; margin-top: 30px; color: var(--text-light);
-            font-size: 0.78rem; opacity: 0.8;
+            text-align: center;
+            margin-top: 28px;
+            color: var(--muted);
+            font-size: 0.78rem;
+            opacity: 0.8;
         }
 
         .modal-overlay {
-            display: none; position: fixed; inset: 0; background: rgba(50,40,35,0.5);
-            z-index: 100; align-items: center; justify-content: center; backdrop-filter: blur(3px);
+            display: none;
+            position: fixed;
+            inset: 0;
+            background: rgba(50,40,35,0.5);
+            z-index: 100;
+            align-items: center;
+            justify-content: center;
+            backdrop-filter: blur(3px);
         }
         .modal-overlay.show { display: flex; }
         .modal {
-            background: white; border-radius: 20px; padding: 36px 32px;
-            max-width: 480px; width: 90%; max-height: 90vh; overflow-y: auto;
-            box-shadow: 0 20px 60px rgba(50,40,35,0.2); position: relative;
+            background: white;
+            border-radius: 20px;
+            padding: 36px 32px;
+            max-width: 480px;
+            width: 90%;
+            max-height: 90vh;
+            overflow-y: auto;
+            box-shadow: 0 20px 60px rgba(50,40,35,0.2);
+            position: relative;
         }
         .modal-close {
-            position: absolute; top: 14px; right: 18px; background: none; border: none;
-            font-size: 1.4rem; color: var(--text-light); cursor: pointer; line-height: 1;
+            position: absolute;
+            top: 14px;
+            right: 18px;
+            background: none;
+            border: none;
+            font-size: 1.4rem;
+            color: var(--muted);
+            cursor: pointer;
+            line-height: 1;
         }
         .modal h2 {
             font-family: 'Playfair Display', 'Noto Serif SC', serif;
-            font-size: 1.4rem; margin-bottom: 20px; text-align: center;
+            font-size: 1.4rem;
+            margin-bottom: 20px;
+            text-align: center;
         }
-        .donate-intro { text-align: center; color: var(--text-light); font-size: 0.88rem; line-height: 1.8; margin-bottom: 20px; }
-        .qr-tabs { display: flex; justify-content: center; gap: 0; margin-bottom: 16px; border-bottom: 1px solid var(--warm); }
+        .donate-intro {
+            text-align: center;
+            color: var(--muted);
+            font-size: 0.88rem;
+            line-height: 1.8;
+            margin-bottom: 20px;
+        }
+        .qr-tabs {
+            display: flex;
+            justify-content: center;
+            gap: 0;
+            margin-bottom: 16px;
+            border-bottom: 1px solid var(--line);
+        }
         .qr-tab {
-            padding: 8px 24px; font-size: 0.88rem; cursor: pointer; border-bottom: 2px solid transparent;
-            color: var(--text-light); font-family: inherit; background: none; border-top: none; border-left: none; border-right: none;
+            padding: 8px 24px;
+            font-size: 0.88rem;
+            cursor: pointer;
+            border-bottom: 2px solid transparent;
+            color: var(--muted);
+            font-family: inherit;
+            background: none;
+            border-top: none;
+            border-left: none;
+            border-right: none;
         }
         .qr-tab.active { font-weight: 600; border-bottom-color: currentColor; }
         .qr-tab.alipay.active { color: #1677ff; }
         .qr-tab.wechat.active { color: #07c160; }
         .qr-img { display: block; margin: 0 auto; max-width: 260px; border-radius: 12px; }
-        .donate-thanks { text-align: center; margin-top: 16px; color: var(--text-light); font-size: 0.82rem; line-height: 1.7; }
-
-        @media (max-width: 920px) {
-            .hero { grid-template-columns: 1fr; }
-            .entry-grid, .feature-grid { grid-template-columns: 1fr; }
+        .donate-thanks {
+            text-align: center;
+            margin-top: 16px;
+            color: var(--muted);
+            font-size: 0.82rem;
+            line-height: 1.7;
         }
 
+        @media (max-width: 840px) {
+            .hero-grid,
+            .entry-grid,
+            .notice-row {
+                grid-template-columns: 1fr;
+            }
+        }
         @media (max-width: 640px) {
-            .page { padding: 22px 16px 42px; }
-            .hero-main, .hero-side, .feature-card, .entry-card, .support-card { border-radius: 22px; }
-            .hero-main { padding: 26px 22px; }
-            .hero-actions, .topbar, .auth-links { align-items: stretch; }
+            .page { width: min(100vw - 24px, 980px); padding-top: 22px; }
+            .hero { padding: 24px 18px; border-radius: 24px; }
+            .entry-card, .notice-card, .support-card { border-radius: 20px; }
+            .hero-actions, .auth-links { align-items: stretch; }
             .hero-btn, .pill-link { width: 100%; justify-content: center; }
-            .hero-stats { grid-template-columns: 1fr; }
             .level-tabs { width: 100%; justify-content: space-between; }
             .level-tab { flex: 1; }
         }
@@ -259,7 +411,8 @@
         <div class="topbar">
             <div class="brand">
                 <small>Cambridge English Practice</small>
-                <h1>KET & PET 练习站</h1>
+                <h1>KET & PET 练习</h1>
+                <p>在线练习、背词与真题回顾</p>
             </div>
             <div class="auth-links" id="authArea">
                 <a class="pill-link" href="login.html">登录 / 注册</a>
@@ -267,97 +420,72 @@
         </div>
 
         <section class="hero">
-            <div class="hero-main">
-                <div class="hero-badge">KET / PET 真题练习 + 官方主题词背诵</div>
-                <div class="level-tabs">
-                    <button class="level-tab active" onclick="switchLevel('ket')">KET (A2 Key)</button>
-                    <button class="level-tab" onclick="switchLevel('pet')">PET (B1 Preliminary)</button>
-                </div>
-                <div class="level-meta" id="levelInfo">
-                    <div>Reading & Writing · Part 1-5 · 每套 30 题</div>
-                    <div class="level-chip">适合小学高年级 — 初中</div>
-                </div>
-                <h2>今天先做一套题，<br>再背 20 个高频主题词。</h2>
-                <p>首页不再只是入口列表。你可以直接开始当前等级的套卷练习，或者进入“每日 20 词”计划，用词卡、拼写、听写、例句挖空四种方式刷 Cambridge 官方主题词表。</p>
-                <div class="hero-actions">
-                    <a id="quizEntry" class="hero-btn primary" href="quiz.html?level=ket">开始当前等级练习</a>
-                    <a id="dailyEntry" class="hero-btn secondary" href="vocab.html?focus=daily&level=a2-key">进入每日 20 词</a>
-                </div>
-                <div class="hero-stats">
-                    <div class="hero-stat">
-                        <strong>516</strong>
-                        <span>已整理 KET / PET 官方主题词汇，覆盖 12 个主题。</span>
-                    </div>
-                    <div class="hero-stat">
-                        <strong>4</strong>
-                        <span>词卡、拼写、听写、例句挖空四种训练模式。</span>
-                    </div>
-                    <div class="hero-stat">
-                        <strong>Auto</strong>
-                        <span>做题草稿自动保存，游客先完成，登录后再存历史。</span>
-                    </div>
-                </div>
+            <div class="level-tabs">
+                <button class="level-tab active" onclick="switchLevel('ket')">KET (A2 Key)</button>
+                <button class="level-tab" onclick="switchLevel('pet')">PET (B1 Preliminary)</button>
             </div>
 
-            <div class="hero-side">
-                <div class="side-card">
-                    <small>Daily Plan</small>
+            <div class="hero-grid">
+                <div class="hero-copy">
+                    <h2>先做题，<br>再背词。</h2>
+                    <div class="level-info" id="levelInfo">
+                        <div>Reading & Writing · Part 1-5 · 每套 30 题</div>
+                        <div class="level-chip">适合小学高年级 — 初中</div>
+                    </div>
+                    <p>适合家长陪练，也适合学生自己刷。先完成一套当前等级练习，再用每日 20 词巩固高频主题词。游客也可以直接开始，不必先登录。</p>
+                    <div class="hero-actions">
+                        <a id="quizEntry" class="hero-btn primary" href="quiz.html?level=ket">开始做题</a>
+                        <a id="dailyEntry" class="hero-btn secondary" href="vocab.html?focus=daily&level=a2-key">开始今日背词</a>
+                    </div>
+                </div>
+
+                <div class="hero-side">
+                    <small>Today</small>
                     <strong>每日 20 词</strong>
-                    <p>系统按当天日期、当前等级和你的掌握情况，自动挑出最值得今天复习的 20 个词。</p>
-                    <a id="sideDailyEntry" class="mini-link" href="vocab.html?focus=daily&level=a2-key">现在进入今日计划 →</a>
-                </div>
-                <div class="side-card">
-                    <small>Quiz Flow</small>
-                    <strong>先做题，再决定是否登录</strong>
-                    <p>现在测验支持游客直接交卷并查看答案，登录只影响“是否保存到历史记录”，不再卡在提交前。</p>
-                    <a class="mini-link" href="quiz.html?level=ket">直接开始一套 →</a>
-                </div>
-                <div class="side-card">
-                    <small>Dashboard</small>
-                    <strong>个人中心 / 进度回顾</strong>
-                    <p>历史成绩、错题回顾、邀请码和后台数据都在这里。普通用户看个人记录，管理员看全站监控。</p>
-                    <a id="historyEntry" class="mini-link" href="admin.html">打开个人中心 →</a>
+                    <p>按等级和掌握情况自动推荐今天最值得复习的词，适合每天花 10 分钟坚持练。</p>
+                    <a id="sideDailyEntry" href="vocab.html?focus=daily&level=a2-key">直接进入今日计划 →</a>
                 </div>
             </div>
         </section>
 
         <section class="entry-grid">
-            <a id="vocabEntry" href="vocab.html" class="entry-card">
-                <small>Vocabulary</small>
-                <strong>完整主题词表</strong>
-                <p>按 Family, Education, Food, Travel 等官方 topic headings 筛选，支持等级和主题联动。</p>
+            <a id="quickQuizEntry" href="quiz.html?level=ket" class="entry-card">
+                <div class="entry-kicker">Practice</div>
+                <div class="entry-title">在线练习</div>
+                <div class="entry-desc">选择套卷逐题作答，自动判分，支持查看答案和错题回顾。</div>
+                <div class="entry-meta">真题 / 练习卷 / 结果回看</div>
             </a>
-            <a href="vocab.html?mode=dictation&focus=daily" class="entry-card" id="dictationEntry">
-                <small>Dictation</small>
-                <strong>听写 / 挖空专项</strong>
-                <p>适合补听辨和拼写薄弱点。可以先听发音，再拼写或在例句中补全单词。</p>
+
+            <a id="vocabEntry" href="vocab.html?level=a2-key" class="entry-card">
+                <div class="entry-kicker">Vocabulary</div>
+                <div class="entry-title">单词背诵</div>
+                <div class="entry-desc">按官方主题词表背词，支持主题筛选、每日计划和进度记录。</div>
+                <div class="entry-meta">主题词表 / 每日 20 词 / 复习进度</div>
             </a>
-            <a href="quiz.html?level=ket" class="entry-card" id="quickQuizEntry">
-                <small>Practice</small>
-                <strong>快速开刷</strong>
-                <p>进入当前等级套卷列表，支持官方真题、练习卷、错题复盘和结果页回看。</p>
+
+            <a id="historyEntry" href="admin.html" class="entry-card">
+                <div class="entry-kicker">Progress</div>
+                <div class="entry-title">个人中心</div>
+                <div class="entry-desc">查看历史成绩、错题回顾和学习记录，方便持续跟进。</div>
+                <div class="entry-meta">历史成绩 / 错题本 / 邀请码</div>
             </a>
         </section>
 
-        <section class="feature-grid">
-            <div class="feature-card">
-                <strong>真题练习更顺手</strong>
-                <p>支持游客直接完成整套练习并立即看结果，不用先注册；登录后再保存成绩和历史记录。</p>
+        <section class="notice-row">
+            <div class="notice-card">
+                <strong>四种背词模式</strong>
+                <p>词卡、拼写、听写、例句挖空可以自由切换，既适合入门记忆，也适合查漏补缺。</p>
             </div>
-            <div class="feature-card">
-                <strong>词汇学习更系统</strong>
-                <p>按官方主题词表分组，支持等级筛选、主题筛选和每日 20 词计划，适合长期稳定积累。</p>
-            </div>
-            <div class="feature-card">
-                <strong>四种模式反复练</strong>
-                <p>词卡、拼写、听写、例句挖空可以切换着练，既能记意思，也能练听辨和拼写输出。</p>
+            <div class="notice-card">
+                <strong>先练后存更轻松</strong>
+                <p>做题支持游客直接完成并查看结果；登录后再保存历史，不会因为注册打断练习节奏。</p>
             </div>
         </section>
 
         <section class="support-card">
             <div>
-                <strong style="display:block;color:var(--accent);margin-bottom:8px;">支持站点持续维护</strong>
-                <p>这个站点目前主要靠业余时间维护。如果它对你有帮助，可以请我喝杯咖啡，帮助继续补题库、词库和体验细节。</p>
+                <strong>支持站点持续维护</strong>
+                <p>如果这个网站对你有帮助，欢迎请我喝杯咖啡，支持继续补题库、词库和体验细节。</p>
             </div>
             <button onclick="openDonate()">☕ 请我喝杯咖啡</button>
         </section>
@@ -414,14 +542,13 @@
             document.getElementById('quickQuizEntry').href = `quiz.html?level=${currentLevel}`;
             document.getElementById('dailyEntry').href = `vocab.html?focus=daily&level=${vocabLevel}`;
             document.getElementById('sideDailyEntry').href = `vocab.html?focus=daily&level=${vocabLevel}`;
-            document.getElementById('dictationEntry').href = `vocab.html?focus=daily&mode=dictation&level=${vocabLevel}`;
             document.getElementById('vocabEntry').href = `vocab.html?level=${vocabLevel}`;
         }
 
         function switchLevel(level) {
             currentLevel = level;
             document.querySelectorAll('.level-tab').forEach((tab, index) => {
-                tab.classList.toggle('active', (level === 'ket' ? index === 0 : index === 1));
+                tab.classList.toggle('active', level === 'ket' ? index === 0 : index === 1);
             });
             if (level === 'pet') {
                 document.getElementById('levelInfo').innerHTML = '<div>Reading · Part 1-6 · 每套 32 题</div><div class="level-chip">适合初中 — 高中</div>';
@@ -446,12 +573,11 @@
         updateEntryLinks();
 
         document.getElementById('quizEntry').addEventListener('click', () => trackEvent('home_entry_click', { target: 'quiz', level: currentLevel, position: 'hero_primary' }));
-        document.getElementById('quickQuizEntry').addEventListener('click', () => trackEvent('home_entry_click', { target: 'quiz', level: currentLevel, position: 'card_quick_quiz' }));
+        document.getElementById('quickQuizEntry').addEventListener('click', () => trackEvent('home_entry_click', { target: 'quiz', level: currentLevel, position: 'card_quiz' }));
         document.getElementById('historyEntry').addEventListener('click', () => trackEvent('home_entry_click', { target: 'admin' }));
         document.getElementById('vocabEntry').addEventListener('click', () => trackEvent('home_entry_click', { target: 'vocab', level: getVocabLevel(currentLevel), position: 'card_vocab' }));
         document.getElementById('dailyEntry').addEventListener('click', () => trackEvent('home_entry_click', { target: 'vocab_daily', level: getVocabLevel(currentLevel), position: 'hero_secondary' }));
         document.getElementById('sideDailyEntry').addEventListener('click', () => trackEvent('home_entry_click', { target: 'vocab_daily', level: getVocabLevel(currentLevel), position: 'side_daily' }));
-        document.getElementById('dictationEntry').addEventListener('click', () => trackEvent('home_entry_click', { target: 'vocab_dictation', level: getVocabLevel(currentLevel), position: 'card_dictation' }));
         document.querySelector('#authArea').addEventListener('click', (event) => {
             const target = event.target.closest('a');
             if (!target) return;

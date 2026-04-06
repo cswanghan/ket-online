@@ -1,0 +1,406 @@
+{
+  "examType": "PET",
+  "title": "PET Reading Practice Test 13",
+  "source": "KET Online PET Remix 13",
+  "category": "practice",
+  "totalQuestions": 32,
+  "parts": [
+    {
+      "part": 1,
+      "name": "Reading Part 1",
+      "description": "For each question, choose the correct answer.",
+      "type": "multiple_choice",
+      "questions": [
+        {
+          "number": 1,
+          "points": 1,
+          "text": "SWIMMING POOL\nAll swimmers must shower before entering the pool.",
+          "textType": "notice",
+          "options": [
+            "A. You should shower after you have been in the pool.",
+            "B. You are required to take a shower before going into the pool.",
+            "C. The showers are next to the swimming pool."
+          ],
+          "answer": "B"
+        },
+        {
+          "number": 2,
+          "points": 1,
+          "text": "Sophie,\nI've left the concert tickets on the kitchen table. Don't forget to bring them tonight – I won't have time to come home before the show.\nDad",
+          "textType": "message",
+          "question": "Why has Sophie's dad written the message?",
+          "options": [
+            "A. To remind Sophie to buy concert tickets.",
+            "B. To ask Sophie to bring the tickets with her.",
+            "C. To tell Sophie he will be late for the concert."
+          ],
+          "answer": "B"
+        },
+        {
+          "number": 3,
+          "points": 1,
+          "text": "LIBRARY NOTICE\nBooks may be borrowed for up to three weeks. A fine of 20p per day will be charged for late returns.",
+          "textType": "notice",
+          "options": [
+            "A. You can keep library books for as long as you like.",
+            "B. There is a daily charge if you do not return books on time.",
+            "C. You must pay 20p each time you borrow a book."
+          ],
+          "answer": "B"
+        },
+        {
+          "number": 4,
+          "points": 1,
+          "text": "SALE\nAll winter clothing reduced by up to 50%. Offer ends Saturday.",
+          "textType": "notice",
+          "options": [
+            "A. Everything in the shop is half price until Saturday.",
+            "B. Winter clothes have been reduced, but not all by the same amount.",
+            "C. The sale starts on Saturday."
+          ],
+          "answer": "B"
+        },
+        {
+          "number": 5,
+          "points": 1,
+          "text": "James,\nThe dentist called to say your appointment has been moved from Thursday to Friday at 2pm. Can you let me know if that's OK?\nMum",
+          "textType": "message",
+          "question": "James's mum is writing to",
+          "options": [
+            "A. ask James to make a dentist appointment.",
+            "B. tell James about a change to his appointment.",
+            "C. remind James that his appointment is on Thursday."
+          ],
+          "answer": "B"
+        }
+      ]
+    },
+    {
+      "part": 2,
+      "name": "Reading Part 2",
+      "type": "matching",
+      "description": "The people below all want to find a restaurant for a special occasion. Read the descriptions of eight restaurants. Choose which restaurant would be the most suitable for the people below.",
+      "texts": {
+        "A": {
+          "title": "The Garden Room",
+          "content": "An elegant restaurant in a converted greenhouse, surrounded by beautiful gardens. The menu changes seasonally and features dishes made with ingredients grown on site. Open for lunch and dinner. Booking essential at weekends. Live piano music on Friday and Saturday evenings."
+        },
+        "B": {
+          "title": "Mario's",
+          "content": "A lively Italian restaurant popular with families. The children's menu offers smaller portions of favourites like pasta and pizza. There's a play area to keep the kids entertained while you wait for your food. Open every day for lunch and dinner. No need to book."
+        },
+        "C": {
+          "title": "The Blue Elephant",
+          "content": "Authentic Thai food served in a relaxed atmosphere. This small restaurant seats only 20 people, so booking is essential. The set menu offers excellent value for money. BYOB (bring your own bottle) – no alcohol sold on the premises. Closed on Mondays."
+        },
+        "D": {
+          "title": "Café Express",
+          "content": "Quick, affordable meals in the town centre. Choose from sandwiches, salads, soups and daily specials. Popular with shoppers and office workers at lunchtime. No evening opening. Free Wi-Fi available. Takeaway also available."
+        },
+        "E": {
+          "title": "The Riverside Inn",
+          "content": "A traditional English pub with a restaurant overlooking the river. Famous for its Sunday roast dinner and homemade pies. Large car park. Dog-friendly outdoor seating area. Open for lunch and dinner every day. Group bookings welcome."
+        },
+        "F": {
+          "title": "Sakura",
+          "content": "Japanese cuisine at its finest. Watch the chefs prepare your food at the teppanyaki table. Private dining rooms available for special celebrations. Expensive but worth it for a unique experience. Open Tuesday to Saturday, evenings only."
+        },
+        "G": {
+          "title": "The Vegan Kitchen",
+          "content": "100% plant-based food that even meat-lovers enjoy. Creative dishes using locally sourced organic ingredients. The weekend brunch is particularly popular. Open Wednesday to Sunday. No children under 12 in the evenings."
+        },
+        "H": {
+          "title": "Spice Route",
+          "content": "Award-winning Indian restaurant offering a wide range of curries, from mild to extremely hot. Buffet lunch available on weekdays at a fixed price. Takeaway and delivery service. Large restaurant with space for groups. Open every day."
+        }
+      },
+      "questions": [
+        {
+          "number": 6,
+          "points": 1,
+          "text": "Paula wants to take her parents out for a special anniversary dinner. She'd like somewhere with a private space and something different to watch while they eat. Price is not an issue.",
+          "answer": "F"
+        },
+        {
+          "number": 7,
+          "points": 1,
+          "text": "Mike wants to go out for Sunday lunch with his wife, their two young children and their dog. They need somewhere with parking as they live outside town.",
+          "answer": "E"
+        },
+        {
+          "number": 8,
+          "points": 1,
+          "text": "Yuki and her flatmate are students who want a tasty evening meal that won't cost too much. They want to bring a bottle of wine they received as a gift.",
+          "answer": "C"
+        },
+        {
+          "number": 9,
+          "points": 1,
+          "text": "Greg is planning an evening out with his girlfriend. She loves live music and he enjoys food made from fresh, local ingredients. They want to go on a Saturday.",
+          "answer": "A"
+        },
+        {
+          "number": 10,
+          "points": 1,
+          "text": "Anna wants to have lunch with a large group of work colleagues. She needs somewhere affordable that doesn't require booking and is available on a weekday.",
+          "answer": "H"
+        }
+      ]
+    },
+    {
+      "part": 3,
+      "name": "Reading Part 3",
+      "type": "multiple_choice",
+      "description": "Read the text and answer the questions.",
+      "passageTitle": "Artist Peter Fuller talks about his hobby",
+      "passage": "There's a popular idea that artists are not supposed to be into sport, but mountain biking is a huge part of my life. It gets me out of my studio, and into the countryside. But more importantly, racing along as fast as you can leaves you no time to worry about anything that's going on in your life. You're too busy concentrating on not crashing. The only things you pay attention to are the pain in your legs and the rocks on the path in front of you.\n\nI'm in my sixties now, but I started cycling when I was a kid. In the summer my friends and I would ride our bikes into the woods and see who was brave enough to go down steep hills, or do big jumps. The bikes we had then weren't built for that, and often broke, so I used to draw pictures of bikes with big thick tyres that would be strong enough for what we were doing. They looked just like modern mountain bikes. However, it wasn't until many years later that someone actually invented one. By the 1980s, they were everywhere.\n\nAt that time I was into skateboarding. I did that for a decade until falling off on to hard surfaces started to hurt too much. Mountain biking seemed a fairly safe way to keep fit, so I took that up instead. I made a lot of friends, and got involved in racing, which gave me a reason to train hard. I wanted to find out just how fit and fast I could get, which turned out to be fairly quick. I even won a couple of local races.\n\nIn the end I stopped racing, mainly because I knew what it could mean to my career if I had a bad crash. But I still like to do a three-hour mountain bike ride every week. And if I'm out cycling in the hills and see a rider ahead, I have to beat them to the top. As I go past I imagine how surprised they would be if they knew how old I am.",
+      "questions": [
+        {
+          "number": 11,
+          "points": 1,
+          "text": "Peter enjoys mountain biking because",
+          "options": [
+            "A. it gives him the opportunity to enjoy the views.",
+            "B. he can use the time to plan his work.",
+            "C. he is able to stop thinking about his problems.",
+            "D. it helps him to concentrate better."
+          ],
+          "answer": "C"
+        },
+        {
+          "number": 12,
+          "points": 1,
+          "text": "What does Peter say about cycling during his childhood?",
+          "options": [
+            "A. He is sorry he didn't take more care of his bike.",
+            "B. His friends always had better quality bikes than he did.",
+            "C. His bike wasn't suitable for the activities he was doing.",
+            "D. He was more interested in designing bikes than riding them."
+          ],
+          "answer": "C"
+        },
+        {
+          "number": 13,
+          "points": 1,
+          "text": "Peter says he returned to cycling after several years",
+          "options": [
+            "A. because he had become unfit.",
+            "B. so that he could enter races.",
+            "C. in order to meet new people.",
+            "D. to replace an activity he had given up."
+          ],
+          "answer": "D"
+        },
+        {
+          "number": 14,
+          "points": 1,
+          "text": "How does Peter feel about cycling now?",
+          "options": [
+            "A. He is proud that he is still so fast.",
+            "B. He is keen to do less now that he is older.",
+            "C. He regrets the fact that he can no longer compete.",
+            "D. He wishes more people were involved in the sport."
+          ],
+          "answer": "A"
+        },
+        {
+          "number": 15,
+          "points": 1,
+          "text": "What would be a good introduction to this article?",
+          "options": [
+            "A. For Peter Fuller, nothing matters more than mountain biking, not even his career. Here, in his own words, he tells us why.",
+            "B. Artist Peter Fuller takes mountain biking pretty seriously. Here he describes how it all began and what he gets out of it.",
+            "C. In this article, Peter Fuller explains how he became an artist only as a result of his interest in mountain biking.",
+            "D. After discovering mountain biking late in life, Peter Fuller gave up art for a while to concentrate on getting as good as possible."
+          ],
+          "answer": "B"
+        }
+      ]
+    },
+    {
+      "part": 4,
+      "name": "Reading Part 4",
+      "type": "gapped_text",
+      "description": "Five sentences have been removed from the text below. For each question, choose the correct answer. There are three extra sentences which you do not need to use.",
+      "passageTitle": "The History of Jeans",
+      "passage": "Jeans are one of the most popular items of clothing in the world. Almost everyone owns at least one pair. But they weren't always a fashion item. (16) ______\n\nIn 1853, a German immigrant called Levi Strauss moved to San Francisco during the California Gold Rush. He noticed that the miners needed strong, durable trousers that wouldn't fall apart. (17) ______ The material was tough enough to withstand the rough conditions of mining.\n\nFor the next hundred years, jeans were mainly worn by manual workers – farmers, factory workers and cowboys. (18) ______ They were seen as practical workwear, nothing more.\n\nEverything changed in the 1950s when film stars like James Dean and Marlon Brando wore jeans in movies. (19) ______ Parents and teachers disapproved, which of course made jeans even more attractive to young people.\n\nBy the 1970s and 80s, designer brands started making expensive versions. (20) ______ Today, you can buy jeans at almost any price, from a few pounds to thousands, and they are worn by people of all ages and backgrounds around the world.",
+      "sentenceOptions": [
+        "A. In fact, they were originally designed as work clothes for manual labourers.",
+        "B. So he started making trousers from a strong cotton fabric called denim.",
+        "C. Nobody in fashionable society would have been seen wearing them.",
+        "D. Suddenly, jeans became a symbol of youth and rebellion.",
+        "E. Jeans went from being cheap workwear to a luxury fashion item.",
+        "F. Strauss had no interest in the fashion industry.",
+        "G. The gold miners preferred lighter fabrics that were more comfortable.",
+        "H. Other materials proved to be more popular with workers."
+      ],
+      "questions": [
+        {
+          "number": 16,
+          "points": 1,
+          "text": "(16)",
+          "answer": "A"
+        },
+        {
+          "number": 17,
+          "points": 1,
+          "text": "(17)",
+          "answer": "B"
+        },
+        {
+          "number": 18,
+          "points": 1,
+          "text": "(18)",
+          "answer": "C"
+        },
+        {
+          "number": 19,
+          "points": 1,
+          "text": "(19)",
+          "answer": "D"
+        },
+        {
+          "number": 20,
+          "points": 1,
+          "text": "(20)",
+          "answer": "E"
+        }
+      ]
+    },
+    {
+      "part": 5,
+      "name": "Reading Part 5",
+      "type": "cloze_choice",
+      "description": "Read the text. Choose the correct word for each space.",
+      "passageTitle": "The Bicycle",
+      "passage": "The bicycle is one of the most (21)______ inventions in history. Since it was first developed in the early 19th century, it has provided people with an affordable and environmentally friendly (22)______ of transport.\n\nThe earliest bicycles looked very different from those we ride today. The first models didn't even have pedals – riders had to push themselves along with (23)______ feet. It wasn't (24)______ the 1860s that pedals were added, and the modern bicycle design that we recognise today didn't appear until the 1880s.\n\nIn recent years, cycling has become more popular (25)______ ever. Many cities have introduced bike-sharing schemes and built dedicated cycle lanes. This is partly because of growing concerns about pollution and traffic congestion, but also because people have recognised the health (26)______ of regular cycling.",
+      "questions": [
+        {
+          "number": 21,
+          "points": 1,
+          "text": "(21)",
+          "options": [
+            "A. successful",
+            "B. achieved",
+            "C. capable",
+            "D. possible"
+          ],
+          "answer": "A"
+        },
+        {
+          "number": 22,
+          "points": 1,
+          "text": "(22)",
+          "options": [
+            "A. way",
+            "B. kind",
+            "C. means",
+            "D. sort"
+          ],
+          "answer": "C"
+        },
+        {
+          "number": 23,
+          "points": 1,
+          "text": "(23)",
+          "options": [
+            "A. his",
+            "B. its",
+            "C. one's",
+            "D. their"
+          ],
+          "answer": "D"
+        },
+        {
+          "number": 24,
+          "points": 1,
+          "text": "(24)",
+          "options": [
+            "A. since",
+            "B. from",
+            "C. until",
+            "D. after"
+          ],
+          "answer": "C"
+        },
+        {
+          "number": 25,
+          "points": 1,
+          "text": "(25)",
+          "options": [
+            "A. as",
+            "B. than",
+            "C. that",
+            "D. so"
+          ],
+          "answer": "B"
+        },
+        {
+          "number": 26,
+          "points": 1,
+          "text": "(26)",
+          "options": [
+            "A. profits",
+            "B. advantages",
+            "C. benefits",
+            "D. gains"
+          ],
+          "answer": "C"
+        }
+      ]
+    },
+    {
+      "part": 6,
+      "name": "Reading Part 6",
+      "type": "fill_blank",
+      "description": "Read the text. Write ONE word for each gap.",
+      "passageTitle": "Sleep",
+      "passage": "Few people doubt the importance of a good night's sleep. But (27)______ much do you need? Some people famously claim (28)______ need as little as three hours' sleep per night, while others need nine hours or more just to function properly.\n\nA good way (29)______ find out how much sleep you need is to find a time such (30)______ an annual holiday when you can sleep as much as you like. Take a note of the time when you go to sleep and wake up every day for seven days. Write (31)______ down and finally work out the average you need daily by dividing the total by 7.\n\nTo give (32)______ an idea, people commonly need between six and eight hours' sleep per night. However, everyone is different. Try it and see how much time you need in bed.",
+      "questions": [
+        {
+          "number": 27,
+          "points": 1,
+          "answer": [
+            "how"
+          ]
+        },
+        {
+          "number": 28,
+          "points": 1,
+          "answer": [
+            "to",
+            "they"
+          ]
+        },
+        {
+          "number": 29,
+          "points": 1,
+          "answer": [
+            "to"
+          ]
+        },
+        {
+          "number": 30,
+          "points": 1,
+          "answer": [
+            "as"
+          ]
+        },
+        {
+          "number": 31,
+          "points": 1,
+          "answer": [
+            "it"
+          ]
+        },
+        {
+          "number": 32,
+          "points": 1,
+          "answer": [
+            "you"
+          ]
+        }
+      ]
+    }
+  ]
+}

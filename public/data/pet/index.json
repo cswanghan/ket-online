@@ -6,12 +6,118 @@
       "description": "Cambridge B1 Preliminary English Test - Reading",
       "grade": "适合初中 - 高中",
       "tests": [
-        { "id": "cambridge-official-1", "title": "PET 官方样卷 1", "totalQuestions": 32, "source": "Cambridge English Official", "category": "official" },
-        { "id": "pet-practice-01", "title": "PET 阅读练习 1", "totalQuestions": 32, "source": "Cambridge B1 Reading: Ten Practice Tests", "category": "practice" },
-        { "id": "pet-practice-02", "title": "PET 阅读练习 2", "totalQuestions": 32, "source": "AI Generated", "category": "practice" },
-        { "id": "pet-practice-03", "title": "PET 阅读练习 3", "totalQuestions": 32, "source": "AI Generated", "category": "practice" },
-        { "id": "pet-practice-04", "title": "PET 阅读练习 4", "totalQuestions": 32, "source": "AI Generated", "category": "practice" },
-        { "id": "pet-practice-05", "title": "PET 阅读练习 5", "totalQuestions": 32, "source": "AI Generated", "category": "practice" }
+        {
+          "id": "cambridge-official-1",
+          "title": "PET 官方样卷 1",
+          "totalQuestions": 32,
+          "source": "Cambridge English Official",
+          "category": "official"
+        },
+        {
+          "id": "pet-practice-01",
+          "title": "PET 阅读练习 1",
+          "totalQuestions": 32,
+          "source": "Cambridge B1 Reading: Ten Practice Tests",
+          "category": "practice"
+        },
+        {
+          "id": "pet-practice-02",
+          "title": "PET 阅读练习 2",
+          "totalQuestions": 32,
+          "source": "AI Generated",
+          "category": "practice"
+        },
+        {
+          "id": "pet-practice-03",
+          "title": "PET 阅读练习 3",
+          "totalQuestions": 32,
+          "source": "AI Generated",
+          "category": "practice"
+        },
+        {
+          "id": "pet-practice-04",
+          "title": "PET 阅读练习 4",
+          "totalQuestions": 32,
+          "source": "AI Generated",
+          "category": "practice"
+        },
+        {
+          "id": "pet-practice-05",
+          "title": "PET 阅读练习 5",
+          "totalQuestions": 32,
+          "source": "AI Generated",
+          "category": "practice"
+        },
+        {
+          "id": "pet-practice-06",
+          "title": "PET 阅读练习 6",
+          "totalQuestions": 32,
+          "source": "KET Online PET Remix 06",
+          "category": "practice"
+        },
+        {
+          "id": "pet-practice-07",
+          "title": "PET 阅读练习 7",
+          "totalQuestions": 32,
+          "source": "KET Online PET Remix 07",
+          "category": "practice"
+        },
+        {
+          "id": "pet-practice-08",
+          "title": "PET 阅读练习 8",
+          "totalQuestions": 32,
+          "source": "KET Online PET Remix 08",
+          "category": "practice"
+        },
+        {
+          "id": "pet-practice-09",
+          "title": "PET 阅读练习 9",
+          "totalQuestions": 32,
+          "source": "KET Online PET Remix 09",
+          "category": "practice"
+        },
+        {
+          "id": "pet-practice-10",
+          "title": "PET 阅读练习 10",
+          "totalQuestions": 32,
+          "source": "KET Online PET Remix 10",
+          "category": "practice"
+        },
+        {
+          "id": "pet-practice-11",
+          "title": "PET 阅读练习 11",
+          "totalQuestions": 32,
+          "source": "KET Online PET Remix 11",
+          "category": "practice"
+        },
+        {
+          "id": "pet-practice-12",
+          "title": "PET 阅读练习 12",
+          "totalQuestions": 32,
+          "source": "KET Online PET Remix 12",
+          "category": "practice"
+        },
+        {
+          "id": "pet-practice-13",
+          "title": "PET 阅读练习 13",
+          "totalQuestions": 32,
+          "source": "KET Online PET Remix 13",
+          "category": "practice"
+        },
+        {
+          "id": "pet-practice-14",
+          "title": "PET 阅读练习 14",
+          "totalQuestions": 32,
+          "source": "KET Online PET Remix 14",
+          "category": "practice"
+        },
+        {
+          "id": "pet-practice-15",
+          "title": "PET 阅读练习 15",
+          "totalQuestions": 32,
+          "source": "KET Online PET Remix 15",
+          "category": "practice"
+        }
       ]
     }
   ]

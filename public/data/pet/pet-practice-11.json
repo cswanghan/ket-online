@@ -1,0 +1,408 @@
+{
+  "examType": "PET",
+  "title": "PET Reading Practice Test 11",
+  "source": "KET Online PET Remix 11",
+  "category": "practice",
+  "totalQuestions": 32,
+  "parts": [
+    {
+      "part": 1,
+      "name": "Reading Part 1",
+      "description": "For each question, choose the correct answer.",
+      "type": "multiple_choice",
+      "questions": [
+        {
+          "number": 1,
+          "points": 1,
+          "text": "Win a Car\nCOMPETITION\nEntries will only be accepted from people who are at least eighteen.",
+          "textType": "notice",
+          "options": [
+            "A. The competition is open to people over a certain age.",
+            "B. There is a maximum age limit for this competition.",
+            "C. Only eighteen-year-olds are allowed to enter this competition."
+          ],
+          "answer": "A"
+        },
+        {
+          "number": 2,
+          "points": 1,
+          "text": "Rachel\nFor our holiday, you need to get a photo for your visa and let me have it. I've got the visa forms so I can post them then.\nAdam",
+          "textType": "message",
+          "question": "Adam is telling Rachel to",
+          "options": [
+            "A. post something for him.",
+            "B. find out how to do something.",
+            "C. give him something he needs."
+          ],
+          "answer": "C"
+        },
+        {
+          "number": 3,
+          "points": 1,
+          "text": "LABORATORY\nThe public are not permitted beyond this point unless accompanied by a staff member.",
+          "textType": "notice",
+          "options": [
+            "A. Members of staff must be accompanied if they wish to pass this point.",
+            "B. Members of the public can't go through unless they are visiting someone working here.",
+            "C. Members of the public may go further if a company employee goes with them."
+          ],
+          "answer": "C"
+        },
+        {
+          "number": 4,
+          "points": 1,
+          "text": "Jane,\nMum's leaving really early tomorrow, so could you wake me at 7 when you leave for work? I mustn't be late for college again!\nTom",
+          "textType": "message",
+          "options": [
+            "A. Tom wants to persuade Jane to take him to college tomorrow morning.",
+            "B. Tom would like Jane to do him a favour tomorrow morning.",
+            "C. Tom is reminding Jane they have to get up early tomorrow morning."
+          ],
+          "answer": "B"
+        },
+        {
+          "number": 5,
+          "points": 1,
+          "text": "FREE COPIES OF ADVERTISEMENTS ON THIS BOARD ARE AVAILABLE FROM THE CAREERS CENTRE",
+          "textType": "notice",
+          "options": [
+            "A. The Careers Centre will give you a copy of any advertisement on this board.",
+            "B. This board is used to advertise the work done by the Careers Centre.",
+            "C. If you ask the Careers Centre, you can advertise for free on this board."
+          ],
+          "answer": "A"
+        }
+      ]
+    },
+    {
+      "part": 2,
+      "name": "Reading Part 2",
+      "type": "matching",
+      "description": "The people below are all looking for a new place to live. Read the descriptions of eight potential homes. Choose which home would be the most suitable for the people below.",
+      "texts": {
+        "A": {
+          "title": "Home A",
+          "content": "A four-bedroom, semi-detached house with a garage and extra parking is available from September. Large garden. Pets welcome. Easy access to the motorway and town centre. Close to several outstanding schools."
+        },
+        "B": {
+          "title": "Home B",
+          "content": "A shared house with four students who like to party. The room is inexpensive and situated in Dobberton, just ten miles from Cambridge. You'll need a car, but we have lots of space for parking."
+        },
+        "C": {
+          "title": "Home C",
+          "content": "Fully furnished luxury flat available for short-term lease. One bedroom, shower and bath, elevator and underground parking. All the modern conveniences. Owners prefer a single person."
+        },
+        "D": {
+          "title": "Home D",
+          "content": "Room available in a flat with one other person. The room is spacious and airy, and inexpensive for its location, a two-minute walk from a bus stop and five minutes from the train station."
+        },
+        "E": {
+          "title": "Home E",
+          "content": "A detached four-bedroom home is available near the old St Andrew's school site, located on the edge of town. Good access to all parts of town using the motorway. A family preferred. No pets though."
+        },
+        "F": {
+          "title": "Home F",
+          "content": "A country cottage surrounded by tranquil countryside. Two bedrooms and one studio for home-working or study. Large garden. Pets welcome. Pre-installed security system and a good internet connection."
+        },
+        "G": {
+          "title": "Home G",
+          "content": "Double room available in a small house with off-street parking. To share with studious 3rd year uni student who is often away at the weekend."
+        },
+        "H": {
+          "title": "Home H",
+          "content": "Attic-type apartment available in the city centre. Large, quiet, open-plan space. Located just beside Coldham's park. Minimum 12-month contract."
+        }
+      },
+      "questions": [
+        {
+          "number": 6,
+          "points": 1,
+          "text": "Stuart has just finished university and is looking for a room in a cheap, relaxed shared house. He doesn't have a car so he needs to be close to public transport links.",
+          "answer": "D"
+        },
+        {
+          "number": 7,
+          "points": 1,
+          "text": "Mary Anne is an architect who is looking for something quiet in a rural area with lots of space. She would like to work from home sometimes. She is looking for a home which will accommodate her two pet dogs.",
+          "answer": "F"
+        },
+        {
+          "number": 8,
+          "points": 1,
+          "text": "Colin is a student and wants to share with one other person who is tidy and responsible. He needs something with parking for his car. He would like his girlfriend to come to visit at the weekend sometimes.",
+          "answer": "G"
+        },
+        {
+          "number": 9,
+          "points": 1,
+          "text": "Lin needs an apartment for the next three months. She wants to live alone. She would like somewhere close to the centre of town, and would like something which she doesn't have to decorate.",
+          "answer": "C"
+        },
+        {
+          "number": 10,
+          "points": 1,
+          "text": "Trish needs a house for her husband and two young children, and her dog Rover. She needs parking for two cars, and would prefer to be close to a nursery school and primary school. She needs somewhere for just after the summer, as they will be on holiday in August.",
+          "answer": "A"
+        }
+      ]
+    },
+    {
+      "part": 3,
+      "name": "Reading Part 3",
+      "type": "multiple_choice",
+      "description": "Read the text and answer the questions.",
+      "passageTitle": "Wildlife photographer Kate Morrison",
+      "passage": "I never planned to become a wildlife photographer. After university, where I studied biology, I got a job in a research laboratory. The work was interesting enough, but I spent all day indoors, and I missed being outside. I'd always loved nature, and it was frustrating to be stuck in a building all day looking at a computer screen.\n\nOne weekend, a friend persuaded me to join her on a bird-watching trip. I borrowed my dad's old camera and took a few photos. When I got home and looked at them, I was amazed at how good some of them were – not because of my skill, but because of how beautiful the birds looked. That was the moment I realised I wanted to combine my love of nature with photography.\n\nI started by photographing birds in my local park every weekend. I quickly discovered that wildlife photography requires enormous patience. Animals don't pose for you – you might wait for hours in the cold and rain for a single good shot. But that challenge is part of what makes it so satisfying.\n\nAfter about a year, I entered a photo competition and won second prize. That gave me the confidence to leave my laboratory job and try to make photography my career. It wasn't easy at first. I had very little income for the first couple of years. But gradually, magazines and websites started buying my photos, and I began to get invited on expeditions.\n\nNow I travel the world photographing animals in their natural habitats. Last year I spent three months in Africa, and next month I'm going to the Arctic. It can be physically demanding – I sometimes have to walk for hours carrying heavy equipment. But there's nothing quite like the feeling of capturing a perfect image of a wild animal. I feel incredibly lucky to do what I do.",
+      "questions": [
+        {
+          "number": 11,
+          "points": 1,
+          "text": "Why did Kate become unhappy with her first job?",
+          "options": [
+            "A. The research she was doing was boring.",
+            "B. She wanted to spend more time outdoors.",
+            "C. She didn't get on well with her colleagues.",
+            "D. The salary was too low."
+          ],
+          "answer": "B"
+        },
+        {
+          "number": 12,
+          "points": 1,
+          "text": "What happened on the bird-watching trip that changed Kate's life?",
+          "options": [
+            "A. She decided she wanted to study birds professionally.",
+            "B. Her friend suggested she become a photographer.",
+            "C. She took some photos that showed her the beauty of nature.",
+            "D. She bought an expensive camera."
+          ],
+          "answer": "C"
+        },
+        {
+          "number": 13,
+          "points": 1,
+          "text": "What does Kate say is the hardest thing about wildlife photography?",
+          "options": [
+            "A. Learning how to use the camera equipment.",
+            "B. Finding animals to photograph.",
+            "C. Working in bad weather conditions.",
+            "D. Having to wait a long time for good pictures."
+          ],
+          "answer": "D"
+        },
+        {
+          "number": 14,
+          "points": 1,
+          "text": "How did winning the competition affect Kate?",
+          "options": [
+            "A. It helped her believe she could be a professional photographer.",
+            "B. It led immediately to a well-paid job.",
+            "C. It made her famous overnight.",
+            "D. It taught her new photography techniques."
+          ],
+          "answer": "A"
+        },
+        {
+          "number": 15,
+          "points": 1,
+          "text": "What would be the best title for this article?",
+          "options": [
+            "A. How to win wildlife photography competitions.",
+            "B. From laboratory scientist to world-travelling wildlife photographer.",
+            "C. The best places in the world to photograph animals.",
+            "D. Why wildlife photography is the most difficult type of photography."
+          ],
+          "answer": "B"
+        }
+      ]
+    },
+    {
+      "part": 4,
+      "name": "Reading Part 4",
+      "type": "gapped_text",
+      "description": "Five sentences have been removed from the text below. For each question, choose the correct answer. There are three extra sentences which you do not need to use.",
+      "passageTitle": "The Importance of Bees",
+      "passage": "Bees are among the most important creatures on Earth. Without them, our food supply would be in serious trouble. (16) ______ This means that without bees, many of the fruits, vegetables and nuts we eat every day simply would not exist.\n\nSadly, bee populations around the world have been declining rapidly in recent years. (17) ______ Pesticides used in farming are one major factor. When bees come into contact with these chemicals, it can affect their ability to navigate back to their hive.\n\nAnother threat to bees is the loss of their natural habitat. (18) ______ With fewer wildflowers to feed on, bees struggle to find enough food, especially in late summer.\n\nFortunately, there are things that ordinary people can do to help. (19) ______ Even a small window box with the right flowers can provide food for local bees. Avoiding the use of pesticides in your garden is also important.\n\nGovernments are also taking action. Several countries have banned the most harmful pesticides, and farmers are being encouraged to leave areas of wildflowers at the edges of their fields. (20) ______ But it will take the efforts of everyone – governments, farmers, and individuals – to turn the situation around.",
+      "sentenceOptions": [
+        "A. Scientists believe there are several reasons for this decline.",
+        "B. Planting bee-friendly flowers such as lavender and sunflowers in your garden is one simple step.",
+        "C. As towns and cities expand, fields and meadows are being replaced by buildings and roads.",
+        "D. Honey is also used in many traditional medicines.",
+        "E. This is because bees pollinate around a third of the food crops that humans depend on.",
+        "F. These measures are beginning to show positive results in some areas.",
+        "G. Some types of bee live alone rather than in colonies.",
+        "H. Bees produce honey, which humans have collected for thousands of years."
+      ],
+      "questions": [
+        {
+          "number": 16,
+          "points": 1,
+          "text": "(16)",
+          "answer": "E"
+        },
+        {
+          "number": 17,
+          "points": 1,
+          "text": "(17)",
+          "answer": "A"
+        },
+        {
+          "number": 18,
+          "points": 1,
+          "text": "(18)",
+          "answer": "C"
+        },
+        {
+          "number": 19,
+          "points": 1,
+          "text": "(19)",
+          "answer": "B"
+        },
+        {
+          "number": 20,
+          "points": 1,
+          "text": "(20)",
+          "answer": "F"
+        }
+      ]
+    },
+    {
+      "part": 5,
+      "name": "Reading Part 5",
+      "type": "cloze_choice",
+      "description": "Read the text. Choose the correct word for each space.",
+      "passageTitle": "The History of Chocolate",
+      "passage": "Chocolate has been enjoyed by people (21)______ thousands of years. The ancient Mayans and Aztecs in Central America were the first to discover that the beans of the cacao tree could be (22)______ into a delicious drink.\n\nWhen Spanish explorers arrived in the Americas in the 16th century, they (23)______ cacao beans back to Europe. At first, chocolate was only available to the rich, as it was very expensive. (24)______, as production methods improved, the price came down and more people were (25)______ to enjoy it.\n\nToday, chocolate is one of the most popular foods in the world. The Swiss and Belgians are particularly famous (26)______ their high-quality chocolate, although cacao beans are still mainly grown in West Africa and South America.",
+      "questions": [
+        {
+          "number": 21,
+          "points": 1,
+          "text": "(21)",
+          "options": [
+            "A. since",
+            "B. for",
+            "C. during",
+            "D. while"
+          ],
+          "answer": "B"
+        },
+        {
+          "number": 22,
+          "points": 1,
+          "text": "(22)",
+          "options": [
+            "A. turned",
+            "B. changed",
+            "C. mixed",
+            "D. moved"
+          ],
+          "answer": "A"
+        },
+        {
+          "number": 23,
+          "points": 1,
+          "text": "(23)",
+          "options": [
+            "A. carried",
+            "B. fetched",
+            "C. brought",
+            "D. delivered"
+          ],
+          "answer": "C"
+        },
+        {
+          "number": 24,
+          "points": 1,
+          "text": "(24)",
+          "options": [
+            "A. But",
+            "B. However",
+            "C. Although",
+            "D. Despite"
+          ],
+          "answer": "B"
+        },
+        {
+          "number": 25,
+          "points": 1,
+          "text": "(25)",
+          "options": [
+            "A. capable",
+            "B. possible",
+            "C. able",
+            "D. allowed"
+          ],
+          "answer": "C"
+        },
+        {
+          "number": 26,
+          "points": 1,
+          "text": "(26)",
+          "options": [
+            "A. about",
+            "B. with",
+            "C. of",
+            "D. for"
+          ],
+          "answer": "D"
+        }
+      ]
+    },
+    {
+      "part": 6,
+      "name": "Reading Part 6",
+      "type": "fill_blank",
+      "description": "Read the text. Write ONE word for each gap.",
+      "passageTitle": "Keeping Fit",
+      "passage": "Staying active is important for both your physical and mental health. Experts recommend that adults should do (27)______ least 150 minutes of moderate exercise per week. This might sound like a lot, but it works out at just over 20 minutes (28)______ day.\n\nYou don't need to join a gym or buy expensive equipment. Walking is one of (29)______ best forms of exercise, and it's completely free. If you walk quickly enough to feel slightly out (30)______ breath, you're getting a good workout.\n\nSwimming is (31)______ excellent option because it exercises your whole body without putting stress on your joints. Many public swimming pools offer affordable memberships, and some even have sessions (32)______ are free for certain age groups.",
+      "questions": [
+        {
+          "number": 27,
+          "points": 1,
+          "answer": [
+            "at"
+          ]
+        },
+        {
+          "number": 28,
+          "points": 1,
+          "answer": [
+            "a",
+            "per",
+            "each",
+            "every"
+          ]
+        },
+        {
+          "number": 29,
+          "points": 1,
+          "answer": [
+            "the"
+          ]
+        },
+        {
+          "number": 30,
+          "points": 1,
+          "answer": [
+            "of"
+          ]
+        },
+        {
+          "number": 31,
+          "points": 1,
+          "answer": [
+            "an"
+          ]
+        },
+        {
+          "number": 32,
+          "points": 1,
+          "answer": [
+            "that",
+            "which"
+          ]
+        }
+      ]
+    }
+  ]
+}

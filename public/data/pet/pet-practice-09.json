@@ -1,0 +1,405 @@
+{
+  "examType": "PET",
+  "title": "PET Reading Practice Test 9",
+  "source": "KET Online PET Remix 09",
+  "category": "practice",
+  "totalQuestions": 32,
+  "parts": [
+    {
+      "part": 1,
+      "name": "Reading Part 1",
+      "description": "For each question, choose the correct answer.",
+      "type": "multiple_choice",
+      "questions": [
+        {
+          "number": 1,
+          "points": 1,
+          "text": "HOTEL\nGuests wishing to check out after 11am will be charged for an additional night.",
+          "textType": "notice",
+          "options": [
+            "A. You can stay in your room until 11am without extra cost.",
+            "B. You must arrive before 11am to check in.",
+            "C. An extra night costs the same as checking out late."
+          ],
+          "answer": "A"
+        },
+        {
+          "number": 2,
+          "points": 1,
+          "text": "Kate,\nI bumped into your old school friend Maria today. She's moved back to town and asked for your number. I gave it to her – hope that's OK!\nAunt Helen",
+          "textType": "message",
+          "question": "Aunt Helen is writing to tell Kate that",
+          "options": [
+            "A. she has arranged for Kate to meet Maria.",
+            "B. Maria may contact her soon.",
+            "C. Maria wants Kate's new address."
+          ],
+          "answer": "B"
+        },
+        {
+          "number": 3,
+          "points": 1,
+          "text": "BICYCLE PARKING\nBicycles left here for more than 48 hours will be removed without notice.",
+          "textType": "notice",
+          "options": [
+            "A. You can park your bicycle here for up to two days.",
+            "B. Bicycles must be moved every 24 hours.",
+            "C. You will receive a warning before your bicycle is taken away."
+          ],
+          "answer": "A"
+        },
+        {
+          "number": 4,
+          "points": 1,
+          "text": "RESTAURANT\nPlease inform your server of any food allergies before ordering.",
+          "textType": "notice",
+          "options": [
+            "A. The restaurant does not serve food that causes allergies.",
+            "B. You should tell staff about any allergies when you order food.",
+            "C. The menu contains a list of all possible allergens."
+          ],
+          "answer": "B"
+        },
+        {
+          "number": 5,
+          "points": 1,
+          "text": "Dan,\nThe plumber can come on Thursday between 2 and 4. I'll be at work so can you be home to let him in? The problem is the kitchen tap.\nLisa",
+          "textType": "message",
+          "question": "Lisa wants Dan to",
+          "options": [
+            "A. fix the kitchen tap himself.",
+            "B. call the plumber and arrange a time.",
+            "C. be at home when the plumber arrives."
+          ],
+          "answer": "C"
+        }
+      ]
+    },
+    {
+      "part": 2,
+      "name": "Reading Part 2",
+      "type": "matching",
+      "description": "The people below all want to visit a tourist attraction during their holiday. Read the descriptions of eight attractions. Choose which attraction would be the most suitable for the people below.",
+      "texts": {
+        "A": {
+          "title": "Oceanworld Aquarium",
+          "content": "Home to over 5,000 sea creatures including sharks, rays and seahorses. Daily feeding shows at 11am and 3pm. Children can touch sea stars and crabs in the rock pool area. Café and gift shop on site. Open every day, 10am-6pm. Free parking."
+        },
+        "B": {
+          "title": "Greenfield Steam Railway",
+          "content": "Take a trip back in time on our beautifully restored steam trains. The 45-minute journey passes through stunning countryside. Special afternoon tea service on Saturdays. Trains run at weekends only, April to September. Small museum at the station. Not suitable for wheelchair users."
+        },
+        "C": {
+          "title": "Adventure Island Theme Park",
+          "content": "Over 30 rides and attractions for all ages, from gentle rides for toddlers to high-speed roller coasters for thrill-seekers. Water park open in summer months. Multiple food outlets throughout the park. Open daily during school holidays, weekends only at other times."
+        },
+        "D": {
+          "title": "Hartley Castle",
+          "content": "Explore 800 years of history in this magnificent medieval castle. Guided tours run hourly and last about 90 minutes. Beautiful gardens with picnic areas. Special events for children during school holidays including sword-fighting demonstrations. Closed November to March."
+        },
+        "E": {
+          "title": "National Space Centre",
+          "content": "Discover the wonders of the universe through interactive exhibits and a state-of-the-art planetarium. Ideal for children aged 8 and over. Workshops and talks by real scientists at weekends. Café serving hot and cold meals. Fully accessible for wheelchair users."
+        },
+        "F": {
+          "title": "Willowbrook Farm Park",
+          "content": "Meet friendly farm animals and learn how a real farm works. Daily milking demonstration at 4pm. Pony rides for children under 10. Large indoor play area – great for rainy days. Farm shop selling local produce. Open every day except Christmas."
+        },
+        "G": {
+          "title": "Botanical Gardens",
+          "content": "Wander through 15 hectares of beautiful gardens featuring plants from around the world. Free guided walks every afternoon. The tropical greenhouse is especially impressive in winter. Dogs welcome in most areas. Open daily, dawn to dusk. Entry is free."
+        },
+        "H": {
+          "title": "Sea Life Boat Trips",
+          "content": "See dolphins, seals and seabirds on our two-hour coastal boat trips. Expert guides explain the wildlife you'll see. Trips depend on weather conditions – please phone on the day. Warm clothing recommended. Not suitable for children under 5. Limited to 12 passengers per trip."
+        }
+      },
+      "questions": [
+        {
+          "number": 6,
+          "points": 1,
+          "text": "George has two children aged 4 and 7. He wants to take them somewhere they can see and interact with animals. It might rain, so he needs somewhere with indoor activities too.",
+          "answer": "F"
+        },
+        {
+          "number": 7,
+          "points": 1,
+          "text": "Sarah is 12 and loves science, especially anything about space. She would enjoy hands-on activities and hearing from experts. Her grandmother uses a wheelchair and will come too.",
+          "answer": "E"
+        },
+        {
+          "number": 8,
+          "points": 1,
+          "text": "Mr and Mrs Hall are retired and enjoy being outdoors. They want to visit somewhere peaceful and free of charge, and they would like to bring their dog.",
+          "answer": "G"
+        },
+        {
+          "number": 9,
+          "points": 1,
+          "text": "Kenji's family is visiting during the school holidays. His children, aged 5 and 9, love exciting rides and splashing around in water. They want to spend a full day out.",
+          "answer": "C"
+        },
+        {
+          "number": 10,
+          "points": 1,
+          "text": "Lara enjoys history and wants to visit somewhere she can learn about the past through a professional tour. She would like to eat her own lunch in the grounds.",
+          "answer": "D"
+        }
+      ]
+    },
+    {
+      "part": 3,
+      "name": "Reading Part 3",
+      "type": "multiple_choice",
+      "description": "Read the text and answer the questions.",
+      "passageTitle": "Artist Peter Fuller talks about his hobby",
+      "passage": "There's a popular idea that artists are not supposed to be into sport, but mountain biking is a huge part of my life. It gets me out of my studio, and into the countryside. But more importantly, racing along as fast as you can leaves you no time to worry about anything that's going on in your life. You're too busy concentrating on not crashing. The only things you pay attention to are the pain in your legs and the rocks on the path in front of you.\n\nI'm in my sixties now, but I started cycling when I was a kid. In the summer my friends and I would ride our bikes into the woods and see who was brave enough to go down steep hills, or do big jumps. The bikes we had then weren't built for that, and often broke, so I used to draw pictures of bikes with big thick tyres that would be strong enough for what we were doing. They looked just like modern mountain bikes. However, it wasn't until many years later that someone actually invented one. By the 1980s, they were everywhere.\n\nAt that time I was into skateboarding. I did that for a decade until falling off on to hard surfaces started to hurt too much. Mountain biking seemed a fairly safe way to keep fit, so I took that up instead. I made a lot of friends, and got involved in racing, which gave me a reason to train hard. I wanted to find out just how fit and fast I could get, which turned out to be fairly quick. I even won a couple of local races.\n\nIn the end I stopped racing, mainly because I knew what it could mean to my career if I had a bad crash. But I still like to do a three-hour mountain bike ride every week. And if I'm out cycling in the hills and see a rider ahead, I have to beat them to the top. As I go past I imagine how surprised they would be if they knew how old I am.",
+      "questions": [
+        {
+          "number": 11,
+          "points": 1,
+          "text": "Peter enjoys mountain biking because",
+          "options": [
+            "A. it gives him the opportunity to enjoy the views.",
+            "B. he can use the time to plan his work.",
+            "C. he is able to stop thinking about his problems.",
+            "D. it helps him to concentrate better."
+          ],
+          "answer": "C"
+        },
+        {
+          "number": 12,
+          "points": 1,
+          "text": "What does Peter say about cycling during his childhood?",
+          "options": [
+            "A. He is sorry he didn't take more care of his bike.",
+            "B. His friends always had better quality bikes than he did.",
+            "C. His bike wasn't suitable for the activities he was doing.",
+            "D. He was more interested in designing bikes than riding them."
+          ],
+          "answer": "C"
+        },
+        {
+          "number": 13,
+          "points": 1,
+          "text": "Peter says he returned to cycling after several years",
+          "options": [
+            "A. because he had become unfit.",
+            "B. so that he could enter races.",
+            "C. in order to meet new people.",
+            "D. to replace an activity he had given up."
+          ],
+          "answer": "D"
+        },
+        {
+          "number": 14,
+          "points": 1,
+          "text": "How does Peter feel about cycling now?",
+          "options": [
+            "A. He is proud that he is still so fast.",
+            "B. He is keen to do less now that he is older.",
+            "C. He regrets the fact that he can no longer compete.",
+            "D. He wishes more people were involved in the sport."
+          ],
+          "answer": "A"
+        },
+        {
+          "number": 15,
+          "points": 1,
+          "text": "What would be a good introduction to this article?",
+          "options": [
+            "A. For Peter Fuller, nothing matters more than mountain biking, not even his career. Here, in his own words, he tells us why.",
+            "B. Artist Peter Fuller takes mountain biking pretty seriously. Here he describes how it all began and what he gets out of it.",
+            "C. In this article, Peter Fuller explains how he became an artist only as a result of his interest in mountain biking.",
+            "D. After discovering mountain biking late in life, Peter Fuller gave up art for a while to concentrate on getting as good as possible."
+          ],
+          "answer": "B"
+        }
+      ]
+    },
+    {
+      "part": 4,
+      "name": "Reading Part 4",
+      "type": "gapped_text",
+      "description": "Five sentences have been removed from the text below. For each question, choose the correct answer. There are three extra sentences which you do not need to use.",
+      "passageTitle": "The Streaming Phenomenon",
+      "passage": "Watching the latest movies and series on demand is undoubtedly the biggest change in entertainment in the 21st century. The emergence of services such as Netflix and Disney Plus have revolutionised the way we watch TV, and how the TV and cinema industry function forever. Music listening is following a similar model. (16) ______ Gideon McFluff explains.\n\nWhen people started making movies, they sold their product directly through the cinema theatres. (17) ______ It formed a lucrative industry for everyone involved. Many became rich and famous. Millions more around the world also earned a living, such as the camera operators, the make-up artists or the ice cream sellers in the theatre. And so it continued for many years.\n\nPiracy – copying movies or music and then selling them illegally to individuals to watch at home – became a problem in the 1980s and early 90s. (18) ______ Sites such as Napster offered users the option to share movies and music for free. People no longer had to pay for what they watched or listened to. Something had to be done.\n\nAs internet technology has become more powerful, the necessary means have arrived in our homes. Broadband and fibre optic capability has enabled us to receive images and audio in real time. (19) ______\n\nWith such developments, companies now offer a convenient and legal way to watch your favourite media productions. (20) ______ What distinguishes one from the other is the available content. These companies need the most popular movies and series to attract subscribers. We have seen the streaming companies become the financiers of movies and series, enabling media companies to invest in top-quality productions.",
+      "sentenceOptions": [
+        "A. If you wanted to watch the latest release you went to the cinema theatre and paid for your ticket.",
+        "B. Nowadays 4G and Wi-Fi allow us to watch movies even when we are on the move.",
+        "C. But did this change occur by choice or necessity?",
+        "D. This then becomes the content for the streamers' libraries, which therefore attracts subscribers.",
+        "E. Police and legal services eliminated the problem.",
+        "F. Clients pay a subscription fee every month for access.",
+        "G. However, with the arrival of the internet and the digital format the issue changed from problematic to catastrophic.",
+        "H. Where can you get your favourite music or movies?"
+      ],
+      "questions": [
+        {
+          "number": 16,
+          "points": 1,
+          "text": "(16)",
+          "answer": "C"
+        },
+        {
+          "number": 17,
+          "points": 1,
+          "text": "(17)",
+          "answer": "A"
+        },
+        {
+          "number": 18,
+          "points": 1,
+          "text": "(18)",
+          "answer": "G"
+        },
+        {
+          "number": 19,
+          "points": 1,
+          "text": "(19)",
+          "answer": "B"
+        },
+        {
+          "number": 20,
+          "points": 1,
+          "text": "(20)",
+          "answer": "F"
+        }
+      ]
+    },
+    {
+      "part": 5,
+      "name": "Reading Part 5",
+      "type": "cloze_choice",
+      "description": "Read the text. Choose the correct word for each space.",
+      "passageTitle": "The History of Chocolate",
+      "passage": "Chocolate has been enjoyed by people (21)______ thousands of years. The ancient Mayans and Aztecs in Central America were the first to discover that the beans of the cacao tree could be (22)______ into a delicious drink.\n\nWhen Spanish explorers arrived in the Americas in the 16th century, they (23)______ cacao beans back to Europe. At first, chocolate was only available to the rich, as it was very expensive. (24)______, as production methods improved, the price came down and more people were (25)______ to enjoy it.\n\nToday, chocolate is one of the most popular foods in the world. The Swiss and Belgians are particularly famous (26)______ their high-quality chocolate, although cacao beans are still mainly grown in West Africa and South America.",
+      "questions": [
+        {
+          "number": 21,
+          "points": 1,
+          "text": "(21)",
+          "options": [
+            "A. since",
+            "B. for",
+            "C. during",
+            "D. while"
+          ],
+          "answer": "B"
+        },
+        {
+          "number": 22,
+          "points": 1,
+          "text": "(22)",
+          "options": [
+            "A. turned",
+            "B. changed",
+            "C. mixed",
+            "D. moved"
+          ],
+          "answer": "A"
+        },
+        {
+          "number": 23,
+          "points": 1,
+          "text": "(23)",
+          "options": [
+            "A. carried",
+            "B. fetched",
+            "C. brought",
+            "D. delivered"
+          ],
+          "answer": "C"
+        },
+        {
+          "number": 24,
+          "points": 1,
+          "text": "(24)",
+          "options": [
+            "A. But",
+            "B. However",
+            "C. Although",
+            "D. Despite"
+          ],
+          "answer": "B"
+        },
+        {
+          "number": 25,
+          "points": 1,
+          "text": "(25)",
+          "options": [
+            "A. capable",
+            "B. possible",
+            "C. able",
+            "D. allowed"
+          ],
+          "answer": "C"
+        },
+        {
+          "number": 26,
+          "points": 1,
+          "text": "(26)",
+          "options": [
+            "A. about",
+            "B. with",
+            "C. of",
+            "D. for"
+          ],
+          "answer": "D"
+        }
+      ]
+    },
+    {
+      "part": 6,
+      "name": "Reading Part 6",
+      "type": "fill_blank",
+      "description": "Read the text. Write ONE word for each gap.",
+      "passageTitle": "School Trips",
+      "passage": "School trips are an important part of education. They give students the chance to learn outside (27)______ classroom and experience things they have only read about in books.\n\nOne of the most popular types of school trip is a visit (28)______ a museum. Students can see real objects and displays that bring their lessons to life. (29)______ example, a history class might visit a castle, while a science class could go to a technology centre.\n\nOf course, organising school trips is not always easy. Teachers have (30)______ plan carefully and make sure that all students are safe. Parents must give their permission, and (31)______ is usually a cost involved. However, most people agree that the benefits of school trips (32)______ worth the effort and expense.",
+      "questions": [
+        {
+          "number": 27,
+          "points": 1,
+          "answer": [
+            "the"
+          ]
+        },
+        {
+          "number": 28,
+          "points": 1,
+          "answer": [
+            "to"
+          ]
+        },
+        {
+          "number": 29,
+          "points": 1,
+          "answer": [
+            "for"
+          ]
+        },
+        {
+          "number": 30,
+          "points": 1,
+          "answer": [
+            "to"
+          ]
+        },
+        {
+          "number": 31,
+          "points": 1,
+          "answer": [
+            "there"
+          ]
+        },
+        {
+          "number": 32,
+          "points": 1,
+          "answer": [
+            "are"
+          ]
+        }
+      ]
+    }
+  ]
+}

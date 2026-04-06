@@ -1,0 +1,405 @@
+{
+  "examType": "PET",
+  "title": "PET Reading Practice Test 12",
+  "source": "KET Online PET Remix 12",
+  "category": "practice",
+  "totalQuestions": 32,
+  "parts": [
+    {
+      "part": 1,
+      "name": "Reading Part 1",
+      "description": "For each question, choose the correct answer.",
+      "type": "multiple_choice",
+      "questions": [
+        {
+          "number": 1,
+          "points": 1,
+          "text": "CHILDREN'S PLAY AREA\nAll children must be supervised by a responsible adult at all times.",
+          "textType": "notice",
+          "options": [
+            "A. Adults are not permitted in the children's play area.",
+            "B. Children must always be accompanied by an adult.",
+            "C. Children must stay to the left in the play area."
+          ],
+          "answer": "B"
+        },
+        {
+          "number": 2,
+          "points": 1,
+          "text": "Tim,\nI've tried to call Isa but she's not picking up. Can you drop by the post office and pick up the parcel she left for me? I'll collect it from your place tonight.\nAngus",
+          "textType": "message",
+          "question": "Angus is telling Tim to:",
+          "options": [
+            "A. collect something from the post office.",
+            "B. call Isa.",
+            "C. get some new ID."
+          ],
+          "answer": "A"
+        },
+        {
+          "number": 3,
+          "points": 1,
+          "text": "Due to current regulations, we are now only able to allow a maximum of 20 customers in the shop at any time. Please wait outside until another customer leaves.",
+          "textType": "notice",
+          "options": [
+            "A. Do not try to buy so many things.",
+            "B. The number of people permitted in the shop is less than it was previously.",
+            "C. Only enter after someone has left."
+          ],
+          "answer": "B"
+        },
+        {
+          "number": 4,
+          "points": 1,
+          "text": "COFFEE CORNER LOYALTY CARD\nBuy nine hot drinks and receive your tenth completely free!",
+          "textType": "notice",
+          "options": [
+            "A. Buy ten hot drinks, get one free next time.",
+            "B. Buy nine hot drinks, get one free today.",
+            "C. Buy ten drinks and get a loyalty card."
+          ],
+          "answer": "A"
+        },
+        {
+          "number": 5,
+          "points": 1,
+          "text": "STAFF COFFEE ROOM\nThis room is for staff use only. The public coffee shop on the ground floor is temporarily closed for refurbishment. We apologise for any inconvenience.",
+          "textType": "notice",
+          "options": [
+            "A. The coffee room is only for workers.",
+            "B. The coffee shop is closed today only.",
+            "C. The coffee shop is closed indefinitely."
+          ],
+          "answer": "C"
+        }
+      ]
+    },
+    {
+      "part": 2,
+      "name": "Reading Part 2",
+      "type": "matching",
+      "description": "The people below all want to find a course to study. Read the descriptions of eight courses. Choose which course would be the most suitable for the people below.",
+      "texts": {
+        "A": {
+          "title": "Digital Photography",
+          "content": "A ten-week evening course for complete beginners. Learn how to use your camera properly and take better photos. All you need is a digital camera or smartphone. Classes are on Tuesday evenings from 7pm to 9pm. Materials and refreshments included in the fee."
+        },
+        "B": {
+          "title": "Creative Writing Workshop",
+          "content": "Write short stories and poems in a supportive group. This weekend course is suitable for people who have some experience of writing and want to develop their skills further. Limited to 10 participants. Takes place on the first Saturday of each month."
+        },
+        "C": {
+          "title": "Spanish for Travellers",
+          "content": "A six-week course designed for people planning to visit a Spanish-speaking country. Learn essential phrases for hotels, restaurants and shops. No previous knowledge of Spanish required. Daytime classes only, Monday and Wednesday mornings."
+        },
+        "D": {
+          "title": "Introduction to Cooking",
+          "content": "Perfect for students and young adults living independently for the first time. Learn to prepare simple, healthy meals on a budget. Saturday morning classes. All ingredients provided. Each session focuses on a different type of meal."
+        },
+        "E": {
+          "title": "Advanced Watercolour Painting",
+          "content": "For experienced painters who want to take their work to the next level. Explore advanced techniques with a professional artist. Students should bring their own materials. Wednesday afternoons, 2pm-5pm. Minimum age 18."
+        },
+        "F": {
+          "title": "First Aid Certificate",
+          "content": "A two-day intensive course covering essential first aid skills. Internationally recognised certificate awarded on completion. Suitable for anyone over 14. Courses run every month and are available on weekdays or weekends. Lunch provided."
+        },
+        "G": {
+          "title": "Yoga for Beginners",
+          "content": "Start your yoga journey in a relaxed, friendly environment. No experience or special equipment needed – just wear comfortable clothes. Classes meet twice a week, Thursday evenings and Sunday mornings. Suitable for all ages and fitness levels."
+        },
+        "H": {
+          "title": "Web Design Basics",
+          "content": "Learn to build your own website from scratch. This eight-week course covers HTML, CSS and basic design principles. Some computer experience helpful but not essential. Monday evenings, 6pm-8pm. Students need to bring their own laptop."
+        }
+      },
+      "questions": [
+        {
+          "number": 6,
+          "points": 1,
+          "text": "Alex is 19 and has just moved into his own flat. He can't cook at all and wants to learn to make simple meals without spending too much money. He is free on Saturdays.",
+          "answer": "D"
+        },
+        {
+          "number": 7,
+          "points": 1,
+          "text": "Rita is retired and enjoys painting. She has been doing watercolours for years and wants to improve her technique. She is available during the daytime on weekdays.",
+          "answer": "E"
+        },
+        {
+          "number": 8,
+          "points": 1,
+          "text": "Chen works full-time and wants to create a website for his small business. He uses computers daily at work and has his own laptop. He needs an evening class.",
+          "answer": "H"
+        },
+        {
+          "number": 9,
+          "points": 1,
+          "text": "Olivia is planning a holiday to Mexico next summer. She doesn't speak any Spanish and wants to learn some useful phrases. She doesn't work and is free during the day.",
+          "answer": "C"
+        },
+        {
+          "number": 10,
+          "points": 1,
+          "text": "Sam is 15 and needs a qualification that will look good on job applications. He would like to complete it quickly and is available at weekends.",
+          "answer": "F"
+        }
+      ]
+    },
+    {
+      "part": 3,
+      "name": "Reading Part 3",
+      "type": "multiple_choice",
+      "description": "Read the text and answer the questions.",
+      "passageTitle": "Marathon runner James Chen",
+      "passage": "Running a marathon was never something I imagined I would do. At school, I was hopeless at sport. I was always the last person to be picked for any team, and I dreaded PE lessons. The idea of running 42 kilometres would have seemed completely impossible to me back then.\n\nEverything changed when I turned 30. I'd been working in an office for eight years and realised I was seriously unfit. I couldn't run for a bus without getting out of breath. A colleague suggested we sign up for a 5-kilometre charity run, and although I found it incredibly hard, I managed to finish. The sense of achievement I felt when I crossed that finish line was unlike anything I'd experienced before.\n\nAfter that first race, I was hooked. I started running three times a week and gradually increased my distances. Within a year, I'd completed a half marathon. The training was tough, especially in winter when it was dark and cold, but I found that running helped me deal with the stress of my job. It became my way of switching off from work.\n\nTwo years later, I entered the London Marathon. The training plan was brutal – I had to run at least five days a week, including one long run of 30 kilometres every Sunday. I lost weight, gained muscle, and felt healthier than I'd ever been. But the hardest part wasn't the physical training – it was making time for it alongside my full-time job and family life.\n\nOn race day, the atmosphere was incredible. Thousands of people lined the streets, cheering and offering sweets and drinks. I hit a wall at about 35 kilometres – my legs felt like lead and every step was painful. But I kept going, and when I finally crossed the finish line in just under four hours, I burst into tears. I've run three more marathons since then, and each one has been just as emotional.",
+      "questions": [
+        {
+          "number": 11,
+          "points": 1,
+          "text": "What does James say about his attitude to sport when he was young?",
+          "options": [
+            "A. He enjoyed watching sport but not playing it.",
+            "B. He was not good at sport and didn't enjoy it.",
+            "C. He was interested in running but not team sports.",
+            "D. He liked PE lessons but not competitive sport."
+          ],
+          "answer": "B"
+        },
+        {
+          "number": 12,
+          "points": 1,
+          "text": "What motivated James to start running?",
+          "options": [
+            "A. He wanted to lose weight.",
+            "B. His doctor told him he needed to exercise.",
+            "C. He realised how unfit he had become.",
+            "D. He watched the London Marathon on TV."
+          ],
+          "answer": "C"
+        },
+        {
+          "number": 13,
+          "points": 1,
+          "text": "What benefit did running bring to James besides fitness?",
+          "options": [
+            "A. He made a lot of new friends.",
+            "B. It helped him relax and forget about work.",
+            "C. He earned money from winning races.",
+            "D. It helped him get a promotion at work."
+          ],
+          "answer": "B"
+        },
+        {
+          "number": 14,
+          "points": 1,
+          "text": "What did James find most challenging about marathon training?",
+          "options": [
+            "A. The long Sunday runs.",
+            "B. Running in bad weather.",
+            "C. Fitting training around his other responsibilities.",
+            "D. Following a strict diet."
+          ],
+          "answer": "C"
+        },
+        {
+          "number": 15,
+          "points": 1,
+          "text": "How did James feel during the London Marathon?",
+          "options": [
+            "A. He found the whole race easy because of his training.",
+            "B. He nearly gave up but was inspired by the crowd.",
+            "C. He struggled towards the end but was deeply moved when he finished.",
+            "D. He was disappointed with his finishing time."
+          ],
+          "answer": "C"
+        }
+      ]
+    },
+    {
+      "part": 4,
+      "name": "Reading Part 4",
+      "type": "gapped_text",
+      "description": "Five sentences have been removed from the text below. For each question, choose the correct answer. There are three extra sentences which you do not need to use.",
+      "passageTitle": "The Rise of Electric Cars",
+      "passage": "Electric cars have been around for much longer than most people realise. In fact, some of the very first motor vehicles built in the late 1800s were powered by electricity. (16) ______ They were quiet, easy to drive, and didn't produce unpleasant smells.\n\nHowever, when Henry Ford began mass-producing petrol-powered cars in 1908, electric vehicles quickly fell out of favour. (17) ______ For most of the twentieth century, almost nobody thought about electric cars.\n\nThings began to change in the 1990s when people started to worry more about pollution and climate change. (18) ______ But these early models were expensive and could only travel short distances before needing to be recharged.\n\nThe real breakthrough came with improvements in battery technology. (19) ______ Companies like Tesla proved that electric cars could be fast, stylish and practical for everyday use.\n\nToday, many countries have announced plans to ban the sale of new petrol and diesel cars within the next ten to twenty years. (20) ______ Whether we like it or not, the future of driving is electric.",
+      "sentenceOptions": [
+        "A. Petrol cars were cheaper, faster and could travel much further on a single tank of fuel.",
+        "B. Several car manufacturers began experimenting with electric models again.",
+        "C. At that time, they were actually more popular than petrol-powered vehicles.",
+        "D. Modern batteries can store much more energy and can be recharged much more quickly.",
+        "E. This means that electric cars will eventually become the only option for new car buyers.",
+        "F. The problem was that electricity was not widely available at that time.",
+        "G. Electric cars are also much cheaper to maintain than traditional vehicles.",
+        "H. Many people believe that public transport is a better solution than electric cars."
+      ],
+      "questions": [
+        {
+          "number": 16,
+          "points": 1,
+          "text": "(16)",
+          "answer": "C"
+        },
+        {
+          "number": 17,
+          "points": 1,
+          "text": "(17)",
+          "answer": "A"
+        },
+        {
+          "number": 18,
+          "points": 1,
+          "text": "(18)",
+          "answer": "B"
+        },
+        {
+          "number": 19,
+          "points": 1,
+          "text": "(19)",
+          "answer": "D"
+        },
+        {
+          "number": 20,
+          "points": 1,
+          "text": "(20)",
+          "answer": "E"
+        }
+      ]
+    },
+    {
+      "part": 5,
+      "name": "Reading Part 5",
+      "type": "cloze_choice",
+      "description": "Read the text. Choose the correct word for each space.",
+      "passageTitle": "The London Eye",
+      "passage": "The London Eye is one of the most famous landmarks in London. It (21)______ on the south bank of the River Thames and offers spectacular views of the city. The wheel is 135 metres tall, (22)______ it one of the largest observation wheels in the world.\n\nThe Eye was originally built to celebrate the year 2000. It was only (23)______ to be temporary, but it proved so popular that it became a permanent attraction. Since then, it (24)______ been visited by over 80 million people from around the world.\n\nA ride on the London Eye (25)______ about 30 minutes. On a clear day, you can see for up to 40 kilometres. Each of the 32 glass capsules can hold up to 25 passengers, and the wheel moves slowly enough (26)______ people to get on and off without it stopping.",
+      "questions": [
+        {
+          "number": 21,
+          "points": 1,
+          "text": "(21)",
+          "options": [
+            "A. stands",
+            "B. lies",
+            "C. sits",
+            "D. places"
+          ],
+          "answer": "A"
+        },
+        {
+          "number": 22,
+          "points": 1,
+          "text": "(22)",
+          "options": [
+            "A. doing",
+            "B. giving",
+            "C. making",
+            "D. having"
+          ],
+          "answer": "C"
+        },
+        {
+          "number": 23,
+          "points": 1,
+          "text": "(23)",
+          "options": [
+            "A. wanted",
+            "B. planned",
+            "C. meant",
+            "D. wished"
+          ],
+          "answer": "C"
+        },
+        {
+          "number": 24,
+          "points": 1,
+          "text": "(24)",
+          "options": [
+            "A. was",
+            "B. is",
+            "C. had",
+            "D. has"
+          ],
+          "answer": "D"
+        },
+        {
+          "number": 25,
+          "points": 1,
+          "text": "(25)",
+          "options": [
+            "A. takes",
+            "B. spends",
+            "C. lasts",
+            "D. goes"
+          ],
+          "answer": "C"
+        },
+        {
+          "number": 26,
+          "points": 1,
+          "text": "(26)",
+          "options": [
+            "A. to",
+            "B. for",
+            "C. that",
+            "D. so"
+          ],
+          "answer": "B"
+        }
+      ]
+    },
+    {
+      "part": 6,
+      "name": "Reading Part 6",
+      "type": "fill_blank",
+      "description": "Read the text. Write ONE word for each gap.",
+      "passageTitle": "The Natural History Museum",
+      "passage": "This is one of my favourite places to visit. I've learned a huge amount about animals and plants (27) __________ time I've visited. I've even seen bits of rock from the moon!\n\nThe building's really beautiful and it's easy to find your way around. There are hundreds of interesting things on display, but (28) __________ you like dinosaurs the best time (29) __________ see them is during term-time. I've been twice in the school holidays and the queue was (30) __________ long that I wasn't able to visit that part (31) __________ the museum.\n\nYou'll probably want something to eat while you're there. You can take (32) __________ own picnic and eat in the museum garden, or try one of the two museum cafés.",
+      "questions": [
+        {
+          "number": 27,
+          "points": 1,
+          "answer": [
+            "every",
+            "each"
+          ]
+        },
+        {
+          "number": 28,
+          "points": 1,
+          "answer": [
+            "if"
+          ]
+        },
+        {
+          "number": 29,
+          "points": 1,
+          "answer": [
+            "to"
+          ]
+        },
+        {
+          "number": 30,
+          "points": 1,
+          "answer": [
+            "so"
+          ]
+        },
+        {
+          "number": 31,
+          "points": 1,
+          "answer": [
+            "of"
+          ]
+        },
+        {
+          "number": 32,
+          "points": 1,
+          "answer": [
+            "your"
+          ]
+        }
+      ]
+    }
+  ]
+}

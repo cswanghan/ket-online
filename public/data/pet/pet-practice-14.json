@@ -1,0 +1,406 @@
+{
+  "examType": "PET",
+  "title": "PET Reading Practice Test 14",
+  "source": "KET Online PET Remix 14",
+  "category": "practice",
+  "totalQuestions": 32,
+  "parts": [
+    {
+      "part": 1,
+      "name": "Reading Part 1",
+      "description": "For each question, choose the correct answer.",
+      "type": "multiple_choice",
+      "questions": [
+        {
+          "number": 1,
+          "points": 1,
+          "text": "MUSEUM CAFÉ\nLast orders 30 minutes before closing time.",
+          "textType": "notice",
+          "options": [
+            "A. The café closes 30 minutes after the museum.",
+            "B. You cannot order food in the last half hour before the café shuts.",
+            "C. The café opens 30 minutes before the museum."
+          ],
+          "answer": "B"
+        },
+        {
+          "number": 2,
+          "points": 1,
+          "text": "Lucy,\nI tried to return your book to the library but it was closed. I've left it on your desk. Could you take it back tomorrow? It's due today.\nEmma",
+          "textType": "message",
+          "question": "Emma wants Lucy to",
+          "options": [
+            "A. borrow a book from the library.",
+            "B. return a library book for her.",
+            "C. collect a book from Emma's desk."
+          ],
+          "answer": "B"
+        },
+        {
+          "number": 3,
+          "points": 1,
+          "text": "TRAIN STATION\nPassengers are advised that the 8:15 service to London has been cancelled. The next train departs at 8:45.",
+          "textType": "notice",
+          "options": [
+            "A. All trains to London have been cancelled today.",
+            "B. The 8:15 train is running 30 minutes late.",
+            "C. The 8:15 train will not run but there is a later one."
+          ],
+          "answer": "C"
+        },
+        {
+          "number": 4,
+          "points": 1,
+          "text": "GYM MEMBERSHIP\nNew members joining in January receive two months free. Normal monthly fee applies from March.",
+          "textType": "notice",
+          "options": [
+            "A. January members don't have to pay until March.",
+            "B. Membership is free for the first two months for everyone.",
+            "C. The gym is closed in January and February."
+          ],
+          "answer": "A"
+        },
+        {
+          "number": 5,
+          "points": 1,
+          "text": "Mark,\nI've checked and your passport expires next month. You'll need to renew it before we book the flights. The form is online.\nSarah",
+          "textType": "message",
+          "question": "Sarah is telling Mark that he needs to",
+          "options": [
+            "A. book the flights as soon as possible.",
+            "B. get a new passport before they can travel.",
+            "C. find his passport before their trip."
+          ],
+          "answer": "B"
+        }
+      ]
+    },
+    {
+      "part": 2,
+      "name": "Reading Part 2",
+      "type": "matching",
+      "description": "The people below all want to visit a tourist attraction during their holiday. Read the descriptions of eight attractions. Choose which attraction would be the most suitable for the people below.",
+      "texts": {
+        "A": {
+          "title": "Oceanworld Aquarium",
+          "content": "Home to over 5,000 sea creatures including sharks, rays and seahorses. Daily feeding shows at 11am and 3pm. Children can touch sea stars and crabs in the rock pool area. Café and gift shop on site. Open every day, 10am-6pm. Free parking."
+        },
+        "B": {
+          "title": "Greenfield Steam Railway",
+          "content": "Take a trip back in time on our beautifully restored steam trains. The 45-minute journey passes through stunning countryside. Special afternoon tea service on Saturdays. Trains run at weekends only, April to September. Small museum at the station. Not suitable for wheelchair users."
+        },
+        "C": {
+          "title": "Adventure Island Theme Park",
+          "content": "Over 30 rides and attractions for all ages, from gentle rides for toddlers to high-speed roller coasters for thrill-seekers. Water park open in summer months. Multiple food outlets throughout the park. Open daily during school holidays, weekends only at other times."
+        },
+        "D": {
+          "title": "Hartley Castle",
+          "content": "Explore 800 years of history in this magnificent medieval castle. Guided tours run hourly and last about 90 minutes. Beautiful gardens with picnic areas. Special events for children during school holidays including sword-fighting demonstrations. Closed November to March."
+        },
+        "E": {
+          "title": "National Space Centre",
+          "content": "Discover the wonders of the universe through interactive exhibits and a state-of-the-art planetarium. Ideal for children aged 8 and over. Workshops and talks by real scientists at weekends. Café serving hot and cold meals. Fully accessible for wheelchair users."
+        },
+        "F": {
+          "title": "Willowbrook Farm Park",
+          "content": "Meet friendly farm animals and learn how a real farm works. Daily milking demonstration at 4pm. Pony rides for children under 10. Large indoor play area – great for rainy days. Farm shop selling local produce. Open every day except Christmas."
+        },
+        "G": {
+          "title": "Botanical Gardens",
+          "content": "Wander through 15 hectares of beautiful gardens featuring plants from around the world. Free guided walks every afternoon. The tropical greenhouse is especially impressive in winter. Dogs welcome in most areas. Open daily, dawn to dusk. Entry is free."
+        },
+        "H": {
+          "title": "Sea Life Boat Trips",
+          "content": "See dolphins, seals and seabirds on our two-hour coastal boat trips. Expert guides explain the wildlife you'll see. Trips depend on weather conditions – please phone on the day. Warm clothing recommended. Not suitable for children under 5. Limited to 12 passengers per trip."
+        }
+      },
+      "questions": [
+        {
+          "number": 6,
+          "points": 1,
+          "text": "George has two children aged 4 and 7. He wants to take them somewhere they can see and interact with animals. It might rain, so he needs somewhere with indoor activities too.",
+          "answer": "F"
+        },
+        {
+          "number": 7,
+          "points": 1,
+          "text": "Sarah is 12 and loves science, especially anything about space. She would enjoy hands-on activities and hearing from experts. Her grandmother uses a wheelchair and will come too.",
+          "answer": "E"
+        },
+        {
+          "number": 8,
+          "points": 1,
+          "text": "Mr and Mrs Hall are retired and enjoy being outdoors. They want to visit somewhere peaceful and free of charge, and they would like to bring their dog.",
+          "answer": "G"
+        },
+        {
+          "number": 9,
+          "points": 1,
+          "text": "Kenji's family is visiting during the school holidays. His children, aged 5 and 9, love exciting rides and splashing around in water. They want to spend a full day out.",
+          "answer": "C"
+        },
+        {
+          "number": 10,
+          "points": 1,
+          "text": "Lara enjoys history and wants to visit somewhere she can learn about the past through a professional tour. She would like to eat her own lunch in the grounds.",
+          "answer": "D"
+        }
+      ]
+    },
+    {
+      "part": 3,
+      "name": "Reading Part 3",
+      "type": "multiple_choice",
+      "description": "Read the text and answer the questions.",
+      "passageTitle": "Chef Marco Rivera talks about his career",
+      "passage": "I grew up in a small town in southern Spain, where food was at the centre of family life. My grandmother was an incredible cook, and I spent hours watching her prepare meals from scratch. She never used a recipe book – everything was done by memory and instinct. That early experience in her kitchen is what made me want to become a chef.\n\nAfter finishing school, I moved to Madrid to study at a cooking academy. It was tough at first. I was used to home-style cooking, and suddenly I had to learn complicated techniques and work under enormous pressure. Some students dropped out in the first few months, but I was determined to succeed. The course lasted three years and I graduated near the top of my class.\n\nMy first job was in a busy restaurant in Barcelona. The head chef was extremely demanding and would shout at us if anything was less than perfect. I learned an enormous amount from him, though, especially about organisation and timing. In a professional kitchen, being a few seconds late with a dish can ruin the entire table's meal.\n\nAfter five years there, I felt ready to open my own place. I found a small building near the beach and turned it into a restaurant with just twelve tables. I wanted it to feel intimate and personal. The menu changes every week depending on what's fresh at the local market. We don't have a huge team – just me and two other cooks – but that's how I like it.\n\nRunning your own restaurant is harder than I ever imagined. I work at least fourteen hours a day and rarely take a holiday. But when a customer tells me that a meal was the best they've ever had, it makes everything worthwhile. I wouldn't change what I do for anything.",
+      "questions": [
+        {
+          "number": 11,
+          "points": 1,
+          "text": "What inspired Marco to become a chef?",
+          "options": [
+            "A. Reading recipe books as a child.",
+            "B. Spending time in his grandmother's kitchen.",
+            "C. Visiting restaurants in his town.",
+            "D. Watching cooking shows on television."
+          ],
+          "answer": "B"
+        },
+        {
+          "number": 12,
+          "points": 1,
+          "text": "What does Marco say about his time at cooking academy?",
+          "options": [
+            "A. He found it easy because of his background.",
+            "B. He was the best student in his class.",
+            "C. It was difficult but he was determined to finish.",
+            "D. Most students completed the course successfully."
+          ],
+          "answer": "C"
+        },
+        {
+          "number": 13,
+          "points": 1,
+          "text": "What did Marco learn from the head chef in Barcelona?",
+          "options": [
+            "A. How to cook Spanish dishes.",
+            "B. The importance of being well-organised and punctual.",
+            "C. How to manage a team of cooks.",
+            "D. How to deal with difficult customers."
+          ],
+          "answer": "B"
+        },
+        {
+          "number": 14,
+          "points": 1,
+          "text": "What is special about Marco's own restaurant?",
+          "options": [
+            "A. It is the largest restaurant near the beach.",
+            "B. It serves the same menu every day.",
+            "C. It is small and the food depends on what is available locally.",
+            "D. It has a large team of experienced cooks."
+          ],
+          "answer": "C"
+        },
+        {
+          "number": 15,
+          "points": 1,
+          "text": "How does Marco feel about owning his restaurant?",
+          "options": [
+            "A. He wishes he worked fewer hours.",
+            "B. He regrets not staying in Barcelona.",
+            "C. He finds the work challenging but rewarding.",
+            "D. He is planning to open a second restaurant."
+          ],
+          "answer": "C"
+        }
+      ]
+    },
+    {
+      "part": 4,
+      "name": "Reading Part 4",
+      "type": "gapped_text",
+      "description": "Five sentences have been removed from the text below. For each question, choose the correct answer. There are three extra sentences which you do not need to use.",
+      "passageTitle": "Learning a Musical Instrument",
+      "passage": "Learning to play a musical instrument is one of the most rewarding things you can do. However, many people start with great enthusiasm and then give up within a few months. (16) ______ Understanding these can help you stay motivated.\n\nThe most common reason people quit is that they expect to make progress too quickly. (17) ______ In reality, learning any instrument takes months or even years of regular practice before you start to sound good.\n\nAnother problem is finding time to practise. Most experts recommend at least thirty minutes a day. (18) ______ Even ten minutes a day is much better than an hour once a week, because your muscles and brain need regular repetition to develop.\n\nChoosing the right teacher is also important. A good teacher will make lessons enjoyable and adapt to your learning speed. (19) ______ If you don't enjoy your lessons, it might be worth trying a different teacher before you decide to stop altogether.\n\nFinally, it helps to set realistic goals. Instead of dreaming about playing at a concert hall, focus on learning one new piece each month. (20) ______ Before you know it, you'll have built up an impressive range of music you can play.",
+      "sentenceOptions": [
+        "A. There are several common reasons why people stop learning.",
+        "B. This can be difficult for people with busy schedules, but it doesn't have to be a full half hour.",
+        "C. These small achievements will keep you motivated and give you a sense of progress.",
+        "D. They imagine they'll be playing their favourite songs within a few weeks.",
+        "E. Playing music with others is one of the best ways to improve.",
+        "F. A bad teacher, on the other hand, can make the whole experience frustrating.",
+        "G. The guitar is one of the easiest instruments for beginners.",
+        "H. Many famous musicians started learning when they were very young."
+      ],
+      "questions": [
+        {
+          "number": 16,
+          "points": 1,
+          "text": "(16)",
+          "answer": "A"
+        },
+        {
+          "number": 17,
+          "points": 1,
+          "text": "(17)",
+          "answer": "D"
+        },
+        {
+          "number": 18,
+          "points": 1,
+          "text": "(18)",
+          "answer": "B"
+        },
+        {
+          "number": 19,
+          "points": 1,
+          "text": "(19)",
+          "answer": "F"
+        },
+        {
+          "number": 20,
+          "points": 1,
+          "text": "(20)",
+          "answer": "C"
+        }
+      ]
+    },
+    {
+      "part": 5,
+      "name": "Reading Part 5",
+      "type": "cloze_choice",
+      "description": "Read the text. Choose the correct word for each space.",
+      "passageTitle": "The Coconut Tree",
+      "passage": "The coconut tree is thought to be one of the most valuable trees in the world. It is mostly found by the sea where there is a hot and wet (21) __________ . The coconuts often fall into the sea and float on the water until they (22) __________ another beach, where more trees then begin to grow.\n\nHoliday makers often see the coconut tree as no more than an attractive sun umbrella that provides (23) __________ . However, this amazing tree has hundreds of (24) __________ and more are still being discovered.\n\nPeople have made houses, boats and baskets from the coconut tree's wood and leaves for centuries. Even today, if you take a (25) __________ in your cupboards, you will find coconut oil in products as (26) __________ as medicine and desserts.",
+      "questions": [
+        {
+          "number": 21,
+          "points": 1,
+          "text": "(21)",
+          "options": [
+            "A. temperature",
+            "B. condition",
+            "C. climate",
+            "D. weather"
+          ],
+          "answer": "C"
+        },
+        {
+          "number": 22,
+          "points": 1,
+          "text": "(22)",
+          "options": [
+            "A. reach",
+            "B. go",
+            "C. travel",
+            "D. arrive"
+          ],
+          "answer": "A"
+        },
+        {
+          "number": 23,
+          "points": 1,
+          "text": "(23)",
+          "options": [
+            "A. cloud",
+            "B. shade",
+            "C. dark",
+            "D. cold"
+          ],
+          "answer": "B"
+        },
+        {
+          "number": 24,
+          "points": 1,
+          "text": "(24)",
+          "options": [
+            "A. uses",
+            "B. jobs",
+            "C. roles",
+            "D. things"
+          ],
+          "answer": "A"
+        },
+        {
+          "number": 25,
+          "points": 1,
+          "text": "(25)",
+          "options": [
+            "A. scene",
+            "B. sight",
+            "C. look",
+            "D. view"
+          ],
+          "answer": "C"
+        },
+        {
+          "number": 26,
+          "points": 1,
+          "text": "(26)",
+          "options": [
+            "A. opposite",
+            "B. separate",
+            "C. strange",
+            "D. different"
+          ],
+          "answer": "D"
+        }
+      ]
+    },
+    {
+      "part": 6,
+      "name": "Reading Part 6",
+      "type": "fill_blank",
+      "description": "Read the text. Write ONE word for each gap.",
+      "passageTitle": "Sleep",
+      "passage": "Few people doubt the importance of a good night's sleep. But (27)______ much do you need? Some people famously claim (28)______ need as little as three hours' sleep per night, while others need nine hours or more just to function properly.\n\nA good way (29)______ find out how much sleep you need is to find a time such (30)______ an annual holiday when you can sleep as much as you like. Take a note of the time when you go to sleep and wake up every day for seven days. Write (31)______ down and finally work out the average you need daily by dividing the total by 7.\n\nTo give (32)______ an idea, people commonly need between six and eight hours' sleep per night. However, everyone is different. Try it and see how much time you need in bed.",
+      "questions": [
+        {
+          "number": 27,
+          "points": 1,
+          "answer": [
+            "how"
+          ]
+        },
+        {
+          "number": 28,
+          "points": 1,
+          "answer": [
+            "to",
+            "they"
+          ]
+        },
+        {
+          "number": 29,
+          "points": 1,
+          "answer": [
+            "to"
+          ]
+        },
+        {
+          "number": 30,
+          "points": 1,
+          "answer": [
+            "as"
+          ]
+        },
+        {
+          "number": 31,
+          "points": 1,
+          "answer": [
+            "it"
+          ]
+        },
+        {
+          "number": 32,
+          "points": 1,
+          "answer": [
+            "you"
+          ]
+        }
+      ]
+    }
+  ]
+}

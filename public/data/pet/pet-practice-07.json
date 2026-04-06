@@ -1,0 +1,406 @@
+{
+  "examType": "PET",
+  "title": "PET Reading Practice Test 7",
+  "source": "KET Online PET Remix 07",
+  "category": "practice",
+  "totalQuestions": 32,
+  "parts": [
+    {
+      "part": 1,
+      "name": "Reading Part 1",
+      "description": "For each question, choose the correct answer.",
+      "type": "multiple_choice",
+      "questions": [
+        {
+          "number": 1,
+          "points": 1,
+          "text": "SWIMMING POOL\nAll swimmers must shower before entering the pool.",
+          "textType": "notice",
+          "options": [
+            "A. You should shower after you have been in the pool.",
+            "B. You are required to take a shower before going into the pool.",
+            "C. The showers are next to the swimming pool."
+          ],
+          "answer": "B"
+        },
+        {
+          "number": 2,
+          "points": 1,
+          "text": "Sophie,\nI've left the concert tickets on the kitchen table. Don't forget to bring them tonight – I won't have time to come home before the show.\nDad",
+          "textType": "message",
+          "question": "Why has Sophie's dad written the message?",
+          "options": [
+            "A. To remind Sophie to buy concert tickets.",
+            "B. To ask Sophie to bring the tickets with her.",
+            "C. To tell Sophie he will be late for the concert."
+          ],
+          "answer": "B"
+        },
+        {
+          "number": 3,
+          "points": 1,
+          "text": "LIBRARY NOTICE\nBooks may be borrowed for up to three weeks. A fine of 20p per day will be charged for late returns.",
+          "textType": "notice",
+          "options": [
+            "A. You can keep library books for as long as you like.",
+            "B. There is a daily charge if you do not return books on time.",
+            "C. You must pay 20p each time you borrow a book."
+          ],
+          "answer": "B"
+        },
+        {
+          "number": 4,
+          "points": 1,
+          "text": "SALE\nAll winter clothing reduced by up to 50%. Offer ends Saturday.",
+          "textType": "notice",
+          "options": [
+            "A. Everything in the shop is half price until Saturday.",
+            "B. Winter clothes have been reduced, but not all by the same amount.",
+            "C. The sale starts on Saturday."
+          ],
+          "answer": "B"
+        },
+        {
+          "number": 5,
+          "points": 1,
+          "text": "James,\nThe dentist called to say your appointment has been moved from Thursday to Friday at 2pm. Can you let me know if that's OK?\nMum",
+          "textType": "message",
+          "question": "James's mum is writing to",
+          "options": [
+            "A. ask James to make a dentist appointment.",
+            "B. tell James about a change to his appointment.",
+            "C. remind James that his appointment is on Thursday."
+          ],
+          "answer": "B"
+        }
+      ]
+    },
+    {
+      "part": 2,
+      "name": "Reading Part 2",
+      "type": "matching",
+      "description": "The people below all want to find a course to study. Read the descriptions of eight courses. Choose which course would be the most suitable for the people below.",
+      "texts": {
+        "A": {
+          "title": "Digital Photography",
+          "content": "A ten-week evening course for complete beginners. Learn how to use your camera properly and take better photos. All you need is a digital camera or smartphone. Classes are on Tuesday evenings from 7pm to 9pm. Materials and refreshments included in the fee."
+        },
+        "B": {
+          "title": "Creative Writing Workshop",
+          "content": "Write short stories and poems in a supportive group. This weekend course is suitable for people who have some experience of writing and want to develop their skills further. Limited to 10 participants. Takes place on the first Saturday of each month."
+        },
+        "C": {
+          "title": "Spanish for Travellers",
+          "content": "A six-week course designed for people planning to visit a Spanish-speaking country. Learn essential phrases for hotels, restaurants and shops. No previous knowledge of Spanish required. Daytime classes only, Monday and Wednesday mornings."
+        },
+        "D": {
+          "title": "Introduction to Cooking",
+          "content": "Perfect for students and young adults living independently for the first time. Learn to prepare simple, healthy meals on a budget. Saturday morning classes. All ingredients provided. Each session focuses on a different type of meal."
+        },
+        "E": {
+          "title": "Advanced Watercolour Painting",
+          "content": "For experienced painters who want to take their work to the next level. Explore advanced techniques with a professional artist. Students should bring their own materials. Wednesday afternoons, 2pm-5pm. Minimum age 18."
+        },
+        "F": {
+          "title": "First Aid Certificate",
+          "content": "A two-day intensive course covering essential first aid skills. Internationally recognised certificate awarded on completion. Suitable for anyone over 14. Courses run every month and are available on weekdays or weekends. Lunch provided."
+        },
+        "G": {
+          "title": "Yoga for Beginners",
+          "content": "Start your yoga journey in a relaxed, friendly environment. No experience or special equipment needed – just wear comfortable clothes. Classes meet twice a week, Thursday evenings and Sunday mornings. Suitable for all ages and fitness levels."
+        },
+        "H": {
+          "title": "Web Design Basics",
+          "content": "Learn to build your own website from scratch. This eight-week course covers HTML, CSS and basic design principles. Some computer experience helpful but not essential. Monday evenings, 6pm-8pm. Students need to bring their own laptop."
+        }
+      },
+      "questions": [
+        {
+          "number": 6,
+          "points": 1,
+          "text": "Alex is 19 and has just moved into his own flat. He can't cook at all and wants to learn to make simple meals without spending too much money. He is free on Saturdays.",
+          "answer": "D"
+        },
+        {
+          "number": 7,
+          "points": 1,
+          "text": "Rita is retired and enjoys painting. She has been doing watercolours for years and wants to improve her technique. She is available during the daytime on weekdays.",
+          "answer": "E"
+        },
+        {
+          "number": 8,
+          "points": 1,
+          "text": "Chen works full-time and wants to create a website for his small business. He uses computers daily at work and has his own laptop. He needs an evening class.",
+          "answer": "H"
+        },
+        {
+          "number": 9,
+          "points": 1,
+          "text": "Olivia is planning a holiday to Mexico next summer. She doesn't speak any Spanish and wants to learn some useful phrases. She doesn't work and is free during the day.",
+          "answer": "C"
+        },
+        {
+          "number": 10,
+          "points": 1,
+          "text": "Sam is 15 and needs a qualification that will look good on job applications. He would like to complete it quickly and is available at weekends.",
+          "answer": "F"
+        }
+      ]
+    },
+    {
+      "part": 3,
+      "name": "Reading Part 3",
+      "type": "multiple_choice",
+      "description": "Read the text and answer the questions.",
+      "passageTitle": "Emma Clarke – voice of the London Underground",
+      "passage": "You may not know Emma Clarke's face, but if you've ever used the London Underground, you will almost certainly know her voice. Emma is the woman behind the famous 'mind the gap' announcement and many other messages you hear on the Tube.\n\nEmma got into voice work almost by accident. After studying drama at university, she struggled to find acting jobs and took a temporary position at a radio station to pay the bills. She discovered that she had a natural talent for voice work and decided to focus on that instead. 'I realised I didn't need to be on stage or on screen,' she says. 'My voice alone could be my career.'\n\nThe London Underground job came in 2003 when Transport for London decided to update their announcements. Emma recorded thousands of separate words and phrases, which were then combined by computer to create all the different announcements passengers hear today. The work took several weeks to complete.\n\nEmma says the experience was both exciting and exhausting. 'You have to say each word perfectly clearly, with exactly the right tone and speed,' she explains. 'If you make even a tiny mistake, you have to do it again. By the end of each recording day, my voice was completely worn out.'\n\nOutside of her work for the Underground, Emma runs a successful business providing voices for telephone systems, TV advertisements and audiobooks. She works from a professional studio she has built in her home, which allows her to record at any time. Despite having one of the most heard voices in Britain, Emma can walk down the street without anyone recognising her. 'People sometimes say my voice sounds familiar,' she laughs, 'but they can never work out where they know it from.'",
+      "questions": [
+        {
+          "number": 11,
+          "points": 1,
+          "text": "How did Emma first get into voice work?",
+          "options": [
+            "A. She applied for a job with London Underground.",
+            "B. She studied it at university.",
+            "C. She found she was good at it while working at a radio station.",
+            "D. A friend recommended her for the job."
+          ],
+          "answer": "C"
+        },
+        {
+          "number": 12,
+          "points": 1,
+          "text": "What does Emma mean when she says 'My voice alone could be my career'?",
+          "options": [
+            "A. She could earn a living just by using her voice.",
+            "B. She was the only person with a voice good enough.",
+            "C. She preferred working alone to working with others.",
+            "D. She wanted to become a singer."
+          ],
+          "answer": "A"
+        },
+        {
+          "number": 13,
+          "points": 1,
+          "text": "How were the Underground announcements created?",
+          "options": [
+            "A. Emma recorded each complete announcement separately.",
+            "B. Individual words were recorded and put together electronically.",
+            "C. Emma recorded them live at underground stations.",
+            "D. A computer generated a voice based on Emma's."
+          ],
+          "answer": "B"
+        },
+        {
+          "number": 14,
+          "points": 1,
+          "text": "What did Emma find difficult about recording for the Underground?",
+          "options": [
+            "A. The studio was too cold.",
+            "B. She had to record at night.",
+            "C. Every word had to be pronounced exactly right.",
+            "D. She didn't understand the technical equipment."
+          ],
+          "answer": "C"
+        },
+        {
+          "number": 15,
+          "points": 1,
+          "text": "What does Emma find amusing about being famous?",
+          "options": [
+            "A. People ask her to record personal messages for them.",
+            "B. She often gets stopped in the street.",
+            "C. People recognise her voice but don't know who she is.",
+            "D. Other voice artists try to copy her style."
+          ],
+          "answer": "C"
+        }
+      ]
+    },
+    {
+      "part": 4,
+      "name": "Reading Part 4",
+      "type": "gapped_text",
+      "description": "Five sentences have been removed from the text below. For each question, choose the correct answer. There are three extra sentences which you do not need to use.",
+      "passageTitle": "The Importance of Bees",
+      "passage": "Bees are among the most important creatures on Earth. Without them, our food supply would be in serious trouble. (16) ______ This means that without bees, many of the fruits, vegetables and nuts we eat every day simply would not exist.\n\nSadly, bee populations around the world have been declining rapidly in recent years. (17) ______ Pesticides used in farming are one major factor. When bees come into contact with these chemicals, it can affect their ability to navigate back to their hive.\n\nAnother threat to bees is the loss of their natural habitat. (18) ______ With fewer wildflowers to feed on, bees struggle to find enough food, especially in late summer.\n\nFortunately, there are things that ordinary people can do to help. (19) ______ Even a small window box with the right flowers can provide food for local bees. Avoiding the use of pesticides in your garden is also important.\n\nGovernments are also taking action. Several countries have banned the most harmful pesticides, and farmers are being encouraged to leave areas of wildflowers at the edges of their fields. (20) ______ But it will take the efforts of everyone – governments, farmers, and individuals – to turn the situation around.",
+      "sentenceOptions": [
+        "A. Scientists believe there are several reasons for this decline.",
+        "B. Planting bee-friendly flowers such as lavender and sunflowers in your garden is one simple step.",
+        "C. As towns and cities expand, fields and meadows are being replaced by buildings and roads.",
+        "D. Honey is also used in many traditional medicines.",
+        "E. This is because bees pollinate around a third of the food crops that humans depend on.",
+        "F. These measures are beginning to show positive results in some areas.",
+        "G. Some types of bee live alone rather than in colonies.",
+        "H. Bees produce honey, which humans have collected for thousands of years."
+      ],
+      "questions": [
+        {
+          "number": 16,
+          "points": 1,
+          "text": "(16)",
+          "answer": "E"
+        },
+        {
+          "number": 17,
+          "points": 1,
+          "text": "(17)",
+          "answer": "A"
+        },
+        {
+          "number": 18,
+          "points": 1,
+          "text": "(18)",
+          "answer": "C"
+        },
+        {
+          "number": 19,
+          "points": 1,
+          "text": "(19)",
+          "answer": "B"
+        },
+        {
+          "number": 20,
+          "points": 1,
+          "text": "(20)",
+          "answer": "F"
+        }
+      ]
+    },
+    {
+      "part": 5,
+      "name": "Reading Part 5",
+      "type": "cloze_choice",
+      "description": "Read the text. Choose the correct word for each space.",
+      "passageTitle": "The Coconut Tree",
+      "passage": "The coconut tree is thought to be one of the most valuable trees in the world. It is mostly found by the sea where there is a hot and wet (21) __________ . The coconuts often fall into the sea and float on the water until they (22) __________ another beach, where more trees then begin to grow.\n\nHoliday makers often see the coconut tree as no more than an attractive sun umbrella that provides (23) __________ . However, this amazing tree has hundreds of (24) __________ and more are still being discovered.\n\nPeople have made houses, boats and baskets from the coconut tree's wood and leaves for centuries. Even today, if you take a (25) __________ in your cupboards, you will find coconut oil in products as (26) __________ as medicine and desserts.",
+      "questions": [
+        {
+          "number": 21,
+          "points": 1,
+          "text": "(21)",
+          "options": [
+            "A. temperature",
+            "B. condition",
+            "C. climate",
+            "D. weather"
+          ],
+          "answer": "C"
+        },
+        {
+          "number": 22,
+          "points": 1,
+          "text": "(22)",
+          "options": [
+            "A. reach",
+            "B. go",
+            "C. travel",
+            "D. arrive"
+          ],
+          "answer": "A"
+        },
+        {
+          "number": 23,
+          "points": 1,
+          "text": "(23)",
+          "options": [
+            "A. cloud",
+            "B. shade",
+            "C. dark",
+            "D. cold"
+          ],
+          "answer": "B"
+        },
+        {
+          "number": 24,
+          "points": 1,
+          "text": "(24)",
+          "options": [
+            "A. uses",
+            "B. jobs",
+            "C. roles",
+            "D. things"
+          ],
+          "answer": "A"
+        },
+        {
+          "number": 25,
+          "points": 1,
+          "text": "(25)",
+          "options": [
+            "A. scene",
+            "B. sight",
+            "C. look",
+            "D. view"
+          ],
+          "answer": "C"
+        },
+        {
+          "number": 26,
+          "points": 1,
+          "text": "(26)",
+          "options": [
+            "A. opposite",
+            "B. separate",
+            "C. strange",
+            "D. different"
+          ],
+          "answer": "D"
+        }
+      ]
+    },
+    {
+      "part": 6,
+      "name": "Reading Part 6",
+      "type": "fill_blank",
+      "description": "Read the text. Write ONE word for each gap.",
+      "passageTitle": "Sleep",
+      "passage": "Few people doubt the importance of a good night's sleep. But (27)______ much do you need? Some people famously claim (28)______ need as little as three hours' sleep per night, while others need nine hours or more just to function properly.\n\nA good way (29)______ find out how much sleep you need is to find a time such (30)______ an annual holiday when you can sleep as much as you like. Take a note of the time when you go to sleep and wake up every day for seven days. Write (31)______ down and finally work out the average you need daily by dividing the total by 7.\n\nTo give (32)______ an idea, people commonly need between six and eight hours' sleep per night. However, everyone is different. Try it and see how much time you need in bed.",
+      "questions": [
+        {
+          "number": 27,
+          "points": 1,
+          "answer": [
+            "how"
+          ]
+        },
+        {
+          "number": 28,
+          "points": 1,
+          "answer": [
+            "to",
+            "they"
+          ]
+        },
+        {
+          "number": 29,
+          "points": 1,
+          "answer": [
+            "to"
+          ]
+        },
+        {
+          "number": 30,
+          "points": 1,
+          "answer": [
+            "as"
+          ]
+        },
+        {
+          "number": 31,
+          "points": 1,
+          "answer": [
+            "it"
+          ]
+        },
+        {
+          "number": 32,
+          "points": 1,
+          "answer": [
+            "you"
+          ]
+        }
+      ]
+    }
+  ]
+}

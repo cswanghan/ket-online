@@ -1,0 +1,405 @@
+{
+  "examType": "PET",
+  "title": "PET Reading Practice Test 15",
+  "source": "KET Online PET Remix 15",
+  "category": "practice",
+  "totalQuestions": 32,
+  "parts": [
+    {
+      "part": 1,
+      "name": "Reading Part 1",
+      "description": "For each question, choose the correct answer.",
+      "type": "multiple_choice",
+      "questions": [
+        {
+          "number": 1,
+          "points": 1,
+          "text": "HOTEL\nGuests wishing to check out after 11am will be charged for an additional night.",
+          "textType": "notice",
+          "options": [
+            "A. You can stay in your room until 11am without extra cost.",
+            "B. You must arrive before 11am to check in.",
+            "C. An extra night costs the same as checking out late."
+          ],
+          "answer": "A"
+        },
+        {
+          "number": 2,
+          "points": 1,
+          "text": "Kate,\nI bumped into your old school friend Maria today. She's moved back to town and asked for your number. I gave it to her – hope that's OK!\nAunt Helen",
+          "textType": "message",
+          "question": "Aunt Helen is writing to tell Kate that",
+          "options": [
+            "A. she has arranged for Kate to meet Maria.",
+            "B. Maria may contact her soon.",
+            "C. Maria wants Kate's new address."
+          ],
+          "answer": "B"
+        },
+        {
+          "number": 3,
+          "points": 1,
+          "text": "BICYCLE PARKING\nBicycles left here for more than 48 hours will be removed without notice.",
+          "textType": "notice",
+          "options": [
+            "A. You can park your bicycle here for up to two days.",
+            "B. Bicycles must be moved every 24 hours.",
+            "C. You will receive a warning before your bicycle is taken away."
+          ],
+          "answer": "A"
+        },
+        {
+          "number": 4,
+          "points": 1,
+          "text": "RESTAURANT\nPlease inform your server of any food allergies before ordering.",
+          "textType": "notice",
+          "options": [
+            "A. The restaurant does not serve food that causes allergies.",
+            "B. You should tell staff about any allergies when you order food.",
+            "C. The menu contains a list of all possible allergens."
+          ],
+          "answer": "B"
+        },
+        {
+          "number": 5,
+          "points": 1,
+          "text": "Dan,\nThe plumber can come on Thursday between 2 and 4. I'll be at work so can you be home to let him in? The problem is the kitchen tap.\nLisa",
+          "textType": "message",
+          "question": "Lisa wants Dan to",
+          "options": [
+            "A. fix the kitchen tap himself.",
+            "B. call the plumber and arrange a time.",
+            "C. be at home when the plumber arrives."
+          ],
+          "answer": "C"
+        }
+      ]
+    },
+    {
+      "part": 2,
+      "name": "Reading Part 2",
+      "type": "matching",
+      "description": "The people below all want to visit a city market. Read the descriptions of eight markets. Decide which market would be the most suitable for the people below.",
+      "texts": {
+        "A": {
+          "title": "Beckfield Market",
+          "content": "This market's world-famous for second-hand camera equipment and books on photography. As well as an amazing range of cameras, we have old pictures of local places of interest for you to buy, and of course the stall owners are happy to give you advice for free! Don't miss our hot soup stall in cold weather."
+        },
+        "B": {
+          "title": "Rosewell Hill",
+          "content": "Our market's in an amazing building that's hundreds of years old. Visitors find our late-night opening hours convenient, and there are always performers entertaining the crowds. We've recently opened more stalls specializing in pictures both from well-known artists and also those beginning their careers."
+        },
+        "C": {
+          "title": "Camberwall Market",
+          "content": "There's lots to see in this interesting indoor market, so it's open from morning until late, in a fantastic modern setting. Find everything from rare gold and silver jewellery to designer clothes – although the prices aren't cheap, the quality's excellent. After shopping, enjoy a meal in a nearby restaurant."
+        },
+        "D": {
+          "title": "Cobbledown Road",
+          "content": "A small market that's open in all weathers. Come and find something really fantastic – treat yourself or someone special! We have a wide selection of jewellery and musical instruments, produced locally by highly-skilled people, and homemade cakes to enjoy."
+        },
+        "E": {
+          "title": "Oldford Lane",
+          "content": "Situated in the historic city centre, you'll find a wide range of jewellery and clothes. Arrive early to avoid disappointment – bargains are found in the morning, and the stalls pack up after lunch. If the weather's good, enjoy watching the world go by, although it gets very busy in the tourist season."
+        },
+        "F": {
+          "title": "Purford Market",
+          "content": "Close to museums and art galleries, this is the place to buy something for lunch, as well as fresh fruit and special breads. Try the region's famous cheese – the producers are there with advice on different types. Eat on the seats situated around the market, watching the colourful scene and enjoying music from local bands."
+        },
+        "G": {
+          "title": "Teddingley Market",
+          "content": "Situated under historic city walls, in this busy market you'll find a huge selection of great-value new and second-hand clothes. There are also stalls offering unusual albums by international singers, often hard to find in shops. Our world-food area allows you to taste food from abroad, cooked in front of you by international chefs."
+        },
+        "H": {
+          "title": "Frome Place",
+          "content": "Stalls open during normal daytime shopping hours so, depending on the weather, there's plenty to entertain you the whole day. Try our sandwich bar if you're hungry, and look for an old copy of something by a favourite author. We also have gifts from all over the world."
+        }
+      },
+      "questions": [
+        {
+          "number": 6,
+          "points": 1,
+          "text": "Jenny wants to buy locally-produced food traditional to the area. She needs somewhere convenient to eat, and as she's sightseeing in the city, the market shouldn't be far from local attractions.",
+          "answer": "F"
+        },
+        {
+          "number": 7,
+          "points": 1,
+          "text": "Matt wants a market where he can get something to wear at reasonable prices, and something hot to eat. He's also keen on music, and likes finding rare recordings by different bands.",
+          "answer": "G"
+        },
+        {
+          "number": 8,
+          "points": 1,
+          "text": "Sammie wants to visit a market after spending the day in the city. He would like to photograph a historic place, and buy a painting by someone unknown.",
+          "answer": "B"
+        },
+        {
+          "number": 9,
+          "points": 1,
+          "text": "Alexia is looking for a really special necklace for her grandmother's birthday. She'd like to spend the whole day at the market, and wants to avoid the cold by staying inside.",
+          "answer": "C"
+        },
+        {
+          "number": 10,
+          "points": 1,
+          "text": "Ella is looking for objects from other countries for her friends. She'd like to choose a second-hand book to read on the journey home, and wants a snack at the market, too.",
+          "answer": "H"
+        }
+      ]
+    },
+    {
+      "part": 3,
+      "name": "Reading Part 3",
+      "type": "multiple_choice",
+      "description": "Read the text and answer the questions.",
+      "passageTitle": "Chef Marco Rivera talks about his career",
+      "passage": "I grew up in a small town in southern Spain, where food was at the centre of family life. My grandmother was an incredible cook, and I spent hours watching her prepare meals from scratch. She never used a recipe book – everything was done by memory and instinct. That early experience in her kitchen is what made me want to become a chef.\n\nAfter finishing school, I moved to Madrid to study at a cooking academy. It was tough at first. I was used to home-style cooking, and suddenly I had to learn complicated techniques and work under enormous pressure. Some students dropped out in the first few months, but I was determined to succeed. The course lasted three years and I graduated near the top of my class.\n\nMy first job was in a busy restaurant in Barcelona. The head chef was extremely demanding and would shout at us if anything was less than perfect. I learned an enormous amount from him, though, especially about organisation and timing. In a professional kitchen, being a few seconds late with a dish can ruin the entire table's meal.\n\nAfter five years there, I felt ready to open my own place. I found a small building near the beach and turned it into a restaurant with just twelve tables. I wanted it to feel intimate and personal. The menu changes every week depending on what's fresh at the local market. We don't have a huge team – just me and two other cooks – but that's how I like it.\n\nRunning your own restaurant is harder than I ever imagined. I work at least fourteen hours a day and rarely take a holiday. But when a customer tells me that a meal was the best they've ever had, it makes everything worthwhile. I wouldn't change what I do for anything.",
+      "questions": [
+        {
+          "number": 11,
+          "points": 1,
+          "text": "What inspired Marco to become a chef?",
+          "options": [
+            "A. Reading recipe books as a child.",
+            "B. Spending time in his grandmother's kitchen.",
+            "C. Visiting restaurants in his town.",
+            "D. Watching cooking shows on television."
+          ],
+          "answer": "B"
+        },
+        {
+          "number": 12,
+          "points": 1,
+          "text": "What does Marco say about his time at cooking academy?",
+          "options": [
+            "A. He found it easy because of his background.",
+            "B. He was the best student in his class.",
+            "C. It was difficult but he was determined to finish.",
+            "D. Most students completed the course successfully."
+          ],
+          "answer": "C"
+        },
+        {
+          "number": 13,
+          "points": 1,
+          "text": "What did Marco learn from the head chef in Barcelona?",
+          "options": [
+            "A. How to cook Spanish dishes.",
+            "B. The importance of being well-organised and punctual.",
+            "C. How to manage a team of cooks.",
+            "D. How to deal with difficult customers."
+          ],
+          "answer": "B"
+        },
+        {
+          "number": 14,
+          "points": 1,
+          "text": "What is special about Marco's own restaurant?",
+          "options": [
+            "A. It is the largest restaurant near the beach.",
+            "B. It serves the same menu every day.",
+            "C. It is small and the food depends on what is available locally.",
+            "D. It has a large team of experienced cooks."
+          ],
+          "answer": "C"
+        },
+        {
+          "number": 15,
+          "points": 1,
+          "text": "How does Marco feel about owning his restaurant?",
+          "options": [
+            "A. He wishes he worked fewer hours.",
+            "B. He regrets not staying in Barcelona.",
+            "C. He finds the work challenging but rewarding.",
+            "D. He is planning to open a second restaurant."
+          ],
+          "answer": "C"
+        }
+      ]
+    },
+    {
+      "part": 4,
+      "name": "Reading Part 4",
+      "type": "gapped_text",
+      "description": "Five sentences have been removed from the text below. For each question, choose the correct answer. There are three extra sentences which you do not need to use.",
+      "passageTitle": "The Importance of Bees",
+      "passage": "Bees are among the most important creatures on Earth. Without them, our food supply would be in serious trouble. (16) ______ This means that without bees, many of the fruits, vegetables and nuts we eat every day simply would not exist.\n\nSadly, bee populations around the world have been declining rapidly in recent years. (17) ______ Pesticides used in farming are one major factor. When bees come into contact with these chemicals, it can affect their ability to navigate back to their hive.\n\nAnother threat to bees is the loss of their natural habitat. (18) ______ With fewer wildflowers to feed on, bees struggle to find enough food, especially in late summer.\n\nFortunately, there are things that ordinary people can do to help. (19) ______ Even a small window box with the right flowers can provide food for local bees. Avoiding the use of pesticides in your garden is also important.\n\nGovernments are also taking action. Several countries have banned the most harmful pesticides, and farmers are being encouraged to leave areas of wildflowers at the edges of their fields. (20) ______ But it will take the efforts of everyone – governments, farmers, and individuals – to turn the situation around.",
+      "sentenceOptions": [
+        "A. Scientists believe there are several reasons for this decline.",
+        "B. Planting bee-friendly flowers such as lavender and sunflowers in your garden is one simple step.",
+        "C. As towns and cities expand, fields and meadows are being replaced by buildings and roads.",
+        "D. Honey is also used in many traditional medicines.",
+        "E. This is because bees pollinate around a third of the food crops that humans depend on.",
+        "F. These measures are beginning to show positive results in some areas.",
+        "G. Some types of bee live alone rather than in colonies.",
+        "H. Bees produce honey, which humans have collected for thousands of years."
+      ],
+      "questions": [
+        {
+          "number": 16,
+          "points": 1,
+          "text": "(16)",
+          "answer": "E"
+        },
+        {
+          "number": 17,
+          "points": 1,
+          "text": "(17)",
+          "answer": "A"
+        },
+        {
+          "number": 18,
+          "points": 1,
+          "text": "(18)",
+          "answer": "C"
+        },
+        {
+          "number": 19,
+          "points": 1,
+          "text": "(19)",
+          "answer": "B"
+        },
+        {
+          "number": 20,
+          "points": 1,
+          "text": "(20)",
+          "answer": "F"
+        }
+      ]
+    },
+    {
+      "part": 5,
+      "name": "Reading Part 5",
+      "type": "cloze_choice",
+      "description": "Read the text. Choose the correct word for each space.",
+      "passageTitle": "The Potato",
+      "passage": "Solanum tuberosum, otherwise known (21)______ its common name, the potato, is the world's fourth largest food crop, (22)______ rice, wheat and maize.\n\nIt was first cultivated by the Inca-native Americans in Peru somewhere around 8,000 BC to 5,000 B.C. Spanish Conquistadors took over Peru in 1536 and discovered the potato for themselves, and subsequently transported them (23)______ Europe.\n\nIntroduced to Ireland in 1589 it (24)______ nearly 40 years for the potato to spread to the rest of Europe. It then made its way back across the Atlantic, this time to the North American continent, this time taken by European immigrants to the New World.\n\nPotatoes are easy to grow, contain most of the vitamins required, and provide a (25)______ yield from the space they occupy than the other staple crops.\n\nThe potato became the first vegetable to be grown in space in 1995. The University of Wisconsin and NASA invented the technology aimed at cultivating food (26)______ astronauts on long space voyages, and, in the future, feeding space colonies.",
+      "questions": [
+        {
+          "number": 21,
+          "points": 1,
+          "text": "(21)",
+          "options": [
+            "A. for",
+            "B. by",
+            "C. at",
+            "D. on"
+          ],
+          "answer": "B"
+        },
+        {
+          "number": 22,
+          "points": 1,
+          "text": "(22)",
+          "options": [
+            "A. after",
+            "B. before",
+            "C. over",
+            "D. when"
+          ],
+          "answer": "A"
+        },
+        {
+          "number": 23,
+          "points": 1,
+          "text": "(23)",
+          "options": [
+            "A. over",
+            "B. on",
+            "C. of",
+            "D. to"
+          ],
+          "answer": "D"
+        },
+        {
+          "number": 24,
+          "points": 1,
+          "text": "(24)",
+          "options": [
+            "A. took",
+            "B. lasted",
+            "C. played",
+            "D. told"
+          ],
+          "answer": "A"
+        },
+        {
+          "number": 25,
+          "points": 1,
+          "text": "(25)",
+          "options": [
+            "A. best",
+            "B. good",
+            "C. worst",
+            "D. higher"
+          ],
+          "answer": "D"
+        },
+        {
+          "number": 26,
+          "points": 1,
+          "text": "(26)",
+          "options": [
+            "A. from",
+            "B. in",
+            "C. for",
+            "D. make"
+          ],
+          "answer": "C"
+        }
+      ]
+    },
+    {
+      "part": 6,
+      "name": "Reading Part 6",
+      "type": "fill_blank",
+      "description": "Read the text. Write ONE word for each gap.",
+      "passageTitle": "School Trips",
+      "passage": "School trips are an important part of education. They give students the chance to learn outside (27)______ classroom and experience things they have only read about in books.\n\nOne of the most popular types of school trip is a visit (28)______ a museum. Students can see real objects and displays that bring their lessons to life. (29)______ example, a history class might visit a castle, while a science class could go to a technology centre.\n\nOf course, organising school trips is not always easy. Teachers have (30)______ plan carefully and make sure that all students are safe. Parents must give their permission, and (31)______ is usually a cost involved. However, most people agree that the benefits of school trips (32)______ worth the effort and expense.",
+      "questions": [
+        {
+          "number": 27,
+          "points": 1,
+          "answer": [
+            "the"
+          ]
+        },
+        {
+          "number": 28,
+          "points": 1,
+          "answer": [
+            "to"
+          ]
+        },
+        {
+          "number": 29,
+          "points": 1,
+          "answer": [
+            "for"
+          ]
+        },
+        {
+          "number": 30,
+          "points": 1,
+          "answer": [
+            "to"
+          ]
+        },
+        {
+          "number": 31,
+          "points": 1,
+          "answer": [
+            "there"
+          ]
+        },
+        {
+          "number": 32,
+          "points": 1,
+          "answer": [
+            "are"
+          ]
+        }
+      ]
+    }
+  ]
+}

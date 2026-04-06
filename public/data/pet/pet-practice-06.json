@@ -1,0 +1,405 @@
+{
+  "examType": "PET",
+  "title": "PET Reading Practice Test 6",
+  "source": "KET Online PET Remix 06",
+  "category": "practice",
+  "totalQuestions": 32,
+  "parts": [
+    {
+      "part": 1,
+      "name": "Reading Part 1",
+      "description": "For each question, choose the correct answer.",
+      "type": "multiple_choice",
+      "questions": [
+        {
+          "number": 1,
+          "points": 1,
+          "text": "CHILDREN'S PLAY AREA\nAll children must be supervised by a responsible adult at all times.",
+          "textType": "notice",
+          "options": [
+            "A. Adults are not permitted in the children's play area.",
+            "B. Children must always be accompanied by an adult.",
+            "C. Children must stay to the left in the play area."
+          ],
+          "answer": "B"
+        },
+        {
+          "number": 2,
+          "points": 1,
+          "text": "Tim,\nI've tried to call Isa but she's not picking up. Can you drop by the post office and pick up the parcel she left for me? I'll collect it from your place tonight.\nAngus",
+          "textType": "message",
+          "question": "Angus is telling Tim to:",
+          "options": [
+            "A. collect something from the post office.",
+            "B. call Isa.",
+            "C. get some new ID."
+          ],
+          "answer": "A"
+        },
+        {
+          "number": 3,
+          "points": 1,
+          "text": "Due to current regulations, we are now only able to allow a maximum of 20 customers in the shop at any time. Please wait outside until another customer leaves.",
+          "textType": "notice",
+          "options": [
+            "A. Do not try to buy so many things.",
+            "B. The number of people permitted in the shop is less than it was previously.",
+            "C. Only enter after someone has left."
+          ],
+          "answer": "B"
+        },
+        {
+          "number": 4,
+          "points": 1,
+          "text": "COFFEE CORNER LOYALTY CARD\nBuy nine hot drinks and receive your tenth completely free!",
+          "textType": "notice",
+          "options": [
+            "A. Buy ten hot drinks, get one free next time.",
+            "B. Buy nine hot drinks, get one free today.",
+            "C. Buy ten drinks and get a loyalty card."
+          ],
+          "answer": "A"
+        },
+        {
+          "number": 5,
+          "points": 1,
+          "text": "STAFF COFFEE ROOM\nThis room is for staff use only. The public coffee shop on the ground floor is temporarily closed for refurbishment. We apologise for any inconvenience.",
+          "textType": "notice",
+          "options": [
+            "A. The coffee room is only for workers.",
+            "B. The coffee shop is closed today only.",
+            "C. The coffee shop is closed indefinitely."
+          ],
+          "answer": "C"
+        }
+      ]
+    },
+    {
+      "part": 2,
+      "name": "Reading Part 2",
+      "type": "matching",
+      "description": "The people below all want to choose a holiday activity. Read the descriptions of eight activities. Choose which activity would be the most suitable for the people below.",
+      "texts": {
+        "A": {
+          "title": "Mountain Trails Cycling",
+          "content": "Explore beautiful mountain scenery on our guided bike tours. Suitable for experienced cyclists only. Tours last a full day and include a packed lunch. Groups are kept small, with a maximum of six riders. Available April to October."
+        },
+        "B": {
+          "title": "Riverside Kayaking",
+          "content": "A gentle two-hour paddle along the River Avon. No previous experience needed – full training provided. Children welcome if accompanied by an adult. Equipment and waterproof clothing included in the price. Hot drinks available afterwards."
+        },
+        "C": {
+          "title": "Ocean Sailing School",
+          "content": "Learn to sail in our sheltered bay. Courses run from Monday to Friday, with a certificate awarded at the end. Students must be at least 16 years old. Accommodation available nearby at reduced rates for course participants."
+        },
+        "D": {
+          "title": "Forest Adventure Park",
+          "content": "Climbing, zip-lines and rope bridges high up in the trees. Ideal for families with children aged 6 and over. Half-day sessions morning or afternoon. A café serves sandwiches and cakes throughout the day. Free parking available."
+        },
+        "E": {
+          "title": "Lakeside Fishing",
+          "content": "Spend a peaceful day fishing at our well-stocked lake. Equipment can be hired on site. A beginners' workshop runs every Saturday morning. The on-site shop sells bait and refreshments. Open all year round."
+        },
+        "F": {
+          "title": "Country Walking Tours",
+          "content": "Guided walks through historic villages and beautiful countryside. Choose from easy half-day walks or more challenging full-day hikes. Our guides are experts in local history and wildlife. Large groups welcome. Walks take place every weekend."
+        },
+        "G": {
+          "title": "Beach Surfing Lessons",
+          "content": "Catch your first wave with our qualified instructors. Lessons last two hours and wetsuits are provided. Suitable for ages 10 and above. No previous experience necessary. Book online for a 15% discount."
+        },
+        "H": {
+          "title": "Indoor Climbing Centre",
+          "content": "Try rock climbing whatever the weather. Sessions for all ability levels from complete beginner to expert. Open seven days a week, mornings and evenings. Family sessions on Saturday afternoons. Birthday party packages available."
+        }
+      },
+      "questions": [
+        {
+          "number": 6,
+          "points": 1,
+          "text": "Tom wants to try a water sport with his 8-year-old daughter. Neither of them has done anything like this before, and he would like something that doesn't take too long.",
+          "answer": "B"
+        },
+        {
+          "number": 7,
+          "points": 1,
+          "text": "Maria is a keen cyclist who wants a challenging ride in a scenic area. She would prefer to go with a small group and have lunch provided.",
+          "answer": "A"
+        },
+        {
+          "number": 8,
+          "points": 1,
+          "text": "David is a history teacher who wants to organise an outdoor activity for his class of 25 students. He wants something educational that they can do on a Saturday.",
+          "answer": "F"
+        },
+        {
+          "number": 9,
+          "points": 1,
+          "text": "Karen is looking for a week-long course where she can learn a new skill. She is 18 and would need somewhere to stay during the course.",
+          "answer": "C"
+        },
+        {
+          "number": 10,
+          "points": 1,
+          "text": "Ben wants to take his two children, aged 7 and 10, somewhere fun for half a day. He would like to be able to get something to eat there and not have to worry about parking.",
+          "answer": "D"
+        }
+      ]
+    },
+    {
+      "part": 3,
+      "name": "Reading Part 3",
+      "type": "multiple_choice",
+      "description": "Read the text and answer the questions.",
+      "passageTitle": "Wildlife photographer Kate Morrison",
+      "passage": "I never planned to become a wildlife photographer. After university, where I studied biology, I got a job in a research laboratory. The work was interesting enough, but I spent all day indoors, and I missed being outside. I'd always loved nature, and it was frustrating to be stuck in a building all day looking at a computer screen.\n\nOne weekend, a friend persuaded me to join her on a bird-watching trip. I borrowed my dad's old camera and took a few photos. When I got home and looked at them, I was amazed at how good some of them were – not because of my skill, but because of how beautiful the birds looked. That was the moment I realised I wanted to combine my love of nature with photography.\n\nI started by photographing birds in my local park every weekend. I quickly discovered that wildlife photography requires enormous patience. Animals don't pose for you – you might wait for hours in the cold and rain for a single good shot. But that challenge is part of what makes it so satisfying.\n\nAfter about a year, I entered a photo competition and won second prize. That gave me the confidence to leave my laboratory job and try to make photography my career. It wasn't easy at first. I had very little income for the first couple of years. But gradually, magazines and websites started buying my photos, and I began to get invited on expeditions.\n\nNow I travel the world photographing animals in their natural habitats. Last year I spent three months in Africa, and next month I'm going to the Arctic. It can be physically demanding – I sometimes have to walk for hours carrying heavy equipment. But there's nothing quite like the feeling of capturing a perfect image of a wild animal. I feel incredibly lucky to do what I do.",
+      "questions": [
+        {
+          "number": 11,
+          "points": 1,
+          "text": "Why did Kate become unhappy with her first job?",
+          "options": [
+            "A. The research she was doing was boring.",
+            "B. She wanted to spend more time outdoors.",
+            "C. She didn't get on well with her colleagues.",
+            "D. The salary was too low."
+          ],
+          "answer": "B"
+        },
+        {
+          "number": 12,
+          "points": 1,
+          "text": "What happened on the bird-watching trip that changed Kate's life?",
+          "options": [
+            "A. She decided she wanted to study birds professionally.",
+            "B. Her friend suggested she become a photographer.",
+            "C. She took some photos that showed her the beauty of nature.",
+            "D. She bought an expensive camera."
+          ],
+          "answer": "C"
+        },
+        {
+          "number": 13,
+          "points": 1,
+          "text": "What does Kate say is the hardest thing about wildlife photography?",
+          "options": [
+            "A. Learning how to use the camera equipment.",
+            "B. Finding animals to photograph.",
+            "C. Working in bad weather conditions.",
+            "D. Having to wait a long time for good pictures."
+          ],
+          "answer": "D"
+        },
+        {
+          "number": 14,
+          "points": 1,
+          "text": "How did winning the competition affect Kate?",
+          "options": [
+            "A. It helped her believe she could be a professional photographer.",
+            "B. It led immediately to a well-paid job.",
+            "C. It made her famous overnight.",
+            "D. It taught her new photography techniques."
+          ],
+          "answer": "A"
+        },
+        {
+          "number": 15,
+          "points": 1,
+          "text": "What would be the best title for this article?",
+          "options": [
+            "A. How to win wildlife photography competitions.",
+            "B. From laboratory scientist to world-travelling wildlife photographer.",
+            "C. The best places in the world to photograph animals.",
+            "D. Why wildlife photography is the most difficult type of photography."
+          ],
+          "answer": "B"
+        }
+      ]
+    },
+    {
+      "part": 4,
+      "name": "Reading Part 4",
+      "type": "gapped_text",
+      "description": "Five sentences have been removed from the text below. For each question, choose the correct answer. There are three extra sentences which you do not need to use.",
+      "passageTitle": "Learning a Musical Instrument",
+      "passage": "Learning to play a musical instrument is one of the most rewarding things you can do. However, many people start with great enthusiasm and then give up within a few months. (16) ______ Understanding these can help you stay motivated.\n\nThe most common reason people quit is that they expect to make progress too quickly. (17) ______ In reality, learning any instrument takes months or even years of regular practice before you start to sound good.\n\nAnother problem is finding time to practise. Most experts recommend at least thirty minutes a day. (18) ______ Even ten minutes a day is much better than an hour once a week, because your muscles and brain need regular repetition to develop.\n\nChoosing the right teacher is also important. A good teacher will make lessons enjoyable and adapt to your learning speed. (19) ______ If you don't enjoy your lessons, it might be worth trying a different teacher before you decide to stop altogether.\n\nFinally, it helps to set realistic goals. Instead of dreaming about playing at a concert hall, focus on learning one new piece each month. (20) ______ Before you know it, you'll have built up an impressive range of music you can play.",
+      "sentenceOptions": [
+        "A. There are several common reasons why people stop learning.",
+        "B. This can be difficult for people with busy schedules, but it doesn't have to be a full half hour.",
+        "C. These small achievements will keep you motivated and give you a sense of progress.",
+        "D. They imagine they'll be playing their favourite songs within a few weeks.",
+        "E. Playing music with others is one of the best ways to improve.",
+        "F. A bad teacher, on the other hand, can make the whole experience frustrating.",
+        "G. The guitar is one of the easiest instruments for beginners.",
+        "H. Many famous musicians started learning when they were very young."
+      ],
+      "questions": [
+        {
+          "number": 16,
+          "points": 1,
+          "text": "(16)",
+          "answer": "A"
+        },
+        {
+          "number": 17,
+          "points": 1,
+          "text": "(17)",
+          "answer": "D"
+        },
+        {
+          "number": 18,
+          "points": 1,
+          "text": "(18)",
+          "answer": "B"
+        },
+        {
+          "number": 19,
+          "points": 1,
+          "text": "(19)",
+          "answer": "F"
+        },
+        {
+          "number": 20,
+          "points": 1,
+          "text": "(20)",
+          "answer": "C"
+        }
+      ]
+    },
+    {
+      "part": 5,
+      "name": "Reading Part 5",
+      "type": "cloze_choice",
+      "description": "Read the text. Choose the correct word for each space.",
+      "passageTitle": "The Bicycle",
+      "passage": "The bicycle is one of the most (21)______ inventions in history. Since it was first developed in the early 19th century, it has provided people with an affordable and environmentally friendly (22)______ of transport.\n\nThe earliest bicycles looked very different from those we ride today. The first models didn't even have pedals – riders had to push themselves along with (23)______ feet. It wasn't (24)______ the 1860s that pedals were added, and the modern bicycle design that we recognise today didn't appear until the 1880s.\n\nIn recent years, cycling has become more popular (25)______ ever. Many cities have introduced bike-sharing schemes and built dedicated cycle lanes. This is partly because of growing concerns about pollution and traffic congestion, but also because people have recognised the health (26)______ of regular cycling.",
+      "questions": [
+        {
+          "number": 21,
+          "points": 1,
+          "text": "(21)",
+          "options": [
+            "A. successful",
+            "B. achieved",
+            "C. capable",
+            "D. possible"
+          ],
+          "answer": "A"
+        },
+        {
+          "number": 22,
+          "points": 1,
+          "text": "(22)",
+          "options": [
+            "A. way",
+            "B. kind",
+            "C. means",
+            "D. sort"
+          ],
+          "answer": "C"
+        },
+        {
+          "number": 23,
+          "points": 1,
+          "text": "(23)",
+          "options": [
+            "A. his",
+            "B. its",
+            "C. one's",
+            "D. their"
+          ],
+          "answer": "D"
+        },
+        {
+          "number": 24,
+          "points": 1,
+          "text": "(24)",
+          "options": [
+            "A. since",
+            "B. from",
+            "C. until",
+            "D. after"
+          ],
+          "answer": "C"
+        },
+        {
+          "number": 25,
+          "points": 1,
+          "text": "(25)",
+          "options": [
+            "A. as",
+            "B. than",
+            "C. that",
+            "D. so"
+          ],
+          "answer": "B"
+        },
+        {
+          "number": 26,
+          "points": 1,
+          "text": "(26)",
+          "options": [
+            "A. profits",
+            "B. advantages",
+            "C. benefits",
+            "D. gains"
+          ],
+          "answer": "C"
+        }
+      ]
+    },
+    {
+      "part": 6,
+      "name": "Reading Part 6",
+      "type": "fill_blank",
+      "description": "Read the text. Write ONE word for each gap.",
+      "passageTitle": "The Natural History Museum",
+      "passage": "This is one of my favourite places to visit. I've learned a huge amount about animals and plants (27) __________ time I've visited. I've even seen bits of rock from the moon!\n\nThe building's really beautiful and it's easy to find your way around. There are hundreds of interesting things on display, but (28) __________ you like dinosaurs the best time (29) __________ see them is during term-time. I've been twice in the school holidays and the queue was (30) __________ long that I wasn't able to visit that part (31) __________ the museum.\n\nYou'll probably want something to eat while you're there. You can take (32) __________ own picnic and eat in the museum garden, or try one of the two museum cafés.",
+      "questions": [
+        {
+          "number": 27,
+          "points": 1,
+          "answer": [
+            "every",
+            "each"
+          ]
+        },
+        {
+          "number": 28,
+          "points": 1,
+          "answer": [
+            "if"
+          ]
+        },
+        {
+          "number": 29,
+          "points": 1,
+          "answer": [
+            "to"
+          ]
+        },
+        {
+          "number": 30,
+          "points": 1,
+          "answer": [
+            "so"
+          ]
+        },
+        {
+          "number": 31,
+          "points": 1,
+          "answer": [
+            "of"
+          ]
+        },
+        {
+          "number": 32,
+          "points": 1,
+          "answer": [
+            "your"
+          ]
+        }
+      ]
+    }
+  ]
+}

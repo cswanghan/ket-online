@@ -1,0 +1,409 @@
+{
+  "examType": "PET",
+  "title": "PET Reading Practice Test 10",
+  "source": "KET Online PET Remix 10",
+  "category": "practice",
+  "totalQuestions": 32,
+  "parts": [
+    {
+      "part": 1,
+      "name": "Reading Part 1",
+      "description": "For each question, choose the correct answer.",
+      "type": "multiple_choice",
+      "questions": [
+        {
+          "number": 1,
+          "points": 1,
+          "text": "APARTMENT BUILDING\nDeliveries should be left with the security desk if the resident is not at home.",
+          "textType": "notice",
+          "options": [
+            "A. Residents must collect their deliveries from the security desk.",
+            "B. If nobody is home, packages should be given to security.",
+            "C. The security desk is only open during delivery hours."
+          ],
+          "answer": "B"
+        },
+        {
+          "number": 2,
+          "points": 1,
+          "text": "Tom,\nThe washing machine has broken down again. I've called the repair company but they can't come until Wednesday. Could you take the dirty clothes to the laundrette on your way home?\nJen",
+          "textType": "message",
+          "question": "Jen is asking Tom to",
+          "options": [
+            "A. call the repair company about the washing machine.",
+            "B. fix the washing machine before Wednesday.",
+            "C. take the laundry somewhere to be washed."
+          ],
+          "answer": "C"
+        },
+        {
+          "number": 3,
+          "points": 1,
+          "text": "CINEMA\nScreenings in 3D require special glasses, available free of charge from the ticket office.",
+          "textType": "notice",
+          "options": [
+            "A. 3D glasses must be purchased separately.",
+            "B. You can get free 3D glasses when you buy your ticket.",
+            "C. Only certain films are shown in 3D."
+          ],
+          "answer": "B"
+        },
+        {
+          "number": 4,
+          "points": 1,
+          "text": "SUPERMARKET\nCustomers using the self-checkout must scan their loyalty card before starting.",
+          "textType": "notice",
+          "options": [
+            "A. You need a loyalty card to use the self-checkout.",
+            "B. You should scan your loyalty card first if you have one.",
+            "C. Loyalty cards are available at the self-checkout."
+          ],
+          "answer": "B"
+        },
+        {
+          "number": 5,
+          "points": 1,
+          "text": "Amy,\nI saw a great jacket in the shop window on Park Street – it would be perfect for your interview. They're having a sale that ends tomorrow. Shall I pick one up for you? What size are you?\nRachel",
+          "textType": "message",
+          "question": "Rachel is offering to",
+          "options": [
+            "A. go to Amy's interview with her.",
+            "B. lend Amy one of her jackets.",
+            "C. buy something for Amy from a shop."
+          ],
+          "answer": "C"
+        }
+      ]
+    },
+    {
+      "part": 2,
+      "name": "Reading Part 2",
+      "type": "matching",
+      "description": "The people below all want to visit a city market. Read the descriptions of eight markets. Decide which market would be the most suitable for the people below.",
+      "texts": {
+        "A": {
+          "title": "Beckfield Market",
+          "content": "This market's world-famous for second-hand camera equipment and books on photography. As well as an amazing range of cameras, we have old pictures of local places of interest for you to buy, and of course the stall owners are happy to give you advice for free! Don't miss our hot soup stall in cold weather."
+        },
+        "B": {
+          "title": "Rosewell Hill",
+          "content": "Our market's in an amazing building that's hundreds of years old. Visitors find our late-night opening hours convenient, and there are always performers entertaining the crowds. We've recently opened more stalls specializing in pictures both from well-known artists and also those beginning their careers."
+        },
+        "C": {
+          "title": "Camberwall Market",
+          "content": "There's lots to see in this interesting indoor market, so it's open from morning until late, in a fantastic modern setting. Find everything from rare gold and silver jewellery to designer clothes – although the prices aren't cheap, the quality's excellent. After shopping, enjoy a meal in a nearby restaurant."
+        },
+        "D": {
+          "title": "Cobbledown Road",
+          "content": "A small market that's open in all weathers. Come and find something really fantastic – treat yourself or someone special! We have a wide selection of jewellery and musical instruments, produced locally by highly-skilled people, and homemade cakes to enjoy."
+        },
+        "E": {
+          "title": "Oldford Lane",
+          "content": "Situated in the historic city centre, you'll find a wide range of jewellery and clothes. Arrive early to avoid disappointment – bargains are found in the morning, and the stalls pack up after lunch. If the weather's good, enjoy watching the world go by, although it gets very busy in the tourist season."
+        },
+        "F": {
+          "title": "Purford Market",
+          "content": "Close to museums and art galleries, this is the place to buy something for lunch, as well as fresh fruit and special breads. Try the region's famous cheese – the producers are there with advice on different types. Eat on the seats situated around the market, watching the colourful scene and enjoying music from local bands."
+        },
+        "G": {
+          "title": "Teddingley Market",
+          "content": "Situated under historic city walls, in this busy market you'll find a huge selection of great-value new and second-hand clothes. There are also stalls offering unusual albums by international singers, often hard to find in shops. Our world-food area allows you to taste food from abroad, cooked in front of you by international chefs."
+        },
+        "H": {
+          "title": "Frome Place",
+          "content": "Stalls open during normal daytime shopping hours so, depending on the weather, there's plenty to entertain you the whole day. Try our sandwich bar if you're hungry, and look for an old copy of something by a favourite author. We also have gifts from all over the world."
+        }
+      },
+      "questions": [
+        {
+          "number": 6,
+          "points": 1,
+          "text": "Jenny wants to buy locally-produced food traditional to the area. She needs somewhere convenient to eat, and as she's sightseeing in the city, the market shouldn't be far from local attractions.",
+          "answer": "F"
+        },
+        {
+          "number": 7,
+          "points": 1,
+          "text": "Matt wants a market where he can get something to wear at reasonable prices, and something hot to eat. He's also keen on music, and likes finding rare recordings by different bands.",
+          "answer": "G"
+        },
+        {
+          "number": 8,
+          "points": 1,
+          "text": "Sammie wants to visit a market after spending the day in the city. He would like to photograph a historic place, and buy a painting by someone unknown.",
+          "answer": "B"
+        },
+        {
+          "number": 9,
+          "points": 1,
+          "text": "Alexia is looking for a really special necklace for her grandmother's birthday. She'd like to spend the whole day at the market, and wants to avoid the cold by staying inside.",
+          "answer": "C"
+        },
+        {
+          "number": 10,
+          "points": 1,
+          "text": "Ella is looking for objects from other countries for her friends. She'd like to choose a second-hand book to read on the journey home, and wants a snack at the market, too.",
+          "answer": "H"
+        }
+      ]
+    },
+    {
+      "part": 3,
+      "name": "Reading Part 3",
+      "type": "multiple_choice",
+      "description": "Read the text and answer the questions.",
+      "passageTitle": "Violinist Alaina Masters talks about her job",
+      "passage": "I have always worked hard at mastering my instrument. That goes without saying. But ever since entering music college I was aware of how important it is to network with people. Since then, I've never really looked back and I am very happy to say that I've always managed to keep working.\n\nWhen it comes to finding work, people who work for themselves, like me, must have various ways of making an income. I always need to be looking for jobs, or gigs, as musicians call temporary pieces of work. Those might come from orchestras or with smaller groups, such as the string quartet and jazz trio I usually play with.\n\nI used to teach from time to time, but because I need to be available when a job comes up, I can't commit to having students anymore. It's a shame because I really enjoyed it.\n\nThe work with orchestras is always in the metropolitan area, which is handy for me. When I have one of those gigs, we will rehearse during the day in the weeks before the show starts. Those sessions are hard work and very tiring, but there is a social element to them and that helps get us through. Then we'll do a performance every night for the duration of the show, two on a weekend with some productions. That is always exciting and it's when I am in my element. The performances make all the effort worthwhile.\n\nWith my string quartet we play at weddings or other events, and that sometimes involves travelling. I don't drive, but thankfully one of the others is usually able to give me a ride, and we travel together for the concert. We try to always come back to our own beds afterwards, as paying for accommodation would use almost all our profits from the show.\n\nPlaying an instrument as a hobby and doing it to earn a living are quite different though. Thankfully, I have always maintained the love of what I do, so really I don't consider it work.",
+      "questions": [
+        {
+          "number": 11,
+          "points": 1,
+          "text": "Alaina says her experience at college taught her the importance of",
+          "options": [
+            "A. building up connections in the scene.",
+            "B. being good at her instrument.",
+            "C. continually working.",
+            "D. managing her time."
+          ],
+          "answer": "A"
+        },
+        {
+          "number": 12,
+          "points": 1,
+          "text": "How would you best describe Alaina's work status?",
+          "options": [
+            "A. Self-employed, with one main job.",
+            "B. Self-employed, with a variety of jobs.",
+            "C. An employee of an orchestra.",
+            "D. Unemployed."
+          ],
+          "answer": "B"
+        },
+        {
+          "number": 13,
+          "points": 1,
+          "text": "What does Alaina say about teaching?",
+          "options": [
+            "A. She is accustomed to teaching now.",
+            "B. She does not have time to teach any more.",
+            "C. She would like to teach in the future.",
+            "D. She hates teaching."
+          ],
+          "answer": "B"
+        },
+        {
+          "number": 14,
+          "points": 1,
+          "text": "What does Alaina enjoy most about working with the orchestra?",
+          "options": [
+            "A. The fact that the rehearsals and performances are close to where she lives.",
+            "B. The rehearsals.",
+            "C. Performing.",
+            "D. Seeing friends."
+          ],
+          "answer": "C"
+        },
+        {
+          "number": 15,
+          "points": 1,
+          "text": "Which option best summarises why Alaina likes to get home after gigs?",
+          "options": [
+            "A. She can't drive and her driver insists on it.",
+            "B. She is unable to sleep in a different bed.",
+            "C. It is impossible to find somewhere to stay.",
+            "D. To save money."
+          ],
+          "answer": "D"
+        }
+      ]
+    },
+    {
+      "part": 4,
+      "name": "Reading Part 4",
+      "type": "gapped_text",
+      "description": "Five sentences have been removed from the text below. For each question, choose the correct answer. There are three extra sentences which you do not need to use.",
+      "passageTitle": "The Rise of Electric Cars",
+      "passage": "Electric cars have been around for much longer than most people realise. In fact, some of the very first motor vehicles built in the late 1800s were powered by electricity. (16) ______ They were quiet, easy to drive, and didn't produce unpleasant smells.\n\nHowever, when Henry Ford began mass-producing petrol-powered cars in 1908, electric vehicles quickly fell out of favour. (17) ______ For most of the twentieth century, almost nobody thought about electric cars.\n\nThings began to change in the 1990s when people started to worry more about pollution and climate change. (18) ______ But these early models were expensive and could only travel short distances before needing to be recharged.\n\nThe real breakthrough came with improvements in battery technology. (19) ______ Companies like Tesla proved that electric cars could be fast, stylish and practical for everyday use.\n\nToday, many countries have announced plans to ban the sale of new petrol and diesel cars within the next ten to twenty years. (20) ______ Whether we like it or not, the future of driving is electric.",
+      "sentenceOptions": [
+        "A. Petrol cars were cheaper, faster and could travel much further on a single tank of fuel.",
+        "B. Several car manufacturers began experimenting with electric models again.",
+        "C. At that time, they were actually more popular than petrol-powered vehicles.",
+        "D. Modern batteries can store much more energy and can be recharged much more quickly.",
+        "E. This means that electric cars will eventually become the only option for new car buyers.",
+        "F. The problem was that electricity was not widely available at that time.",
+        "G. Electric cars are also much cheaper to maintain than traditional vehicles.",
+        "H. Many people believe that public transport is a better solution than electric cars."
+      ],
+      "questions": [
+        {
+          "number": 16,
+          "points": 1,
+          "text": "(16)",
+          "answer": "C"
+        },
+        {
+          "number": 17,
+          "points": 1,
+          "text": "(17)",
+          "answer": "A"
+        },
+        {
+          "number": 18,
+          "points": 1,
+          "text": "(18)",
+          "answer": "B"
+        },
+        {
+          "number": 19,
+          "points": 1,
+          "text": "(19)",
+          "answer": "D"
+        },
+        {
+          "number": 20,
+          "points": 1,
+          "text": "(20)",
+          "answer": "E"
+        }
+      ]
+    },
+    {
+      "part": 5,
+      "name": "Reading Part 5",
+      "type": "cloze_choice",
+      "description": "Read the text. Choose the correct word for each space.",
+      "passageTitle": "The Great Barrier Reef",
+      "passage": "The Great Barrier Reef, located off the coast of Australia, is the largest coral reef system in the world. It (21)______ over 2,300 kilometres and can even be seen from space. The reef is home (22)______ an incredible variety of marine life, including over 1,500 species of fish.\n\nThe reef was formed over millions of years by tiny living organisms (23)______ coral polyps. These creatures build hard structures around themselves, and over time, these structures grow into the enormous reef we see today.\n\nUnfortunately, the Great Barrier Reef is (24)______ serious danger. Rising sea temperatures caused by climate change are damaging the coral. When the water gets too warm, the coral turns white – a process (25)______ as 'bleaching' – and eventually dies.\n\nScientists are working hard to find ways to protect the reef. Some are experimenting with growing coral in laboratories and then planting it back in the ocean. (26)______, many people believe that the only real solution is to reduce global warming.",
+      "questions": [
+        {
+          "number": 21,
+          "points": 1,
+          "text": "(21)",
+          "options": [
+            "A. stretches",
+            "B. reaches",
+            "C. measures",
+            "D. covers"
+          ],
+          "answer": "A"
+        },
+        {
+          "number": 22,
+          "points": 1,
+          "text": "(22)",
+          "options": [
+            "A. for",
+            "B. to",
+            "C. of",
+            "D. with"
+          ],
+          "answer": "B"
+        },
+        {
+          "number": 23,
+          "points": 1,
+          "text": "(23)",
+          "options": [
+            "A. named",
+            "B. said",
+            "C. told",
+            "D. called"
+          ],
+          "answer": "D"
+        },
+        {
+          "number": 24,
+          "points": 1,
+          "text": "(24)",
+          "options": [
+            "A. at",
+            "B. on",
+            "C. in",
+            "D. under"
+          ],
+          "answer": "C"
+        },
+        {
+          "number": 25,
+          "points": 1,
+          "text": "(25)",
+          "options": [
+            "A. called",
+            "B. known",
+            "C. referred",
+            "D. named"
+          ],
+          "answer": "B"
+        },
+        {
+          "number": 26,
+          "points": 1,
+          "text": "(26)",
+          "options": [
+            "A. However",
+            "B. Although",
+            "C. Despite",
+            "D. Moreover"
+          ],
+          "answer": "A"
+        }
+      ]
+    },
+    {
+      "part": 6,
+      "name": "Reading Part 6",
+      "type": "fill_blank",
+      "description": "Read the text. Write ONE word for each gap.",
+      "passageTitle": "Keeping Fit",
+      "passage": "Staying active is important for both your physical and mental health. Experts recommend that adults should do (27)______ least 150 minutes of moderate exercise per week. This might sound like a lot, but it works out at just over 20 minutes (28)______ day.\n\nYou don't need to join a gym or buy expensive equipment. Walking is one of (29)______ best forms of exercise, and it's completely free. If you walk quickly enough to feel slightly out (30)______ breath, you're getting a good workout.\n\nSwimming is (31)______ excellent option because it exercises your whole body without putting stress on your joints. Many public swimming pools offer affordable memberships, and some even have sessions (32)______ are free for certain age groups.",
+      "questions": [
+        {
+          "number": 27,
+          "points": 1,
+          "answer": [
+            "at"
+          ]
+        },
+        {
+          "number": 28,
+          "points": 1,
+          "answer": [
+            "a",
+            "per",
+            "each",
+            "every"
+          ]
+        },
+        {
+          "number": 29,
+          "points": 1,
+          "answer": [
+            "the"
+          ]
+        },
+        {
+          "number": 30,
+          "points": 1,
+          "answer": [
+            "of"
+          ]
+        },
+        {
+          "number": 31,
+          "points": 1,
+          "answer": [
+            "an"
+          ]
+        },
+        {
+          "number": 32,
+          "points": 1,
+          "answer": [
+            "that",
+            "which"
+          ]
+        }
+      ]
+    }
+  ]
+}

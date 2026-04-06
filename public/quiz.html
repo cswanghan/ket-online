@@ -453,6 +453,7 @@
     // Level detection
     const params = new URLSearchParams(location.search);
     const currentLevel = params.get('level') || 'ket';
+    document.getElementById('topTitle').textContent = currentLevel === 'pet' ? 'PET Practice' : 'KET Practice';
 
     function getAnsweredCount() {
         return Object.keys(userAnswers).filter(key => String(userAnswers[key] || '').trim() !== '').length;

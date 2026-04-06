@@ -1,0 +1,408 @@
+{
+  "examType": "PET",
+  "title": "PET Reading Practice Test 8",
+  "source": "KET Online PET Remix 08",
+  "category": "practice",
+  "totalQuestions": 32,
+  "parts": [
+    {
+      "part": 1,
+      "name": "Reading Part 1",
+      "description": "For each question, choose the correct answer.",
+      "type": "multiple_choice",
+      "questions": [
+        {
+          "number": 1,
+          "points": 1,
+          "text": "MUSEUM CAFÉ\nLast orders 30 minutes before closing time.",
+          "textType": "notice",
+          "options": [
+            "A. The café closes 30 minutes after the museum.",
+            "B. You cannot order food in the last half hour before the café shuts.",
+            "C. The café opens 30 minutes before the museum."
+          ],
+          "answer": "B"
+        },
+        {
+          "number": 2,
+          "points": 1,
+          "text": "Lucy,\nI tried to return your book to the library but it was closed. I've left it on your desk. Could you take it back tomorrow? It's due today.\nEmma",
+          "textType": "message",
+          "question": "Emma wants Lucy to",
+          "options": [
+            "A. borrow a book from the library.",
+            "B. return a library book for her.",
+            "C. collect a book from Emma's desk."
+          ],
+          "answer": "B"
+        },
+        {
+          "number": 3,
+          "points": 1,
+          "text": "TRAIN STATION\nPassengers are advised that the 8:15 service to London has been cancelled. The next train departs at 8:45.",
+          "textType": "notice",
+          "options": [
+            "A. All trains to London have been cancelled today.",
+            "B. The 8:15 train is running 30 minutes late.",
+            "C. The 8:15 train will not run but there is a later one."
+          ],
+          "answer": "C"
+        },
+        {
+          "number": 4,
+          "points": 1,
+          "text": "GYM MEMBERSHIP\nNew members joining in January receive two months free. Normal monthly fee applies from March.",
+          "textType": "notice",
+          "options": [
+            "A. January members don't have to pay until March.",
+            "B. Membership is free for the first two months for everyone.",
+            "C. The gym is closed in January and February."
+          ],
+          "answer": "A"
+        },
+        {
+          "number": 5,
+          "points": 1,
+          "text": "Mark,\nI've checked and your passport expires next month. You'll need to renew it before we book the flights. The form is online.\nSarah",
+          "textType": "message",
+          "question": "Sarah is telling Mark that he needs to",
+          "options": [
+            "A. book the flights as soon as possible.",
+            "B. get a new passport before they can travel.",
+            "C. find his passport before their trip."
+          ],
+          "answer": "B"
+        }
+      ]
+    },
+    {
+      "part": 2,
+      "name": "Reading Part 2",
+      "type": "matching",
+      "description": "The people below all want to find a restaurant for a special occasion. Read the descriptions of eight restaurants. Choose which restaurant would be the most suitable for the people below.",
+      "texts": {
+        "A": {
+          "title": "The Garden Room",
+          "content": "An elegant restaurant in a converted greenhouse, surrounded by beautiful gardens. The menu changes seasonally and features dishes made with ingredients grown on site. Open for lunch and dinner. Booking essential at weekends. Live piano music on Friday and Saturday evenings."
+        },
+        "B": {
+          "title": "Mario's",
+          "content": "A lively Italian restaurant popular with families. The children's menu offers smaller portions of favourites like pasta and pizza. There's a play area to keep the kids entertained while you wait for your food. Open every day for lunch and dinner. No need to book."
+        },
+        "C": {
+          "title": "The Blue Elephant",
+          "content": "Authentic Thai food served in a relaxed atmosphere. This small restaurant seats only 20 people, so booking is essential. The set menu offers excellent value for money. BYOB (bring your own bottle) – no alcohol sold on the premises. Closed on Mondays."
+        },
+        "D": {
+          "title": "Café Express",
+          "content": "Quick, affordable meals in the town centre. Choose from sandwiches, salads, soups and daily specials. Popular with shoppers and office workers at lunchtime. No evening opening. Free Wi-Fi available. Takeaway also available."
+        },
+        "E": {
+          "title": "The Riverside Inn",
+          "content": "A traditional English pub with a restaurant overlooking the river. Famous for its Sunday roast dinner and homemade pies. Large car park. Dog-friendly outdoor seating area. Open for lunch and dinner every day. Group bookings welcome."
+        },
+        "F": {
+          "title": "Sakura",
+          "content": "Japanese cuisine at its finest. Watch the chefs prepare your food at the teppanyaki table. Private dining rooms available for special celebrations. Expensive but worth it for a unique experience. Open Tuesday to Saturday, evenings only."
+        },
+        "G": {
+          "title": "The Vegan Kitchen",
+          "content": "100% plant-based food that even meat-lovers enjoy. Creative dishes using locally sourced organic ingredients. The weekend brunch is particularly popular. Open Wednesday to Sunday. No children under 12 in the evenings."
+        },
+        "H": {
+          "title": "Spice Route",
+          "content": "Award-winning Indian restaurant offering a wide range of curries, from mild to extremely hot. Buffet lunch available on weekdays at a fixed price. Takeaway and delivery service. Large restaurant with space for groups. Open every day."
+        }
+      },
+      "questions": [
+        {
+          "number": 6,
+          "points": 1,
+          "text": "Paula wants to take her parents out for a special anniversary dinner. She'd like somewhere with a private space and something different to watch while they eat. Price is not an issue.",
+          "answer": "F"
+        },
+        {
+          "number": 7,
+          "points": 1,
+          "text": "Mike wants to go out for Sunday lunch with his wife, their two young children and their dog. They need somewhere with parking as they live outside town.",
+          "answer": "E"
+        },
+        {
+          "number": 8,
+          "points": 1,
+          "text": "Yuki and her flatmate are students who want a tasty evening meal that won't cost too much. They want to bring a bottle of wine they received as a gift.",
+          "answer": "C"
+        },
+        {
+          "number": 9,
+          "points": 1,
+          "text": "Greg is planning an evening out with his girlfriend. She loves live music and he enjoys food made from fresh, local ingredients. They want to go on a Saturday.",
+          "answer": "A"
+        },
+        {
+          "number": 10,
+          "points": 1,
+          "text": "Anna wants to have lunch with a large group of work colleagues. She needs somewhere affordable that doesn't require booking and is available on a weekday.",
+          "answer": "H"
+        }
+      ]
+    },
+    {
+      "part": 3,
+      "name": "Reading Part 3",
+      "type": "multiple_choice",
+      "description": "Read the text and answer the questions.",
+      "passageTitle": "Marathon runner James Chen",
+      "passage": "Running a marathon was never something I imagined I would do. At school, I was hopeless at sport. I was always the last person to be picked for any team, and I dreaded PE lessons. The idea of running 42 kilometres would have seemed completely impossible to me back then.\n\nEverything changed when I turned 30. I'd been working in an office for eight years and realised I was seriously unfit. I couldn't run for a bus without getting out of breath. A colleague suggested we sign up for a 5-kilometre charity run, and although I found it incredibly hard, I managed to finish. The sense of achievement I felt when I crossed that finish line was unlike anything I'd experienced before.\n\nAfter that first race, I was hooked. I started running three times a week and gradually increased my distances. Within a year, I'd completed a half marathon. The training was tough, especially in winter when it was dark and cold, but I found that running helped me deal with the stress of my job. It became my way of switching off from work.\n\nTwo years later, I entered the London Marathon. The training plan was brutal – I had to run at least five days a week, including one long run of 30 kilometres every Sunday. I lost weight, gained muscle, and felt healthier than I'd ever been. But the hardest part wasn't the physical training – it was making time for it alongside my full-time job and family life.\n\nOn race day, the atmosphere was incredible. Thousands of people lined the streets, cheering and offering sweets and drinks. I hit a wall at about 35 kilometres – my legs felt like lead and every step was painful. But I kept going, and when I finally crossed the finish line in just under four hours, I burst into tears. I've run three more marathons since then, and each one has been just as emotional.",
+      "questions": [
+        {
+          "number": 11,
+          "points": 1,
+          "text": "What does James say about his attitude to sport when he was young?",
+          "options": [
+            "A. He enjoyed watching sport but not playing it.",
+            "B. He was not good at sport and didn't enjoy it.",
+            "C. He was interested in running but not team sports.",
+            "D. He liked PE lessons but not competitive sport."
+          ],
+          "answer": "B"
+        },
+        {
+          "number": 12,
+          "points": 1,
+          "text": "What motivated James to start running?",
+          "options": [
+            "A. He wanted to lose weight.",
+            "B. His doctor told him he needed to exercise.",
+            "C. He realised how unfit he had become.",
+            "D. He watched the London Marathon on TV."
+          ],
+          "answer": "C"
+        },
+        {
+          "number": 13,
+          "points": 1,
+          "text": "What benefit did running bring to James besides fitness?",
+          "options": [
+            "A. He made a lot of new friends.",
+            "B. It helped him relax and forget about work.",
+            "C. He earned money from winning races.",
+            "D. It helped him get a promotion at work."
+          ],
+          "answer": "B"
+        },
+        {
+          "number": 14,
+          "points": 1,
+          "text": "What did James find most challenging about marathon training?",
+          "options": [
+            "A. The long Sunday runs.",
+            "B. Running in bad weather.",
+            "C. Fitting training around his other responsibilities.",
+            "D. Following a strict diet."
+          ],
+          "answer": "C"
+        },
+        {
+          "number": 15,
+          "points": 1,
+          "text": "How did James feel during the London Marathon?",
+          "options": [
+            "A. He found the whole race easy because of his training.",
+            "B. He nearly gave up but was inspired by the crowd.",
+            "C. He struggled towards the end but was deeply moved when he finished.",
+            "D. He was disappointed with his finishing time."
+          ],
+          "answer": "C"
+        }
+      ]
+    },
+    {
+      "part": 4,
+      "name": "Reading Part 4",
+      "type": "gapped_text",
+      "description": "Five sentences have been removed from the text below. For each question, choose the correct answer. There are three extra sentences which you do not need to use.",
+      "passageTitle": "A new life",
+      "passage": "I used to work as a college lecturer in the north of England, running photography courses. It wasn't a bad job and I really liked my students, but I began to feel tired of doing the same thing every day. (16) ______\n\nI'd always loved travelling, so one weekend I typed 'international volunteering' into an internet search engine. At the top of the results page was the opportunity to go and stay on an island in the Indian Ocean, thousands of miles away, and help to protect the beaches and the sea life. (17) ______ I had some diving experience, and the more I talked about it, the more I wanted to do it. So I contacted the organisation. One week later they offered to send me to the island and I accepted. (18) ______ After all, the volunteer job was only for two months during the summer holidays. I thought after I'd finished, I'd come home.\n\nAs soon as I got to the island, I was sure I'd done the right thing. My first dive was incredible. (19) ______ I felt so lucky to be able to experience that every day.\n\nIn fact I loved it so much that I never came home! I've now been on the island for ten years and I have a permanent job. I'm working as a marine educator, teaching volunteers about the sea life and taking them snorkelling and diving. My desk is a picnic table 10 metres from the best beach on the island. Of course not everything about my new life is perfect. (20) ______ However, I can't imagine going back to my old life.",
+      "sentenceOptions": [
+        "A. That's why I knew it was a terrible plan.",
+        "B. I had trained in icy water in the UK so the crystal clear warm water felt amazing.",
+        "C. They always ask lots of questions.",
+        "D. I work far harder than I used to.",
+        "E. I began joking to friends about sending in an application.",
+        "F. Afterwards, some people were surprised by my decision but I wasn't too worried.",
+        "G. I decided I needed a break.",
+        "H. I needed to explain that first."
+      ],
+      "questions": [
+        {
+          "number": 16,
+          "points": 1,
+          "text": "(16)",
+          "answer": "G"
+        },
+        {
+          "number": 17,
+          "points": 1,
+          "text": "(17)",
+          "answer": "E"
+        },
+        {
+          "number": 18,
+          "points": 1,
+          "text": "(18)",
+          "answer": "F"
+        },
+        {
+          "number": 19,
+          "points": 1,
+          "text": "(19)",
+          "answer": "B"
+        },
+        {
+          "number": 20,
+          "points": 1,
+          "text": "(20)",
+          "answer": "D"
+        }
+      ]
+    },
+    {
+      "part": 5,
+      "name": "Reading Part 5",
+      "type": "cloze_choice",
+      "description": "Read the text. Choose the correct word for each space.",
+      "passageTitle": "The Potato",
+      "passage": "Solanum tuberosum, otherwise known (21)______ its common name, the potato, is the world's fourth largest food crop, (22)______ rice, wheat and maize.\n\nIt was first cultivated by the Inca-native Americans in Peru somewhere around 8,000 BC to 5,000 B.C. Spanish Conquistadors took over Peru in 1536 and discovered the potato for themselves, and subsequently transported them (23)______ Europe.\n\nIntroduced to Ireland in 1589 it (24)______ nearly 40 years for the potato to spread to the rest of Europe. It then made its way back across the Atlantic, this time to the North American continent, this time taken by European immigrants to the New World.\n\nPotatoes are easy to grow, contain most of the vitamins required, and provide a (25)______ yield from the space they occupy than the other staple crops.\n\nThe potato became the first vegetable to be grown in space in 1995. The University of Wisconsin and NASA invented the technology aimed at cultivating food (26)______ astronauts on long space voyages, and, in the future, feeding space colonies.",
+      "questions": [
+        {
+          "number": 21,
+          "points": 1,
+          "text": "(21)",
+          "options": [
+            "A. for",
+            "B. by",
+            "C. at",
+            "D. on"
+          ],
+          "answer": "B"
+        },
+        {
+          "number": 22,
+          "points": 1,
+          "text": "(22)",
+          "options": [
+            "A. after",
+            "B. before",
+            "C. over",
+            "D. when"
+          ],
+          "answer": "A"
+        },
+        {
+          "number": 23,
+          "points": 1,
+          "text": "(23)",
+          "options": [
+            "A. over",
+            "B. on",
+            "C. of",
+            "D. to"
+          ],
+          "answer": "D"
+        },
+        {
+          "number": 24,
+          "points": 1,
+          "text": "(24)",
+          "options": [
+            "A. took",
+            "B. lasted",
+            "C. played",
+            "D. told"
+          ],
+          "answer": "A"
+        },
+        {
+          "number": 25,
+          "points": 1,
+          "text": "(25)",
+          "options": [
+            "A. best",
+            "B. good",
+            "C. worst",
+            "D. higher"
+          ],
+          "answer": "D"
+        },
+        {
+          "number": 26,
+          "points": 1,
+          "text": "(26)",
+          "options": [
+            "A. from",
+            "B. in",
+            "C. for",
+            "D. make"
+          ],
+          "answer": "C"
+        }
+      ]
+    },
+    {
+      "part": 6,
+      "name": "Reading Part 6",
+      "type": "fill_blank",
+      "description": "Read the text. Write ONE word for each gap.",
+      "passageTitle": "Learning to Drive",
+      "passage": "Getting your driving licence is an exciting moment for most young people. In the UK, you can start learning to drive (27)______ you are 17 years old. Before you can drive on public roads, you need to apply (28)______ a provisional driving licence.\n\nMost people take lessons (29)______ a qualified driving instructor. A typical lesson lasts about an hour, and most learners need around 40 lessons (30)______ they are ready to take the test. Of course, some people learn more quickly (31)______ others.\n\nThe driving test has two parts: a theory test and a practical test. You must pass the theory test (32)______ you can take the practical one. The theory test includes questions about road signs and safe driving.",
+      "questions": [
+        {
+          "number": 27,
+          "points": 1,
+          "answer": [
+            "when",
+            "once"
+          ]
+        },
+        {
+          "number": 28,
+          "points": 1,
+          "answer": [
+            "for"
+          ]
+        },
+        {
+          "number": 29,
+          "points": 1,
+          "answer": [
+            "with",
+            "from"
+          ]
+        },
+        {
+          "number": 30,
+          "points": 1,
+          "answer": [
+            "before",
+            "until"
+          ]
+        },
+        {
+          "number": 31,
+          "points": 1,
+          "answer": [
+            "than"
+          ]
+        },
+        {
+          "number": 32,
+          "points": 1,
+          "answer": [
+            "before"
+          ]
+        }
+      ]
+    }
+  ]
+}

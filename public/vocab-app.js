@@ -2,7 +2,8 @@ const STORAGE_KEY = 'ket-vocab-progress-v3';
 const LEGACY_STORAGE_KEYS = ['ket-vocab-progress-v2'];
 const UI_PREFS_KEY = 'ket-vocab-ui-v2';
 const FIRST_VISIT_KEY = 'ket-vocab-first-visit-v1';
-const DAILY_TARGET = 20;
+const DAILY_TARGET_OPTIONS = [10, 20, 30, 50];
+const DEFAULT_DAILY_TARGET = 20;
 const SYNC_DEBOUNCE_MS = 1200;
 const MODE_LABELS = {
   flashcard: '词卡模式',
@@ -19,6 +20,7 @@ const state = {
   randomOrder: false,
   audioOnly: false,
   mode: 'flashcard',
+  dailyTarget: DEFAULT_DAILY_TARGET,
   queue: [],
   index: 0,
   reveal: false,
@@ -75,6 +77,7 @@ function saveUiPrefs() {
     randomOrder: state.randomOrder,
     audioOnly: state.audioOnly,
     mode: state.mode,
+    dailyTarget: state.dailyTarget,
   }));
 }
 
@@ -204,7 +207,7 @@ function saveProgress() {
 function focusLabel() {
   if (state.focus === 'wrong') return '错词本';
   if (state.focus === 'favorites') return '收藏夹';
-  if (state.focus === 'daily') return '每日 20 词';
+  if (state.focus === 'daily') return `每日 ${state.dailyTarget} 词`;
   return '全部词池';
 }
 
@@ -253,6 +256,7 @@ function resolveInitialState() {
   state.onlyUnmastered = params.has('onlyUnmastered') ? params.get('onlyUnmastered') === '1' : Boolean(prefs.onlyUnmastered);
   state.randomOrder = params.has('random') ? params.get('random') === '1' : Boolean(prefs.randomOrder);
   state.audioOnly = params.has('audioOnly') ? params.get('audioOnly') === '1' : Boolean(prefs.audioOnly);
+  state.dailyTarget = DAILY_TARGET_OPTIONS.includes(Number(prefs.dailyTarget)) ? Number(prefs.dailyTarget) : DEFAULT_DAILY_TARGET;
 
   if (validFocus.has(requestedFocus)) {
     state.focus = requestedFocus;
@@ -314,7 +318,7 @@ function getDailyWords(pool = getBasePool()) {
     return left.word.localeCompare(right.word);
   });
 
-  return sorted.slice(0, Math.min(DAILY_TARGET, sorted.length));
+  return sorted.slice(0, Math.min(state.dailyTarget, sorted.length));
 }
 
 function filteredWords() {
@@ -463,7 +467,7 @@ function renderFilters() {
   const dailyCount = getDailyWords(currentPool).length;
   const focusItems = [
     { id: 'all', label: '全部词池', desc: `${currentPool.length} 个词` },
-    { id: 'daily', label: '每日 20 词', desc: `${dailyCount} 个词` },
+    { id: 'daily', label: `每日 ${state.dailyTarget} 词`, desc: `${dailyCount} 个词` },
     { id: 'wrong', label: '错词本', desc: `${wrongCount} 个词` },
     { id: 'favorites', label: '收藏夹', desc: `${favCount} 个词` },
   ];
@@ -566,13 +570,21 @@ function renderDailyCard() {
         <span>需复习词数</span>
       </div>
       <div class="daily-stat">
-        <strong>${DAILY_TARGET}</strong>
-        <span>默认每日目标</span>
+        <select id="dailyTargetSelect" class="daily-target-select">
+          ${DAILY_TARGET_OPTIONS.map((n) => `<option value="${n}"${n === state.dailyTarget ? ' selected' : ''}>${n}</option>`).join('')}
+        </select>
+        <span>每日目标</span>
       </div>
     </div>
-    <button class="daily-btn" id="dailyFocusBtn">${state.focus === 'daily' ? '正在训练今日计划' : '切到每日 20 词'}</button>
+    <button class="daily-btn" id="dailyFocusBtn">${state.focus === 'daily' ? '正在训练今日计划' : `切到每日 ${state.dailyTarget} 词`}</button>
   `;
 
+  document.getElementById('dailyTargetSelect').addEventListener('change', (e) => {
+    state.dailyTarget = Number(e.target.value);
+    saveUiPrefs();
+    buildQueue();
+    render();
+  });
   document.getElementById('dailyFocusBtn').addEventListener('click', () => {
     setFocus('daily', 'daily_card');
   });
@@ -591,18 +603,18 @@ function renderHero() {
     ? `${levelMeta.label} · ${topicMeta.label}`
     : `${levelMeta.label} · Cambridge Topic Vocabulary`;
   document.getElementById('heroTitle').textContent = state.focus === 'daily'
-    ? 'Today’s 20 Words'
+    ? `Today’s ${state.dailyTarget} Words`
     : topicMeta
       ? `${topicMeta.label} Word Studio`
       : 'Official Topic Vocabulary Studio';
   document.getElementById('heroDesc').textContent = state.focus === 'daily'
-    ? `系统会按今日日期、当前等级/主题和你的掌握情况，优先挑出 ${DAILY_TARGET} 个值得复习的单词。`
+    ? `系统会按今日日期、当前等级/主题和你的掌握情况，优先挑出 ${state.dailyTarget} 个值得复习的单词。`
     : topicMeta
       ? `当前筛选的是 ${topicMeta.label} 主题词。可以切换词卡、拼写、听写和例句挖空四种训练模式。`
       : '词汇按 Cambridge English 官方 A2 Key / B1 Preliminary 主题维度组织，支持主题筛选、每日计划和云端同步。';
 
   document.getElementById('heroActions').innerHTML = `
-    <button class="hero-action-btn primary" id="heroDailyAction">${state.focus === 'daily' ? '继续今日 20 词' : '切到今日 20 词'}</button>
+    <button class="hero-action-btn primary" id="heroDailyAction">${state.focus === 'daily' ? `继续今日 ${state.dailyTarget} 词` : `切到今日 ${state.dailyTarget} 词`}</button>
     <button class="hero-action-btn" id="heroTopicAction">${state.topic === 'all' ? '浏览全部主题' : '回到全部主题'}</button>
     <button class="hero-action-btn" id="heroModeAction">${state.mode === 'dictation' ? '切到例句挖空' : '切到听写模式'}</button>
   `;

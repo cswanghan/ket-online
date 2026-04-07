@@ -350,8 +350,8 @@
 
     function showAuthModal(reason = 'save_result') {
         document.getElementById('authOverlay').classList.add('show');
-        document.getElementById('authModalTitle').textContent = '登录后保存记录';
-        document.getElementById('authModalHint').textContent = '注册/登录后可同步成绩和历史记录，游客也能先做完再保存。';
+        setText('authModalTitle', '登录后保存记录');
+        setText('authModalHint', '注册/登录后可同步成绩和历史记录，游客也能先做完再保存。');
         trackEvent('quiz_save_history_click', { reason, answered: getAnsweredCount(), hasResult: Boolean(lastResult) });
     }
     function closeAuthModal() {
@@ -462,7 +462,7 @@
     // Level detection
     const params = new URLSearchParams(location.search);
     const currentLevel = params.get('level') || 'ket';
-    document.getElementById('topTitle').textContent = currentLevel === 'pet' ? 'PET Practice' : 'KET Practice';
+    setText('topTitle', currentLevel === 'pet' ? 'PET Practice' : 'KET Practice');
 
     function getAnsweredCount() {
         return Object.keys(userAnswers).filter(key => String(userAnswers[key] || '').trim() !== '').length;
@@ -562,7 +562,7 @@
             ).join('');
             trackEvent('quiz_selector_view', { level: currentLevel, tests: level.tests.length });
             renderResumeBanner();
-        } catch (e) { document.getElementById('testGrid').textContent = '加载失败'; }
+        } catch (e) { setText('testGrid', '加载失败'); }
     }
 
     // Load a specific test
@@ -573,7 +573,7 @@
         try {
             const r = await fetch(`/data/${level}/${testId}.json`);
             testData = await r.json();
-            document.getElementById('topTitle').textContent = testData.title;
+            setText('topTitle', testData.title);
 
             // Flatten all questions
             allQuestions = [];
@@ -615,11 +615,25 @@
         persistDraft();
     }
 
+    function setText(id, value) {
+        const el = document.getElementById(id);
+        if (el) el.textContent = value;
+    }
+
     function updateTimer() {
+        const el = document.getElementById('timer');
+        if (!el) {
+            // Element gone — interval is leaking, clean up to avoid log spam
+            if (timerInterval) {
+                clearInterval(timerInterval);
+                timerInterval = null;
+            }
+            return;
+        }
         const elapsed = Math.floor((Date.now() - startTime) / 1000);
         const m = String(Math.floor(elapsed / 60)).padStart(2, '0');
         const s = String(elapsed % 60).padStart(2, '0');
-        document.getElementById('timer').textContent = `${m}:${s}`;
+        el.textContent = `${m}:${s}`;
     }
 
     function renderCurrentPart() {
@@ -791,7 +805,7 @@
 
     function updateProgress() {
         const answered = getAnsweredCount();
-        document.getElementById('progress').textContent = `已答 ${answered} / ${allQuestions.length}`;
+        setText('progress', `已答 ${answered} / ${allQuestions.length}`);
         document.getElementById('progressBar').style.width = `${(answered / allQuestions.length) * 100}%`;
         maybeTrackProgressCheckpoint(answered);
     }
@@ -1074,6 +1088,10 @@
     loadTestList();
     window.addEventListener('beforeunload', persistDraft);
     window.addEventListener('pagehide', () => {
+        if (timerInterval) {
+            clearInterval(timerInterval);
+            timerInterval = null;
+        }
         if (!submitted && getAnsweredCount() > 0) {
             persistDraft();
             trackEvent('quiz_in_progress_leave', {

@@ -158,7 +158,17 @@
     }
   }
 
+  function isThirdPartyError(event) {
+    const msg = event.message || '';
+    // Cross-origin scripts blocked by CORS surface as opaque "Script error."
+    if (msg === 'Script error.' || msg === 'Script error') return true;
+    // Browser extension / minified third-party noise (no source filename, no line)
+    if (!event.filename && !event.lineno) return true;
+    return false;
+  }
+
   window.addEventListener('error', (event) => {
+    if (isThirdPartyError(event)) return;
     track('js_error', {
       eventGroup: 'error',
       label: event.message || 'unknown',

@@ -45,22 +45,113 @@
             font-size: 0.9rem; line-height: 1.8;
         }
         .resume-banner {
-            max-width: 640px; margin: 0 auto 20px; text-align: left;
-            background: white; border: 1px solid var(--warm); border-radius: 16px;
-            padding: 18px 20px; display: none; gap: 14px;
-            box-shadow: 0 8px 24px rgba(180,140,110,0.08);
+            max-width: 640px; margin: 0 auto 24px; text-align: left;
+            background: linear-gradient(135deg, #fef3e8 0%, #fde6d3 100%);
+            border: 1px solid var(--rose); border-radius: 20px;
+            padding: 22px 24px; display: none; gap: 14px;
+            box-shadow: 0 12px 32px rgba(180,120,80,0.18);
+            position: relative; overflow: hidden;
+        }
+        .resume-banner::before {
+            content: '↻'; position: absolute; right: 22px; top: 16px;
+            font-size: 2.2rem; color: var(--accent); opacity: 0.18;
         }
         .resume-banner.show { display: grid; }
-        .resume-banner strong { color: var(--accent); font-size: 1rem; }
-        .resume-banner p { color: var(--text-light); font-size: 0.86rem; line-height: 1.7; }
-        .resume-actions { display: flex; gap: 10px; flex-wrap: wrap; }
-        .resume-btn {
-            padding: 10px 16px; border-radius: 18px; border: none; font: inherit;
-            cursor: pointer; transition: all 0.2s;
+        .resume-banner .resume-eyebrow {
+            display: inline-block; align-self: start;
+            background: var(--accent); color: white;
+            font-size: 0.72rem; font-weight: 600; letter-spacing: 0.08em;
+            padding: 4px 10px; border-radius: 10px;
         }
-        .resume-btn.primary { background: var(--accent); color: white; }
-        .resume-btn.secondary { background: white; color: var(--text); border: 1px solid var(--warm); }
-        .resume-btn.secondary:hover { border-color: var(--rose); color: var(--accent); }
+        .resume-banner strong { color: var(--accent); font-size: 1.08rem; }
+        .resume-banner p { color: var(--text); font-size: 0.88rem; line-height: 1.6; margin: 0; }
+        .resume-progress {
+            height: 6px; background: rgba(255,255,255,0.7); border-radius: 999px;
+            overflow: hidden; margin: 4px 0 2px;
+        }
+        .resume-progress-fill {
+            height: 100%; background: var(--accent); border-radius: 999px;
+            transition: width 0.3s ease;
+        }
+        .resume-actions { display: flex; gap: 10px; flex-wrap: wrap; margin-top: 4px; }
+        .resume-btn {
+            padding: 12px 22px; border-radius: 18px; border: none; font: inherit;
+            font-weight: 600; cursor: pointer; transition: all 0.2s;
+        }
+        .resume-btn.primary {
+            background: var(--accent); color: white;
+            box-shadow: 0 6px 16px rgba(154,107,82,0.3);
+        }
+        .resume-btn.primary:hover { transform: translateY(-1px); box-shadow: 0 8px 20px rgba(154,107,82,0.4); }
+        .resume-btn.secondary { background: rgba(255,255,255,0.8); color: var(--text-light); border: 1px solid var(--warm); }
+        .resume-btn.secondary:hover { color: var(--accent); }
+
+        /* Quiz intro screen */
+        .quiz-intro {
+            max-width: 600px; margin: 30px auto; text-align: center;
+            background: white; border: 1px solid var(--warm); border-radius: 24px;
+            padding: 36px 32px;
+            box-shadow: 0 12px 32px rgba(180,140,110,0.1);
+        }
+        .intro-eyebrow {
+            font-size: 0.72rem; color: var(--text-light); letter-spacing: 0.18em;
+            text-transform: uppercase; margin-bottom: 8px;
+        }
+        .intro-title {
+            font-family: 'Playfair Display', 'Noto Serif SC', serif;
+            font-size: 1.5rem; color: var(--accent); margin: 0 0 24px;
+        }
+        .intro-meta {
+            display: grid; grid-template-columns: repeat(3, 1fr); gap: 12px;
+            margin-bottom: 28px;
+        }
+        .intro-stat {
+            background: var(--warm-bg, #faf6f1); border-radius: 16px;
+            padding: 16px 8px; display: grid; gap: 4px;
+        }
+        .intro-stat strong { font-size: 1.6rem; color: var(--accent); font-weight: 700; }
+        .intro-stat span { font-size: 0.78rem; color: var(--text-light); }
+        .intro-parts {
+            text-align: left; margin-bottom: 24px;
+            background: #faf6f1; border-radius: 16px; padding: 16px 18px;
+        }
+        .intro-parts-label {
+            font-size: 0.74rem; text-transform: uppercase; letter-spacing: 0.12em;
+            color: var(--text-light); margin-bottom: 10px;
+        }
+        .intro-part-row {
+            display: flex; align-items: center; gap: 12px;
+            padding: 8px 0; border-bottom: 1px solid rgba(180,140,110,0.12);
+            font-size: 0.88rem;
+        }
+        .intro-part-row:last-child { border-bottom: none; }
+        .intro-part-num {
+            font-weight: 700; color: var(--accent); min-width: 56px;
+        }
+        .intro-part-name { flex: 1; color: var(--text); }
+        .intro-part-count { color: var(--text-light); font-size: 0.82rem; }
+        .intro-tips {
+            text-align: left; font-size: 0.84rem; color: var(--text-light);
+            line-height: 1.9; margin-bottom: 24px;
+        }
+        .intro-start-btn {
+            width: 100%; padding: 16px;
+            background: var(--accent); color: white; border: none; border-radius: 18px;
+            font: inherit; font-size: 1.02rem; font-weight: 700;
+            cursor: pointer; transition: all 0.2s;
+            box-shadow: 0 8px 20px rgba(154,107,82,0.28);
+        }
+        .intro-start-btn:hover { transform: translateY(-1px); box-shadow: 0 12px 26px rgba(154,107,82,0.36); }
+        .intro-back-btn {
+            margin-top: 12px; background: none; border: none; color: var(--text-light);
+            font: inherit; font-size: 0.86rem; cursor: pointer; padding: 8px;
+        }
+        .intro-back-btn:hover { color: var(--accent); }
+        @media (max-width: 600px) {
+            .quiz-intro { padding: 28px 20px; margin: 16px auto; border-radius: 20px; }
+            .intro-title { font-size: 1.25rem; }
+            .intro-stat strong { font-size: 1.4rem; }
+        }
         .test-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(200px, 1fr)); gap: 16px; max-width: 640px; margin: 0 auto; }
         .test-option {
             background: white; border: 1px solid var(--warm); border-radius: 16px;
@@ -521,12 +612,18 @@
         }
 
         banner.classList.add('show');
+        const answered = draft.answered || 0;
+        const total = draft.total || 0;
+        const pct = total ? Math.min(100, Math.round((answered / total) * 100)) : 0;
+        const savedAgo = formatRelativeTime(draft.savedAt);
         banner.innerHTML = `
-            <strong>发现上次未完成的练习</strong>
-            <p>${draft.title || draft.testId} · 已答 ${draft.answered || 0}/${draft.total || 0} · 自动保存于 ${new Date(draft.savedAt).toLocaleString('zh-CN', { hour12: false })}</p>
+            <span class="resume-eyebrow">上次未完成</span>
+            <strong>${draft.title || draft.testId}</strong>
+            <p>已答 <strong>${answered}/${total}</strong> 题 · 草稿保存于 ${savedAgo}</p>
+            <div class="resume-progress"><div class="resume-progress-fill" style="width:${pct}%"></div></div>
             <div class="resume-actions">
-                <button class="resume-btn primary" id="resumeQuizBtn">继续作答</button>
-                <button class="resume-btn secondary" id="discardQuizBtn">放弃草稿</button>
+                <button class="resume-btn primary" id="resumeQuizBtn">继续上次（剩 ${Math.max(0, total - answered)} 题）</button>
+                <button class="resume-btn secondary" id="discardQuizBtn">重新开始</button>
             </div>
         `;
         document.getElementById('resumeQuizBtn').onclick = () => {
@@ -534,10 +631,12 @@
             loadTest(draft.testId, draft.level, true);
         };
         document.getElementById('discardQuizBtn').onclick = () => {
+            trackEvent('quiz_draft_discard', { testId: draft.testId });
             clearDraft();
             banner.classList.remove('show');
             banner.innerHTML = '';
-            trackEvent('quiz_draft_discard', { testId: draft.testId });
+            // Restart this test from scratch
+            loadTest(draft.testId, draft.level, false);
         };
     }
 
@@ -600,7 +699,20 @@
         currentPartIdx = draft?.currentPartIdx || 0;
         submitted = false;
         progressCheckpoints.clear();
-        startTime = Date.now() - ((draft?.elapsedSeconds || 0) * 1000);
+        startTime = 0;
+        if (timerInterval) { clearInterval(timerInterval); timerInterval = null; }
+
+        if (draft) {
+            // Resuming an existing draft → skip intro, jump straight in
+            beginQuizSession(draft.elapsedSeconds || 0, true);
+        } else {
+            renderQuizIntro();
+        }
+    }
+
+    function beginQuizSession(elapsedSeconds = 0, resumed = false) {
+        startTime = Date.now() - (elapsedSeconds * 1000);
+        if (timerInterval) clearInterval(timerInterval);
         updateTimer();
         timerInterval = setInterval(updateTimer, 1000);
         trackEvent('quiz_start', {
@@ -608,16 +720,100 @@
             title: testData?.title || '',
             totalQuestions: allQuestions.length,
             totalParts: testData?.parts?.length || 0,
-            resumed: Boolean(draft),
+            resumed,
         });
         renderCurrentPart();
         updateProgress();
         persistDraft();
     }
 
+    function estimateMinutes() {
+        // Practice pace ≈ 1.5 min per question, rounded to nearest 5
+        const raw = Math.max(5, Math.round((allQuestions.length * 1.5) / 5) * 5);
+        return raw;
+    }
+
+    function renderQuizIntro() {
+        const view = document.getElementById('quizView');
+        const loggedIn = Boolean(localStorage.getItem('token'));
+        const partRows = (testData.parts || []).map((p, i) => `
+            <div class="intro-part-row">
+                <span class="intro-part-num">Part ${i + 1}</span>
+                <span class="intro-part-name">${p.name || ''}</span>
+                <span class="intro-part-count">${(p.questions || []).length} 题</span>
+            </div>
+        `).join('');
+
+        view.innerHTML = `
+            <div class="quiz-intro">
+                <div class="intro-eyebrow">${currentLevel === 'pet' ? 'PET · B1 Preliminary' : 'KET · A2 Key'}</div>
+                <h2 class="intro-title">${testData.title}</h2>
+                <div class="intro-meta">
+                    <div class="intro-stat">
+                        <strong>${testData.parts?.length || 0}</strong>
+                        <span>个 Part</span>
+                    </div>
+                    <div class="intro-stat">
+                        <strong>${allQuestions.length}</strong>
+                        <span>道题</span>
+                    </div>
+                    <div class="intro-stat">
+                        <strong>~${estimateMinutes()}</strong>
+                        <span>分钟</span>
+                    </div>
+                </div>
+                <div class="intro-parts">
+                    <div class="intro-parts-label">本套构成</div>
+                    ${partRows}
+                </div>
+                <div class="intro-tips">
+                    <div>✓ 中途随时离开，进度会自动保存，下次继续</div>
+                    <div>✓ ${loggedIn ? '已登录，交卷后自动同步到历史' : '游客可直接做完，看到分数后再决定是否登录保存'}</div>
+                    <div>✓ 不计时强制结束，按自己节奏来</div>
+                </div>
+                <button class="intro-start-btn" id="introStartBtn">开始作答 · Part 1 →</button>
+                <button class="intro-back-btn" id="introBackBtn">先回去看看别的</button>
+            </div>
+        `;
+
+        document.getElementById('introStartBtn').onclick = () => {
+            trackEvent('quiz_intro_start', {
+                testId: currentTestId,
+                level: currentLevel,
+                totalQuestions: allQuestions.length,
+                totalParts: testData?.parts?.length || 0,
+            });
+            beginQuizSession(0, false);
+        };
+        document.getElementById('introBackBtn').onclick = () => {
+            trackEvent('quiz_intro_back', { testId: currentTestId });
+            document.getElementById('quizView').classList.add('hidden');
+            document.getElementById('selectorView').classList.remove('hidden');
+            view.innerHTML = '';
+            currentTestId = null;
+        };
+
+        trackEvent('quiz_intro_view', {
+            testId: currentTestId,
+            level: currentLevel,
+            totalQuestions: allQuestions.length,
+            totalParts: testData?.parts?.length || 0,
+        });
+    }
+
     function setText(id, value) {
         const el = document.getElementById(id);
         if (el) el.textContent = value;
+    }
+
+    function formatRelativeTime(ts) {
+        if (!ts) return '刚刚';
+        const diff = Date.now() - ts;
+        if (diff < 60_000) return '刚刚';
+        if (diff < 3_600_000) return `${Math.round(diff / 60_000)} 分钟前`;
+        if (diff < 86_400_000) return `${Math.round(diff / 3_600_000)} 小时前`;
+        if (diff < 604_800_000) return `${Math.round(diff / 86_400_000)} 天前`;
+        return new Date(ts).toLocaleDateString('zh-CN');
     }
 
     function updateTimer() {

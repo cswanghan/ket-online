@@ -1158,10 +1158,16 @@
     }
 
     async function persistPendingResult(source = 'submit') {
-        if (!pendingResultPayload) return false;
+        if (!pendingResultPayload) {
+            trackEvent('quiz_persist_skipped', { source, reason: 'no_payload' }, 'error');
+            return false;
+        }
         try {
             const token = localStorage.getItem('token');
-            if (!token) return false;
+            if (!token) {
+                trackEvent('quiz_persist_skipped', { source, reason: 'no_token' }, 'error');
+                return false;
+            }
             const response = await fetch('/api/quiz/submit', {
                 method: 'POST',
                 headers: { 'Authorization': `Bearer ${token}`, 'Content-Type': 'application/json' },
@@ -1174,20 +1180,17 @@
                 })
             });
             if (!response.ok) throw new Error(`submit_${response.status}`);
-            if (source === 'submit') {
-                trackEvent('quiz_submit_success', {
+            const successEvent = source === 'submit' ? 'quiz_submit_success' : 'quiz_save_history_success';
+            window.KETAnalytics?.track(successEvent, {
+                meta: {
                     correct: pendingResultPayload.correct,
                     total: pendingResultPayload.total,
                     pct: pendingResultPayload.pct,
                     duration: pendingResultPayload.duration,
-                });
-            } else {
-                trackEvent('quiz_save_history_success', {
-                    correct: pendingResultPayload.correct,
-                    total: pendingResultPayload.total,
-                    pct: pendingResultPayload.pct,
-                });
-            }
+                },
+                immediate: true,
+                keepalive: true,
+            });
             pendingResultPayload = null;
             renderResults();
             return true;

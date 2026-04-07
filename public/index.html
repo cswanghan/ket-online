@@ -495,7 +495,7 @@
                 <button class="qr-tab alipay active" onclick="switchQR('alipay')">支付宝</button>
                 <button class="qr-tab wechat" onclick="switchQR('wechat')">微信</button>
             </div>
-            <img class="qr-img" id="qrImg" src="images/alipay-qr.png" alt="收款码">
+            <img class="qr-img" id="qrImg" data-src="images/alipay-qr.png" alt="收款码" loading="lazy" decoding="async">
             <div class="donate-thanks">
                 感谢你的支持与鼓励<br>每一份心意都是继续更新的动力
             </div>
@@ -515,6 +515,12 @@
         }
 
         function openDonate() {
+            // Lazy-load the QR image only when the user opens the modal,
+            // avoiding a 350KB blocker on the first page load.
+            const qrImg = document.getElementById('qrImg');
+            if (qrImg && !qrImg.src && qrImg.dataset.src) {
+                qrImg.src = qrImg.dataset.src;
+            }
             document.getElementById('donateModal').classList.add('show');
             trackEvent('donate_modal_open');
         }

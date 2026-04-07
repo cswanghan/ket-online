@@ -138,22 +138,32 @@
   }
 
   function trackPerformance() {
+    // If the tab was ever backgrounded, load timings are unreliable
+    // (browsers throttle the `load` event, pushing loadEventEnd minutes
+    // or even hours into the future). Skip those samples.
+    if (document.visibilityState !== 'visible') return;
     const navigation = performance.getEntriesByType('navigation')[0];
     if (!navigation) return;
     const loadEventMs = Math.round(navigation.loadEventEnd || 0);
-    if (!loadEventMs) return;
+    const domContentLoadedMs = Math.round(navigation.domContentLoadedEventEnd || 0);
+    const ttfbMs = Math.round(navigation.responseStart || 0);
+    if (!loadEventMs || loadEventMs < 0) return;
+    // Upper bound: anything > 60s is background throttling, not real latency
+    if (loadEventMs > 60_000) return;
     track('page_load', {
       eventGroup: 'performance',
-      value: Math.round(loadEventMs / 1000),
+      value: loadEventMs,
       meta: {
-        domContentLoadedMs: Math.round(navigation.domContentLoadedEventEnd || 0),
+        domContentLoadedMs,
         loadEventMs,
+        ttfbMs,
       },
     });
     if (loadEventMs >= 4000) {
       track('page_load_slow', {
         eventGroup: 'friction',
         value: loadEventMs,
+        meta: { domContentLoadedMs, ttfbMs },
       });
     }
   }

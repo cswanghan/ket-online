@@ -5,7 +5,7 @@ export const onRequestGet: PagesFunction<Env> = async (context) => {
   const status = url.searchParams.get('status') || 'pending';
 
   const users = await context.env.DB.prepare(
-    'SELECT id, username, phone, role, status, created_at FROM users WHERE status = ? ORDER BY created_at DESC'
+    'SELECT id, username, email, phone, role, status, created_at FROM users WHERE status = ? ORDER BY created_at DESC'
   ).bind(status).all();
 
   return new Response(JSON.stringify({ users: users.results }), {

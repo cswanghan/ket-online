@@ -323,6 +323,10 @@
                 <input class="form-input" name="username" placeholder="3-20 字符" required>
             </div>
             <div class="form-group">
+                <label class="form-label">邮箱</label>
+                <input class="form-input" name="email" type="email" placeholder="用于找回账号" required>
+            </div>
+            <div class="form-group">
                 <label class="form-label">密码</label>
                 <input class="form-input" name="password" type="password" placeholder="至少 6 位" required>
             </div>
@@ -403,7 +407,12 @@
         try {
             const r = await fetch('/api/auth/register', {
                 method: 'POST', headers: { 'Content-Type': 'application/json' },
-                body: JSON.stringify({ username: form.username.value, password: form.password.value, phone: form.phone.value || undefined }),
+                body: JSON.stringify({
+                    username: form.username.value,
+                    email: form.email.value,
+                    password: form.password.value,
+                    phone: form.phone.value || undefined,
+                }),
             });
             const res = await r.json();
             if (r.ok) {

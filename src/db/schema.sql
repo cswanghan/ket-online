@@ -2,14 +2,17 @@ CREATE TABLE IF NOT EXISTS users (
     id         INTEGER PRIMARY KEY AUTOINCREMENT,
     username   TEXT    NOT NULL UNIQUE,
     password   TEXT    NOT NULL,
+    email      TEXT,
     phone      TEXT,
     role       TEXT    NOT NULL DEFAULT 'user',
-    status     TEXT    NOT NULL DEFAULT 'pending',
+    status     TEXT    NOT NULL DEFAULT 'approved',
     invited_by INTEGER,
     created_at TEXT    NOT NULL DEFAULT (datetime('now')),
     updated_at TEXT    NOT NULL DEFAULT (datetime('now')),
     FOREIGN KEY (invited_by) REFERENCES users(id)
 );
+
+CREATE UNIQUE INDEX IF NOT EXISTS idx_users_email ON users(email) WHERE email IS NOT NULL;
 
 CREATE TABLE IF NOT EXISTS invite_codes (
     id         INTEGER PRIMARY KEY AUTOINCREMENT,

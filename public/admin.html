@@ -197,7 +197,7 @@
             </div>
             <div class="analytics-grid">
                 <div class="analytics-card"><div class="k">做题启动</div><div class="v">${quiz.starts || 0}</div><div class="subv">看到结果 ${(quiz.submitSuccess || 0) + (quiz.guestResults || 0)}</div></div>
-                <div class="analytics-card"><div class="k">历史保存</div><div class="v">${quiz.saveHistorySuccess || 0}</div><div class="subv">中途离开 ${quiz.inProgressLeave || 0}</div></div>
+                <div class="analytics-card"><div class="k">成绩入库</div><div class="v">${quiz.persistedSessions || 0}</div><div class="subv">游客补存 ${quiz.saveHistorySuccess || 0} · 中途离开 ${quiz.inProgressLeave || 0}</div></div>
                 <div class="analytics-card"><div class="k">背词会话</div><div class="v">${vocab.starts || 0}</div><div class="subv">每日计划使用 ${vocab.dailyFocus || 0}</div></div>
                 <div class="analytics-card"><div class="k">背词完成量</div><div class="v">${vocab.wordCompletions || 0}</div><div class="subv">同步失败 ${vocab.syncFailed || 0}</div></div>
             </div>

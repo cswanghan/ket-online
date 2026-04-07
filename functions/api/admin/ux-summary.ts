@@ -157,6 +157,7 @@ async function loadQuiz(db: D1Database, since: string) {
        SUM(CASE WHEN event_name = 'quiz_submit_success' THEN 1 ELSE 0 END) AS submit_success,
        SUM(CASE WHEN event_name = 'quiz_guest_result_shown' THEN 1 ELSE 0 END) AS guest_results,
        SUM(CASE WHEN event_name = 'quiz_save_history_success' THEN 1 ELSE 0 END) AS save_history_success,
+       COUNT(DISTINCT CASE WHEN event_name IN ('quiz_submit_success', 'quiz_save_history_success') THEN session_id END) AS persisted_sessions,
        SUM(CASE WHEN event_name = 'quiz_submit_failed' THEN 1 ELSE 0 END) AS submit_failed,
        SUM(CASE WHEN event_name = 'quiz_in_progress_leave' THEN 1 ELSE 0 END) AS in_progress_leave,
        SUM(CASE WHEN event_name = 'quiz_progress_checkpoint' THEN 1 ELSE 0 END) AS checkpoints
@@ -170,6 +171,7 @@ async function loadQuiz(db: D1Database, since: string) {
     submitSuccess: row?.submit_success || 0,
     guestResults: row?.guest_results || 0,
     saveHistorySuccess: row?.save_history_success || 0,
+    persistedSessions: row?.persisted_sessions || 0,
     submitFailed: row?.submit_failed || 0,
     inProgressLeave: row?.in_progress_leave || 0,
     checkpoints: row?.checkpoints || 0,
@@ -209,7 +211,7 @@ async function loadQuizFunnel(db: D1Database, since: string): Promise<FunnelStep
        COUNT(DISTINCT CASE WHEN event_name = 'quiz_progress_checkpoint' AND CAST(json_extract(meta_json, '$.percent') AS INTEGER) >= 50 THEN session_id END) AS mid_progress,
        COUNT(DISTINCT CASE WHEN event_name = 'quiz_submit_attempt' THEN session_id END) AS submit_attempt,
        COUNT(DISTINCT CASE WHEN event_name IN ('quiz_submit_success', 'quiz_guest_result_shown') THEN session_id END) AS result_view,
-       COUNT(DISTINCT CASE WHEN event_name = 'quiz_save_history_success' THEN session_id END) AS save_history
+       COUNT(DISTINCT CASE WHEN event_name IN ('quiz_submit_success', 'quiz_save_history_success') THEN session_id END) AS save_history
      FROM ux_events
      WHERE created_at >= ?`
   ).bind(since).first<any>();
@@ -222,7 +224,7 @@ async function loadQuizFunnel(db: D1Database, since: string): Promise<FunnelStep
     { key: 'mid_progress', label: '做到 50%', count: row?.mid_progress || 0 },
     { key: 'submit_attempt', label: '点击交卷', count: row?.submit_attempt || 0 },
     { key: 'result_view', label: '看到结果页', count: row?.result_view || 0 },
-    { key: 'save_history', label: '保存到历史', count: row?.save_history || 0 },
+    { key: 'save_history', label: '成绩入库', count: row?.save_history || 0 },
   ];
 }
 

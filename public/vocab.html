@@ -883,9 +883,10 @@
     <div class="shell">
         <aside class="panel sidebar">
             <div class="brand">
-                <a href="index.html">← 返回 KET&PET 首页</a>
+                <a href="index.html" data-i18n="backHome">← 返回 KET&PET 首页</a>
                 <h1>Word Voyage</h1>
-                <p>按 Cambridge English 官方主题词组织，支持等级筛选、主题筛选、今日 20 词，以及词卡、拼写、听写、例句挖空四种训练方式。</p>
+                <p data-i18n="brandDesc">按 Cambridge English 官方主题词组织，支持等级筛选、主题筛选、今日 20 词，以及词卡、拼写、听写、例句挖空四种训练方式。</p>
+                <button class="i18n-toggle" onclick="I18n.toggle()" style="margin-top:8px;padding:4px 14px;border-radius:999px;border:1px solid var(--line);background:rgba(255,255,255,0.8);font-size:0.82rem;font-family:inherit;cursor:pointer;">EN</button>
             </div>
 
             <section>
@@ -910,8 +911,8 @@
             <section class="toggle-stack">
                 <div class="toggle-card">
                     <div class="toggle-copy">
-                        <strong>只看未掌握</strong>
-                        <span>隐藏已经连续答对两次的熟词。</span>
+                        <strong data-i18n="toggleUnmastered">只看未掌握</strong>
+                        <span data-i18n="toggleUnmasteredDesc">隐藏已经连续答对两次的熟词。</span>
                     </div>
                     <label class="switch">
                         <input type="checkbox" id="onlyUnmasteredToggle">
@@ -921,8 +922,8 @@
 
                 <div class="toggle-card">
                     <div class="toggle-copy">
-                        <strong>随机顺序</strong>
-                        <span>每次重建队列时打乱当前词池。</span>
+                        <strong data-i18n="toggleRandom">随机顺序</strong>
+                        <span data-i18n="toggleRandomDesc">每次重建队列时打乱当前词池。</span>
                     </div>
                     <label class="switch">
                         <input type="checkbox" id="randomOrderToggle">
@@ -932,8 +933,8 @@
 
                 <div class="toggle-card">
                     <div class="toggle-copy">
-                        <strong>纯听模式</strong>
-                        <span>在听写模式下隐藏文字提示，只保留语音。</span>
+                        <strong data-i18n="toggleAudioOnly">纯听模式</strong>
+                        <span data-i18n="toggleAudioOnlyDesc">在听写模式下隐藏文字提示，只保留语音。</span>
                     </div>
                     <label class="switch">
                         <input type="checkbox" id="audioOnlyToggle">
@@ -944,7 +945,7 @@
 
             <section class="source-card">
                 <h3 class="section-title" style="margin:0;">Official Source</h3>
-                <p>主题维度参考 Cambridge English 官方 A2 Key / B1 Preliminary vocabulary list 的 topic headings。</p>
+                <p data-i18n="sourceDesc">主题维度参考 Cambridge English 官方 A2 Key / B1 Preliminary vocabulary list 的 topic headings。</p>
                 <div class="source-links" id="sourceLinks"></div>
             </section>
         </aside>
@@ -960,10 +961,10 @@
 
             <section class="panel mode-bar">
                 <span class="mode-bar-label">Mode</span>
-                <button class="mode-tab active" data-mode="flashcard">词卡模式</button>
-                <button class="mode-tab" data-mode="spelling">拼写模式</button>
-                <button class="mode-tab" data-mode="dictation">听写模式</button>
-                <button class="mode-tab" data-mode="cloze">例句挖空</button>
+                <button class="mode-tab active" data-mode="flashcard" data-i18n="modeFlashcard">词卡模式</button>
+                <button class="mode-tab" data-mode="spelling" data-i18n="modeSpelling">拼写模式</button>
+                <button class="mode-tab" data-mode="dictation" data-i18n="modeDictation">听写模式</button>
+                <button class="mode-tab" data-mode="cloze" data-i18n="modeCloze">例句挖空</button>
             </section>
 
             <section class="panel session">
@@ -982,6 +983,216 @@
 
     <div class="toast" id="toast"></div>
 
+    <script>
+    window.I18N = {
+        zh: {
+            backHome: '← 返回 KET&PET 首页',
+            brandDesc: '按 Cambridge English 官方主题词组织，支持等级筛选、主题筛选、今日 20 词，以及词卡、拼写、听写、例句挖空四种训练方式。',
+            toggleUnmastered: '只看未掌握',
+            toggleUnmasteredDesc: '隐藏已经连续答对两次的熟词。',
+            toggleRandom: '随机顺序',
+            toggleRandomDesc: '每次重建队列时打乱当前词池。',
+            toggleAudioOnly: '纯听模式',
+            toggleAudioOnlyDesc: '在听写模式下隐藏文字提示，只保留语音。',
+            sourceDesc: '主题维度参考 Cambridge English 官方 A2 Key / B1 Preliminary vocabulary list 的 topic headings。',
+            modeFlashcard: '词卡模式',
+            modeSpelling: '拼写模式',
+            modeDictation: '听写模式',
+            modeCloze: '例句挖空',
+            // vocab-app.js dynamic strings
+            focusAll: '全部词池',
+            focusDaily: '每日 {n} 词',
+            focusWrong: '错词本',
+            focusFavorites: '收藏夹',
+            wordsUnit: '个词',
+            dailyPlanCount: '今日计划词数',
+            dailyMastered: '今日已掌握',
+            dailyReview: '需复习词数',
+            dailyGoal: '每日目标',
+            dailyBtnActive: '正在训练今日计划',
+            dailyBtnSwitch: '切到每日 {n} 词',
+            heroDescDaily: '系统会按今日日期、当前等级/主题和你的掌握情况，优先挑出 {n} 个值得复习的单词。',
+            heroDescTopic: '当前筛选的是 {topic} 主题词。可以切换词卡、拼写、听写和例句挖空四种训练模式。',
+            heroDescAll: '词汇按 Cambridge English 官方 A2 Key / B1 Preliminary 主题维度组织，支持主题筛选、每日计划和云端同步。',
+            heroDailyContinue: '继续今日 {n} 词',
+            heroDailySwitch: '切到今日 {n} 词',
+            heroBrowseAll: '浏览全部主题',
+            heroBackAll: '回到全部主题',
+            heroSwitchCloze: '切到例句挖空',
+            heroSwitchDictation: '切到听写模式',
+            statFiltered: '筛选词数',
+            statMastered: '已掌握',
+            statTopics: '主题数',
+            statTotal: '完整词库',
+            sessionMastered: '{mastered} / {total} 已掌握',
+            emptyTitle: '当前筛选没有词条',
+            emptyDesc: '换一个等级或主题试试，或者回到 All Topics 模式继续刷词。',
+            roundDoneTitle: '这轮已经完成',
+            roundDoneDesc: '当前筛选下的词已经过完一轮。你可以重新开始，或者切换到其他主题继续复习。',
+            restartBtn: '重新开始本轮',
+            btnSpeak: '英式发音',
+            btnSpeakSentence: '朗读例句',
+            labelMeaning: '中文释义',
+            labelExample: '例句',
+            btnPlayWord: '播放单词',
+            btnPlaySentence: '播放例句',
+            hintMask: '首尾提示 {mask}',
+            audioOnlyOn: '纯听模式已开启',
+            labelContext: '语境提示',
+            audioOnlyListenFirst: '先听发音，再尝试拼写。',
+            inputSpell: '写出英文单词',
+            dictationNoText: '纯听模式：无文字提示',
+            dictationListen: '听单词和例句后再输入',
+            inputDictation: '听写输入',
+            labelAnswer: '答案提示',
+            clozeListenFirst: '先听例句，再填写单词',
+            clozeFromMeaning: '根据例句补全单词',
+            labelCloze: '例句挖空',
+            clozeHidden: '文字提示已隐藏，请先播放例句。',
+            inputCloze: '填入英文单词',
+            statusMastered: '熟词',
+            statusLearning: '待巩固',
+            btnFavorited: '已收藏',
+            btnFavorite: '收藏',
+            feedbackCorrect: '答对了',
+            feedbackWrong: '这次没答对',
+            continueNext: '继续下一个',
+            toggleMeaningShow: '显示释义',
+            toggleMeaningHide: '收起释义',
+            btnAgain: '再看一次',
+            btnKnown: '记住了',
+            btnReveal: '直接看答案',
+            btnAgainLater: '不会，稍后再来',
+            btnSubmit: '提交答案',
+            revealMsg: '正确答案是 {word}，意思是"{meaning}"。',
+            correctMsg: '正确答案就是 {word}。继续保持。',
+            toastNoSpeech: '当前浏览器不支持语音播放',
+            formatJustNow: '刚刚',
+            syncGuest: '未登录，进度仅保存在当前浏览器。',
+            syncSyncing: '同步中',
+            syncReady: '云端已连接',
+            syncError: '同步异常',
+            syncLocal: '本地模式',
+            syncGuestLabel: '游客',
+            syncNotYet: '尚未同步',
+            syncAccount: '账号：{name}',
+            syncLastSync: '最近同步：{time}',
+            syncLoginLink: '登录后同步',
+            syncConnected: '已连接云端进度，同步账号 {name}。',
+            syncExpired: '登录已失效，已切回本地模式。',
+            syncUpdated: '本地进度已更新，等待同步...',
+            syncMerged: '已同步 {n} 个词条。',
+            syncSaved: '云端已保存 {n} 条更新。',
+            syncFailed: '云端同步失败，进度仍已保存在本地。',
+            toastSynced: '云端进度已同步',
+            toastSyncFailed: '同步失败，已保留本地记录',
+            syncReadyOffline: '已登录，但云端进度暂时不可用。',
+        },
+        en: {
+            backHome: '← Back to Home',
+            brandDesc: 'Organised by official Cambridge English topic headings. Filter by level and topic, use daily 20 words, and practice with flashcards, spelling, dictation, or cloze.',
+            toggleUnmastered: 'Unmastered only',
+            toggleUnmasteredDesc: 'Hide words answered correctly twice in a row.',
+            toggleRandom: 'Random order',
+            toggleRandomDesc: 'Shuffle the pool each time the queue is rebuilt.',
+            toggleAudioOnly: 'Audio only',
+            toggleAudioOnlyDesc: 'Hide text hints in dictation mode, keep audio only.',
+            sourceDesc: 'Topic headings follow the official Cambridge English A2 Key / B1 Preliminary vocabulary list.',
+            modeFlashcard: 'Flashcard',
+            modeSpelling: 'Spelling',
+            modeDictation: 'Dictation',
+            modeCloze: 'Cloze',
+            focusAll: 'All words',
+            focusDaily: 'Daily {n}',
+            focusWrong: 'Wrong words',
+            focusFavorites: 'Favorites',
+            wordsUnit: 'words',
+            dailyPlanCount: 'Planned today',
+            dailyMastered: 'Mastered today',
+            dailyReview: 'Need review',
+            dailyGoal: 'Daily goal',
+            dailyBtnActive: 'Training daily plan',
+            dailyBtnSwitch: 'Switch to daily {n}',
+            heroDescDaily: 'Based on today\'s date, your level/topic, and mastery, the system picks the {n} words most worth reviewing.',
+            heroDescTopic: 'Filtered to {topic} topic words. Switch between flashcard, spelling, dictation, and cloze modes.',
+            heroDescAll: 'Vocabulary organised by official Cambridge English A2 Key / B1 Preliminary topics, with topic filters, daily plans, and cloud sync.',
+            heroDailyContinue: 'Continue daily {n}',
+            heroDailySwitch: 'Switch to daily {n}',
+            heroBrowseAll: 'Browse all topics',
+            heroBackAll: 'Back to all topics',
+            heroSwitchCloze: 'Switch to Cloze',
+            heroSwitchDictation: 'Switch to Dictation',
+            statFiltered: 'Filtered',
+            statMastered: 'Mastered',
+            statTopics: 'Topics',
+            statTotal: 'Total library',
+            sessionMastered: '{mastered} / {total} mastered',
+            emptyTitle: 'No words match current filters',
+            emptyDesc: 'Try a different level or topic, or go back to All Topics.',
+            roundDoneTitle: 'Round complete',
+            roundDoneDesc: 'You\'ve gone through all words in this filter. Restart or switch to another topic.',
+            restartBtn: 'Restart this round',
+            btnSpeak: 'Pronounce',
+            btnSpeakSentence: 'Read sentence',
+            labelMeaning: 'Chinese meaning',
+            labelExample: 'Example',
+            btnPlayWord: 'Play word',
+            btnPlaySentence: 'Play sentence',
+            hintMask: 'Hint: {mask}',
+            audioOnlyOn: 'Audio-only mode on',
+            labelContext: 'Context hint',
+            audioOnlyListenFirst: 'Listen first, then try to spell.',
+            inputSpell: 'Type the English word',
+            dictationNoText: 'Audio only: no text hints',
+            dictationListen: 'Listen to word and sentence, then type',
+            inputDictation: 'Dictation input',
+            labelAnswer: 'Answer hint',
+            clozeListenFirst: 'Listen to the sentence, then fill in the word',
+            clozeFromMeaning: 'Complete the word from the sentence',
+            labelCloze: 'Sentence cloze',
+            clozeHidden: 'Text hidden — play the sentence first.',
+            inputCloze: 'Fill in the English word',
+            statusMastered: 'Mastered',
+            statusLearning: 'Learning',
+            btnFavorited: 'Favorited',
+            btnFavorite: 'Favorite',
+            feedbackCorrect: 'Correct!',
+            feedbackWrong: 'Not quite right',
+            continueNext: 'Next word',
+            toggleMeaningShow: 'Show meaning',
+            toggleMeaningHide: 'Hide meaning',
+            btnAgain: 'See again',
+            btnKnown: 'Got it',
+            btnReveal: 'Show answer',
+            btnAgainLater: 'Skip for now',
+            btnSubmit: 'Submit',
+            revealMsg: 'The answer is {word}, meaning "{meaning}".',
+            correctMsg: 'Correct! The answer is {word}. Keep going.',
+            toastNoSpeech: 'Speech synthesis not supported in this browser',
+            formatJustNow: 'just now',
+            syncGuest: 'Not logged in — progress saved locally only.',
+            syncSyncing: 'Syncing',
+            syncReady: 'Cloud connected',
+            syncError: 'Sync error',
+            syncLocal: 'Local mode',
+            syncGuestLabel: 'Guest',
+            syncNotYet: 'Not synced yet',
+            syncAccount: 'Account: {name}',
+            syncLastSync: 'Last sync: {time}',
+            syncLoginLink: 'Login to sync',
+            syncConnected: 'Cloud progress connected for {name}.',
+            syncExpired: 'Session expired — switched to local mode.',
+            syncUpdated: 'Local progress updated, syncing...',
+            syncMerged: 'Synced {n} words.',
+            syncSaved: 'Cloud saved {n} updates.',
+            syncFailed: 'Cloud sync failed — progress still saved locally.',
+            toastSynced: 'Cloud progress synced',
+            toastSyncFailed: 'Sync failed — local records kept',
+            syncReadyOffline: 'Logged in, but cloud progress temporarily unavailable.',
+        },
+    };
+    </script>
+    <script src="i18n.js"></script>
     <script src="analytics.js"></script>
     <script src="vocab-data.js"></script>
     <script src="vocab-app.js"></script>

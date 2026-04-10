@@ -5,12 +5,15 @@ const FIRST_VISIT_KEY = 'ket-vocab-first-visit-v1';
 const DAILY_TARGET_OPTIONS = [10, 20, 30, 50];
 const DEFAULT_DAILY_TARGET = 20;
 const SYNC_DEBOUNCE_MS = 1200;
-const MODE_LABELS = {
-  flashcard: '词卡模式',
-  spelling: '拼写模式',
-  dictation: '听写模式',
-  cloze: '例句挖空',
+const MODE_LABEL_KEYS = {
+  flashcard: 'modeFlashcard',
+  spelling: 'modeSpelling',
+  dictation: 'modeDictation',
+  cloze: 'modeCloze',
 };
+function modeLabel(mode) {
+  return typeof I18n !== 'undefined' ? I18n.t(MODE_LABEL_KEYS[mode]) : mode;
+}
 
 const state = {
   level: 'all',
@@ -34,7 +37,7 @@ const state = {
     token: localStorage.getItem('token') || '',
     user: loadJson('user'),
     status: 'guest',
-    message: '未登录，进度仅保存在当前浏览器。',
+    message: '',
     syncing: false,
     lastSyncedAt: null,
   },
@@ -205,10 +208,10 @@ function saveProgress() {
 }
 
 function focusLabel() {
-  if (state.focus === 'wrong') return '错词本';
-  if (state.focus === 'favorites') return '收藏夹';
-  if (state.focus === 'daily') return `每日 ${state.dailyTarget} 词`;
-  return '全部词池';
+  if (state.focus === 'wrong') return I18n.t('focusWrong');
+  if (state.focus === 'favorites') return I18n.t('focusFavorites');
+  if (state.focus === 'daily') return I18n.t('focusDaily').replace('{n}', state.dailyTarget);
+  return I18n.t('focusAll');
 }
 
 function getWordState(item) {
@@ -241,7 +244,7 @@ function resolveInitialState() {
   const prefs = loadUiPrefs();
   const validLevels = new Set(window.VOCAB_LIBRARY.levels.map((item) => item.id));
   const validTopics = new Set(window.VOCAB_LIBRARY.topics.map((item) => item.id));
-  const validModes = new Set(Object.keys(MODE_LABELS));
+  const validModes = new Set(Object.keys(MODE_LABEL_KEYS));
   const validFocus = new Set(['all', 'daily', 'wrong', 'favorites']);
   const isFirstVisit = !localStorage.getItem(FIRST_VISIT_KEY);
 
@@ -388,7 +391,7 @@ function hashString(value) {
 
 function speakText(text) {
   if (!('speechSynthesis' in window)) {
-    showToast('当前浏览器不支持语音播放');
+    showToast(I18n.t('toastNoSpeech'));
     return;
   }
 
@@ -466,10 +469,10 @@ function renderFilters() {
   const favCount = currentPool.filter((item) => getWordState(item).favorite).length;
   const dailyCount = getDailyWords(currentPool).length;
   const focusItems = [
-    { id: 'all', label: '全部词池', desc: `${currentPool.length} 个词` },
-    { id: 'daily', label: `每日 ${state.dailyTarget} 词`, desc: `${dailyCount} 个词` },
-    { id: 'wrong', label: '错词本', desc: `${wrongCount} 个词` },
-    { id: 'favorites', label: '收藏夹', desc: `${favCount} 个词` },
+    { id: 'all', label: I18n.t('focusAll'), desc: `${currentPool.length} ${I18n.t('wordsUnit')}` },
+    { id: 'daily', label: I18n.t('focusDaily').replace('{n}', state.dailyTarget), desc: `${dailyCount} ${I18n.t('wordsUnit')}` },
+    { id: 'wrong', label: I18n.t('focusWrong'), desc: `${wrongCount} ${I18n.t('wordsUnit')}` },
+    { id: 'favorites', label: I18n.t('focusFavorites'), desc: `${favCount} ${I18n.t('wordsUnit')}` },
   ];
 
   focusContainer.innerHTML = focusItems.map((item) => `
@@ -520,15 +523,15 @@ function renderFilters() {
 
 function renderSyncCard() {
   const card = document.getElementById('syncCard');
-  const username = state.auth.user?.username || '游客';
-  const timeText = state.auth.lastSyncedAt ? formatTime(state.auth.lastSyncedAt) : '尚未同步';
+  const username = state.auth.user?.username || I18n.t('syncGuestLabel');
+  const timeText = state.auth.lastSyncedAt ? formatTime(state.auth.lastSyncedAt) : I18n.t('syncNotYet');
   const badge = state.auth.syncing
-    ? '同步中'
+    ? I18n.t('syncSyncing')
     : state.auth.status === 'ready'
-      ? '云端已连接'
+      ? I18n.t('syncReady')
       : state.auth.status === 'error'
-        ? '同步异常'
-        : '本地模式';
+        ? I18n.t('syncError')
+        : I18n.t('syncLocal');
 
   card.innerHTML = `
     <div class="status-row">
@@ -537,10 +540,10 @@ function renderSyncCard() {
     </div>
     <p class="status-note">${state.auth.message}</p>
     <div class="status-row">
-      <span class="status-note">账号：${escapeHtml(username)}</span>
+      <span class="status-note">${I18n.t('syncAccount').replace('{name}', escapeHtml(username))}</span>
       ${state.auth.status === 'ready'
-        ? `<span class="status-note">最近同步：${timeText}</span>`
-        : '<a class="status-link" href="login.html">登录后同步</a>'}
+        ? `<span class="status-note">${I18n.t('syncLastSync').replace('{time}', timeText)}</span>`
+        : `<a class="status-link" href="login.html">${I18n.t('syncLoginLink')}</a>`}
     </div>
   `;
 }
@@ -559,24 +562,24 @@ function renderDailyCard() {
     <div class="daily-stats">
       <div class="daily-stat">
         <strong>${dailyWords.length}</strong>
-        <span>今日计划词数</span>
+        <span>${I18n.t('dailyPlanCount')}</span>
       </div>
       <div class="daily-stat">
         <strong>${mastered}</strong>
-        <span>今日已掌握</span>
+        <span>${I18n.t('dailyMastered')}</span>
       </div>
       <div class="daily-stat">
         <strong>${wrong}</strong>
-        <span>需复习词数</span>
+        <span>${I18n.t('dailyReview')}</span>
       </div>
       <div class="daily-stat">
         <select id="dailyTargetSelect" class="daily-target-select">
           ${DAILY_TARGET_OPTIONS.map((n) => `<option value="${n}"${n === state.dailyTarget ? ' selected' : ''}>${n}</option>`).join('')}
         </select>
-        <span>每日目标</span>
+        <span>${I18n.t('dailyGoal')}</span>
       </div>
     </div>
-    <button class="daily-btn" id="dailyFocusBtn">${state.focus === 'daily' ? '正在训练今日计划' : `切到每日 ${state.dailyTarget} 词`}</button>
+    <button class="daily-btn" id="dailyFocusBtn">${state.focus === 'daily' ? I18n.t('dailyBtnActive') : I18n.t('dailyBtnSwitch').replace('{n}', state.dailyTarget)}</button>
   `;
 
   document.getElementById('dailyTargetSelect').addEventListener('change', (e) => {
@@ -608,15 +611,15 @@ function renderHero() {
       ? `${topicMeta.label} Word Studio`
       : 'Official Topic Vocabulary Studio';
   document.getElementById('heroDesc').textContent = state.focus === 'daily'
-    ? `系统会按今日日期、当前等级/主题和你的掌握情况，优先挑出 ${state.dailyTarget} 个值得复习的单词。`
+    ? I18n.t('heroDescDaily').replace('{n}', state.dailyTarget)
     : topicMeta
-      ? `当前筛选的是 ${topicMeta.label} 主题词。可以切换词卡、拼写、听写和例句挖空四种训练模式。`
-      : '词汇按 Cambridge English 官方 A2 Key / B1 Preliminary 主题维度组织，支持主题筛选、每日计划和云端同步。';
+      ? I18n.t('heroDescTopic').replace('{topic}', topicMeta.label)
+      : I18n.t('heroDescAll');
 
   document.getElementById('heroActions').innerHTML = `
-    <button class="hero-action-btn primary" id="heroDailyAction">${state.focus === 'daily' ? `继续今日 ${state.dailyTarget} 词` : `切到今日 ${state.dailyTarget} 词`}</button>
-    <button class="hero-action-btn" id="heroTopicAction">${state.topic === 'all' ? '浏览全部主题' : '回到全部主题'}</button>
-    <button class="hero-action-btn" id="heroModeAction">${state.mode === 'dictation' ? '切到例句挖空' : '切到听写模式'}</button>
+    <button class="hero-action-btn primary" id="heroDailyAction">${state.focus === 'daily' ? I18n.t('heroDailyContinue').replace('{n}', state.dailyTarget) : I18n.t('heroDailySwitch').replace('{n}', state.dailyTarget)}</button>
+    <button class="hero-action-btn" id="heroTopicAction">${state.topic === 'all' ? I18n.t('heroBrowseAll') : I18n.t('heroBackAll')}</button>
+    <button class="hero-action-btn" id="heroModeAction">${state.mode === 'dictation' ? I18n.t('heroSwitchCloze') : I18n.t('heroSwitchDictation')}</button>
   `;
   document.getElementById('heroDailyAction').addEventListener('click', () => {
     setFocus('daily', 'hero');
@@ -640,10 +643,10 @@ function renderHero() {
   });
 
   document.getElementById('overviewStats').innerHTML = `
-    <div class="metric"><span class="metric-num">${words.length}</span><span class="metric-label">筛选词数</span></div>
-    <div class="metric"><span class="metric-num">${mastered}</span><span class="metric-label">已掌握</span></div>
-    <div class="metric"><span class="metric-num">${topicCount}</span><span class="metric-label">主题数</span></div>
-    <div class="metric"><span class="metric-num">${state.libraryWords.length}</span><span class="metric-label">完整词库</span></div>
+    <div class="metric"><span class="metric-num">${words.length}</span><span class="metric-label">${I18n.t('statFiltered')}</span></div>
+    <div class="metric"><span class="metric-num">${mastered}</span><span class="metric-label">${I18n.t('statMastered')}</span></div>
+    <div class="metric"><span class="metric-num">${topicCount}</span><span class="metric-label">${I18n.t('statTopics')}</span></div>
+    <div class="metric"><span class="metric-num">${state.libraryWords.length}</span><span class="metric-label">${I18n.t('statTotal')}</span></div>
   `;
 }
 
@@ -659,13 +662,13 @@ function renderSessionMeta() {
   const topicMeta = item ? getTopicMeta(item.topic) : getTopicMeta(state.topic);
   document.getElementById('sessionMeta').innerHTML = item
     ? `
-      <span>${MODE_LABELS[state.mode]}</span>
+      <span>${modeLabel(state.mode)}</span>
       <span>${state.index + 1} / ${state.queue.length}</span>
       <span>${topicMeta ? topicMeta.label : 'All Topics'} · ${focusLabel()}</span>
     `
     : `
-      <span>${MODE_LABELS[state.mode]}</span>
-      <span>${countMastered(words)} / ${words.length} 已掌握</span>
+      <span>${modeLabel(state.mode)}</span>
+      <span>${I18n.t('sessionMastered').replace('{mastered}', countMastered(words)).replace('{total}', words.length)}</span>
       <span>${focusLabel()} · Ready for another round</span>
     `;
 }
@@ -678,8 +681,8 @@ function renderStage() {
   if (!words.length) {
     stage.innerHTML = `
       <div class="result-card">
-        <h3>当前筛选没有词条</h3>
-        <p>换一个等级或主题试试，或者回到 All Topics 模式继续刷词。</p>
+        <h3>${I18n.t('emptyTitle')}</h3>
+        <p>${I18n.t('emptyDesc')}</p>
       </div>
     `;
     return;
@@ -688,9 +691,9 @@ function renderStage() {
   if (!item) {
     stage.innerHTML = `
       <div class="result-card">
-        <h3>这轮已经完成</h3>
-        <p>当前筛选下的词已经过完一轮。你可以重新开始，或者切换到其他主题继续复习。</p>
-        <button class="primary-btn" id="restartBtn">重新开始本轮</button>
+        <h3>${I18n.t('roundDoneTitle')}</h3>
+        <p>${I18n.t('roundDoneDesc')}</p>
+        <button class="primary-btn" id="restartBtn">${I18n.t('restartBtn')}</button>
       </div>
     `;
     document.getElementById('restartBtn').addEventListener('click', () => {
@@ -710,15 +713,15 @@ function renderStage() {
       <div class="headline">${item.word}</div>
       <div class="subline">${item.level === 'a2-key' ? 'A2 Key' : 'B1 Preliminary'} · ${topicMeta.label} · British audio ready</div>
       <div class="tool-row">
-        <button class="secondary-btn" id="speakWordBtn">英式发音</button>
-        <button class="secondary-btn" id="speakSentenceBtn">朗读例句</button>
+        <button class="secondary-btn" id="speakWordBtn">${I18n.t('btnSpeak')}</button>
+        <button class="secondary-btn" id="speakSentenceBtn">${I18n.t('btnSpeakSentence')}</button>
       </div>
       <div class="meaning-card${state.reveal ? ' reveal' : ''}">
-        <span class="section-label">中文释义</span>
+        <span class="section-label">${I18n.t('labelMeaning')}</span>
         <strong>${item.meaning}</strong>
       </div>
       <div class="example-card">
-        <span class="section-label">例句</span>
+        <span class="section-label">${I18n.t('labelExample')}</span>
         <p>${item.example}</p>
       </div>
     `;
@@ -728,17 +731,17 @@ function renderStage() {
     body = `
       <div class="prompt-label">Spell It</div>
       <div class="headline">${state.audioOnly ? 'Listen, then spell' : item.meaning}</div>
-      <div class="subline">${topicMeta.label} · ${state.audioOnly ? '纯听模式已开启' : `首尾提示 ${maskWord(item.word)}`}</div>
+      <div class="subline">${topicMeta.label} · ${state.audioOnly ? I18n.t('audioOnlyOn') : I18n.t('hintMask').replace('{mask}', maskWord(item.word))}</div>
       <div class="tool-row">
-        <button class="secondary-btn" id="speakWordBtn">播放单词</button>
-        <button class="secondary-btn" id="speakSentenceBtn">播放例句</button>
+        <button class="secondary-btn" id="speakWordBtn">${I18n.t('btnPlayWord')}</button>
+        <button class="secondary-btn" id="speakSentenceBtn">${I18n.t('btnPlaySentence')}</button>
       </div>
       <div class="example-card">
-        <span class="section-label">语境提示</span>
-        <p>${state.audioOnly ? '先听发音，再尝试拼写。' : item.example}</p>
+        <span class="section-label">${I18n.t('labelContext')}</span>
+        <p>${state.audioOnly ? I18n.t('audioOnlyListenFirst') : item.example}</p>
       </div>
       <div class="input-card">
-        <label for="answerInput">写出英文单词</label>
+        <label for="answerInput">${I18n.t('inputSpell')}</label>
         <input id="answerInput" type="text" value="${escapeHtml(state.answer)}" placeholder="Type the word">
       </div>
     `;
@@ -748,17 +751,17 @@ function renderStage() {
     body = `
       <div class="prompt-label">Dictation</div>
       <div class="headline">Listen and type</div>
-      <div class="subline">${topicMeta.label} · ${state.audioOnly ? '纯听模式：无文字提示' : '听单词和例句后再输入'}</div>
+      <div class="subline">${topicMeta.label} · ${state.audioOnly ? I18n.t('dictationNoText') : I18n.t('dictationListen')}</div>
       <div class="tool-row">
-        <button class="secondary-btn" id="speakWordBtn">播放单词</button>
-        <button class="secondary-btn" id="speakSentenceBtn">播放例句</button>
+        <button class="secondary-btn" id="speakWordBtn">${I18n.t('btnPlayWord')}</button>
+        <button class="secondary-btn" id="speakSentenceBtn">${I18n.t('btnPlaySentence')}</button>
       </div>
       <div class="input-card">
-        <label for="answerInput">听写输入</label>
+        <label for="answerInput">${I18n.t('inputDictation')}</label>
         <input id="answerInput" type="text" value="${escapeHtml(state.answer)}" placeholder="Type what you hear">
       </div>
       <div class="meaning-card${state.reveal ? ' reveal' : ''}">
-        <span class="section-label">答案提示</span>
+        <span class="section-label">${I18n.t('labelAnswer')}</span>
         <strong>${item.word}</strong>
         <p>${state.audioOnly ? item.example : item.meaning}</p>
       </div>
@@ -769,16 +772,16 @@ function renderStage() {
     body = `
       <div class="prompt-label">Cloze</div>
       <div class="headline">${state.audioOnly ? 'Listen and complete' : item.meaning}</div>
-      <div class="subline">${topicMeta.label} · ${state.audioOnly ? '先听例句，再填写单词' : '根据例句补全单词'}</div>
+      <div class="subline">${topicMeta.label} · ${state.audioOnly ? I18n.t('clozeListenFirst') : I18n.t('clozeFromMeaning')}</div>
       <div class="tool-row">
-        <button class="secondary-btn" id="speakSentenceBtn">播放例句</button>
+        <button class="secondary-btn" id="speakSentenceBtn">${I18n.t('btnPlaySentence')}</button>
       </div>
       <div class="example-card">
-        <span class="section-label">例句挖空</span>
-        <p>${state.audioOnly ? '文字提示已隐藏，请先播放例句。' : makeCloze(item.example, item.word)}</p>
+        <span class="section-label">${I18n.t('labelCloze')}</span>
+        <p>${state.audioOnly ? I18n.t('clozeHidden') : makeCloze(item.example, item.word)}</p>
       </div>
       <div class="input-card">
-        <label for="answerInput">填入英文单词</label>
+        <label for="answerInput">${I18n.t('inputCloze')}</label>
         <input id="answerInput" type="text" value="${escapeHtml(state.answer)}" placeholder="Fill in the blank">
       </div>
     `;
@@ -788,9 +791,9 @@ function renderStage() {
     <div class="word-stage" data-mode="${state.mode}">
       <div class="stage-topline">
         <span class="topic-badge">${topicMeta.label}</span>
-        <span class="status-badge">${wordState.mastered ? '熟词' : '待巩固'} · streak ${wordState.streak}</span>
+        <span class="status-badge">${wordState.mastered ? I18n.t('statusMastered') : I18n.t('statusLearning')} · streak ${wordState.streak}</span>
         <div class="stage-actions">
-          <button class="mini-btn${wordState.favorite ? ' active' : ''}" id="favoriteBtn">${wordState.favorite ? '已收藏' : '收藏'}</button>
+          <button class="mini-btn${wordState.favorite ? ' active' : ''}" id="favoriteBtn">${wordState.favorite ? I18n.t('btnFavorited') : I18n.t('btnFavorite')}</button>
         </div>
       </div>
       ${body}
@@ -836,7 +839,7 @@ function renderFeedback() {
 
   box.className = `feedback-box ${state.feedback.correct ? 'correct' : 'wrong'}`;
   box.innerHTML = `
-    <strong>${state.feedback.correct ? '答对了' : '这次没答对'}</strong>
+    <strong>${state.feedback.correct ? I18n.t('feedbackCorrect') : I18n.t('feedbackWrong')}</strong>
     <span>${state.feedback.message}</span>
   `;
 }
@@ -851,7 +854,7 @@ function renderControls() {
   }
 
   if (state.feedback) {
-    controls.innerHTML = '<button class="primary-btn" id="continueBtn">继续下一个</button>';
+    controls.innerHTML = `<button class="primary-btn" id="continueBtn">${I18n.t('continueNext')}</button>`;
     document.getElementById('continueBtn').addEventListener('click', () => {
       commitProgress(state.feedback.correct);
     });
@@ -860,9 +863,9 @@ function renderControls() {
 
   if (state.mode === 'flashcard') {
     controls.innerHTML = `
-      <button class="secondary-btn" id="toggleMeaningBtn">${state.reveal ? '收起释义' : '显示释义'}</button>
-      <button class="ghost-btn" id="againBtn">再看一次</button>
-      <button class="primary-btn" id="knownBtn">记住了</button>
+      <button class="secondary-btn" id="toggleMeaningBtn">${state.reveal ? I18n.t('toggleMeaningHide') : I18n.t('toggleMeaningShow')}</button>
+      <button class="ghost-btn" id="againBtn">${I18n.t('btnAgain')}</button>
+      <button class="primary-btn" id="knownBtn">${I18n.t('btnKnown')}</button>
     `;
     document.getElementById('toggleMeaningBtn').addEventListener('click', () => {
       state.reveal = !state.reveal;
@@ -880,16 +883,16 @@ function renderControls() {
   }
 
   controls.innerHTML = `
-    <button class="secondary-btn" id="revealBtn">直接看答案</button>
-    <button class="ghost-btn" id="againBtn">不会，稍后再来</button>
-    <button class="primary-btn" id="submitBtn">提交答案</button>
+    <button class="secondary-btn" id="revealBtn">${I18n.t('btnReveal')}</button>
+    <button class="ghost-btn" id="againBtn">${I18n.t('btnAgainLater')}</button>
+    <button class="primary-btn" id="submitBtn">${I18n.t('btnSubmit')}</button>
   `;
 
   document.getElementById('revealBtn').addEventListener('click', () => {
     state.reveal = true;
     state.feedback = {
       correct: false,
-      message: `正确答案是 ${item.word}，意思是“${item.meaning}”。`,
+      message: I18n.t('revealMsg').replace('{word}', item.word).replace('{meaning}', item.meaning),
     };
     renderStage();
     renderFeedback();
@@ -915,8 +918,8 @@ function submitTypingAnswer() {
   const correct = actual === expected;
   state.reveal = true;
   state.feedback = correct
-    ? { correct: true, message: `正确答案就是 ${item.word}。继续保持。` }
-    : { correct: false, message: `正确答案是 ${item.word}，意思是“${item.meaning}”。` };
+    ? { correct: true, message: I18n.t('correctMsg').replace('{word}', item.word) }
+    : { correct: false, message: I18n.t('revealMsg').replace('{word}', item.word).replace('{meaning}', item.meaning) };
 
   renderStage();
   renderFeedback();
@@ -998,7 +1001,7 @@ function escapeHtml(value) {
 
 function formatTime(value) {
   const date = new Date(value);
-  if (Number.isNaN(date.getTime())) return '刚刚';
+  if (Number.isNaN(date.getTime())) return I18n.t('formatJustNow');
   return `${String(date.getHours()).padStart(2, '0')}:${String(date.getMinutes()).padStart(2, '0')}`;
 }
 
@@ -1025,7 +1028,7 @@ function apiFetch(path, options = {}) {
 async function verifyAuth() {
   if (!state.auth.token) {
     state.auth.status = 'guest';
-    state.auth.message = '未登录，进度仅保存在当前浏览器。';
+    state.auth.message = I18n.t('syncGuest');
     return false;
   }
 
@@ -1038,12 +1041,12 @@ async function verifyAuth() {
       localStorage.setItem('user', JSON.stringify(state.auth.user));
     }
     state.auth.status = 'ready';
-    state.auth.message = `已连接云端进度，同步账号 ${state.auth.user?.username || ''}。`;
+    state.auth.message = I18n.t('syncConnected').replace('{name}', state.auth.user?.username || '');
     trackEvent('vocab_sync_ready', { user: state.auth.user?.username || '' });
     return true;
   } catch {
     state.auth.status = 'guest';
-    state.auth.message = '登录已失效，已切回本地模式。';
+    state.auth.message = I18n.t('syncExpired');
     state.auth.token = '';
     state.auth.user = null;
     localStorage.removeItem('token');
@@ -1076,7 +1079,7 @@ async function pullCloudProgress() {
   state.stats = merged;
   saveProgress();
   state.auth.lastSyncedAt = data.syncedAt || new Date().toISOString();
-  state.auth.message = `已同步 ${Object.keys(merged).length} 个词条。`;
+  state.auth.message = I18n.t('syncMerged').replace('{n}', Object.keys(merged).length);
 
   if (Object.keys(syncBack).length) {
     await pushProgress(syncBack, true);
@@ -1086,7 +1089,7 @@ async function pullCloudProgress() {
 function scheduleCloudSync(keys) {
   if (state.auth.status !== 'ready') return;
   keys.forEach((key) => state.pendingSyncKeys.add(key));
-  state.auth.message = '本地进度已更新，等待同步...';
+  state.auth.message = I18n.t('syncUpdated');
   renderSyncCard();
 
   clearTimeout(state.syncTimer);
@@ -1122,13 +1125,13 @@ async function pushProgress(progressMap, silent) {
     const data = await response.json();
     state.auth.status = 'ready';
     state.auth.lastSyncedAt = data.syncedAt || new Date().toISOString();
-    state.auth.message = `云端已保存 ${data.saved || 0} 条更新。`;
-    if (!silent) showToast('云端进度已同步');
+    state.auth.message = I18n.t('syncSaved').replace('{n}', data.saved || 0);
+    if (!silent) showToast(I18n.t('toastSynced'));
   } catch {
     state.auth.status = 'ready';
-    state.auth.message = '云端同步失败，进度仍已保存在本地。';
+    state.auth.message = I18n.t('syncFailed');
     trackEvent('vocab_sync_failed', { pending: Object.keys(progressMap).length }, 'error');
-    if (!silent) showToast('同步失败，已保留本地记录');
+    if (!silent) showToast(I18n.t('toastSyncFailed'));
   } finally {
     state.auth.syncing = false;
     renderSyncCard();
@@ -1144,7 +1147,7 @@ async function initCloudSync() {
     await pullCloudProgress();
   } catch {
     state.auth.status = 'ready';
-    state.auth.message = '已登录，但云端进度暂时不可用。';
+    state.auth.message = I18n.t('syncReadyOffline');
     trackEvent('vocab_sync_failed', { stage: 'initial_pull' }, 'error');
     renderSyncCard();
   }
@@ -1192,4 +1195,10 @@ document.addEventListener('DOMContentLoaded', async () => {
   await initCloudSync();
   buildQueue();
   render();
+
+  if (typeof I18n !== 'undefined') {
+    I18n.onSwitch(() => {
+      render();
+    });
+  }
 });

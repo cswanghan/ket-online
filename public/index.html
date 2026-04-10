@@ -416,19 +416,20 @@
             <div class="brand">
                 <small>Cambridge English Practice</small>
                 <h1>KET & PET 练习</h1>
-                <p>在线练习、背词与真题回顾</p>
+                <p data-i18n="brandDesc">在线练习、背词与真题回顾</p>
             </div>
             <div class="auth-links" id="authArea">
-                <a class="pill-link" href="login.html">登录 / 注册</a>
+                <button class="i18n-toggle" onclick="I18n.toggle()" style="padding:4px 14px;border-radius:999px;border:1px solid rgba(0,0,0,0.1);background:white;font-size:0.82rem;font-family:inherit;cursor:pointer;">EN</button>
+                <a class="pill-link" href="login.html" data-i18n="loginRegister">登录 / 注册</a>
             </div>
         </div>
 
         <section class="support-card">
             <div class="support-copy">
-                <strong>支持维护</strong>
-                <p>如果这个网站对你有帮助，欢迎请我喝杯咖啡。</p>
+                <strong data-i18n="supportTitle">支持维护</strong>
+                <p data-i18n="supportDesc">如果这个网站对你有帮助，欢迎请我喝杯咖啡。</p>
             </div>
-            <button onclick="openDonate()">☕ 请我喝杯咖啡</button>
+            <button onclick="openDonate()" data-i18n="supportBtn">☕ 请我喝杯咖啡</button>
         </section>
 
         <section class="hero">
@@ -439,23 +440,23 @@
 
             <div class="hero-grid">
                 <div class="hero-copy">
-                    <h2>先做题，<br>再背词。</h2>
+                    <h2 data-i18n-html="heroHeadline">先做题，<br>再背词。</h2>
                     <div class="level-info" id="levelInfo">
                         <div>Reading & Writing · Part 1-5 · 每套 30 题</div>
                         <div class="level-chip">适合小学高年级 — 初中</div>
                     </div>
-                <p>适合家长陪练，也适合学生自己刷。先做一套题，再用每日 20 词巩固高频词。游客也能直接开始。</p>
+                <p data-i18n="heroBody">适合家长陪练，也适合学生自己刷。先做一套题，再用每日 20 词巩固高频词。游客也能直接开始。</p>
                     <div class="hero-actions">
-                        <a id="quizEntry" class="hero-btn primary" href="quiz.html?level=ket">开始做题</a>
-                        <a id="dailyEntry" class="hero-btn secondary" href="vocab.html?focus=daily&level=a2-key">开始今日背词</a>
+                        <a id="quizEntry" class="hero-btn primary" href="quiz.html?level=ket" data-i18n="heroStartQuiz">开始做题</a>
+                        <a id="dailyEntry" class="hero-btn secondary" href="vocab.html?focus=daily&level=a2-key" data-i18n="heroStartVocab">开始今日背词</a>
                     </div>
                 </div>
 
                 <div class="hero-side">
                     <small>Today</small>
-                    <strong>每日 20 词</strong>
-                    <p>按等级和掌握情况推荐今天最值得复习的词，每天 10 分钟就能坚持。</p>
-                    <a id="sideDailyEntry" href="vocab.html?focus=daily&level=a2-key">直接进入今日计划 →</a>
+                    <strong data-i18n="sideDaily">每日 20 词</strong>
+                    <p data-i18n="sideDailyDesc">按等级和掌握情况推荐今天最值得复习的词，每天 10 分钟就能坚持。</p>
+                    <a id="sideDailyEntry" href="vocab.html?focus=daily&level=a2-key" data-i18n="sideDailyLink">直接进入今日计划 →</a>
                 </div>
             </div>
         </section>
@@ -463,21 +464,21 @@
         <section class="entry-grid">
             <a id="quickQuizEntry" href="quiz.html?level=ket" class="entry-card">
                 <div class="entry-kicker">Practice</div>
-                <div class="entry-title">在线练习</div>
-                <div class="entry-desc">选择套卷逐题作答，自动判分，支持查看答案和错题回顾。</div>
-                <div class="entry-meta">真题 / 练习卷 / 结果回看</div>
+                <div class="entry-title" data-i18n="cardQuizTitle">在线练习</div>
+                <div class="entry-desc" data-i18n="cardQuizDesc">选择套卷逐题作答，自动判分，支持查看答案和错题回顾。</div>
+                <div class="entry-meta" data-i18n="cardQuizMeta">真题 / 练习卷 / 结果回看</div>
             </a>
 
             <a id="vocabEntry" href="vocab.html?level=a2-key" class="entry-card">
                 <div class="entry-kicker">Vocabulary</div>
-                <div class="entry-title">单词背诵</div>
-                <div class="entry-desc">按官方主题词表背词，支持主题筛选、每日计划和学习进度。</div>
-                <div class="entry-meta">主题词表 / 每日 20 词 / 复习进度</div>
+                <div class="entry-title" data-i18n="cardVocabTitle">单词背诵</div>
+                <div class="entry-desc" data-i18n="cardVocabDesc">按官方主题词表背词，支持主题筛选、每日计划和学习进度。</div>
+                <div class="entry-meta" data-i18n="cardVocabMeta">主题词表 / 每日 20 词 / 复习进度</div>
             </a>
         </section>
 
         <div class="subnav">
-            <a id="historyEntry" class="subnav-link" href="admin.html">查看历史成绩 / 个人中心</a>
+            <a id="historyEntry" class="subnav-link" href="admin.html" data-i18n="subnavHistory">查看历史成绩 / 个人中心</a>
         </div>
 
         <div class="site-footer">Cambridge English Practice Platform</div>
@@ -486,22 +487,95 @@
     <div class="modal-overlay" id="donateModal" onclick="if(event.target===this)closeDonate()">
         <div class="modal">
             <button class="modal-close" onclick="closeDonate()">&times;</button>
-            <h2>支持我们</h2>
-            <div class="donate-intro">
+            <h2 data-i18n="donateTitle">支持我们</h2>
+            <div class="donate-intro" data-i18n-html="donateIntro">
                 这个网站由一位家长利用业余时间开发维护<br>
                 如果对你有帮助，欢迎请我喝杯咖啡 :)
             </div>
             <div class="qr-tabs">
-                <button class="qr-tab alipay active" onclick="switchQR('alipay')">支付宝</button>
-                <button class="qr-tab wechat" onclick="switchQR('wechat')">微信</button>
+                <button class="qr-tab alipay active" onclick="switchQR('alipay')" data-i18n="alipay">支付宝</button>
+                <button class="qr-tab wechat" onclick="switchQR('wechat')" data-i18n="wechat">微信</button>
             </div>
             <img class="qr-img" id="qrImg" data-src="images/alipay-qr.png" alt="收款码" loading="lazy" decoding="async">
-            <div class="donate-thanks">
+            <div class="donate-thanks" data-i18n-html="donateThanks">
                 感谢你的支持与鼓励<br>每一份心意都是继续更新的动力
             </div>
         </div>
     </div>
 
+    <script>
+    window.I18N = {
+        zh: {
+            loginRegister: '登录 / 注册',
+            brandDesc: '在线练习、背词与真题回顾',
+            supportTitle: '支持维护',
+            supportDesc: '如果这个网站对你有帮助，欢迎请我喝杯咖啡。',
+            supportBtn: '☕ 请我喝杯咖啡',
+            heroHeadline: '先做题，<br>再背词。',
+            heroBody: '适合家长陪练，也适合学生自己刷。先做一套题，再用每日 20 词巩固高频词。游客也能直接开始。',
+            heroStartQuiz: '开始做题',
+            heroStartVocab: '开始今日背词',
+            sideDaily: '每日 20 词',
+            sideDailyDesc: '按等级和掌握情况推荐今天最值得复习的词，每天 10 分钟就能坚持。',
+            sideDailyLink: '直接进入今日计划 →',
+            cardQuizTitle: '在线练习',
+            cardQuizDesc: '选择套卷逐题作答，自动判分，支持查看答案和错题回顾。',
+            cardQuizMeta: '真题 / 练习卷 / 结果回看',
+            cardVocabTitle: '单词背诵',
+            cardVocabDesc: '按官方主题词表背词，支持主题筛选、每日计划和学习进度。',
+            cardVocabMeta: '主题词表 / 每日 20 词 / 复习进度',
+            subnavHistory: '查看历史成绩 / 个人中心',
+            donateTitle: '支持我们',
+            donateIntro: '这个网站由一位家长利用业余时间开发维护<br>如果对你有帮助，欢迎请我喝杯咖啡 :)',
+            alipay: '支付宝',
+            wechat: '微信',
+            donateThanks: '感谢你的支持与鼓励<br>每一份心意都是继续更新的动力',
+            levelInfoKet: 'Reading & Writing · Part 1-5 · 每套 30 题',
+            levelChipKet: '适合小学高年级 — 初中',
+            levelInfoPet: 'Reading · Part 1-6 · 每套 32 题',
+            levelChipPet: '适合初中 — 高中',
+            authUser: '{username}',
+            authPersonal: '个人中心',
+            authAdmin: '管理后台',
+            authLogout: '退出',
+        },
+        en: {
+            loginRegister: 'Login / Register',
+            brandDesc: 'Practice, vocabulary & past papers online',
+            supportTitle: 'Support Us',
+            supportDesc: 'If this site helps you, consider buying me a coffee.',
+            supportBtn: '☕ Buy me a coffee',
+            heroHeadline: 'Practice first,<br>then vocabulary.',
+            heroBody: 'Great for parents coaching kids or for students studying on their own. Start with a quiz, then reinforce with 20 daily words. Guests can start right away.',
+            heroStartQuiz: 'Start Quiz',
+            heroStartVocab: 'Start Daily Vocab',
+            sideDaily: 'Daily 20 Words',
+            sideDailyDesc: 'Get personalized word recommendations based on your level and mastery. Just 10 minutes a day.',
+            sideDailyLink: 'Go to today\'s plan →',
+            cardQuizTitle: 'Online Practice',
+            cardQuizDesc: 'Pick a paper, answer each question, auto-graded with answer review and wrong-answer tracking.',
+            cardQuizMeta: 'Past papers / Practice sets / Review',
+            cardVocabTitle: 'Vocabulary Study',
+            cardVocabDesc: 'Study by official topic word lists with topic filters, daily plans and progress tracking.',
+            cardVocabMeta: 'Topic lists / Daily 20 / Progress',
+            subnavHistory: 'History & Profile',
+            donateTitle: 'Support Us',
+            donateIntro: 'This site is built and maintained by a parent in spare time.<br>If it helps you, a coffee would be much appreciated :)',
+            alipay: 'Alipay',
+            wechat: 'WeChat',
+            donateThanks: 'Thank you for your support!<br>Every bit of encouragement keeps this project going.',
+            levelInfoKet: 'Reading & Writing · Part 1-5 · 30 questions per set',
+            levelChipKet: 'Upper primary – Junior high',
+            levelInfoPet: 'Reading · Part 1-6 · 32 questions per set',
+            levelChipPet: 'Junior high – Senior high',
+            authUser: '{username}',
+            authPersonal: 'Profile',
+            authAdmin: 'Admin',
+            authLogout: 'Logout',
+        }
+    };
+    </script>
+    <script src="i18n.js"></script>
     <script src="analytics.js"></script>
     <script>
         let currentLevel = 'ket';
@@ -541,30 +615,44 @@
             document.getElementById('vocabEntry').href = `vocab.html?level=${vocabLevel}`;
         }
 
+        function updateLevelInfo() {
+            if (currentLevel === 'pet') {
+                document.getElementById('levelInfo').innerHTML = `<div>${I18n.t('levelInfoPet')}</div><div class="level-chip">${I18n.t('levelChipPet')}</div>`;
+            } else {
+                document.getElementById('levelInfo').innerHTML = `<div>${I18n.t('levelInfoKet')}</div><div class="level-chip">${I18n.t('levelChipKet')}</div>`;
+            }
+        }
+
         function switchLevel(level) {
             currentLevel = level;
             document.querySelectorAll('.level-tab').forEach((tab, index) => {
                 tab.classList.toggle('active', level === 'ket' ? index === 0 : index === 1);
             });
-            if (level === 'pet') {
-                document.getElementById('levelInfo').innerHTML = '<div>Reading · Part 1-6 · 每套 32 题</div><div class="level-chip">适合初中 — 高中</div>';
-            } else {
-                document.getElementById('levelInfo').innerHTML = '<div>Reading & Writing · Part 1-5 · 每套 30 题</div><div class="level-chip">适合小学高年级 — 初中</div>';
-            }
+            updateLevelInfo();
             updateEntryLinks();
             trackEvent('home_level_switch', { level });
         }
 
-        (function() {
+        function renderAuthArea() {
             const user = JSON.parse(localStorage.getItem('user') || 'null');
+            const area = document.getElementById('authArea');
+            const toggleBtn = '<button class="i18n-toggle" onclick="I18n.toggle()" style="padding:4px 14px;border-radius:999px;border:1px solid rgba(0,0,0,0.1);background:white;font-size:0.82rem;font-family:inherit;cursor:pointer;">EN</button>';
             if (user) {
-                const area = document.getElementById('authArea');
-                const adminLink = user.role === 'admin' ? ' <a class="pill-link" href="admin.html">管理后台</a>' : '';
-                area.innerHTML = `<span class="pill-link" style="cursor:default;">${user.username}</span>` +
-                    `<a class="pill-link" href="admin.html">个人中心</a>` + adminLink +
-                    `<a class="pill-link" href="javascript:void(0)" onclick="localStorage.clear();location.reload()">退出</a>`;
+                const adminLink = user.role === 'admin' ? ` <a class="pill-link" href="admin.html">${I18n.t('authAdmin')}</a>` : '';
+                area.innerHTML = toggleBtn +
+                    `<span class="pill-link" style="cursor:default;">${user.username}</span>` +
+                    `<a class="pill-link" href="admin.html">${I18n.t('authPersonal')}</a>` + adminLink +
+                    `<a class="pill-link" href="javascript:void(0)" onclick="localStorage.clear();location.reload()">${I18n.t('authLogout')}</a>`;
+            } else {
+                area.innerHTML = toggleBtn + `<a class="pill-link" href="login.html" data-i18n="loginRegister">${I18n.t('loginRegister')}</a>`;
             }
-        })();
+        }
+        renderAuthArea();
+
+        I18n.onSwitch(() => {
+            updateLevelInfo();
+            renderAuthArea();
+        });
 
         updateEntryLinks();
 

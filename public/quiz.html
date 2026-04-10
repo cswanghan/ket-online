@@ -361,11 +361,12 @@
 <body>
 
 <div class="top-bar">
-    <a href="index.html">← 返回</a>
+    <a href="index.html" data-i18n="back">← 返回</a>
     <span class="center" id="topTitle">KET Practice</span>
     <div class="right">
+        <button class="i18n-toggle" onclick="I18n.toggle()" style="padding:2px 10px;border-radius:999px;border:1px solid rgba(255,255,255,0.3);background:rgba(255,255,255,0.15);font-size:0.78rem;font-family:inherit;cursor:pointer;color:white;">EN</button>
         <span class="timer" id="timer">00:00</span>
-        <span id="progress">已答 0 / 0</span>
+        <span id="progress" data-i18n="progressInit">已答 0 / 0</span>
     </div>
 </div>
 <div class="progress-bar"><div class="progress-fill" id="progressBar" style="width:0%"></div></div>
@@ -373,10 +374,10 @@
 <div class="quiz-container">
     <!-- Test selector -->
     <div id="selectorView" class="test-selector">
-        <h2>选择练习套卷</h2>
-        <p class="selector-intro">支持游客直接完成整套练习，结果先本地展示；登录后再保存到历史记录。中途作答会自动保存，下次可以继续。</p>
+        <h2 data-i18n="selectorTitle">选择练习套卷</h2>
+        <p class="selector-intro" data-i18n="selectorIntro">支持游客直接完成整套练习，结果先本地展示；登录后再保存到历史记录。中途作答会自动保存，下次可以继续。</p>
         <div id="resumeBanner" class="resume-banner"></div>
-        <div class="test-grid" id="testGrid">加载中...</div>
+        <div class="test-grid" id="testGrid" data-i18n="loading">加载中...</div>
     </div>
 
     <!-- Quiz view -->
@@ -390,47 +391,216 @@
 <div class="auth-overlay" id="authOverlay">
     <div class="auth-modal">
         <button class="close-btn" onclick="closeAuthModal()">&times;</button>
-        <h3 id="authModalTitle">登录后保存记录</h3>
-        <p class="hint" id="authModalHint">注册/登录后可同步成绩和历史记录，游客也能先做完再保存。</p>
+        <h3 id="authModalTitle" data-i18n="authModalTitle">登录后保存记录</h3>
+        <p class="hint" id="authModalHint" data-i18n="authModalHint">注册/登录后可同步成绩和历史记录，游客也能先做完再保存。</p>
         <div class="auth-tabs">
-            <div class="auth-tab active" onclick="switchAuthTab('login')">登录</div>
-            <div class="auth-tab" onclick="switchAuthTab('register')">注册</div>
+            <div class="auth-tab active" onclick="switchAuthTab('login')" data-i18n="tabLogin">登录</div>
+            <div class="auth-tab" onclick="switchAuthTab('register')" data-i18n="tabRegister">注册</div>
         </div>
         <form id="modalLoginForm" onsubmit="handleModalLogin(event)">
             <div class="form-group">
-                <label class="form-label">用户名</label>
-                <input class="form-input" name="username" placeholder="请输入用户名" required>
+                <label class="form-label" data-i18n="labelUsername">用户名</label>
+                <input class="form-input" name="username" data-i18n-placeholder="phUsername" placeholder="请输入用户名" required>
             </div>
             <div class="form-group">
-                <label class="form-label">密码</label>
-                <input class="form-input" name="password" type="password" placeholder="请输入密码" required>
+                <label class="form-label" data-i18n="labelPassword">密码</label>
+                <input class="form-input" name="password" type="password" data-i18n-placeholder="phPassword" placeholder="请输入密码" required>
             </div>
-            <button class="submit-btn" type="submit">登录并保存</button>
+            <button class="submit-btn" type="submit" data-i18n="btnLoginSave">登录并保存</button>
             <div class="msg" id="modalLoginMsg"></div>
         </form>
         <form id="modalRegisterForm" style="display:none" onsubmit="handleModalRegister(event)">
             <div class="form-group">
-                <label class="form-label">用户名</label>
-                <input class="form-input" name="username" placeholder="3-20 字符" required>
+                <label class="form-label" data-i18n="labelUsername">用户名</label>
+                <input class="form-input" name="username" data-i18n-placeholder="phRegUsername" placeholder="3-20 字符" required>
             </div>
             <div class="form-group">
-                <label class="form-label">邮箱</label>
-                <input class="form-input" name="email" type="email" placeholder="用于找回账号" required>
+                <label class="form-label" data-i18n="labelEmail">邮箱</label>
+                <input class="form-input" name="email" type="email" data-i18n-placeholder="phEmail" placeholder="用于找回账号" required>
             </div>
             <div class="form-group">
-                <label class="form-label">密码</label>
-                <input class="form-input" name="password" type="password" placeholder="至少 6 位" required>
+                <label class="form-label" data-i18n="labelPassword">密码</label>
+                <input class="form-input" name="password" type="password" data-i18n-placeholder="phRegPassword" placeholder="至少 6 位" required>
             </div>
             <div class="form-group">
-                <label class="form-label">手机号</label>
-                <input class="form-input" name="phone" placeholder="选填">
+                <label class="form-label" data-i18n="labelPhone">手机号</label>
+                <input class="form-input" name="phone" data-i18n-placeholder="phOptional" placeholder="选填">
             </div>
-            <button class="submit-btn" type="submit">注册并保存</button>
+            <button class="submit-btn" type="submit" data-i18n="btnRegisterSave">注册并保存</button>
             <div class="msg" id="modalRegisterMsg"></div>
         </form>
     </div>
 </div>
 
+<script>
+window.I18N = {
+    zh: {
+        back: '← 返回',
+        progressInit: '已答 0 / 0',
+        selectorTitle: '选择练习套卷',
+        selectorIntro: '支持游客直接完成整套练习，结果先本地展示；登录后再保存到历史记录。中途作答会自动保存，下次可以继续。',
+        loading: '加载中...',
+        loadFailed: '加载失败',
+        authModalTitle: '登录后保存记录',
+        authModalHint: '注册/登录后可同步成绩和历史记录，游客也能先做完再保存。',
+        tabLogin: '登录',
+        tabRegister: '注册',
+        labelUsername: '用户名',
+        labelPassword: '密码',
+        labelEmail: '邮箱',
+        labelPhone: '手机号',
+        phUsername: '请输入用户名',
+        phPassword: '请输入密码',
+        phRegUsername: '3-20 字符',
+        phEmail: '用于找回账号',
+        phRegPassword: '至少 6 位',
+        phOptional: '选填',
+        btnLoginSave: '登录并保存',
+        btnRegisterSave: '注册并保存',
+        networkError: '网络错误',
+        regSuccess: '注册成功，请等待审核后登录',
+        loadTestFailed: '加载试卷失败: ',
+        progressText: '已答 {answered} / {total}',
+        answered: '已答',
+        prevPart: '← 上一部分',
+        nextPart: '下一部分 →',
+        submitQuiz: '提交试卷 ✓',
+        confirmSubmit: '还有 {n} 题未作答，确定提交吗？',
+        loggedInStatus: '已登录，交卷后自动保存',
+        guestStatus: '游客模式，可先完成再决定是否保存',
+        currentPart: '当前部分：{current}/{total}',
+        currentProgress: '当前进度：{answered}/{total}',
+        draftSaved: '草稿已自动保存 {time}',
+        draftWillSave: '开始作答后将自动保存草稿',
+        introParts: '个 Part',
+        introQuestions: '道题',
+        introMinutes: '分钟',
+        introComposition: '本套构成',
+        introQCount: '{n} 题',
+        introTipSave: '中途随时离开，进度会自动保存，下次继续',
+        introTipLoggedIn: '已登录，交卷后自动同步到历史',
+        introTipGuest: '游客可直接做完，看到分数后再决定是否登录保存',
+        introTipPace: '不计时强制结束，按自己节奏来',
+        introStart: '开始作答 · Part 1 →',
+        introBack: '先回去看看别的',
+        resumeEyebrow: '上次未完成',
+        resumeAnswered: '已答 {answered}/{total} 题 · 草稿保存于 {time}',
+        resumeBtn: '继续上次（剩 {n} 题）',
+        discardBtn: '重新开始',
+        resultCorrect: '答对',
+        resultWrong: '答错',
+        resultTime: '用时',
+        reviewAnswers: '查看答案',
+        doAnother: '再做一套',
+        backHome: '返回首页',
+        savedNote: '本次成绩已保存到历史记录，可在个人中心继续查看和回顾。',
+        guestSaveTitle: '这次结果已生成，但还没保存到历史记录',
+        guestSaveDesc: '你现在是游客模式，成绩已经展示给你了。登录或注册后，可以把这次结果补存到个人历史和错题本。',
+        guestSaveBtn: '登录后保存这次成绩',
+        goLogin: '前往登录页',
+        retrySaveTitle: '成绩暂未写入云端',
+        retrySaveDesc: '网络或接口异常时结果仍保留在当前页面。你可以重试保存，不会影响本地查看答案。',
+        retrySaveBtn: '重试保存成绩',
+        fillBlankLabel: '第 {n} 空：',
+        fillPlaceholder: '填写答案',
+        yourAnswer: '你的答案: ',
+        notAnswered: '(未作答)',
+        correctAnswer: ' → 正确答案: ',
+        selectSentence: '选择要插入 {text} 位置的句子：',
+        questionsLabel: '题 · Reading & Writing',
+        badgeOfficial: '官方',
+        badgePastPaper: '真题',
+        badgePractice: '练习',
+        justNow: '刚刚',
+        minutesAgo: '{n} 分钟前',
+        hoursAgo: '{n} 小时前',
+        daysAgo: '{n} 天前',
+    },
+    en: {
+        back: '← Back',
+        progressInit: 'Answered 0 / 0',
+        selectorTitle: 'Choose a Test Paper',
+        selectorIntro: 'Guests can complete a full test and see results locally. Login to save to your history. Progress auto-saves so you can resume later.',
+        loading: 'Loading...',
+        loadFailed: 'Failed to load',
+        authModalTitle: 'Login to Save Results',
+        authModalHint: 'Register or login to sync scores and history. Guests can finish first, then save.',
+        tabLogin: 'Login',
+        tabRegister: 'Register',
+        labelUsername: 'USERNAME',
+        labelPassword: 'PASSWORD',
+        labelEmail: 'EMAIL',
+        labelPhone: 'PHONE',
+        phUsername: 'Enter username',
+        phPassword: 'Enter password',
+        phRegUsername: '3-20 characters',
+        phEmail: 'For account recovery',
+        phRegPassword: 'At least 6 characters',
+        phOptional: 'Optional',
+        btnLoginSave: 'Login & Save',
+        btnRegisterSave: 'Register & Save',
+        networkError: 'Network error',
+        regSuccess: 'Registered. Please wait for approval.',
+        loadTestFailed: 'Failed to load test: ',
+        progressText: 'Answered {answered} / {total}',
+        answered: 'Answered',
+        prevPart: '← Previous',
+        nextPart: 'Next →',
+        submitQuiz: 'Submit ✓',
+        confirmSubmit: '{n} questions unanswered. Submit anyway?',
+        loggedInStatus: 'Logged in — auto-save on submit',
+        guestStatus: 'Guest mode — finish first, save later',
+        currentPart: 'Part: {current}/{total}',
+        currentProgress: 'Progress: {answered}/{total}',
+        draftSaved: 'Draft saved at {time}',
+        draftWillSave: 'Draft will auto-save once you start',
+        introParts: 'Parts',
+        introQuestions: 'Questions',
+        introMinutes: 'minutes',
+        introComposition: 'Test Structure',
+        introQCount: '{n} Q',
+        introTipSave: 'Leave anytime — progress auto-saves for next time',
+        introTipLoggedIn: 'Logged in — results sync to history automatically',
+        introTipGuest: 'Guests can finish first, then decide whether to save',
+        introTipPace: 'No time limit — go at your own pace',
+        introStart: 'Start · Part 1 →',
+        introBack: 'Go back and browse',
+        resumeEyebrow: 'Unfinished',
+        resumeAnswered: 'Answered {answered}/{total} · Draft saved {time}',
+        resumeBtn: 'Resume ({n} left)',
+        discardBtn: 'Start over',
+        resultCorrect: 'Correct',
+        resultWrong: 'Wrong',
+        resultTime: 'Time',
+        reviewAnswers: 'Review Answers',
+        doAnother: 'Try Another',
+        backHome: 'Home',
+        savedNote: 'Results saved to your history. View them in your profile anytime.',
+        guestSaveTitle: 'Results generated but not yet saved',
+        guestSaveDesc: 'You are in guest mode. Your score is shown above. Login or register to save results to your history and wrong-answer book.',
+        guestSaveBtn: 'Login to save results',
+        goLogin: 'Go to login page',
+        retrySaveTitle: 'Results not yet saved to cloud',
+        retrySaveDesc: 'Network issue — results are still on this page. Retry saving without affecting your local view.',
+        retrySaveBtn: 'Retry save',
+        fillBlankLabel: 'Blank {n}: ',
+        fillPlaceholder: 'Type answer',
+        yourAnswer: 'Your answer: ',
+        notAnswered: '(unanswered)',
+        correctAnswer: ' → Correct: ',
+        selectSentence: 'Choose the sentence for gap {text}:',
+        questionsLabel: 'Q · Reading & Writing',
+        badgeOfficial: 'Official',
+        badgePastPaper: 'Past Paper',
+        badgePractice: 'Practice',
+        justNow: 'just now',
+        minutesAgo: '{n} min ago',
+        hoursAgo: '{n} hr ago',
+        daysAgo: '{n} days ago',
+    }
+};
+</script>
+<script src="i18n.js"></script>
 <script src="analytics.js"></script>
 <script>
     // Auth modal helpers
@@ -441,8 +611,8 @@
 
     function showAuthModal(reason = 'save_result') {
         document.getElementById('authOverlay').classList.add('show');
-        setText('authModalTitle', '登录后保存记录');
-        setText('authModalHint', '注册/登录后可同步成绩和历史记录，游客也能先做完再保存。');
+        setText('authModalTitle', I18n.t('authModalTitle'));
+        setText('authModalHint', I18n.t('authModalHint'));
         trackEvent('quiz_save_history_click', { reason, answered: getAnsweredCount(), hasResult: Boolean(lastResult) });
     }
     function closeAuthModal() {
@@ -488,7 +658,7 @@
             }
         } catch {
             trackEvent('auth_login_failure', { source: 'quiz_modal', reason: 'network' }, 'error');
-            showModalMsg('modalLoginMsg', '网络错误', 'error');
+            showModalMsg('modalLoginMsg', I18n.t('networkError'), 'error');
         }
     }
     async function handleModalRegister(e) {
@@ -521,7 +691,7 @@
                     }
                 } else {
                     trackEvent('auth_register_success', { source: 'quiz_modal', directLogin: false });
-                    showModalMsg('modalRegisterMsg', res.message || '注册成功，请等待审核后登录', 'success');
+                    showModalMsg('modalRegisterMsg', res.message || I18n.t('regSuccess'), 'success');
                 }
             } else {
                 trackEvent('auth_register_failure', { source: 'quiz_modal', reason: res.error || 'unknown' }, 'error');
@@ -529,7 +699,7 @@
             }
         } catch {
             trackEvent('auth_register_failure', { source: 'quiz_modal', reason: 'network' }, 'error');
-            showModalMsg('modalRegisterMsg', '网络错误', 'error');
+            showModalMsg('modalRegisterMsg', I18n.t('networkError'), 'error');
         }
     }
 </script>
@@ -617,13 +787,13 @@
         const pct = total ? Math.min(100, Math.round((answered / total) * 100)) : 0;
         const savedAgo = formatRelativeTime(draft.savedAt);
         banner.innerHTML = `
-            <span class="resume-eyebrow">上次未完成</span>
+            <span class="resume-eyebrow">${I18n.t('resumeEyebrow')}</span>
             <strong>${draft.title || draft.testId}</strong>
-            <p>已答 <strong>${answered}/${total}</strong> 题 · 草稿保存于 ${savedAgo}</p>
+            <p>${I18n.t('resumeAnswered').replace('{answered}', answered).replace('{total}', total).replace('{time}', savedAgo)}</p>
             <div class="resume-progress"><div class="resume-progress-fill" style="width:${pct}%"></div></div>
             <div class="resume-actions">
-                <button class="resume-btn primary" id="resumeQuizBtn">继续上次（剩 ${Math.max(0, total - answered)} 题）</button>
-                <button class="resume-btn secondary" id="discardQuizBtn">重新开始</button>
+                <button class="resume-btn primary" id="resumeQuizBtn">${I18n.t('resumeBtn').replace('{n}', Math.max(0, total - answered))}</button>
+                <button class="resume-btn secondary" id="discardQuizBtn">${I18n.t('discardBtn')}</button>
             </div>
         `;
         document.getElementById('resumeQuizBtn').onclick = () => {
@@ -650,18 +820,18 @@
             const data = await r.json();
             const level = data.levels.find(l => l.id === currentLevel);
             if (!level) return;
-            const badgeLabel = { official: '官方', past_paper: '真题', practice: '练习' };
+            const badgeLabel = { official: I18n.t('badgeOfficial'), past_paper: I18n.t('badgePastPaper'), practice: I18n.t('badgePractice') };
             document.getElementById('testGrid').innerHTML = level.tests.map(t =>
                 `<div class="test-option" onclick="loadTest('${t.id}', '${currentLevel}')">
                     <div class="test-name">${t.title}</div>
-                    <div class="test-info">${t.totalQuestions} 题 · Reading & Writing</div>
+                    <div class="test-info">${t.totalQuestions} ${I18n.t('questionsLabel')}</div>
                     ${t.category ? `<div style="margin-top:6px;"><span style="display:inline-block;font-size:0.7rem;padding:2px 8px;border-radius:8px;${t.category === 'official' ? 'background:#fef3c7;color:#92400e' : t.category === 'past_paper' ? 'background:#dbeafe;color:#1e40af' : 'background:#f3f4f6;color:#6b7280'}">${badgeLabel[t.category] || t.category}</span></div>` : ''}
                     ${t.source ? `<div style="font-size:0.7rem;color:#9ca3af;margin-top:4px;">${t.source}</div>` : ''}
                 </div>`
             ).join('');
             trackEvent('quiz_selector_view', { level: currentLevel, tests: level.tests.length });
             renderResumeBanner();
-        } catch (e) { setText('testGrid', '加载失败'); }
+        } catch (e) { setText('testGrid', I18n.t('loadFailed')); }
     }
 
     // Load a specific test
@@ -687,7 +857,7 @@
             startQuiz(draft && draft.testId === testId ? draft : null);
         } catch (e) {
             trackEvent('quiz_load_failed', { testId, level, message: e.message || 'load_failed' }, 'error');
-            alert('加载试卷失败: ' + e.message);
+            alert(I18n.t('loadTestFailed') + e.message);
         }
     }
 
@@ -740,7 +910,7 @@
             <div class="intro-part-row">
                 <span class="intro-part-num">Part ${i + 1}</span>
                 <span class="intro-part-name">${p.name || ''}</span>
-                <span class="intro-part-count">${(p.questions || []).length} 题</span>
+                <span class="intro-part-count">${I18n.t('introQCount').replace('{n}', (p.questions || []).length)}</span>
             </div>
         `).join('');
 
@@ -751,28 +921,28 @@
                 <div class="intro-meta">
                     <div class="intro-stat">
                         <strong>${testData.parts?.length || 0}</strong>
-                        <span>个 Part</span>
+                        <span>${I18n.t('introParts')}</span>
                     </div>
                     <div class="intro-stat">
                         <strong>${allQuestions.length}</strong>
-                        <span>道题</span>
+                        <span>${I18n.t('introQuestions')}</span>
                     </div>
                     <div class="intro-stat">
                         <strong>~${estimateMinutes()}</strong>
-                        <span>分钟</span>
+                        <span>${I18n.t('introMinutes')}</span>
                     </div>
                 </div>
                 <div class="intro-parts">
-                    <div class="intro-parts-label">本套构成</div>
+                    <div class="intro-parts-label">${I18n.t('introComposition')}</div>
                     ${partRows}
                 </div>
                 <div class="intro-tips">
-                    <div>✓ 中途随时离开，进度会自动保存，下次继续</div>
-                    <div>✓ ${loggedIn ? '已登录，交卷后自动同步到历史' : '游客可直接做完，看到分数后再决定是否登录保存'}</div>
-                    <div>✓ 不计时强制结束，按自己节奏来</div>
+                    <div>✓ ${I18n.t('introTipSave')}</div>
+                    <div>✓ ${loggedIn ? I18n.t('introTipLoggedIn') : I18n.t('introTipGuest')}</div>
+                    <div>✓ ${I18n.t('introTipPace')}</div>
                 </div>
-                <button class="intro-start-btn" id="introStartBtn">开始作答 · Part 1 →</button>
-                <button class="intro-back-btn" id="introBackBtn">先回去看看别的</button>
+                <button class="intro-start-btn" id="introStartBtn">${I18n.t('introStart')}</button>
+                <button class="intro-back-btn" id="introBackBtn">${I18n.t('introBack')}</button>
             </div>
         `;
 
@@ -807,13 +977,13 @@
     }
 
     function formatRelativeTime(ts) {
-        if (!ts) return '刚刚';
+        if (!ts) return I18n.t('justNow');
         const diff = Date.now() - ts;
-        if (diff < 60_000) return '刚刚';
-        if (diff < 3_600_000) return `${Math.round(diff / 60_000)} 分钟前`;
-        if (diff < 86_400_000) return `${Math.round(diff / 3_600_000)} 小时前`;
-        if (diff < 604_800_000) return `${Math.round(diff / 86_400_000)} 天前`;
-        return new Date(ts).toLocaleDateString('zh-CN');
+        if (diff < 60_000) return I18n.t('justNow');
+        if (diff < 3_600_000) return I18n.t('minutesAgo').replace('{n}', Math.round(diff / 60_000));
+        if (diff < 86_400_000) return I18n.t('hoursAgo').replace('{n}', Math.round(diff / 3_600_000));
+        if (diff < 604_800_000) return I18n.t('daysAgo').replace('{n}', Math.round(diff / 86_400_000));
+        return new Date(ts).toLocaleDateString(I18n.lang === 'en' ? 'en-US' : 'zh-CN');
     }
 
     function updateTimer() {
@@ -841,12 +1011,12 @@
 
         let html = `
             <div class="quiz-status-card">
-                <span class="quiz-status-pill">${loggedIn ? '已登录，交卷后自动保存' : '游客模式，可先完成再决定是否保存'}</span>
+                <span class="quiz-status-pill">${loggedIn ? I18n.t('loggedInStatus') : I18n.t('guestStatus')}</span>
                 <strong>${testData.title}</strong>
                 <div class="quiz-status-meta">
-                    <span>当前部分：${currentPartIdx + 1}/${testData.parts.length}</span>
-                    <span>当前进度：${answered}/${allQuestions.length}</span>
-                    <span>${draft ? `草稿已自动保存 ${new Date(draft.savedAt).toLocaleTimeString('zh-CN', { hour12: false })}` : '开始作答后将自动保存草稿'}</span>
+                    <span>${I18n.t('currentPart').replace('{current}', currentPartIdx + 1).replace('{total}', testData.parts.length)}</span>
+                    <span>${I18n.t('currentProgress').replace('{answered}', answered).replace('{total}', allQuestions.length)}</span>
+                    <span>${draft ? I18n.t('draftSaved').replace('{time}', new Date(draft.savedAt).toLocaleTimeString(I18n.lang === 'en' ? 'en-US' : 'zh-CN', { hour12: false })) : I18n.t('draftWillSave')}</span>
                 </div>
             </div>
             <div class="part-header"><h3>${part.name}</h3><p>${part.description}</p></div>
@@ -895,10 +1065,10 @@
         const isFirst = currentPartIdx === 0;
         const isLast = currentPartIdx === testData.parts.length - 1;
         html += `<div class="nav-buttons">
-            <button class="nav-btn prev" onclick="prevPart()" ${isFirst ? 'disabled' : ''}>← 上一部分</button>
+            <button class="nav-btn prev" onclick="prevPart()" ${isFirst ? 'disabled' : ''}>${I18n.t('prevPart')}</button>
             ${isLast
-                ? '<button class="nav-btn submit" onclick="submitQuiz()">提交试卷 ✓</button>'
-                : '<button class="nav-btn next" onclick="nextPart()">下一部分 →</button>'}
+                ? `<button class="nav-btn submit" onclick="submitQuiz()">${I18n.t('submitQuiz')}</button>`
+                : `<button class="nav-btn next" onclick="nextPart()">${I18n.t('nextPart')}</button>`}
         </div>`;
 
         view.innerHTML = html;
@@ -950,7 +1120,7 @@
 
         // Gapped text: show sentence options as clickable
         if (part.type === 'gapped_text' && part.sentenceOptions) {
-            html += `<div style="margin-bottom:12px;font-size:0.9rem;">选择要插入 ${q.text} 位置的句子：</div>`;
+            html += `<div style="margin-bottom:12px;font-size:0.9rem;">${I18n.t('selectSentence').replace('{text}', q.text)}</div>`;
             html += '<div class="options">';
             part.sentenceOptions.forEach(s => {
                 const selected = userAnswers[q.number] === s.letter;
@@ -966,8 +1136,8 @@
         if (part.type === 'fill_blank' && !q.options) {
             const val = userAnswers[q.number] || '';
             html += `<div style="margin-top:8px;">
-                <span style="font-size:0.85rem;color:var(--text-light);">第 ${q.number} 空：</span>
-                <input class="fill-input" type="text" value="${val}" placeholder="填写答案"
+                <span style="font-size:0.85rem;color:var(--text-light);">${I18n.t('fillBlankLabel').replace('{n}', q.number)}</span>
+                <input class="fill-input" type="text" value="${val}" placeholder="${I18n.t('fillPlaceholder')}"
                     oninput="fillAnswer(${q.number}, this.value)" autocomplete="off" spellcheck="false">
             </div>`;
         }
@@ -1001,7 +1171,7 @@
 
     function updateProgress() {
         const answered = getAnsweredCount();
-        setText('progress', `已答 ${answered} / ${allQuestions.length}`);
+        setText('progress', I18n.t('progressText').replace('{answered}', answered).replace('{total}', allQuestions.length));
         document.getElementById('progressBar').style.width = `${(answered / allQuestions.length) * 100}%`;
         maybeTrackProgressCheckpoint(answered);
     }
@@ -1028,7 +1198,7 @@
         const answered = getAnsweredCount();
         trackEvent('quiz_submit_attempt', { answered, total: allQuestions.length });
         if (answered < allQuestions.length) {
-            if (!confirm(`还有 ${allQuestions.length - answered} 题未作答，确定提交吗？`)) return;
+            if (!confirm(I18n.t('confirmSubmit').replace('{n}', allQuestions.length - answered))) return;
         }
         doSubmit();
     }
@@ -1098,23 +1268,23 @@
         if (!hasToken && hasPendingSave) {
             saveCard = `
                 <div class="save-card">
-                    <strong>这次结果已生成，但还没保存到历史记录</strong>
-                    <p>你现在是游客模式，成绩已经展示给你了。登录或注册后，可以把这次结果补存到个人历史和错题本。</p>
+                    <strong>${I18n.t('guestSaveTitle')}</strong>
+                    <p>${I18n.t('guestSaveDesc')}</p>
                     <div class="save-actions">
-                        <button class="result-btn primary" id="saveHistoryBtn">登录后保存这次成绩</button>
-                        <a class="result-btn secondary" href="login.html">前往登录页</a>
+                        <button class="result-btn primary" id="saveHistoryBtn">${I18n.t('guestSaveBtn')}</button>
+                        <a class="result-btn secondary" href="login.html">${I18n.t('goLogin')}</a>
                     </div>
                 </div>
             `;
         } else if (!hasPendingSave) {
-            resultNote = '<p class="result-note">本次成绩已保存到历史记录，可在个人中心继续查看和回顾。</p>';
+            resultNote = `<p class="result-note">${I18n.t('savedNote')}</p>`;
         } else if (hasToken && hasPendingSave) {
             saveCard = `
                 <div class="save-card">
-                    <strong>成绩暂未写入云端</strong>
-                    <p>网络或接口异常时结果仍保留在当前页面。你可以重试保存，不会影响本地查看答案。</p>
+                    <strong>${I18n.t('retrySaveTitle')}</strong>
+                    <p>${I18n.t('retrySaveDesc')}</p>
                     <div class="save-actions">
-                        <button class="result-btn primary" id="saveHistoryBtn">重试保存成绩</button>
+                        <button class="result-btn primary" id="saveHistoryBtn">${I18n.t('retrySaveBtn')}</button>
                     </div>
                 </div>
             `;
@@ -1131,14 +1301,14 @@
                 <div class="label">${correct}/${total}</div>
             </div>
             <div class="score-detail">
-                <div><div class="val">${correct}</div>答对</div>
-                <div><div class="val">${total - correct}</div>答错</div>
-                <div><div class="val">${m}:${s}</div>用时</div>
+                <div><div class="val">${correct}</div>${I18n.t('resultCorrect')}</div>
+                <div><div class="val">${total - correct}</div>${I18n.t('resultWrong')}</div>
+                <div><div class="val">${m}:${s}</div>${I18n.t('resultTime')}</div>
             </div>
             <div class="result-actions">
-                <button class="result-btn primary" onclick="reviewAnswers()">查看答案</button>
-                <a class="result-btn secondary" href="quiz.html">再做一套</a>
-                <a class="result-btn secondary" href="index.html">返回首页</a>
+                <button class="result-btn primary" onclick="reviewAnswers()">${I18n.t('reviewAnswers')}</button>
+                <a class="result-btn secondary" href="quiz.html">${I18n.t('doAnother')}</a>
+                <a class="result-btn secondary" href="index.html">${I18n.t('backHome')}</a>
             </div>
             ${resultNote}
             ${saveCard}
@@ -1271,8 +1441,8 @@
 
                 if (part.type === 'fill_blank' && !q.options) {
                     html += `<div style="margin-top:8px;">
-                        <span>你的答案: </span><strong class="${isRight ? '' : 'wrong-answer'}" style="color:${isRight ? 'var(--correct)' : 'var(--wrong)'}">${userAns || '(未作答)'}</strong>
-                        ${!isRight ? `<span class="correct-hint"> → 正确答案: ${Array.isArray(q.answer) ? q.answer.join(' / ') : q.answer}</span>` : ''}
+                        <span>${I18n.t('yourAnswer')}</span><strong class="${isRight ? '' : 'wrong-answer'}" style="color:${isRight ? 'var(--correct)' : 'var(--wrong)'}">${userAns || I18n.t('notAnswered')}</strong>
+                        ${!isRight ? `<span class="correct-hint">${I18n.t('correctAnswer')}${Array.isArray(q.answer) ? q.answer.join(' / ') : q.answer}</span>` : ''}
                     </div>`;
                 }
 

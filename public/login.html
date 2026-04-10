@@ -73,57 +73,105 @@
 <body>
 <div class="auth-container">
     <div class="auth-header">
+        <div style="display:flex;justify-content:flex-end;margin-bottom:8px;"><button class="i18n-toggle" onclick="I18n.toggle()" style="padding:4px 14px;border-radius:999px;border:1px solid rgba(0,0,0,0.1);background:white;font-size:0.82rem;font-family:inherit;cursor:pointer;">EN</button></div>
         <div class="icon">📘</div>
         <h1>KET Practice</h1>
-        <p class="sub">剑桥 A2 Key 英语练习平台</p>
+        <p class="sub" data-i18n="subtitle">剑桥 A2 Key 英语练习平台</p>
     </div>
     <div class="auth-card">
         <div class="tabs">
-            <div class="tab active" onclick="showTab('login')">登录</div>
-            <div class="tab" onclick="showTab('register')">注册</div>
+            <div class="tab active" onclick="showTab('login')" data-i18n="tabLogin">登录</div>
+            <div class="tab" onclick="showTab('register')" data-i18n="tabRegister">注册</div>
         </div>
         <form id="loginForm" class="active" onsubmit="handleLogin(event)">
             <div class="form-group">
-                <label class="form-label">用户名</label>
-                <input class="form-input" name="username" placeholder="请输入用户名" required>
+                <label class="form-label" data-i18n="labelUsername">用户名</label>
+                <input class="form-input" name="username" data-i18n-placeholder="phUsername" placeholder="请输入用户名" required>
             </div>
             <div class="form-group">
-                <label class="form-label">密码</label>
-                <input class="form-input" name="password" type="password" placeholder="请输入密码" required>
+                <label class="form-label" data-i18n="labelPassword">密码</label>
+                <input class="form-input" name="password" type="password" data-i18n-placeholder="phPassword" placeholder="请输入密码" required>
             </div>
-            <button class="submit-btn" type="submit">登录</button>
+            <button class="submit-btn" type="submit" data-i18n="btnLogin">登录</button>
             <div class="message" id="loginMsg"></div>
         </form>
         <form id="registerForm" onsubmit="handleRegister(event)">
             <div class="form-group">
-                <label class="form-label">用户名</label>
-                <input class="form-input" name="username" placeholder="3-20 字符" required>
+                <label class="form-label" data-i18n="labelUsername">用户名</label>
+                <input class="form-input" name="username" data-i18n-placeholder="phRegUsername" placeholder="3-20 字符" required>
             </div>
             <div class="form-group">
-                <label class="form-label">邮箱</label>
-                <input class="form-input" name="email" type="email" placeholder="用于找回账号" required>
+                <label class="form-label" data-i18n="labelEmail">邮箱</label>
+                <input class="form-input" name="email" type="email" data-i18n-placeholder="phEmail" placeholder="用于找回账号" required>
             </div>
             <div class="form-group">
-                <label class="form-label">密码</label>
-                <input class="form-input" name="password" type="password" placeholder="至少 6 位" required>
+                <label class="form-label" data-i18n="labelPassword">密码</label>
+                <input class="form-input" name="password" type="password" data-i18n-placeholder="phRegPassword" placeholder="至少 6 位" required>
             </div>
             <div class="form-group">
-                <label class="form-label">手机号</label>
-                <input class="form-input" name="phone" placeholder="选填">
+                <label class="form-label" data-i18n="labelPhone">手机号</label>
+                <input class="form-input" name="phone" data-i18n-placeholder="phOptional" placeholder="选填">
             </div>
-            <span class="invite-toggle" onclick="toggleInvite()">有邀请码？</span>
+            <span class="invite-toggle" onclick="toggleInvite()" data-i18n="inviteToggle">有邀请码？</span>
             <div class="form-group invite-field" id="inviteField">
-                <label class="form-label">邀请码</label>
-                <input class="form-input" name="inviteCode" placeholder="选填">
+                <label class="form-label" data-i18n="labelInvite">邀请码</label>
+                <input class="form-input" name="inviteCode" data-i18n-placeholder="phOptional" placeholder="选填">
             </div>
-            <button class="submit-btn" type="submit">注册</button>
+            <button class="submit-btn" type="submit" data-i18n="btnRegister">注册</button>
             <div class="message" id="registerMsg"></div>
         </form>
     </div>
     <div class="auth-footer">
-        <a href="index.html">← 返回首页</a>
+        <a href="index.html" data-i18n="backHome">← 返回首页</a>
     </div>
 </div>
+<script>
+window.I18N = {
+    zh: {
+        subtitle: '剑桥 A2 Key 英语练习平台',
+        tabLogin: '登录',
+        tabRegister: '注册',
+        labelUsername: '用户名',
+        labelPassword: '密码',
+        labelEmail: '邮箱',
+        labelPhone: '手机号',
+        labelInvite: '邀请码',
+        phUsername: '请输入用户名',
+        phPassword: '请输入密码',
+        phRegUsername: '3-20 字符',
+        phEmail: '用于找回账号',
+        phRegPassword: '至少 6 位',
+        phOptional: '选填',
+        btnLogin: '登录',
+        btnRegister: '注册',
+        inviteToggle: '有邀请码？',
+        backHome: '← 返回首页',
+        networkError: '网络错误',
+    },
+    en: {
+        subtitle: 'Cambridge A2 Key English Practice',
+        tabLogin: 'Login',
+        tabRegister: 'Register',
+        labelUsername: 'USERNAME',
+        labelPassword: 'PASSWORD',
+        labelEmail: 'EMAIL',
+        labelPhone: 'PHONE',
+        labelInvite: 'INVITE CODE',
+        phUsername: 'Enter username',
+        phPassword: 'Enter password',
+        phRegUsername: '3-20 characters',
+        phEmail: 'For account recovery',
+        phRegPassword: 'At least 6 characters',
+        phOptional: 'Optional',
+        btnLogin: 'Login',
+        btnRegister: 'Register',
+        inviteToggle: 'Have an invite code?',
+        backHome: '← Back to Home',
+        networkError: 'Network error',
+    }
+};
+</script>
+<script src="i18n.js"></script>
 <script src="analytics.js"></script>
 <script>
     function trackEvent(name, meta, eventGroup) {
@@ -175,7 +223,7 @@
             }
         } catch {
             trackEvent('auth_login_failure', { reason: 'network' }, 'error');
-            showMsg('loginMsg', '网络错误', 'error');
+            showMsg('loginMsg', I18n.t('networkError'), 'error');
         }
     }
     async function handleRegister(e) {
@@ -205,7 +253,7 @@
             }
         } catch {
             trackEvent('auth_register_failure', { reason: 'network' }, 'error');
-            showMsg('registerMsg', '网络错误', 'error');
+            showMsg('registerMsg', I18n.t('networkError'), 'error');
         }
     }
 </script>

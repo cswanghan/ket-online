@@ -382,7 +382,25 @@
         .qr-tab.active { font-weight: 600; border-bottom-color: currentColor; }
         .qr-tab.alipay.active { color: #1677ff; }
         .qr-tab.wechat.active { color: #07c160; }
+        .qr-tab.supporters.active { color: var(--accent, #b07d62); }
         .qr-img { display: block; margin: 0 auto; max-width: 260px; border-radius: 12px; }
+        .supporters-panel { display: none; text-align: center; padding: 20px 0; }
+        .supporters-panel.show { display: block; }
+        .supporters-list { list-style: none; padding: 0; margin: 16px auto; max-width: 280px; }
+        .supporters-list li {
+            display: flex; align-items: center; gap: 12px;
+            padding: 12px 16px; margin-bottom: 8px;
+            background: var(--bg, #faf8f5); border-radius: 12px;
+            font-size: 0.92rem;
+        }
+        .supporter-avatar {
+            width: 36px; height: 36px; border-radius: 50%;
+            background: linear-gradient(135deg, #e8d5c8, #c4a08a);
+            display: flex; align-items: center; justify-content: center;
+            font-size: 1rem; color: white; flex-shrink: 0;
+        }
+        .supporter-name { font-weight: 600; color: var(--text, #3d3530); }
+        .supporters-note { font-size: 0.8rem; color: var(--muted, #8a7e76); margin-top: 12px; line-height: 1.7; }
         .donate-thanks {
             text-align: center;
             margin-top: 16px;
@@ -495,9 +513,17 @@
             <div class="qr-tabs">
                 <button class="qr-tab alipay active" onclick="switchQR('alipay')" data-i18n="alipay">支付宝</button>
                 <button class="qr-tab wechat" onclick="switchQR('wechat')" data-i18n="wechat">微信</button>
+                <button class="qr-tab supporters" onclick="switchQR('supporters')" data-i18n="supporterTab">感谢名单</button>
             </div>
-            <img class="qr-img" id="qrImg" data-src="images/alipay-qr.png" alt="收款码" loading="lazy" decoding="async">
-            <div class="donate-thanks" data-i18n-html="donateThanks">
+            <img class="qr-img" id="qrImg" src="images/alipay-qr.png" alt="收款码">
+            <div class="supporters-panel" id="supportersPanel">
+                <ul class="supporters-list">
+                    <li><span class="supporter-avatar">S</span><span class="supporter-name">Shirly</span></li>
+                    <li><span class="supporter-avatar">燕</span><span class="supporter-name">燕尾蝶</span></li>
+                </ul>
+                <div class="supporters-note" data-i18n-html="supporterNote">感谢每一位支持者的慷慨与信任<br>你们的鼓励是这个项目前进的动力</div>
+            </div>
+            <div class="donate-thanks" id="donateThanks" data-i18n-html="donateThanks">
                 感谢你的支持与鼓励<br>每一份心意都是继续更新的动力
             </div>
         </div>
@@ -530,6 +556,8 @@
             alipay: '支付宝',
             wechat: '微信',
             donateThanks: '感谢你的支持与鼓励<br>每一份心意都是继续更新的动力',
+            supporterTab: '感谢名单',
+            supporterNote: '感谢每一位支持者的慷慨与信任<br>你们的鼓励是这个项目前进的动力',
             levelInfoKet: 'Reading & Writing · Part 1-5 · 每套 30 题',
             levelChipKet: '适合小学高年级 — 初中',
             levelInfoPet: 'Reading · Part 1-6 · 每套 32 题',
@@ -564,6 +592,8 @@
             alipay: 'Alipay',
             wechat: 'WeChat',
             donateThanks: 'Thank you for your support!<br>Every bit of encouragement keeps this project going.',
+            supporterTab: 'Supporters',
+            supporterNote: 'Thanks to every supporter for your generosity and trust.<br>Your encouragement keeps this project moving forward.',
             levelInfoKet: 'Reading & Writing · Part 1-5 · 30 questions per set',
             levelChipKet: 'Upper primary – Junior high',
             levelInfoPet: 'Reading · Part 1-6 · 32 questions per set',
@@ -589,12 +619,6 @@
         }
 
         function openDonate() {
-            // Lazy-load the QR image only when the user opens the modal,
-            // avoiding a 350KB blocker on the first page load.
-            const qrImg = document.getElementById('qrImg');
-            if (qrImg && !qrImg.src && qrImg.dataset.src) {
-                qrImg.src = qrImg.dataset.src;
-            }
             document.getElementById('donateModal').classList.add('show');
             trackEvent('donate_modal_open');
         }
@@ -602,7 +626,19 @@
         function switchQR(type) {
             document.querySelectorAll('.qr-tab').forEach(t => t.classList.remove('active'));
             document.querySelector('.qr-tab.' + type).classList.add('active');
-            document.getElementById('qrImg').src = 'images/' + type + '-qr.png';
+            const qrImg = document.getElementById('qrImg');
+            const supportersPanel = document.getElementById('supportersPanel');
+            const donateThanks = document.getElementById('donateThanks');
+            if (type === 'supporters') {
+                qrImg.style.display = 'none';
+                supportersPanel.classList.add('show');
+                donateThanks.style.display = 'none';
+            } else {
+                qrImg.style.display = '';
+                qrImg.src = 'images/' + type + '-qr.png';
+                supportersPanel.classList.remove('show');
+                donateThanks.style.display = '';
+            }
             trackEvent('donate_qr_switch', { type });
         }
 
@@ -647,6 +683,8 @@
                 area.innerHTML = toggleBtn + `<a class="pill-link" href="login.html" data-i18n="loginRegister">${I18n.t('loginRegister')}</a>`;
             }
         }
+        // Ensure i18n dict is loaded before first render (i18n.js defers init via setTimeout)
+        I18n.init(window.I18N);
         renderAuthArea();
 
         I18n.onSwitch(() => {

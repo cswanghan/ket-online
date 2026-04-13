@@ -16,7 +16,7 @@
             --success: #6b9a7d; --error: #c47070;
         }
         body { font-family: 'Noto Serif SC', 'Georgia', serif; background: var(--cream); color: var(--text); }
-        .page { max-width: 800px; margin: 0 auto; padding: 40px 24px; }
+        .page { max-width: 960px; margin: 0 auto; padding: 40px 16px; }
         h1 { font-family: 'Playfair Display', 'Noto Serif SC', serif; font-size: 1.8rem; margin-bottom: 6px; color: var(--accent); }
         .sub { color: var(--text-light); font-size: 0.85rem; margin-bottom: 32px; }
         .nav-row { display: flex; gap: 12px; margin-bottom: 28px; }
@@ -59,12 +59,12 @@
         .analytics-card .k { color: var(--text-light); font-size: 0.78rem; text-transform: uppercase; letter-spacing: 1px; }
         .analytics-card .v { font-size: 1.5rem; color: var(--accent); font-weight: 700; margin-top: 6px; }
         .analytics-card .subv { color: var(--text-light); font-size: 0.8rem; margin-top: 4px; }
-        .analytics-panels { display: grid; grid-template-columns: 1.3fr 1fr; gap: 14px; }
+        .analytics-panels { display: grid; grid-template-columns: minmax(0, 1.3fr) minmax(0, 1fr); gap: 14px; }
         .analytics-panel { background: white; border: 1px solid var(--warm); border-radius: 12px; padding: 14px 16px; }
         .analytics-panel h3 { font-size: 0.84rem; text-transform: uppercase; letter-spacing: 2px; color: var(--text-light); margin-bottom: 12px; }
         .analytics-list { display: grid; gap: 10px; }
         .analytics-row { display: flex; justify-content: space-between; gap: 14px; align-items: center; font-size: 0.84rem; }
-        .analytics-row .name { color: var(--text); min-width: 0; }
+        .analytics-row .name { color: var(--text); min-width: 0; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
         .analytics-row .meta { color: var(--text-light); font-size: 0.78rem; }
         .analytics-pill { padding: 2px 9px; border-radius: 999px; background: var(--rose-bg); color: var(--accent); font-size: 0.76rem; white-space: nowrap; }
         .analytics-funnels { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 14px; margin-top: 14px; }
